@@ -14,7 +14,7 @@ SUBDIRS := miosix
 ## List here your source files (both .s, .c and .cpp)
 ##
 SRC :=                                  \
-main.cpp
+main.cpp lib/*.cpp
 
 ##
 ## List here additional static libraries with relative path
@@ -24,7 +24,7 @@ LIBS :=
 ##
 ## List here additional include directories (in the form -Iinclude_dir)
 ##
-INCLUDE_DIRS :=
+INCLUDE_DIRS := -Iinclude
 
 ##############################################################################
 ## You should not need to modify anything below                             ##
