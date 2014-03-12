@@ -18,7 +18,7 @@ typedef Gpio<GPIOA_BASE,7>  SPI_miso;
 typedef Gpio<GPIOA_BASE,6>  SPI_mosi;
 typedef Gpio<GPIOE_BASE,3>  SPI_CS;
 
-typedef SoftwareSPI<SPI_miso, SPI_mosi, SPI_sclk, SPI_CS, 1>;
+typedef SoftwareSPI<SPI_miso, SPI_mosi, SPI_sclk, SPI_CS, 0>;
 
 LIS302::init() {
 }

@@ -15,6 +15,10 @@
             </sourceRootList>
             <confList>
                 <confElem>
+                    <name>stm32f407vg_stm32f4discovery</name>
+                    <type>0</type>
+                </confElem>
+                <confElem>
                     <name>Default</name>
                     <type>0</type>
                 </confElem>
@@ -40,10 +44,6 @@
                 </confElem>
                 <confElem>
                     <name>stm32f103ze_redbull_v2</name>
-                    <type>0</type>
-                </confElem>
-                <confElem>
-                    <name>stm32f407vg_stm32f4discovery</name>
                     <type>0</type>
                 </confElem>
                 <confElem>
