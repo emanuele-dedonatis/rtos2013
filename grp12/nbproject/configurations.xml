@@ -2,6 +2,14 @@
 <configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root=".." name="0">
+      <df name="include">
+        <in>LIS302.h</in>
+        <in>pedometer.h</in>
+      </df>
+      <df name="lib">
+        <in>LIS302.cpp</in>
+        <in>pedometer.cpp</in>
+      </df>
       <df name="miosix">
         <df name="arch">
           <df name="arm7_lpc2000">
@@ -469,6 +477,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -1583,6 +1599,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -2699,6 +2723,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -3820,6 +3852,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -4936,6 +4976,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -6052,6 +6100,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -7168,6 +7224,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -8282,6 +8346,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -9396,6 +9468,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -10510,6 +10590,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -11624,6 +11712,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -12738,6 +12834,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
@@ -13852,6 +13956,14 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
