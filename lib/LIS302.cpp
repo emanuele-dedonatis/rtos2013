@@ -9,26 +9,31 @@
 
 #include "miosix.h"
 #include "LIS302.h"
-#include "util/software_spi.h"
+#include "spi.h"
 
-using namespace miosix;
+#define LIS302_Ctrl_Reg1        0x20
+#define LIS302_PD               0x40
+#define LIS302_Zen              0x04
+#define LIS302_Yen              0x02
+#define LIS302_Xen              0x01
+#define LIS302_OutX             0x29
+#define LIS302_OutY             0x2B
+#define LIS302_OutZ             0x2D
 
-typedef Gpio<GPIOA_BASE,5>  SPI_sclk;
-typedef Gpio<GPIOA_BASE,7>  SPI_miso;
-typedef Gpio<GPIOA_BASE,6>  SPI_mosi;
-typedef Gpio<GPIOE_BASE,3>  SPI_CS;
-
-typedef SoftwareSPI<SPI_miso, SPI_mosi, SPI_sclk, SPI_CS, 0>;
-
-LIS302::init() {
+void LIS302::init() {
+    SPI::init();
+    SPI::send(LIS302_Ctrl_Reg1, LIS302_PD | LIS302_Xen | LIS302_Yen | LIS302_Zen);    
 }
 
-unsigned char LIS302::readX() {
-}
-
-unsigned char LIS302::readY() {
-}
-
-unsigned char LIS302::readZ() {
-}
+     signed char LIS302::readX() {
+        return SPI::read(LIS302_OutX);
+    }
+    
+     signed char LIS302::readY() {
+        return SPI::read(LIS302_OutY);
+    }
+    
+     signed char LIS302::readZ() {
+        return SPI::read(LIS302_OutZ);
+    }
 

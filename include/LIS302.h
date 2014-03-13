@@ -23,17 +23,17 @@ public:
     /**
      * \return value of x-axis
      */
-    static unsigned char readX();
+    static signed char readX();
 
     /**
      * \return value of y-axis
      */    
-    static unsigned char readY();
+    static signed char readY();
       
     /**
      * \return value of z-axis
      */  
-    static unsigned char readZ();
+    static signed char readZ();
 private:
 
 };

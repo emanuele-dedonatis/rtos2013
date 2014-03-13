@@ -14,7 +14,7 @@ SUBDIRS := miosix
 ## List here your source files (both .s, .c and .cpp)
 ##
 SRC :=                                  \
-main.cpp lib/*.cpp
+main.cpp lib/spi.cpp lib/LIS302.cpp
 
 ##
 ## List here additional static libraries with relative path

@@ -7,10 +7,12 @@
       <df name="include">
         <in>LIS302.h</in>
         <in>pedometer.h</in>
+        <in>spi.h</in>
       </df>
       <df name="lib">
         <in>LIS302.cpp</in>
         <in>pedometer.cpp</in>
+        <in>spi.cpp</in>
       </df>
       <df name="miosix">
         <df name="arch">
