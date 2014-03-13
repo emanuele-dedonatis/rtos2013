@@ -22,7 +22,7 @@
 
 void LIS302::init() {
     SPI::init();
-    SPI::send(LIS302_Ctrl_Reg1, LIS302_PD | LIS302_Xen | LIS302_Yen | LIS302_Zen);    
+    SPI::send(LIS302_Ctrl_Reg1, LIS302_PD | LIS302_Xen | LIS302_Yen | LIS302_Zen);
 }
 
      signed char LIS302::readX() {

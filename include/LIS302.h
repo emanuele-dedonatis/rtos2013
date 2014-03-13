@@ -17,6 +17,7 @@ class LIS302 {
 public:
     /**
      * Initialize the sensor
+     * \return true if initialization ok
      */
     static void init();
     

@@ -1,24 +1,22 @@
 
 #include <cstdio>
 #include "miosix.h"
-#include "LIS302.h"
+#include "pedometer.h"
 
 using namespace std;
 using namespace miosix;
 
-volatile int x, y, z;
-
+void pedometerTask(void *argv) {
+    Pedometer::instance().init();
+    Pedometer::instance().start();
+}
 int main()
 {
-    LIS302::init();
-    
-    for(;;) {
-        x = LIS302::readX();
-        y = LIS302::readY();
-        z = LIS302::readZ();
-        
-        iprintf("%d %d %d \n", x, y, y);
-        
-        usleep(20000);
+    Thread *pedometer_t;
+    pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
+    for(;;){
+        iprintf("Main\n");
+        usleep(50000);
     }
+    pedometer_t->join();
 }
