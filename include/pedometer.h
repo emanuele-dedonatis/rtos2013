@@ -15,7 +15,7 @@
 */
 class Pedometer {
 public:
-   
+
    /**
     * Constants used by getMode method
     */
@@ -110,6 +110,7 @@ public:
    int getCalories();
    
 private:
+    void newStep();
 
 };
 

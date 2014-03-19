@@ -6,9 +6,11 @@
  */
 
 #include <stdio.h>
+#include <ctime>
 #include "pedometer.h"
 #include "LIS302.h"
 #include "miosix.h"
+
 
 using namespace std;
 using namespace miosix;
@@ -29,8 +31,10 @@ volatile int x_accel, y_accel, z_accel;
 volatile int counter;
 volatile int steps;
 volatile int x_th_abs, y_th_abs, z_th_abs;
+volatile long old_time, new_time, current_time;
 
 bool active;
+int mode;
 
 Pedometer& Pedometer::instance(){
     static Pedometer singleton;
@@ -124,13 +128,13 @@ void Pedometer::start() {
                     
                     /*x is the largest*/
                    if(x_old > x_th && x_new < x_th) 
-                    steps++;  
+                        newStep(); 
                    
                 }else{
                     
                     /*z is the largest*/
                     if(z_old > z_th && z_new < z_th)
-                        steps++;
+                        newStep(); 
                     
                 }
             }else{
@@ -138,11 +142,11 @@ void Pedometer::start() {
                 if(y_th_abs > z_th_abs){
                     /*y is the largest*/
                     if(y_old > y_th && y_new < y_th)
-                        steps++;
+                        newStep(); 
                 }else{
                     /*z is the largest*/
                     if(z_old > z_th && z_new < z_th)
-                        steps++;       
+                        newStep(); 
                 }
             }
         }
@@ -162,6 +166,7 @@ void Pedometer::pause() {
 }
 
 void Pedometer::restart() {
+    mode = Pedometer::MODE_STEADY;
      steps = 0;
     counter = 0;
         x_max=-MAX_VALUE;
@@ -172,3 +177,19 @@ void Pedometer::restart() {
         z_min=MAX_VALUE;
 }
 
+void Pedometer::newStep() {
+    steps++;
+    old_time = new_time;
+    new_time = getTick();
+    if(new_time-old_time < 500)
+        mode = Pedometer::MODE_RUN;
+    else 
+        mode = Pedometer::MODE_WALK;
+}
+
+int Pedometer::getMode() {
+    current_time = getTick();
+    if(current_time - new_time > 2000)
+        mode = Pedometer::MODE_STEADY;
+    return mode;
+}

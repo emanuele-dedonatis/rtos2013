@@ -49,6 +49,19 @@ int main()
         lcd.clear();
         lcd.go(0,0);
         lcd.printf("%d", passi);
+        lcd.go(0,1);
+        switch(Pedometer::instance().getMode()) {
+            case Pedometer::MODE_STEADY:
+                lcd.printf("STEADY");
+                break;
+            case Pedometer::MODE_WALK:
+                lcd.printf("WALK");
+                break;            
+            case Pedometer::MODE_RUN:
+                lcd.printf("RUN");
+                break; 
+            default: lcd.printf("");
+        }
         if(button::value())
              Pedometer::instance().restart();
         usleep(50000);
