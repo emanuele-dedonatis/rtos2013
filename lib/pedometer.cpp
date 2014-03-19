@@ -30,6 +30,8 @@ volatile int counter;
 volatile int steps;
 volatile int x_th_abs, y_th_abs, z_th_abs;
 
+bool active;
+
 Pedometer& Pedometer::instance(){
     static Pedometer singleton;
     return singleton;
@@ -49,8 +51,9 @@ void Pedometer::init() {
 }
 
 void Pedometer::start() {
+    active = true;
     for(;;){
-                       
+        if(active){ 
         /*SUM FILTERING*/
 
         /*NOT USED A LOOP FOR STM STUDIO*/
@@ -150,11 +153,23 @@ void Pedometer::start() {
                         steps++;       
                 }
             }
-                usleep(SAMPLE_PERIOD);
+        }
+        usleep(SAMPLE_PERIOD);
     }
 }
 
 int Pedometer::getSteps() {
     return steps;
+}
+
+void Pedometer::pause() {
+    if(active)
+        active = false;
+    else
+        active = true;
+}
+
+void Pedometer::restart() {
+    
 }
 
