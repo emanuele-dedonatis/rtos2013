@@ -28,12 +28,17 @@ void Pedometer::init() {
 
 void Pedometer::start() {
     for(;;){
+        lcd.clear();
         x = LIS302::readX();
         y = LIS302::readY();
         z = LIS302::readZ();
         
-        iprintf("%d %d %d \n", x, y, y);
-        
+        lcd.go(0,0);
+        lcd.printf("%d", x);
+        lcd.go(5,0);
+        lcd.printf("%d", y);
+        lcd.go(3,1);
+        lcd.printf("%d", z);
         usleep(20000);
         }
 }
