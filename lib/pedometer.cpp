@@ -39,15 +39,7 @@ Pedometer& Pedometer::instance(){
 
 void Pedometer::init() {
     LIS302::init();
-    steps = 0;
-    counter = 0;
-    steps = 0;
-        x_max=-MAX_VALUE;
-        x_min=MAX_VALUE;
-        y_max=-MAX_VALUE;
-        y_min=MAX_VALUE;
-        z_max=-MAX_VALUE;
-        z_min=MAX_VALUE;
+    restart();
 }
 
 void Pedometer::start() {
@@ -170,6 +162,13 @@ void Pedometer::pause() {
 }
 
 void Pedometer::restart() {
-    
+     steps = 0;
+    counter = 0;
+        x_max=-MAX_VALUE;
+        x_min=MAX_VALUE;
+        y_max=-MAX_VALUE;
+        y_min=MAX_VALUE;
+        z_max=-MAX_VALUE;
+        z_min=MAX_VALUE;
 }
 
