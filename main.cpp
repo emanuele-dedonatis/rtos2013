@@ -37,8 +37,10 @@ int main()
 {
     Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
     lcd.clear();
-    lcd.go(0,0);
-    lcd.printf("PEDOSIX");
+    lcd.go(3,0);
+    lcd.printf("PEDO");
+    lcd.go(3,1);
+    lcd.printf("METER");
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
     for(;;){
