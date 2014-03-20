@@ -102,7 +102,7 @@ public:
    /**
     * \return current speed [km/sec]
     */
-   int getSpeed();
+   float getSpeed();
    
    /**
     * \return current calories burned 

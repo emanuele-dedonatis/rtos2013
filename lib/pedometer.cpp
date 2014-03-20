@@ -31,8 +31,8 @@ volatile int x_accel, y_accel, z_accel;
 volatile int counter;
 volatile int steps;
 volatile int x_th_abs, y_th_abs, z_th_abs;
-volatile long old_time, new_time, current_time;
 
+long old_time, new_time, current_time;
 bool active;
 int mode;
 float height, weight;
@@ -171,7 +171,7 @@ void Pedometer::restart() {
     mode = Pedometer::MODE_STEADY;
     steps = 0;
     counter = 0;
-    height = 1.80;
+    height = 1.75;
     weight = 0;
     dist = 0;
     speed = 0;
@@ -184,39 +184,29 @@ void Pedometer::restart() {
 }
 
 void Pedometer::newStep() {
-    steps++;
-    old_time = new_time;
-    new_time = getTick();
-    int rhythm = 2000/(new_time-old_time);
-    switch(rhythm) {
-        case 1: mode = Pedometer::MODE_WALK;
-                dist += height/5000;
-                break;
-        case 2: mode = Pedometer::MODE_WALK;
-                dist += height/4000;
-                break;
-        case 3: mode = Pedometer::MODE_WALK;
-                dist += height/3000;
-                break;
-        case 4: mode = Pedometer::MODE_RUN;
-                dist += height/2000;
-                break;
-        case 5:;
-        case 6:;
-        case 7:;
-        case 8:;
-        case 9:;
-        case 10: mode = Pedometer::MODE_RUN;
-                dist += height/1000;
-                break;
-        default: ;
+    old_time = new_time;                //time in msec of last step
+    new_time = getTick();               //time in msec of new step
+    float time = new_time-old_time;     //time in msec between last two steps
+
+    if(time >= 200 && time <= 2000) {        //human range for step
+          steps++;
+          if (time <= 500) {
+              mode = Pedometer::MODE_RUN;
+          }else{
+              mode = Pedometer::MODE_WALK;
+          }
+          float lenght = height / (time/200);   //(obtained experimentally) lenght in m of last step
+          dist += (lenght/1000);
+          speed = lenght * 3600 / time;                 //instant speed in km/h
     }
 }
 
 int Pedometer::getMode() {
     current_time = getTick();
-    if(current_time - new_time > 2000)
+    if(current_time - new_time > 2000) {
         mode = Pedometer::MODE_STEADY;
+        speed = 0;
+    }
     return mode;
 }
 
@@ -230,4 +220,8 @@ void Pedometer::setWeight(float kg) {
 
 float Pedometer::getDistance() {
     return dist;
+}
+
+float Pedometer::getSpeed() {
+    return speed;
 }

@@ -41,13 +41,14 @@ int main()
     Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
-    float distance = 0;
+    float speed = 0;
     for(;;){
-        distance = Pedometer::instance().getDistance();
+        speed = Pedometer::instance().getSpeed();
         lcd.clear();
         lcd.go(0,0);
-        lcd.printf("%.3f", distance);
+        lcd.printf("%.3f", speed);
         lcd.go(0,1);
+        lcd.printf("%d ", Pedometer::instance().getSteps());
         switch(Pedometer::instance().getMode()) {
             case Pedometer::MODE_STEADY:
                 lcd.printf("STEADY");
