@@ -35,6 +35,7 @@ volatile long old_time, new_time, current_time;
 
 bool active;
 int mode;
+int height, weight;
 
 Pedometer& Pedometer::instance(){
     static Pedometer singleton;
@@ -192,4 +193,12 @@ int Pedometer::getMode() {
     if(current_time - new_time > 2000)
         mode = Pedometer::MODE_STEADY;
     return mode;
+}
+
+void Pedometer::setHeight(int cm) {
+    height = cm;
+}
+
+void Pedometer::setWeight(int kg) {
+    weight = kg;
 }
