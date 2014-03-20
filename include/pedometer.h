@@ -107,7 +107,7 @@ public:
    /**
     * \return current calories burned 
     */
-   int getCalories();
+   float getCalories();
    
 private:
     void newStep();

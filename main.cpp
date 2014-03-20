@@ -41,12 +41,12 @@ int main()
     Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
-    float speed = 0;
+    float calories = 0;
     for(;;){
-        speed = Pedometer::instance().getSpeed();
+        calories = Pedometer::instance().getCalories();
         lcd.clear();
         lcd.go(0,0);
-        lcd.printf("%.3f", speed);
+        lcd.printf("%.2f", calories);
         lcd.go(0,1);
         lcd.printf("%d ", Pedometer::instance().getSteps());
         switch(Pedometer::instance().getMode()) {
