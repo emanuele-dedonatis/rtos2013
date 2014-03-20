@@ -35,7 +35,8 @@ volatile long old_time, new_time, current_time;
 
 bool active;
 int mode;
-int height, weight;
+float height, weight;
+float dist, speed;
 
 Pedometer& Pedometer::instance(){
     static Pedometer singleton;
@@ -168,8 +169,12 @@ void Pedometer::pause() {
 
 void Pedometer::restart() {
     mode = Pedometer::MODE_STEADY;
-     steps = 0;
+    steps = 0;
     counter = 0;
+    height = 1.80;
+    weight = 0;
+    dist = 0;
+    speed = 0;
         x_max=-MAX_VALUE;
         x_min=MAX_VALUE;
         y_max=-MAX_VALUE;
@@ -182,10 +187,30 @@ void Pedometer::newStep() {
     steps++;
     old_time = new_time;
     new_time = getTick();
-    if(new_time-old_time < 500)
-        mode = Pedometer::MODE_RUN;
-    else 
-        mode = Pedometer::MODE_WALK;
+    int rhythm = 2000/(new_time-old_time);
+    switch(rhythm) {
+        case 1: mode = Pedometer::MODE_WALK;
+                dist += height/5000;
+                break;
+        case 2: mode = Pedometer::MODE_WALK;
+                dist += height/4000;
+                break;
+        case 3: mode = Pedometer::MODE_WALK;
+                dist += height/3000;
+                break;
+        case 4: mode = Pedometer::MODE_RUN;
+                dist += height/2000;
+                break;
+        case 5:;
+        case 6:;
+        case 7:;
+        case 8:;
+        case 9:;
+        case 10: mode = Pedometer::MODE_RUN;
+                dist += height/1000;
+                break;
+        default: ;
+    }
 }
 
 int Pedometer::getMode() {
@@ -195,10 +220,14 @@ int Pedometer::getMode() {
     return mode;
 }
 
-void Pedometer::setHeight(int cm) {
+void Pedometer::setHeight(float cm) {
     height = cm;
 }
 
-void Pedometer::setWeight(int kg) {
+void Pedometer::setWeight(float kg) {
     weight = kg;
+}
+
+float Pedometer::getDistance() {
+    return dist;
 }

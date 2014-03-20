@@ -31,8 +31,6 @@ typedef Gpio<GPIOA_BASE,0>  button;        //board button
 #define LCD_ROW         2
 #define LCD_COL         8
 
-volatile int passi;
-
 void pedometerTask(void *argv) {
     Pedometer::instance().init();
     Pedometer::instance().start();
@@ -43,12 +41,12 @@ int main()
     Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
-    passi = 0;
+    float distance = 0;
     for(;;){
-        passi = Pedometer::instance().getSteps();
+        distance = Pedometer::instance().getDistance();
         lcd.clear();
         lcd.go(0,0);
-        lcd.printf("%d", passi);
+        lcd.printf("%.3f", distance);
         lcd.go(0,1);
         switch(Pedometer::instance().getMode()) {
             case Pedometer::MODE_STEADY:

@@ -83,26 +83,26 @@ public:
    /**
     * Set the user's height
     * 
-    * \param cm Height in centimeters
+    * \param m Height in meters
     */
-   void setHeight(int cm);
+   void setHeight(float m);
    
    /**
     * Set the user's weight
     * 
     * \param kg Weight in kilos
     */
-   void setWeight(int kg);
+   void setWeight(float kg);
    
    /**
-    * \return current distance
+    * \return current distance [km]
     */
    float getDistance();
    
    /**
-    * \return current speed
+    * \return current speed [km/sec]
     */
-   float getSpeed();
+   int getSpeed();
    
    /**
     * \return current calories burned 
