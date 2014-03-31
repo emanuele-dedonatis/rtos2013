@@ -1,0 +1,167 @@
+\hypertarget{class_serial_options}{\section{Serial\-Options Class Reference}
+\label{class_serial_options}\index{Serial\-Options@{Serial\-Options}}
+}
+
+
+{\ttfamily \#include $<$serialstream.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_serial_options_a747496555e093069ff4e943f38954c0f}{Flow\-Control} \{ {\bfseries noflow}, 
+{\bfseries software}, 
+{\bfseries hardware}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible flow controls. \end{DoxyCompactList}\item 
+enum \hyperlink{class_serial_options_af3761748c70f9d31c7c9f9368e15bf24}{Parity} \{ {\bfseries noparity}, 
+{\bfseries odd}, 
+{\bfseries even}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible parities. \end{DoxyCompactList}\item 
+enum \hyperlink{class_serial_options_acdb2c9f835d6efff77acdac0ca1dd0ea}{Stop\-Bits} \{ {\bfseries one}, 
+{\bfseries onepointfive}, 
+{\bfseries two}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible stop bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_serial_options_accb31280b6beef6b8a00a06639c938a3}{Serial\-Options} ()
+\item 
+\hyperlink{class_serial_options_aebce648c4c3ab68f09c0ad359023e169}{Serial\-Options} (const std\-::string \&device, unsigned int baudrate, time\-\_\-duration timeout=seconds(0), \hyperlink{class_serial_options_af3761748c70f9d31c7c9f9368e15bf24}{Parity} parity=noparity, unsigned char csize=8, \hyperlink{class_serial_options_a747496555e093069ff4e943f38954c0f}{Flow\-Control} flow=noflow, \hyperlink{class_serial_options_acdb2c9f835d6efff77acdac0ca1dd0ea}{Stop\-Bits} stop=one)
+\item 
+void \hyperlink{class_serial_options_ab11afbd71f690893b8237d7a5c492ffd}{set\-Device} (const std\-::string \&device)
+\item 
+\hypertarget{class_serial_options_a831433118475b1626ed7c8b5bf086889}{std\-::string {\bfseries get\-Device} () const }\label{class_serial_options_a831433118475b1626ed7c8b5bf086889}
+
+\item 
+void \hyperlink{class_serial_options_a9fee4da9c869a12030c5acec04835246}{set\-Baudrate} (unsigned int baudrate)
+\item 
+\hypertarget{class_serial_options_ae30984317f86df2896482faa6eebabe9}{unsigned int {\bfseries get\-Baudrate} () const }\label{class_serial_options_ae30984317f86df2896482faa6eebabe9}
+
+\item 
+void \hyperlink{class_serial_options_a6d63853701146cffd863ceaf130630b9}{set\-Timeout} (time\-\_\-duration timeout)
+\item 
+\hypertarget{class_serial_options_a13d22102b32ae8c14438205d6a1f531e}{time\-\_\-duration {\bfseries get\-Timeout} () const }\label{class_serial_options_a13d22102b32ae8c14438205d6a1f531e}
+
+\item 
+void \hyperlink{class_serial_options_af3200fca277999edb89d9ba4cee3eea9}{set\-Parity} (\hyperlink{class_serial_options_af3761748c70f9d31c7c9f9368e15bf24}{Parity} parity)
+\item 
+\hypertarget{class_serial_options_a0334f0968a1f0cfa81cdb1fad70074c9}{\hyperlink{class_serial_options_af3761748c70f9d31c7c9f9368e15bf24}{Parity} {\bfseries get\-Parity} () const }\label{class_serial_options_a0334f0968a1f0cfa81cdb1fad70074c9}
+
+\item 
+void \hyperlink{class_serial_options_a4c4cadb650cafdc25353a9588e08e1ce}{set\-Csize} (unsigned char csize)
+\item 
+\hypertarget{class_serial_options_a28bcc690639f8f14992392c10f774251}{unsigned char {\bfseries get\-Csize} () const }\label{class_serial_options_a28bcc690639f8f14992392c10f774251}
+
+\item 
+void \hyperlink{class_serial_options_a91604c3ccdbff8a8b0e3ae591d3ef7de}{set\-Flow\-Control} (\hyperlink{class_serial_options_a747496555e093069ff4e943f38954c0f}{Flow\-Control} flow)
+\item 
+\hypertarget{class_serial_options_af76d076acaa6dd3e4cb696953e6a1581}{\hyperlink{class_serial_options_a747496555e093069ff4e943f38954c0f}{Flow\-Control} {\bfseries get\-Flow\-Control} () const }\label{class_serial_options_af76d076acaa6dd3e4cb696953e6a1581}
+
+\item 
+void \hyperlink{class_serial_options_a0c912ab2393019617ce830e0fe11b396}{set\-Stop\-Bits} (\hyperlink{class_serial_options_acdb2c9f835d6efff77acdac0ca1dd0ea}{Stop\-Bits} stop)
+\item 
+\hypertarget{class_serial_options_a3ceab934318f27e7367ee86f73298b79}{\hyperlink{class_serial_options_acdb2c9f835d6efff77acdac0ca1dd0ea}{Stop\-Bits} {\bfseries get\-Stop\-Bits} () const }\label{class_serial_options_a3ceab934318f27e7367ee86f73298b79}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class contains all the options for a serial port. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_serial_options_accb31280b6beef6b8a00a06639c938a3}{\index{Serial\-Options@{Serial\-Options}!Serial\-Options@{Serial\-Options}}
+\index{Serial\-Options@{Serial\-Options}!SerialOptions@{Serial\-Options}}
+\subsubsection[{Serial\-Options}]{\setlength{\rightskip}{0pt plus 5cm}Serial\-Options\-::\-Serial\-Options (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_accb31280b6beef6b8a00a06639c938a3}
+Default constructor. \hypertarget{class_serial_options_aebce648c4c3ab68f09c0ad359023e169}{\index{Serial\-Options@{Serial\-Options}!Serial\-Options@{Serial\-Options}}
+\index{Serial\-Options@{Serial\-Options}!SerialOptions@{Serial\-Options}}
+\subsubsection[{Serial\-Options}]{\setlength{\rightskip}{0pt plus 5cm}Serial\-Options\-::\-Serial\-Options (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{device, }
+\item[{unsigned int}]{baudrate, }
+\item[{time\-\_\-duration}]{timeout = {\ttfamily seconds(0)}, }
+\item[{{\bf Parity}}]{parity = {\ttfamily noparity}, }
+\item[{unsigned char}]{csize = {\ttfamily 8}, }
+\item[{{\bf Flow\-Control}}]{flow = {\ttfamily noflow}, }
+\item[{{\bf Stop\-Bits}}]{stop = {\ttfamily one}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_aebce648c4c3ab68f09c0ad359023e169}
+Constructor. 
+\begin{DoxyParams}{Parameters}
+{\em device} & device name (/dev/tty\-S0, /dev/tty\-U\-S\-B0, C\-O\-M1, ...) \\
+\hline
+{\em baudrate} & baudrate, like 9600, 115200 ... \\
+\hline
+{\em timeout} & timeout when reading, use zero to disable \\
+\hline
+{\em parity} & parity \\
+\hline
+{\em csize} & character size (5,6,7 or 8) \\
+\hline
+{\em flow} & flow control \\
+\hline
+{\em stop} & stop bits \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_serial_options_a9fee4da9c869a12030c5acec04835246}{\index{Serial\-Options@{Serial\-Options}!set\-Baudrate@{set\-Baudrate}}
+\index{set\-Baudrate@{set\-Baudrate}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Baudrate}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Baudrate (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_a9fee4da9c869a12030c5acec04835246}
+Setter and getter for baudrate \hypertarget{class_serial_options_a4c4cadb650cafdc25353a9588e08e1ce}{\index{Serial\-Options@{Serial\-Options}!set\-Csize@{set\-Csize}}
+\index{set\-Csize@{set\-Csize}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Csize}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Csize (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{csize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_a4c4cadb650cafdc25353a9588e08e1ce}
+Setter and getter character size \hypertarget{class_serial_options_ab11afbd71f690893b8237d7a5c492ffd}{\index{Serial\-Options@{Serial\-Options}!set\-Device@{set\-Device}}
+\index{set\-Device@{set\-Device}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Device}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Device (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{device}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_ab11afbd71f690893b8237d7a5c492ffd}
+Setter and getter for device name \hypertarget{class_serial_options_a91604c3ccdbff8a8b0e3ae591d3ef7de}{\index{Serial\-Options@{Serial\-Options}!set\-Flow\-Control@{set\-Flow\-Control}}
+\index{set\-Flow\-Control@{set\-Flow\-Control}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Flow\-Control}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Flow\-Control (
+\begin{DoxyParamCaption}
+\item[{{\bf Flow\-Control}}]{flow}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_a91604c3ccdbff8a8b0e3ae591d3ef7de}
+Setter and getter flow control \hypertarget{class_serial_options_af3200fca277999edb89d9ba4cee3eea9}{\index{Serial\-Options@{Serial\-Options}!set\-Parity@{set\-Parity}}
+\index{set\-Parity@{set\-Parity}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Parity}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Parity (
+\begin{DoxyParamCaption}
+\item[{{\bf Parity}}]{parity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_af3200fca277999edb89d9ba4cee3eea9}
+Setter and getter for parity \hypertarget{class_serial_options_a0c912ab2393019617ce830e0fe11b396}{\index{Serial\-Options@{Serial\-Options}!set\-Stop\-Bits@{set\-Stop\-Bits}}
+\index{set\-Stop\-Bits@{set\-Stop\-Bits}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Stop\-Bits}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Stop\-Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf Stop\-Bits}}]{stop}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_a0c912ab2393019617ce830e0fe11b396}
+Setter and getter for stop bits \hypertarget{class_serial_options_a6d63853701146cffd863ceaf130630b9}{\index{Serial\-Options@{Serial\-Options}!set\-Timeout@{set\-Timeout}}
+\index{set\-Timeout@{set\-Timeout}!SerialOptions@{Serial\-Options}}
+\subsubsection[{set\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void Serial\-Options\-::set\-Timeout (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-duration}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_serial_options_a6d63853701146cffd863ceaf130630b9}
+Setter and getter for timeout 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/\-\_\-tools/bootloaders/stm32/pc\-\_\-loader/serialstream.\-h\end{DoxyCompactItemize}

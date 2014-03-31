@@ -1,0 +1,76 @@
+\hypertarget{class_hardware_rng}{\section{Hardware\-Rng Class Reference}
+\label{class_hardware_rng}\index{Hardware\-Rng@{Hardware\-Rng}}
+}
+
+
+{\ttfamily \#include $<$stm32\-\_\-hardware\-\_\-rng.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{class_hardware_rng_a7d08c0c1fafc81fb0da838e7c55530c3}{get} ()
+\item 
+void \hyperlink{class_hardware_rng_a931bc5542c13b46f6529afa5c0aacfe5}{get} (void $\ast$buf, unsigned int size)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_hardware_rng}{Hardware\-Rng} \& \hyperlink{class_hardware_rng_a8137e5c8983a2a3b9693f4ea915fe7f9}{instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to access the hardware random number generator in Miosix Works with the hardware R\-N\-G in stm32f2 and stm32f4 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hardware_rng_a7d08c0c1fafc81fb0da838e7c55530c3}{\index{Hardware\-Rng@{Hardware\-Rng}!get@{get}}
+\index{get@{get}!HardwareRng@{Hardware\-Rng}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Hardware\-Rng\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_hardware_rng_a7d08c0c1fafc81fb0da838e7c55530c3}
+\begin{DoxyReturn}{Returns}
+a 32 bit random number 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\-\_\-error} & if the self test is not passed \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_hardware_rng_a931bc5542c13b46f6529afa5c0aacfe5}{\index{Hardware\-Rng@{Hardware\-Rng}!get@{get}}
+\index{get@{get}!HardwareRng@{Hardware\-Rng}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}void Hardware\-Rng\-::get (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buf, }
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)}}\label{class_hardware_rng_a931bc5542c13b46f6529afa5c0aacfe5}
+Fill a buffer with random data 
+\begin{DoxyParams}{Parameters}
+{\em buf} & buffer to be filled \\
+\hline
+{\em size} & buffer size \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\-\_\-error} & if the self test is not passed \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_hardware_rng_a8137e5c8983a2a3b9693f4ea915fe7f9}{\index{Hardware\-Rng@{Hardware\-Rng}!instance@{instance}}
+\index{instance@{instance}!HardwareRng@{Hardware\-Rng}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hardware\-Rng} \& Hardware\-Rng\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_hardware_rng_a8137e5c8983a2a3b9693f4ea915fe7f9}
+\begin{DoxyReturn}{Returns}
+an instance of this class (singleton) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/arch/common/drivers/stm32\-\_\-hardware\-\_\-rng.\-h\item 
+miosix/arch/common/drivers/stm32\-\_\-hardware\-\_\-rng.\-cpp\end{DoxyCompactItemize}

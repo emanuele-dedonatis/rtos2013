@@ -1,0 +1,97 @@
+\hypertarget{classmiosix_1_1_condition_variable}{\section{miosix\-:\-:Condition\-Variable Class Reference}
+\label{classmiosix_1_1_condition_variable}\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_condition_variable_a071791f7cf57c7f6eed03b17cbb4bb5e}{Condition\-Variable} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classmiosix_1_1_condition_variable_a7fb5a24d48ff29770f994f025d02967c}{wait} (\hyperlink{classmiosix_1_1_lock}{Lock}$<$ T $>$ \&l)
+\item 
+void \hyperlink{classmiosix_1_1_condition_variable_a690ff38de87f884855d6c72bde694116}{wait} (\hyperlink{classmiosix_1_1_mutex}{Mutex} \&m)
+\item 
+void \hyperlink{classmiosix_1_1_condition_variable_a87382101d2526494b8fe04e056426ccb}{wait} (\hyperlink{classmiosix_1_1_fast_mutex}{Fast\-Mutex} \&m)
+\item 
+void \hyperlink{classmiosix_1_1_condition_variable_adbc51a45a48f6afe98fea4581fc4f16d}{signal} ()
+\item 
+void \hyperlink{classmiosix_1_1_condition_variable_adb8897a2ff31ecc320ff624285924600}{broadcast} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A condition variable class for thread synchronization, available from Miosix 1.\-53.\par
+ One or more threads can wait on the condition variable, and the \hyperlink{classmiosix_1_1_condition_variable_adbc51a45a48f6afe98fea4581fc4f16d}{signal()} and \hyperlink{classmiosix_1_1_condition_variable_adb8897a2ff31ecc320ff624285924600}{broadcast()} allow to wake ne or all the waiting threads.\par
+ This class is meant to be a static or global class. Dynamically creating a \hyperlink{classmiosix_1_1_condition_variable}{Condition\-Variable} with new or on the stack must be done with care, to avoid deleting a \hyperlink{classmiosix_1_1_condition_variable}{Condition\-Variable} while some threads are waiting, and to avoid situations where a thread tries to wait on a deleted \hyperlink{classmiosix_1_1_condition_variable}{Condition\-Variable}.\par
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_condition_variable_a071791f7cf57c7f6eed03b17cbb4bb5e}{\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}!Condition\-Variable@{Condition\-Variable}}
+\index{Condition\-Variable@{Condition\-Variable}!miosix::ConditionVariable@{miosix\-::\-Condition\-Variable}}
+\subsubsection[{Condition\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Condition\-Variable\-::\-Condition\-Variable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_condition_variable_a071791f7cf57c7f6eed03b17cbb4bb5e}
+Constructor, initializes the \hyperlink{classmiosix_1_1_condition_variable}{Condition\-Variable}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_condition_variable_adb8897a2ff31ecc320ff624285924600}{\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}!broadcast@{broadcast}}
+\index{broadcast@{broadcast}!miosix::ConditionVariable@{miosix\-::\-Condition\-Variable}}
+\subsubsection[{broadcast}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Condition\-Variable\-::broadcast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_condition_variable_adb8897a2ff31ecc320ff624285924600}
+Wakeup all waiting threads. \hypertarget{classmiosix_1_1_condition_variable_adbc51a45a48f6afe98fea4581fc4f16d}{\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}!signal@{signal}}
+\index{signal@{signal}!miosix::ConditionVariable@{miosix\-::\-Condition\-Variable}}
+\subsubsection[{signal}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Condition\-Variable\-::signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_condition_variable_adbc51a45a48f6afe98fea4581fc4f16d}
+Wakeup one waiting thread. Currently implemented policy is fifo. \hypertarget{classmiosix_1_1_condition_variable_a7fb5a24d48ff29770f994f025d02967c}{\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}!wait@{wait}}
+\index{wait@{wait}!miosix::ConditionVariable@{miosix\-::\-Condition\-Variable}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void miosix\-::\-Condition\-Variable\-::wait (
+\begin{DoxyParamCaption}
+\item[{{\bf Lock}$<$ T $>$ \&}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_condition_variable_a7fb5a24d48ff29770f994f025d02967c}
+\hyperlink{classmiosix_1_1_unlock}{Unlock} the mutex and wait. If more threads call \hyperlink{classmiosix_1_1_condition_variable_a7fb5a24d48ff29770f994f025d02967c}{wait()} they must do so specifying the same mutex, otherwise the behaviour is undefined. 
+\begin{DoxyParams}{Parameters}
+{\em l} & A \hyperlink{classmiosix_1_1_lock}{Lock} instance that locked a \hyperlink{classmiosix_1_1_mutex}{Mutex} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_condition_variable_a690ff38de87f884855d6c72bde694116}{\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}!wait@{wait}}
+\index{wait@{wait}!miosix::ConditionVariable@{miosix\-::\-Condition\-Variable}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Condition\-Variable\-::wait (
+\begin{DoxyParamCaption}
+\item[{{\bf Mutex} \&}]{m}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_condition_variable_a690ff38de87f884855d6c72bde694116}
+\hyperlink{classmiosix_1_1_unlock}{Unlock} the \hyperlink{classmiosix_1_1_mutex}{Mutex} and wait. If more threads call \hyperlink{classmiosix_1_1_condition_variable_a7fb5a24d48ff29770f994f025d02967c}{wait()} they must do so specifying the same mutex, otherwise the behaviour is undefined. 
+\begin{DoxyParams}{Parameters}
+{\em m} & a locked \hyperlink{classmiosix_1_1_mutex}{Mutex} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_condition_variable_a87382101d2526494b8fe04e056426ccb}{\index{miosix\-::\-Condition\-Variable@{miosix\-::\-Condition\-Variable}!wait@{wait}}
+\index{wait@{wait}!miosix::ConditionVariable@{miosix\-::\-Condition\-Variable}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Condition\-Variable\-::wait (
+\begin{DoxyParamCaption}
+\item[{{\bf Fast\-Mutex} \&}]{m}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_condition_variable_a87382101d2526494b8fe04e056426ccb}
+\hyperlink{classmiosix_1_1_unlock}{Unlock} the \hyperlink{classmiosix_1_1_fast_mutex}{Fast\-Mutex} and wait. If more threads call \hyperlink{classmiosix_1_1_condition_variable_a7fb5a24d48ff29770f994f025d02967c}{wait()} they must do so specifying the same mutex, otherwise the behaviour is undefined. 
+\begin{DoxyParams}{Parameters}
+{\em m} & a locked \hyperlink{classmiosix_1_1_mutex}{Mutex} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\item 
+miosix/kernel/sync.\-cpp\end{DoxyCompactItemize}

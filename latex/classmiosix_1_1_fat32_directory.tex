@@ -1,0 +1,95 @@
+\hypertarget{classmiosix_1_1_fat32_directory}{\section{miosix\-:\-:Fat32\-Directory Class Reference}
+\label{classmiosix_1_1_fat32_directory}\index{miosix\-::\-Fat32\-Directory@{miosix\-::\-Fat32\-Directory}}
+}
+Inheritance diagram for miosix\-:\-:Fat32\-Directory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classmiosix_1_1_fat32_directory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_fat32_directory_a42b331336ef5234e0902baf04193f2db}{Fat32\-Directory} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_filesystem_base}{Filesystem\-Base} $>$ parent, \hyperlink{classmiosix_1_1_fast_mutex}{Fast\-Mutex} \&mutex, int current\-Inode, int parent\-Inode)
+\item 
+\hyperlink{struct_d_i_r__}{D\-I\-R\-\_\-} $\ast$ \hyperlink{classmiosix_1_1_fat32_directory_ace2d4de9e2395b1f1ef208852453d49c}{directory} ()
+\item 
+virtual int \hyperlink{classmiosix_1_1_fat32_directory_a5ba7fd91334ac2ee3bc2d5d3c8bda850}{getdents} (void $\ast$dp, int len)
+\item 
+virtual \hyperlink{classmiosix_1_1_fat32_directory_adff79fd236c20a4a0a2713615c8533d5}{$\sim$\-Fat32\-Directory} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Directory class for \hyperlink{classmiosix_1_1_fat32_fs}{Fat32\-Fs} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_fat32_directory_a42b331336ef5234e0902baf04193f2db}{\index{miosix\-::\-Fat32\-Directory@{miosix\-::\-Fat32\-Directory}!Fat32\-Directory@{Fat32\-Directory}}
+\index{Fat32\-Directory@{Fat32\-Directory}!miosix::Fat32Directory@{miosix\-::\-Fat32\-Directory}}
+\subsubsection[{Fat32\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fat32\-Directory\-::\-Fat32\-Directory (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Filesystem\-Base} $>$}]{parent, }
+\item[{{\bf Fast\-Mutex} \&}]{mutex, }
+\item[{int}]{current\-Inode, }
+\item[{int}]{parent\-Inode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fat32_directory_a42b331336ef5234e0902baf04193f2db}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent filesystem \\
+\hline
+{\em mutex} & mutex to lock when accessing the fiesystem \\
+\hline
+{\em current\-Inode} & inode value for '.' entry \\
+\hline
+{\em parent\-Inode} & inode value for '..' entry \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_fat32_directory_adff79fd236c20a4a0a2713615c8533d5}{\index{miosix\-::\-Fat32\-Directory@{miosix\-::\-Fat32\-Directory}!$\sim$\-Fat32\-Directory@{$\sim$\-Fat32\-Directory}}
+\index{$\sim$\-Fat32\-Directory@{$\sim$\-Fat32\-Directory}!miosix::Fat32Directory@{miosix\-::\-Fat32\-Directory}}
+\subsubsection[{$\sim$\-Fat32\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fat32\-Directory\-::$\sim$\-Fat32\-Directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_directory_adff79fd236c20a4a0a2713615c8533d5}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_fat32_directory_ace2d4de9e2395b1f1ef208852453d49c}{\index{miosix\-::\-Fat32\-Directory@{miosix\-::\-Fat32\-Directory}!directory@{directory}}
+\index{directory@{directory}!miosix::Fat32Directory@{miosix\-::\-Fat32\-Directory}}
+\subsubsection[{directory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-I\-R\-\_\-}$\ast$ miosix\-::\-Fat32\-Directory\-::directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fat32_directory_ace2d4de9e2395b1f1ef208852453d49c}
+\begin{DoxyReturn}{Returns}
+the underlying directory object 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fat32_directory_a5ba7fd91334ac2ee3bc2d5d3c8bda850}{\index{miosix\-::\-Fat32\-Directory@{miosix\-::\-Fat32\-Directory}!getdents@{getdents}}
+\index{getdents@{getdents}!miosix::Fat32Directory@{miosix\-::\-Fat32\-Directory}}
+\subsubsection[{getdents}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Fat32\-Directory\-::getdents (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{dp, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_directory_a5ba7fd91334ac2ee3bc2d5d3c8bda850}
+Also directories can be opened as files. In this case, this system call allows to retrieve directory entries. 
+\begin{DoxyParams}{Parameters}
+{\em dp} & pointer to a memory buffer where one or more struct dirent will be placed. dp must be four words aligned. \\
+\hline
+{\em len} & memory buffer size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes read on success, or a negative number on failure. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classmiosix_1_1_file_base_ac06d6bfddbe8399ac15584ea54175a67}{miosix\-::\-File\-Base}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/fat32/fat32.\-cpp\end{DoxyCompactItemize}

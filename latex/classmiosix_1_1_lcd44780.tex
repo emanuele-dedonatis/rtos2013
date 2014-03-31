@@ -1,0 +1,120 @@
+\hypertarget{classmiosix_1_1_lcd44780}{\section{miosix\-:\-:Lcd44780 Class Reference}
+\label{classmiosix_1_1_lcd44780}\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}}
+}
+
+
+{\ttfamily \#include $<$lcd44780.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_lcd44780_a0abfd74ae3a2a360fa9a8d338d0580a4}{Lcd44780} (\hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} rs, \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} e, \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} d4, \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} d5, \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} d6, \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} d7, int row, int col)
+\item 
+void \hyperlink{classmiosix_1_1_lcd44780_a32b5acd0269923726beca065af5c1f56}{go} (int x, int y)
+\item 
+int \hyperlink{classmiosix_1_1_lcd44780_a1cb9c5dfb614e13c381850dc3c1313b8}{printf} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{classmiosix_1_1_lcd44780_a9b7b612642e4fe208cffcd5b342cdfdc}{clear} ()
+\item 
+int \hyperlink{classmiosix_1_1_lcd44780_aa584673eb9867c35ae94788087c2e745}{get\-Row} () const 
+\item 
+int \hyperlink{classmiosix_1_1_lcd44780_a9d1c3c57953cd442ea248aba65edc88e}{get\-Col} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to control an H\-D44780 compatible L\-C\-D 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_lcd44780_a0abfd74ae3a2a360fa9a8d338d0580a4}{\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}!Lcd44780@{Lcd44780}}
+\index{Lcd44780@{Lcd44780}!miosix::Lcd44780@{miosix\-::\-Lcd44780}}
+\subsubsection[{Lcd44780}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Lcd44780\-::\-Lcd44780 (
+\begin{DoxyParamCaption}
+\item[{{\bf miosix\-::\-Gpio\-Pin}}]{rs, }
+\item[{{\bf miosix\-::\-Gpio\-Pin}}]{e, }
+\item[{{\bf miosix\-::\-Gpio\-Pin}}]{d4, }
+\item[{{\bf miosix\-::\-Gpio\-Pin}}]{d5, }
+\item[{{\bf miosix\-::\-Gpio\-Pin}}]{d6, }
+\item[{{\bf miosix\-::\-Gpio\-Pin}}]{d7, }
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_lcd44780_a0abfd74ae3a2a360fa9a8d338d0580a4}
+Constructor, initializes the display 
+\begin{DoxyParams}{Parameters}
+{\em rs} & a \hyperlink{classmiosix_1_1_gpio}{Gpio} class specifying the G\-P\-I\-O connected to the rs signal \\
+\hline
+{\em e} & a \hyperlink{classmiosix_1_1_gpio}{Gpio} class specifying the G\-P\-I\-O connected to the e signal \\
+\hline
+{\em d4} & a \hyperlink{classmiosix_1_1_gpio}{Gpio} class specifying the G\-P\-I\-O connected to the d4 signal \\
+\hline
+{\em d5} & a \hyperlink{classmiosix_1_1_gpio}{Gpio} class specifying the G\-P\-I\-O connected to the d5 signal \\
+\hline
+{\em d6} & a \hyperlink{classmiosix_1_1_gpio}{Gpio} class specifying the G\-P\-I\-O connected to the d6 signal \\
+\hline
+{\em d7} & a \hyperlink{classmiosix_1_1_gpio}{Gpio} class specifying the G\-P\-I\-O connected to the d7 signal \\
+\hline
+{\em row} & number of rows of the display \\
+\hline
+{\em col} & number of columns of the display \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_lcd44780_a9b7b612642e4fe208cffcd5b342cdfdc}{\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}!clear@{clear}}
+\index{clear@{clear}!miosix::Lcd44780@{miosix\-::\-Lcd44780}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Lcd44780\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_lcd44780_a9b7b612642e4fe208cffcd5b342cdfdc}
+Clear the screen \hypertarget{classmiosix_1_1_lcd44780_a9d1c3c57953cd442ea248aba65edc88e}{\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}!get\-Col@{get\-Col}}
+\index{get\-Col@{get\-Col}!miosix::Lcd44780@{miosix\-::\-Lcd44780}}
+\subsubsection[{get\-Col}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Lcd44780\-::get\-Col (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_lcd44780_a9d1c3c57953cd442ea248aba65edc88e}
+\begin{DoxyReturn}{Returns}
+the number of columns of the display 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_lcd44780_aa584673eb9867c35ae94788087c2e745}{\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}!get\-Row@{get\-Row}}
+\index{get\-Row@{get\-Row}!miosix::Lcd44780@{miosix\-::\-Lcd44780}}
+\subsubsection[{get\-Row}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Lcd44780\-::get\-Row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_lcd44780_aa584673eb9867c35ae94788087c2e745}
+\begin{DoxyReturn}{Returns}
+the number of rows of the display 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_lcd44780_a32b5acd0269923726beca065af5c1f56}{\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}!go@{go}}
+\index{go@{go}!miosix::Lcd44780@{miosix\-::\-Lcd44780}}
+\subsubsection[{go}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Lcd44780\-::go (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_lcd44780_a32b5acd0269923726beca065af5c1f56}
+Set the display cursor 
+\begin{DoxyParams}{Parameters}
+{\em x} & a value from 0 to col-\/1 \\
+\hline
+{\em y} & a value from 0 to row-\/1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_lcd44780_a1cb9c5dfb614e13c381850dc3c1313b8}{\index{miosix\-::\-Lcd44780@{miosix\-::\-Lcd44780}!printf@{printf}}
+\index{printf@{printf}!miosix::Lcd44780@{miosix\-::\-Lcd44780}}
+\subsubsection[{printf}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Lcd44780\-::printf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_lcd44780_a1cb9c5dfb614e13c381850dc3c1313b8}
+Print to the display 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/util/lcd44780.\-h\item 
+miosix/util/lcd44780.\-cpp\end{DoxyCompactItemize}

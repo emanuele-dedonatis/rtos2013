@@ -1,0 +1,117 @@
+\hypertarget{classmiosix_1_1_event_queue}{\section{miosix\-:\-:Event\-Queue Class Reference}
+\label{classmiosix_1_1_event_queue}\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}}
+}
+
+
+{\ttfamily \#include $<$e20.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_event_queue_a6fd6570b6db1f48db1f4696f3f8fc176}{Event\-Queue} ()
+\item 
+void \hyperlink{classmiosix_1_1_event_queue_a9ada54bc6aebffc88fde5544c8c881c3}{post} (std\-::tr1\-::function$<$ void()$>$ event)
+\item 
+void \hyperlink{classmiosix_1_1_event_queue_a066baaa55a0367d7c9ddffbabc500aba}{run} ()
+\item 
+void \hyperlink{classmiosix_1_1_event_queue_a77a200274e60ca1c07164a7c30b96371}{run\-One} ()
+\item 
+unsigned int \hyperlink{classmiosix_1_1_event_queue_ad35cac0b7ba5e21378d898d1cda131e7}{size} () const 
+\item 
+bool \hyperlink{classmiosix_1_1_event_queue_a2afeb86904bae3becaab0e7bfaafab7a}{empty} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A variable sized event queue.
+
+Makes use of heap allocations and as such it is not possible to post events from within interrupt service routines. For this, use \hyperlink{classmiosix_1_1_fixed_event_queue}{Fixed\-Event\-Queue}.
+
+This class acts as a synchronization point, multiple threads can post events, and multiple threads can call \hyperlink{classmiosix_1_1_event_queue_a066baaa55a0367d7c9ddffbabc500aba}{run()} or \hyperlink{classmiosix_1_1_event_queue_a77a200274e60ca1c07164a7c30b96371}{run\-One()} (thread pooling).
+
+Events are function that are posted by a thread through \hyperlink{classmiosix_1_1_event_queue_a9ada54bc6aebffc88fde5544c8c881c3}{post()} but executed in the context of the thread that calls \hyperlink{classmiosix_1_1_event_queue_a066baaa55a0367d7c9ddffbabc500aba}{run()} or \hyperlink{classmiosix_1_1_event_queue_a77a200274e60ca1c07164a7c30b96371}{run\-One()} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_event_queue_a6fd6570b6db1f48db1f4696f3f8fc176}{\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}!Event\-Queue@{Event\-Queue}}
+\index{Event\-Queue@{Event\-Queue}!miosix::EventQueue@{miosix\-::\-Event\-Queue}}
+\subsubsection[{Event\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Event\-Queue\-::\-Event\-Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_event_queue_a6fd6570b6db1f48db1f4696f3f8fc176}
+Constructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_event_queue_a2afeb86904bae3becaab0e7bfaafab7a}{\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}!empty@{empty}}
+\index{empty@{empty}!miosix::EventQueue@{miosix\-::\-Event\-Queue}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Event\-Queue\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_event_queue_a2afeb86904bae3becaab0e7bfaafab7a}
+\begin{DoxyReturn}{Returns}
+true if the queue has no events 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_event_queue_a9ada54bc6aebffc88fde5544c8c881c3}{\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}!post@{post}}
+\index{post@{post}!miosix::EventQueue@{miosix\-::\-Event\-Queue}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Event\-Queue\-::post (
+\begin{DoxyParamCaption}
+\item[{std\-::tr1\-::function$<$ void()$>$}]{event}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_event_queue_a9ada54bc6aebffc88fde5544c8c881c3}
+Post an event to the queue. This function never blocks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & function function to be called in the thread that calls \hyperlink{classmiosix_1_1_event_queue_a066baaa55a0367d7c9ddffbabc500aba}{run()} or \hyperlink{classmiosix_1_1_event_queue_a77a200274e60ca1c07164a7c30b96371}{run\-One()}. Bind can be used to bind parameters to the function. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::bad\-\_\-alloc} & if there is not enough heap memory \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classmiosix_1_1_event_queue_a066baaa55a0367d7c9ddffbabc500aba}{\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}!run@{run}}
+\index{run@{run}!miosix::EventQueue@{miosix\-::\-Event\-Queue}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Event\-Queue\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_event_queue_a066baaa55a0367d7c9ddffbabc500aba}
+This function blocks waiting for events being posted, and when available it calls the event function. To return from this event loop an event function must throw an exception.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em any} & exception that is thrown by the event functions \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classmiosix_1_1_event_queue_a77a200274e60ca1c07164a7c30b96371}{\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}!run\-One@{run\-One}}
+\index{run\-One@{run\-One}!miosix::EventQueue@{miosix\-::\-Event\-Queue}}
+\subsubsection[{run\-One}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Event\-Queue\-::run\-One (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_event_queue_a77a200274e60ca1c07164a7c30b96371}
+Run at most one event. This function does not block.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em any} & exception that is thrown by the event functions \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classmiosix_1_1_event_queue_ad35cac0b7ba5e21378d898d1cda131e7}{\index{miosix\-::\-Event\-Queue@{miosix\-::\-Event\-Queue}!size@{size}}
+\index{size@{size}!miosix::EventQueue@{miosix\-::\-Event\-Queue}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int miosix\-::\-Event\-Queue\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_event_queue_ad35cac0b7ba5e21378d898d1cda131e7}
+\begin{DoxyReturn}{Returns}
+the number of events in the queue 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/e20/e20.\-h\item 
+miosix/e20/e20.\-cpp\end{DoxyCompactItemize}

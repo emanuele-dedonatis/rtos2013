@@ -1,0 +1,162 @@
+\hypertarget{classmiosix_1_1_callback}{\section{miosix\-:\-:Callback$<$ N $>$ Class Template Reference}
+\label{classmiosix_1_1_callback}\index{miosix\-::\-Callback$<$ N $>$@{miosix\-::\-Callback$<$ N $>$}}
+}
+
+
+{\ttfamily \#include $<$callback.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Callback$<$ N $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmiosix_1_1_callback}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmiosix_1_1_callback_1_1_safe_bool_struct}{Safe\-Bool\-Struct}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_callback_ab20a0bd9b897d240daac47f59664884c}{typedef void $\ast$Safe\-Bool\-Struct\-::$\ast$ {\bfseries Safe\-Bool}}\label{classmiosix_1_1_callback_ab20a0bd9b897d240daac47f59664884c}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_callback_a96ef773ec6dc1b64e33b09ffc0d9fc4d}{Callback} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classmiosix_1_1_callback_a940e049ec2ea63460ade198ab16c4abb}{Callback} (T functor)
+\item 
+\hyperlink{classmiosix_1_1_callback_ab7ad8e46e7b5349815e83f062ee16e13}{Callback} (const \hyperlink{classmiosix_1_1_callback}{Callback} \&rhs)
+\item 
+\hyperlink{classmiosix_1_1_callback}{Callback} \& \hyperlink{classmiosix_1_1_callback_a05caba068253e7f5e8871f37e93c7982}{operator=} (const \hyperlink{classmiosix_1_1_callback}{Callback} \&rhs)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classmiosix_1_1_callback}{Callback} \& \hyperlink{classmiosix_1_1_callback_a78b946d98961747146a30beb17c8fc90}{operator=} (T functor)
+\item 
+void \hyperlink{classmiosix_1_1_callback_ae4f21e47bf046a21b701f6a24735487b}{clear} ()
+\item 
+void \hyperlink{classmiosix_1_1_callback_a344304b4878817b376c0f42180453f22}{operator()} ()
+\item 
+\hyperlink{classmiosix_1_1_callback_a912bac4bd4e042ff50a71ee9fb7ecc65}{operator Safe\-Bool} () const 
+\item 
+\hyperlink{classmiosix_1_1_callback_adb42a13047e3d3a79e253608642ae07e}{$\sim$\-Callback} ()
+\item 
+\hypertarget{classmiosix_1_1_callback_a22b301608703a85a1946b593dae6c316}{{\footnotesize template$<$typename T $>$ }\\\hyperlink{classmiosix_1_1_callback}{Callback}$<$ N $>$ \& {\bfseries operator=} (T functor)}\label{classmiosix_1_1_callback_a22b301608703a85a1946b593dae6c316}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned N$>$class miosix\-::\-Callback$<$ N $>$}
+
+A \hyperlink{classmiosix_1_1_callback}{Callback} works just like an std\-::tr1\-::function, but has some additional {\bfseries limitations}. First, it can only accept function objects that take void as a parameter and return void, and second if the size of the implementation-\/defined type returned by bind is larger than N a compile-\/time error is generated. Also, calling an empty \hyperlink{classmiosix_1_1_callback}{Callback} does nothing, while doing the same on a tr1\-::function results in an exception being thrown.
+
+The reason why one would want to use this class is because, other than the limitations, this class also offers a guarantee\-: it will never allocate data on the heap. It is not just a matter of code speed\-: in Miosix calling new/delete/malloc/free from an interrupt routine produces undefined behaviour, so this class enables binding function calls form an interrupt safely.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & the size in bytes that an instance of this class reserves to store the function objects. If the line starting with 'typedef char check1' starts failing it means it is time to increase this number. The size of an instance of this object is N+sizeof(void ($\ast$)()), but with N rounded by excess to four byte boundaries. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_callback_a96ef773ec6dc1b64e33b09ffc0d9fc4d}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!Callback@{Callback}}
+\index{Callback@{Callback}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ {\bf miosix\-::\-Callback}$<$ N $>$\-::{\bf Callback} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_a96ef773ec6dc1b64e33b09ffc0d9fc4d}
+Default constructor. Produces an empty callback. \hypertarget{classmiosix_1_1_callback_a940e049ec2ea63460ade198ab16c4abb}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!Callback@{Callback}}
+\index{Callback@{Callback}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ template$<$typename T $>$ {\bf miosix\-::\-Callback}$<$ N $>$\-::{\bf Callback} (
+\begin{DoxyParamCaption}
+\item[{T}]{functor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_a940e049ec2ea63460ade198ab16c4abb}
+Constructor. Not explicit by design. 
+\begin{DoxyParams}{Parameters}
+{\em functor} & function object a copy of which is stored internally \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_callback_ab7ad8e46e7b5349815e83f062ee16e13}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!Callback@{Callback}}
+\index{Callback@{Callback}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ {\bf miosix\-::\-Callback}$<$ N $>$\-::{\bf Callback} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Callback}$<$ N $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_ab7ad8e46e7b5349815e83f062ee16e13}
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to copy \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_callback_adb42a13047e3d3a79e253608642ae07e}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!$\sim$\-Callback@{$\sim$\-Callback}}
+\index{$\sim$\-Callback@{$\sim$\-Callback}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{$\sim$\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ {\bf miosix\-::\-Callback}$<$ N $>$\-::$\sim${\bf Callback} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_adb42a13047e3d3a79e253608642ae07e}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_callback_ae4f21e47bf046a21b701f6a24735487b}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!clear@{clear}}
+\index{clear@{clear}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ void {\bf miosix\-::\-Callback}$<$ N $>$\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_ae4f21e47bf046a21b701f6a24735487b}
+Removes any function object stored in this class \hypertarget{classmiosix_1_1_callback_a912bac4bd4e042ff50a71ee9fb7ecc65}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!operator Safe\-Bool@{operator Safe\-Bool}}
+\index{operator Safe\-Bool@{operator Safe\-Bool}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{operator Safe\-Bool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ {\bf miosix\-::\-Callback}$<$ N $>$\-::operator Safe\-Bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_a912bac4bd4e042ff50a71ee9fb7ecc65}
+\begin{DoxyReturn}{Returns}
+true if the object contains a callback 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_callback_a344304b4878817b376c0f42180453f22}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!operator()@{operator()}}
+\index{operator()@{operator()}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ void {\bf miosix\-::\-Callback}$<$ N $>$\-::operator() (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_callback_a344304b4878817b376c0f42180453f22}
+Call the callback, or do nothing if no callback is set \hypertarget{classmiosix_1_1_callback_a05caba068253e7f5e8871f37e93c7982}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!operator=@{operator=}}
+\index{operator=@{operator=}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ {\bf Callback}$<$ N $>$ \& {\bf miosix\-::\-Callback}$<$ N $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Callback}$<$ N $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_callback_a05caba068253e7f5e8871f37e93c7982}
+Operator = 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_callback_a78b946d98961747146a30beb17c8fc90}{\index{miosix\-::\-Callback@{miosix\-::\-Callback}!operator=@{operator=}}
+\index{operator=@{operator=}!miosix::Callback@{miosix\-::\-Callback}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned N$>$ template$<$typename T $>$ {\bf Callback}\& {\bf miosix\-::\-Callback}$<$ N $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{T}]{functor}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_callback_a78b946d98961747146a30beb17c8fc90}
+Assignment operation, assigns a function object to this callback. 
+\begin{DoxyParams}{Parameters}
+{\em funtor} & function object a copy of which is stored internally \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/e20/callback.\-h\end{DoxyCompactItemize}

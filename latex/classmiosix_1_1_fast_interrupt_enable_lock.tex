@@ -1,0 +1,44 @@
+\hypertarget{classmiosix_1_1_fast_interrupt_enable_lock}{\section{miosix\-:\-:Fast\-Interrupt\-Enable\-Lock Class Reference}
+\label{classmiosix_1_1_fast_interrupt_enable_lock}\index{miosix\-::\-Fast\-Interrupt\-Enable\-Lock@{miosix\-::\-Fast\-Interrupt\-Enable\-Lock}}
+}
+
+
+{\ttfamily \#include $<$kernel.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_fast_interrupt_enable_lock_a1d0dc9ea0ee452a36d300b84c5e30a83}{Fast\-Interrupt\-Enable\-Lock} (\hyperlink{classmiosix_1_1_fast_interrupt_disable_lock}{Fast\-Interrupt\-Disable\-Lock} \&l)
+\item 
+\hyperlink{classmiosix_1_1_fast_interrupt_enable_lock_afb021a03eb3c46a8b8ee8d7854190f8c}{$\sim$\-Fast\-Interrupt\-Enable\-Lock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class allows to temporarily re enable interrpts in a scope where they are disabled with an \hyperlink{classmiosix_1_1_fast_interrupt_disable_lock}{Fast\-Interrupt\-Disable\-Lock}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_fast_interrupt_enable_lock_a1d0dc9ea0ee452a36d300b84c5e30a83}{\index{miosix\-::\-Fast\-Interrupt\-Enable\-Lock@{miosix\-::\-Fast\-Interrupt\-Enable\-Lock}!Fast\-Interrupt\-Enable\-Lock@{Fast\-Interrupt\-Enable\-Lock}}
+\index{Fast\-Interrupt\-Enable\-Lock@{Fast\-Interrupt\-Enable\-Lock}!miosix::FastInterruptEnableLock@{miosix\-::\-Fast\-Interrupt\-Enable\-Lock}}
+\subsubsection[{Fast\-Interrupt\-Enable\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fast\-Interrupt\-Enable\-Lock\-::\-Fast\-Interrupt\-Enable\-Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Fast\-Interrupt\-Disable\-Lock} \&}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_interrupt_enable_lock_a1d0dc9ea0ee452a36d300b84c5e30a83}
+Constructor, enables back interrupts. 
+\begin{DoxyParams}{Parameters}
+{\em l} & the Interupt\-Disable\-Lock that disabled interrupts. Note that this parameter is not used internally. It is only required to prevent erroneous use of this class by making an instance of it without an active Interrupt\-Enabe\-Lock \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_fast_interrupt_enable_lock_afb021a03eb3c46a8b8ee8d7854190f8c}{\index{miosix\-::\-Fast\-Interrupt\-Enable\-Lock@{miosix\-::\-Fast\-Interrupt\-Enable\-Lock}!$\sim$\-Fast\-Interrupt\-Enable\-Lock@{$\sim$\-Fast\-Interrupt\-Enable\-Lock}}
+\index{$\sim$\-Fast\-Interrupt\-Enable\-Lock@{$\sim$\-Fast\-Interrupt\-Enable\-Lock}!miosix::FastInterruptEnableLock@{miosix\-::\-Fast\-Interrupt\-Enable\-Lock}}
+\subsubsection[{$\sim$\-Fast\-Interrupt\-Enable\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fast\-Interrupt\-Enable\-Lock\-::$\sim$\-Fast\-Interrupt\-Enable\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_interrupt_enable_lock_afb021a03eb3c46a8b8ee8d7854190f8c}
+Destructor. Disable back interrupts. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/kernel.\-h\end{DoxyCompactItemize}

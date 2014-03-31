@@ -1,0 +1,197 @@
+\hypertarget{group___interfaces}{\section{Interfaces}
+\label{group___interfaces}\index{Interfaces@{Interfaces}}
+}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{arch__registers_8h}{arch\-\_\-registers.\-h}
+\item 
+file \hyperlink{atomic__ops_8h}{atomic\-\_\-ops.\-h}
+\item 
+file \hyperlink{bsp_8h}{bsp.\-h}
+\item 
+file \hyperlink{console_8h}{console.\-h}
+\item 
+file \hyperlink{delays_8h}{delays.\-h}
+\item 
+file \hyperlink{disk_8h}{disk.\-h}
+\item 
+file \hyperlink{endianness_8h}{endianness.\-h}
+\item 
+file \hyperlink{gpio_8h}{gpio.\-h}
+\item 
+file \hyperlink{portability_8h}{portability.\-h}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacemiosix}{miosix}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmiosix_1_1_console}{miosix\-::\-Console}
+\item 
+class \hyperlink{classmiosix_1_1_disk}{miosix\-::\-Disk}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___interfaces_gad6ceb45da12db3d07d6b0c47e0181cff}{\#define {\bfseries \-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E}~static inline}\label{group___interfaces_gad6ceb45da12db3d07d6b0c47e0181cff}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___interfaces_gaeb88457f0a1ad58c9dd7e7bef0783428}{void {\bfseries miosix\-::\-I\-R\-Qbsp\-Init} ()}\label{group___interfaces_gaeb88457f0a1ad58c9dd7e7bef0783428}
+
+\item 
+\hypertarget{group___interfaces_gab7a59706596b512a2349a9539c9520d8}{void {\bfseries miosix\-::bsp\-Init2} ()}\label{group___interfaces_gab7a59706596b512a2349a9539c9520d8}
+
+\item 
+void \hyperlink{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}{miosix\-::shutdown} ()
+\item 
+void \hyperlink{group___interfaces_ga6f70fdbc3b5d6afa41b5dbc5272cc6a0}{miosix\-::reboot} ()
+\item 
+void \hyperlink{group___interfaces_ga9d13aceddc0481fd1077e6fdfb31f9a7}{miosix\-::delay\-Ms} (unsigned int mseconds)
+\item 
+void \hyperlink{group___interfaces_ga244f9474d20ffd5d905855f68aa3114f}{miosix\-::delay\-Us} (unsigned int useconds)
+\item 
+\-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E unsigned short \hyperlink{group___interfaces_gae568ebe5457b535d78e34cc75ce3c4c1}{swap\-Bytes16} (unsigned short x)
+\item 
+\-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E unsigned int \hyperlink{group___interfaces_ga8941def52689721dbc86c70153d90864}{swap\-Bytes32} (unsigned int x)
+\item 
+\-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E unsigned long long \hyperlink{group___interfaces_ga173fe4adab327c9401b6c95b871bc1d1}{swap\-Bytes64} (unsigned long long x)
+\item 
+\hypertarget{group___interfaces_gac4d0a63745010331da4c5e9275665ccd}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qsystem\-Reboot} ()}\label{group___interfaces_gac4d0a63745010331da4c5e9275665ccd}
+
+\item 
+\hypertarget{group___interfaces_gad6e1b120330ae5e0c580061c1f83cde1}{void {\bfseries miosix\-\_\-private\-::init\-Ctxsave} (unsigned int $\ast$ctxsave, void $\ast$($\ast$pc)(void $\ast$), unsigned int $\ast$sp, void $\ast$argv)}\label{group___interfaces_gad6e1b120330ae5e0c580061c1f83cde1}
+
+\item 
+\hypertarget{group___interfaces_ga9702b5fb892928b5a330ffedda094d2b}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qstack\-Overflow\-Check} ()}\label{group___interfaces_ga9702b5fb892928b5a330ffedda094d2b}
+
+\item 
+\hypertarget{group___interfaces_gae4130aa3e4b9ba0666de5e86b2242a95}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qportable\-Start\-Kernel} ()}\label{group___interfaces_gae4130aa3e4b9ba0666de5e86b2242a95}
+
+\item 
+\hypertarget{group___interfaces_ga38787e05f2b382978b829168c039ff0e}{void {\bfseries miosix\-\_\-private\-::sleep\-Cpu} ()}\label{group___interfaces_ga38787e05f2b382978b829168c039ff0e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interfaces between kernel and architecture specific code.
+
+Starting from Miosix 1.\-53 all calls from kernel to architecture specific code is done through a set of functions, classes and macros grouped in a set of header files in the miosix/interfaces folder. There are multiple implementations of these functions/classes, one for each architecture supported by Miosix. This eases portability since adding a new architecture is done by implementing a well defined set of interfaces.
+
+Some of these functions are not designed to be accessed by user code, for example the functions in \hyperlink{portability_8h}{portability.\-h} are used by the kernel to create threads and perform context switching, while the Disk class in \hyperlink{disk_8h}{disk.\-h} is used by the filesystem module to read and write from disk. Such functions are marked as \textbackslash{}internal and therefore are not visible by default in this doxygen documentation, because are useless for application developers. If there is the need to port Miosix to another platform it is always possible to build the doxygen documentation manually including \textbackslash{}internal functions. Using functions which are marked as \textbackslash{}internal in user code might lead to undefined behaviour. 
+
+\subsection{Function Documentation}
+\hypertarget{group___interfaces_ga9d13aceddc0481fd1077e6fdfb31f9a7}{\index{Interfaces@{Interfaces}!delay\-Ms@{delay\-Ms}}
+\index{delay\-Ms@{delay\-Ms}!Interfaces@{Interfaces}}
+\subsubsection[{delay\-Ms}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::delay\-Ms (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mseconds}
+\end{DoxyParamCaption}
+)}}\label{group___interfaces_ga9d13aceddc0481fd1077e6fdfb31f9a7}
+Delay function. Accuracy depends on the underlying implementation which is architecture specific.\par
+ Delay time can be inaccurate if interrupts are enabled or the kernel is running due to time spent in interrupts and due to preemption.\par
+ It is implemented using busy wait, so can be safely used even when the kernel is paused or interrupts are disabled.\par
+ If the kernel is running it is {\itshape highly} recomended to use \hyperlink{classmiosix_1_1_thread_ad7f738dc69a918960fe814a062696c5c}{Thread\-::sleep} since it gives C\-P\-U time to other threads and/or it puts the C\-P\-U in low power mode. 
+\begin{DoxyParams}{Parameters}
+{\em mseconds} & milliseconds to wait \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___interfaces_ga244f9474d20ffd5d905855f68aa3114f}{\index{Interfaces@{Interfaces}!delay\-Us@{delay\-Us}}
+\index{delay\-Us@{delay\-Us}!Interfaces@{Interfaces}}
+\subsubsection[{delay\-Us}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::delay\-Us (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{useconds}
+\end{DoxyParamCaption}
+)}}\label{group___interfaces_ga244f9474d20ffd5d905855f68aa3114f}
+Delay function. Accuracy depends on the underlying implementation which is architecture specific.\par
+ Delay time can be inaccurate if interrupts are enabled or the kernel is running due to time spent in interrupts and due to preemption.\par
+ It is implemented using busy wait, so can be safely used even when the kernel is paused or interrupts are disabled.\par
+ 
+\begin{DoxyParams}{Parameters}
+{\em useconds} & microseconds to wait. Only values between 1 and 1000 are allowed. For greater delays use \hyperlink{classmiosix_1_1_thread_ad7f738dc69a918960fe814a062696c5c}{Thread\-::sleep()} or \hyperlink{group___interfaces_ga9d13aceddc0481fd1077e6fdfb31f9a7}{delay\-Ms()}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___interfaces_ga6f70fdbc3b5d6afa41b5dbc5272cc6a0}{\index{Interfaces@{Interfaces}!reboot@{reboot}}
+\index{reboot@{reboot}!Interfaces@{Interfaces}}
+\subsubsection[{reboot}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::reboot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___interfaces_ga6f70fdbc3b5d6afa41b5dbc5272cc6a0}
+The difference between this function and miosix\-\_\-private\-::\-I\-R\-Qsystem\-Reboot() is that this function disables filesystem (if enabled), serial port (if enabled) while miosix\-\_\-private\-::system\-\_\-reboot() does not do all these things. miosix\-\_\-private\-::\-I\-R\-Qsystem\-Reboot() is designed to reboot the system when an unrecoverable error occurs, and is used primarily in kernel code, \hyperlink{group___interfaces_ga6f70fdbc3b5d6afa41b5dbc5272cc6a0}{reboot()} is designed to reboot the system in normal conditions.\par
+ This function does not return.\par
+ W\-A\-R\-N\-I\-N\-G\-: close all files before using this function, since it unmounts the filesystem. \hypertarget{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}{\index{Interfaces@{Interfaces}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!Interfaces@{Interfaces}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}
+This function disables filesystem (if enabled), serial port (if enabled) and puts the processor in deep sleep mode.\par
+ Wakeup occurs when p0.\-14 goes low, but instead of \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{sleep()}, a new boot happens. \par
+This function does not return.\par
+ W\-A\-R\-N\-I\-N\-G\-: close all files before using this function, since it unmounts the filesystem.\par
+ When in shutdown mode, power consumption of the miosix board is reduced to $\sim$ 150u\-A, however, true power consumption depends on what is connected to the G\-P\-I\-O pins. The user is responsible to put the devices connected to the G\-P\-I\-O pin in the minimal power consumption mode before calling \hyperlink{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}{shutdown()}. Please note that to minimize power consumption all unused G\-P\-I\-O must be set as output high.
+
+This function disables filesystem (if enabled), serial port (if enabled) and puts the processor in deep sleep mode.\par
+ Wakeup occurs when P\-A.\-0 goes high, but instead of \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{sleep()}, a new boot happens. \par
+This function does not return.\par
+ W\-A\-R\-N\-I\-N\-G\-: close all files before using this function, since it unmounts the filesystem.\par
+ When in shutdown mode, power consumption of the miosix board is reduced to $\sim$ 5u\-A??, however, true power consumption depends on what is connected to the G\-P\-I\-O pins. The user is responsible to put the devices connected to the G\-P\-I\-O pin in the minimal power consumption mode before calling \hyperlink{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}{shutdown()}. Please note that to minimize power consumption all unused G\-P\-I\-O must not be left floating.
+
+This function disables filesystem (if enabled), serial port (if enabled) and shuts down the system, usually by putting the procesor in a deep sleep state.\par
+ The action to start a new boot is system-\/specific, can be for example a reset, powercycle or a special G\-P\-I\-O configured to wakeup the processor from deep sleep.\par
+ This function does not return.\par
+ W\-A\-R\-N\-I\-N\-G\-: close all files before using this function, since it unmounts the filesystem.\par
+ \hypertarget{group___interfaces_gae568ebe5457b535d78e34cc75ce3c4c1}{\index{Interfaces@{Interfaces}!swap\-Bytes16@{swap\-Bytes16}}
+\index{swap\-Bytes16@{swap\-Bytes16}!Interfaces@{Interfaces}}
+\subsubsection[{swap\-Bytes16}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E unsigned short swap\-Bytes16 (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group___interfaces_gae568ebe5457b535d78e34cc75ce3c4c1}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & an short int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same short with its bytes swapped 
+\end{DoxyReturn}
+\hypertarget{group___interfaces_ga8941def52689721dbc86c70153d90864}{\index{Interfaces@{Interfaces}!swap\-Bytes32@{swap\-Bytes32}}
+\index{swap\-Bytes32@{swap\-Bytes32}!Interfaces@{Interfaces}}
+\subsubsection[{swap\-Bytes32}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E unsigned int swap\-Bytes32 (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group___interfaces_ga8941def52689721dbc86c70153d90864}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & an int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same int with its bytes swapped 
+\end{DoxyReturn}
+\hypertarget{group___interfaces_ga173fe4adab327c9401b6c95b871bc1d1}{\index{Interfaces@{Interfaces}!swap\-Bytes64@{swap\-Bytes64}}
+\index{swap\-Bytes64@{swap\-Bytes64}!Interfaces@{Interfaces}}
+\subsubsection[{swap\-Bytes64}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-\-M\-I\-O\-S\-I\-X\-\_\-\-I\-N\-L\-I\-N\-E unsigned long long swap\-Bytes64 (
+\begin{DoxyParamCaption}
+\item[{unsigned long long}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group___interfaces_ga173fe4adab327c9401b6c95b871bc1d1}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & a long long \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the same long long with its bytes swapped 
+\end{DoxyReturn}

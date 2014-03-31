@@ -1,0 +1,75 @@
+\hypertarget{classmiosix_1_1_console_adapter}{\section{miosix\-:\-:Console\-Adapter Class Reference}
+\label{classmiosix_1_1_console_adapter}\index{miosix\-::\-Console\-Adapter@{miosix\-::\-Console\-Adapter}}
+}
+
+
+{\ttfamily \#include $<$console\-\_\-device.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Console\-Adapter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classmiosix_1_1_console_adapter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_console_adapter_afbbc3113ba82ea99de45fe5fd0bc53f2}{write} (const void $\ast$data, size\-\_\-t len)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_console_adapter_a6b9e9bd594b3725cce6761eaf5e9722e}{read} (void $\ast$data, size\-\_\-t len)
+\item 
+virtual void \hyperlink{classmiosix_1_1_console_adapter_a69f90d0638363783425d42a926325b98}{I\-R\-Qwrite} (const char $\ast$str)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+F\-I\-X\-M\-E remove this when removing \hyperlink{classmiosix_1_1_console}{Console} interface! 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_console_adapter_a69f90d0638363783425d42a926325b98}{\index{miosix\-::\-Console\-Adapter@{miosix\-::\-Console\-Adapter}!I\-R\-Qwrite@{I\-R\-Qwrite}}
+\index{I\-R\-Qwrite@{I\-R\-Qwrite}!miosix::ConsoleAdapter@{miosix\-::\-Console\-Adapter}}
+\subsubsection[{I\-R\-Qwrite}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Console\-Adapter\-::\-I\-R\-Qwrite (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_adapter_a69f90d0638363783425d42a926325b98}
+Write a string to the \hyperlink{classmiosix_1_1_console}{Console}. Can O\-N\-L\-Y be called when the kernel is not yet started, paused or within an interrupt. This default implementation ignores writes. 
+\begin{DoxyParams}{Parameters}
+{\em str} & the string to write. The string must be N\-U\-L terminated. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classmiosix_1_1_console_device_a63debd964ea5419e2606323b1d6e5478}{miosix\-::\-Console\-Device}.
+
+\hypertarget{classmiosix_1_1_console_adapter_a6b9e9bd594b3725cce6761eaf5e9722e}{\index{miosix\-::\-Console\-Adapter@{miosix\-::\-Console\-Adapter}!read@{read}}
+\index{read@{read}!miosix::ConsoleAdapter@{miosix\-::\-Console\-Adapter}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Console\-Adapter\-::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_adapter_a6b9e9bd594b3725cce6761eaf5e9722e}
+This default implementation returns an error 
+
+Reimplemented from \hyperlink{classmiosix_1_1_console_device_a289bc47b6fc9ddbb21b5f51b001a1dcc}{miosix\-::\-Console\-Device}.
+
+\hypertarget{classmiosix_1_1_console_adapter_afbbc3113ba82ea99de45fe5fd0bc53f2}{\index{miosix\-::\-Console\-Adapter@{miosix\-::\-Console\-Adapter}!write@{write}}
+\index{write@{write}!miosix::ConsoleAdapter@{miosix\-::\-Console\-Adapter}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Console\-Adapter\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_adapter_afbbc3113ba82ea99de45fe5fd0bc53f2}
+This default implementation returns as if the data was written, but does nothing 
+
+Reimplemented from \hyperlink{classmiosix_1_1_console_device_a8d54dd289d7856569fffb26fa12da419}{miosix\-::\-Console\-Device}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/console/console\-\_\-device.\-h\item 
+miosix/filesystem/console/console\-\_\-device.\-cpp\end{DoxyCompactItemize}

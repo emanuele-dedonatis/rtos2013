@@ -1,0 +1,161 @@
+\hypertarget{group___kernel}{\section{Kernel}
+\label{group___kernel}\index{Kernel@{Kernel}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmiosix_1_1_interrupt_disable_lock}{miosix\-::\-Interrupt\-Disable\-Lock}
+\item 
+class \hyperlink{classmiosix_1_1_interrupt_enable_lock}{miosix\-::\-Interrupt\-Enable\-Lock}
+\item 
+class \hyperlink{classmiosix_1_1_fast_interrupt_disable_lock}{miosix\-::\-Fast\-Interrupt\-Disable\-Lock}
+\item 
+class \hyperlink{classmiosix_1_1_fast_interrupt_enable_lock}{miosix\-::\-Fast\-Interrupt\-Enable\-Lock}
+\item 
+class \hyperlink{classmiosix_1_1_pause_kernel_lock}{miosix\-::\-Pause\-Kernel\-Lock}
+\item 
+class \hyperlink{classmiosix_1_1_restart_kernel_lock}{miosix\-::\-Restart\-Kernel\-Lock}
+\item 
+class \hyperlink{classmiosix_1_1_thread}{miosix\-::\-Thread}
+\item 
+class \hyperlink{classmiosix_1_1_lower_priority}{miosix\-::\-Lower\-Priority}
+\item 
+struct \hyperlink{structmiosix_1_1_sleep_data}{miosix\-::\-Sleep\-Data}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{miosix\-::disable\-Interrupts} ()
+\item 
+void \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{miosix\-::enable\-Interrupts} ()
+\item 
+void \hyperlink{group___kernel_gaeeacb47660439066bb1d787593da9f4e}{miosix\-::fast\-Disable\-Interrupts} ()
+\item 
+void \hyperlink{group___kernel_ga882229b6c936a87454cb154a90751927}{miosix\-::fast\-Enable\-Interrupts} ()
+\item 
+void \hyperlink{group___kernel_ga730c9359f8069cb2f785501ea763eb43}{miosix\-::pause\-Kernel} ()
+\item 
+void \hyperlink{group___kernel_gad3bee49a8dd57a598b7d7aeeeaf8496c}{miosix\-::restart\-Kernel} ()
+\item 
+bool \hyperlink{group___kernel_gacabb0637ded36778470fa27eea329d84}{miosix\-::are\-Interrupts\-Enabled} ()
+\item 
+\hypertarget{group___kernel_ga0cad893a4c93263581e34dd3e0141649}{void {\bfseries miosix\-::start\-Kernel} ()}\label{group___kernel_ga0cad893a4c93263581e34dd3e0141649}
+
+\item 
+bool \hyperlink{group___kernel_gaabdbf06e8cf514d3113325a01927ccf5}{miosix\-::is\-Kernel\-Running} ()
+\item 
+long long \hyperlink{group___kernel_gad16c495ced6659e8bc0bb371362674ef}{miosix\-::get\-Tick} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Miosix kernel A\-P\-I
+
+The most useful part of this A\-P\-I is the \hyperlink{classmiosix_1_1_thread}{Thread} class that allows to create and manage threads.
+
+A note on I\-R\-Q functions/methods\-:\par
+ Functions and methods that do not begin with I\-R\-Q cannot be called inside I\-R\-Q or when interrupts are disabled.\par
+ Functions and methods that begin with I\-R\-Q cannot be called outside I\-R\-Q or when interrupts are enabled.\par
+ When the kernel is paused, you must read the comment of the function to see if it can be called since there is no general rule.\par
+ Only recently (starting from Miosix 1.\-53) some of the functions designed to be called with kernel paused are marked with the P\-K prefix. 
+
+\subsection{Function Documentation}
+\hypertarget{group___kernel_gacabb0637ded36778470fa27eea329d84}{\index{Kernel@{Kernel}!are\-Interrupts\-Enabled@{are\-Interrupts\-Enabled}}
+\index{are\-Interrupts\-Enabled@{are\-Interrupts\-Enabled}!Kernel@{Kernel}}
+\subsubsection[{are\-Interrupts\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::are\-Interrupts\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_gacabb0637ded36778470fa27eea329d84}
+\begin{DoxyReturn}{Returns}
+true if interrupts are enabled 
+\end{DoxyReturn}
+\hypertarget{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{\index{Kernel@{Kernel}!disable\-Interrupts@{disable\-Interrupts}}
+\index{disable\-Interrupts@{disable\-Interrupts}!Kernel@{Kernel}}
+\subsubsection[{disable\-Interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::disable\-Interrupts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}
+Disable interrupts, if interrupts were enable prior to calling this function.
+
+Please note that starting from Miosix 1.\-51 \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()} and \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()} can be nested. You can therefore call \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()} multiple times as long as each call is matched by a call to \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()}.\par
+ This replaced disable\-\_\-and\-\_\-save\-\_\-interrupts() and restore\-\_\-interrupts()
+
+\hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()} cannot be called within an interrupt routine, but can be called before the kernel is started (and does nothing in this case) \hypertarget{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{\index{Kernel@{Kernel}!enable\-Interrupts@{enable\-Interrupts}}
+\index{enable\-Interrupts@{enable\-Interrupts}!Kernel@{Kernel}}
+\subsubsection[{enable\-Interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::enable\-Interrupts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}
+Enable interrupts.\par
+ Please note that starting from Miosix 1.\-51 \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()} and \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()} can be nested. You can therefore call \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()} multiple times as long as each call is matched by a call to \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()}.\par
+ This replaced disable\-\_\-and\-\_\-save\-\_\-interrupts() and restore\-\_\-interrupts()
+
+\hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()} cannot be called within an interrupt routine, but can be called before the kernel is started (and does nothing in this case) \hypertarget{group___kernel_gaeeacb47660439066bb1d787593da9f4e}{\index{Kernel@{Kernel}!fast\-Disable\-Interrupts@{fast\-Disable\-Interrupts}}
+\index{fast\-Disable\-Interrupts@{fast\-Disable\-Interrupts}!Kernel@{Kernel}}
+\subsubsection[{fast\-Disable\-Interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::fast\-Disable\-Interrupts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group___kernel_gaeeacb47660439066bb1d787593da9f4e}
+Fast version of \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()}.\par
+ Despite faster, it has a couple of preconditions\-:
+\begin{DoxyItemize}
+\item calls to \hyperlink{group___kernel_gaeeacb47660439066bb1d787593da9f4e}{fast\-Disable\-Interrupts()} can't be nested
+\item it can't be used in code that is called before the kernel is started 
+\end{DoxyItemize}\hypertarget{group___kernel_ga882229b6c936a87454cb154a90751927}{\index{Kernel@{Kernel}!fast\-Enable\-Interrupts@{fast\-Enable\-Interrupts}}
+\index{fast\-Enable\-Interrupts@{fast\-Enable\-Interrupts}!Kernel@{Kernel}}
+\subsubsection[{fast\-Enable\-Interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::fast\-Enable\-Interrupts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group___kernel_ga882229b6c936a87454cb154a90751927}
+Fast version of \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()}.\par
+ Despite faster, it has a couple of preconditions\-:
+\begin{DoxyItemize}
+\item calls to \hyperlink{group___kernel_gaeeacb47660439066bb1d787593da9f4e}{fast\-Disable\-Interrupts()} can't be nested
+\item it can't be used in code that is called before the kernel is started, because it will (incorreclty) lead to interrupts being enabled before the kernel is started 
+\end{DoxyItemize}\hypertarget{group___kernel_gad16c495ced6659e8bc0bb371362674ef}{\index{Kernel@{Kernel}!get\-Tick@{get\-Tick}}
+\index{get\-Tick@{get\-Tick}!Kernel@{Kernel}}
+\subsubsection[{get\-Tick}]{\setlength{\rightskip}{0pt plus 5cm}long long miosix\-::get\-Tick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_gad16c495ced6659e8bc0bb371362674ef}
+Returns the current kernel tick.\par
+Can be called also with interrupts disabled and/or kernel paused. \begin{DoxyReturn}{Returns}
+current kernel tick 
+\end{DoxyReturn}
+\hypertarget{group___kernel_gaabdbf06e8cf514d3113325a01927ccf5}{\index{Kernel@{Kernel}!is\-Kernel\-Running@{is\-Kernel\-Running}}
+\index{is\-Kernel\-Running@{is\-Kernel\-Running}!Kernel@{Kernel}}
+\subsubsection[{is\-Kernel\-Running}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::is\-Kernel\-Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_gaabdbf06e8cf514d3113325a01927ccf5}
+Return true if kernel is running, false if it is not started, or paused.\par
+ Warning\-: disabling/enabling interrupts does not affect the result returned by this function. \begin{DoxyReturn}{Returns}
+true if kernel is running (started \&\& not paused) 
+\end{DoxyReturn}
+\hypertarget{group___kernel_ga730c9359f8069cb2f785501ea763eb43}{\index{Kernel@{Kernel}!pause\-Kernel@{pause\-Kernel}}
+\index{pause\-Kernel@{pause\-Kernel}!Kernel@{Kernel}}
+\subsubsection[{pause\-Kernel}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::pause\-Kernel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_ga730c9359f8069cb2f785501ea763eb43}
+Pause the kernel.\par
+Interrupts will continue to occur, but no preemption is possible. Call to this function are cumulative\-: if you call \hyperlink{group___kernel_ga730c9359f8069cb2f785501ea763eb43}{pause\-Kernel()} two times, you need to call \hyperlink{group___kernel_gad3bee49a8dd57a598b7d7aeeeaf8496c}{restart\-Kernel()} two times.\par
+Pausing the kernel must be avoided if possible because it is easy to cause deadlock. Calling file related functions (fopen, Directory\-::open() ...), serial port related functions (printf ...) or kernel functions that cannot be called when the kernel is paused will cause deadlock. Therefore, if possible, it is better to use a \hyperlink{classmiosix_1_1_mutex}{Mutex} instead of pausing the kernel\par
+This function is safe to be called even before the kernel is started. In this case it has no effect. \hypertarget{group___kernel_gad3bee49a8dd57a598b7d7aeeeaf8496c}{\index{Kernel@{Kernel}!restart\-Kernel@{restart\-Kernel}}
+\index{restart\-Kernel@{restart\-Kernel}!Kernel@{Kernel}}
+\subsubsection[{restart\-Kernel}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::restart\-Kernel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___kernel_gad3bee49a8dd57a598b7d7aeeeaf8496c}
+Restart the kernel.\par
+This function will yield immediately if a tick has been missed. Since calls to \hyperlink{group___kernel_ga730c9359f8069cb2f785501ea763eb43}{pause\-Kernel()} are cumulative, if you call \hyperlink{group___kernel_ga730c9359f8069cb2f785501ea763eb43}{pause\-Kernel()} two times, you need to call \hyperlink{group___kernel_gad3bee49a8dd57a598b7d7aeeeaf8496c}{restart\-Kernel()} two times.\par
+ This function is safe to be called even before the kernel is started. In this case it has no effect. 

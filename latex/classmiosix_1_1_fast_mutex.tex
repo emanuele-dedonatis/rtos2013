@@ -1,0 +1,98 @@
+\hypertarget{classmiosix_1_1_fast_mutex}{\section{miosix\-:\-:Fast\-Mutex Class Reference}
+\label{classmiosix_1_1_fast_mutex}\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891}{Options} \{ \hyperlink{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891a3e00b8e92574e595293459333b1e9182}{D\-E\-F\-A\-U\-L\-T}, 
+\hyperlink{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891aa70c27d1982ebadac457d4f1c45fa2c8}{R\-E\-C\-U\-R\-S\-I\-V\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_fast_mutex_aca5cd49cdb704db34488ac7ef16bbd12}{Fast\-Mutex} (\hyperlink{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891}{Options} opt=\hyperlink{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891a3e00b8e92574e595293459333b1e9182}{D\-E\-F\-A\-U\-L\-T})
+\item 
+void \hyperlink{classmiosix_1_1_fast_mutex_a0ad94f95d78f1316da8b622928b6ff61}{lock} ()
+\item 
+bool \hyperlink{classmiosix_1_1_fast_mutex_a41f2a4d790a2a7ee8695768d2deae95a}{try\-Lock} ()
+\item 
+void \hyperlink{classmiosix_1_1_fast_mutex_a080ce00d76c005a73917038908fd824c}{unlock} ()
+\item 
+\hypertarget{classmiosix_1_1_fast_mutex_a344bddfd8333fe9dacfba56f6ee6c7da}{pthread\-\_\-mutex\-\_\-t $\ast$ {\bfseries get} ()}\label{classmiosix_1_1_fast_mutex_a344bddfd8333fe9dacfba56f6ee6c7da}
+
+\item 
+\hyperlink{classmiosix_1_1_fast_mutex_ad320fd1b0d905f2d4fa9e8e0567181d2}{$\sim$\-Fast\-Mutex} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fast mutex without support for priority inheritance 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891}{\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!Options@{Options}}
+\index{Options@{Options}!miosix::FastMutex@{miosix\-::\-Fast\-Mutex}}
+\subsubsection[{Options}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf miosix\-::\-Fast\-Mutex\-::\-Options}}}\label{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891}
+\hyperlink{classmiosix_1_1_mutex}{Mutex} options, passed to the constructor to set additional options.\par
+ The D\-E\-F\-A\-U\-L\-T option indicates the default \hyperlink{classmiosix_1_1_mutex}{Mutex} type. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\-E\-F\-A\-U\-L\-T@{D\-E\-F\-A\-U\-L\-T}!miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}}\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!D\-E\-F\-A\-U\-L\-T@{D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891a3e00b8e92574e595293459333b1e9182}{D\-E\-F\-A\-U\-L\-T}\label{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891a3e00b8e92574e595293459333b1e9182}
+}]Default mutex. \index{R\-E\-C\-U\-R\-S\-I\-V\-E@{R\-E\-C\-U\-R\-S\-I\-V\-E}!miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}}\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!R\-E\-C\-U\-R\-S\-I\-V\-E@{R\-E\-C\-U\-R\-S\-I\-V\-E}}\item[{\em 
+\hypertarget{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891aa70c27d1982ebadac457d4f1c45fa2c8}{R\-E\-C\-U\-R\-S\-I\-V\-E}\label{classmiosix_1_1_fast_mutex_a981dd8f3190f81f16a773b3de6ae0891aa70c27d1982ebadac457d4f1c45fa2c8}
+}]\hyperlink{classmiosix_1_1_mutex}{Mutex} is recursive. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_fast_mutex_aca5cd49cdb704db34488ac7ef16bbd12}{\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!Fast\-Mutex@{Fast\-Mutex}}
+\index{Fast\-Mutex@{Fast\-Mutex}!miosix::FastMutex@{miosix\-::\-Fast\-Mutex}}
+\subsubsection[{Fast\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fast\-Mutex\-::\-Fast\-Mutex (
+\begin{DoxyParamCaption}
+\item[{{\bf Options}}]{opt = {\ttfamily {\bf D\-E\-F\-A\-U\-L\-T}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_mutex_aca5cd49cdb704db34488ac7ef16bbd12}
+Constructor, initializes the mutex. \hypertarget{classmiosix_1_1_fast_mutex_ad320fd1b0d905f2d4fa9e8e0567181d2}{\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!$\sim$\-Fast\-Mutex@{$\sim$\-Fast\-Mutex}}
+\index{$\sim$\-Fast\-Mutex@{$\sim$\-Fast\-Mutex}!miosix::FastMutex@{miosix\-::\-Fast\-Mutex}}
+\subsubsection[{$\sim$\-Fast\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fast\-Mutex\-::$\sim$\-Fast\-Mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_mutex_ad320fd1b0d905f2d4fa9e8e0567181d2}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_fast_mutex_a0ad94f95d78f1316da8b622928b6ff61}{\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!lock@{lock}}
+\index{lock@{lock}!miosix::FastMutex@{miosix\-::\-Fast\-Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Fast\-Mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_mutex_a0ad94f95d78f1316da8b622928b6ff61}
+Locks the critical section. If the critical section is already locked, the thread will be queued in a wait list. \hypertarget{classmiosix_1_1_fast_mutex_a41f2a4d790a2a7ee8695768d2deae95a}{\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!try\-Lock@{try\-Lock}}
+\index{try\-Lock@{try\-Lock}!miosix::FastMutex@{miosix\-::\-Fast\-Mutex}}
+\subsubsection[{try\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Fast\-Mutex\-::try\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_mutex_a41f2a4d790a2a7ee8695768d2deae95a}
+Acquires the lock only if the critical section is not already locked by other threads. Attempting to lock again a recursive mutex will fail, and the mutex' lock count will not be incremented. \begin{DoxyReturn}{Returns}
+true if the lock was acquired 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fast_mutex_a080ce00d76c005a73917038908fd824c}{\index{miosix\-::\-Fast\-Mutex@{miosix\-::\-Fast\-Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!miosix::FastMutex@{miosix\-::\-Fast\-Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Fast\-Mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fast_mutex_a080ce00d76c005a73917038908fd824c}
+Unlocks the critical section. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\end{DoxyCompactItemize}

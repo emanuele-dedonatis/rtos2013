@@ -1,0 +1,48 @@
+\hypertarget{group___util}{\section{Utilities}
+\label{group___util}\index{Utilities@{Utilities}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmiosix_1_1_memory_profiling}{miosix\-::\-Memory\-Profiling}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___util_gadb6acdd9cbe72a6198e7b3b4c7d3d702}{miosix\-::mem\-Dump} (const void $\ast$start, int len)
+\item 
+const char $\ast$ \hyperlink{group___util_gadc3015d9be3c5eb12fe691ca0ca9251b}{miosix\-::get\-Miosix\-Version} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Some utilities functions.
+
+The most notable ones are the utilities for memory profiling, grouped in the \hyperlink{classmiosix_1_1_memory_profiling}{Memory\-Profiling} class. 
+
+\subsection{Function Documentation}
+\hypertarget{group___util_gadc3015d9be3c5eb12fe691ca0ca9251b}{\index{Utilities@{Utilities}!get\-Miosix\-Version@{get\-Miosix\-Version}}
+\index{get\-Miosix\-Version@{get\-Miosix\-Version}!Utilities@{Utilities}}
+\subsubsection[{get\-Miosix\-Version}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ miosix\-::get\-Miosix\-Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___util_gadc3015d9be3c5eb12fe691ca0ca9251b}
+Allows to know the version of the kernel at runtime. \begin{DoxyReturn}{Returns}
+a string with the kernel version. The format is \char`\"{}\-Miosix v\-X.\-X\-X (board, builddate, compiler)\char`\"{} where v\-X.\-X\-X is the kernel version number, like \char`\"{}v1.\-59\char`\"{} board is the board name, like \char`\"{}stm32f103ze\-\_\-stm3210e-\/eval\char`\"{} builddate is the date the kernel was built, like \char`\"{}\-Oct 30 2011 00\-:58\-:10\char`\"{} compiler is the compiler version, like \char`\"{}gcc 4.\-5.\-2\char`\"{} 
+\end{DoxyReturn}
+\hypertarget{group___util_gadb6acdd9cbe72a6198e7b3b4c7d3d702}{\index{Utilities@{Utilities}!mem\-Dump@{mem\-Dump}}
+\index{mem\-Dump@{mem\-Dump}!Utilities@{Utilities}}
+\subsubsection[{mem\-Dump}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::mem\-Dump (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{start, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}}\label{group___util_gadb6acdd9cbe72a6198e7b3b4c7d3d702}
+Dump a memory area in this format 0x00000000 $\vert$ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 $\vert$ ................ 
+\begin{DoxyParams}{Parameters}
+{\em start} & pointer to beginning of memory block to dump \\
+\hline
+{\em len} & length of memory block to dump \\
+\hline
+\end{DoxyParams}

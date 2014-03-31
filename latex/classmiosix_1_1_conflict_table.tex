@@ -1,0 +1,98 @@
+\hypertarget{classmiosix_1_1_conflict_table}{\section{miosix\-:\-:Conflict\-Table Class Reference}
+\label{classmiosix_1_1_conflict_table}\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}}
+}
+
+
+{\ttfamily \#include $<$conflict\-\_\-table.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1}{Open\-State} \{ \hyperlink{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1a8f37c33dd680b9b8f8d3ddf9b1eb8746}{N\-O\-T\-\_\-\-O\-P\-E\-N}, 
+\hyperlink{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1aea1a6958403f9949700b56d66f1080bc}{O\-P\-E\-N\-\_\-\-R\-E\-A\-D}, 
+\hyperlink{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1ac6aaa08527137fda829d6f2e5a2301d6}{O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1}{Open\-State} \hyperlink{classmiosix_1_1_conflict_table_aa8f6c7d1fb129de0602e1319c6054023}{is\-Open} (const char $\ast$filename) const 
+\item 
+void \hyperlink{classmiosix_1_1_conflict_table_a11b1815d854928bd578b29da666d801f}{open} (int fd, const char $\ast$filename, \hyperlink{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1}{Open\-State} mode)
+\item 
+void \hyperlink{classmiosix_1_1_conflict_table_a24a9284e4564f4ad87483a3edbd70adb}{close} (int fd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to keep information about open files. Given the file name, this class can tell if it is currently open for reading or writing. Also, for files opened for reading a reference count is kept because it is possible to open the same file more times. The goal of this class is to avoid opening the same file more than once if it is already opened for writing, a thing that can cause crashes and/or filesystem corruption. Wish I could use std\-::set to implement this... 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1}{\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!Open\-State@{Open\-State}}
+\index{Open\-State@{Open\-State}!miosix::ConflictTable@{miosix\-::\-Conflict\-Table}}
+\subsubsection[{Open\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf miosix\-::\-Conflict\-Table\-::\-Open\-State}}}\label{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1}
+A file is considered in one of these three states \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\-O\-T\-\_\-\-O\-P\-E\-N@{N\-O\-T\-\_\-\-O\-P\-E\-N}!miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}}\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!N\-O\-T\-\_\-\-O\-P\-E\-N@{N\-O\-T\-\_\-\-O\-P\-E\-N}}\item[{\em 
+\hypertarget{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1a8f37c33dd680b9b8f8d3ddf9b1eb8746}{N\-O\-T\-\_\-\-O\-P\-E\-N}\label{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1a8f37c33dd680b9b8f8d3ddf9b1eb8746}
+}]File is not currently open. \index{O\-P\-E\-N\-\_\-\-R\-E\-A\-D@{O\-P\-E\-N\-\_\-\-R\-E\-A\-D}!miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}}\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!O\-P\-E\-N\-\_\-\-R\-E\-A\-D@{O\-P\-E\-N\-\_\-\-R\-E\-A\-D}}\item[{\em 
+\hypertarget{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1aea1a6958403f9949700b56d66f1080bc}{O\-P\-E\-N\-\_\-\-R\-E\-A\-D}\label{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1aea1a6958403f9949700b56d66f1080bc}
+}]File is open for reading. \index{O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E@{O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E}!miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}}\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E@{O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E}}\item[{\em 
+\hypertarget{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1ac6aaa08527137fda829d6f2e5a2301d6}{O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E}\label{classmiosix_1_1_conflict_table_a46499bf8153680f103a474c9bd2fb5e1ac6aaa08527137fda829d6f2e5a2301d6}
+}]File is open for writing (or appending) \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_conflict_table_a24a9284e4564f4ad87483a3edbd70adb}{\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!close@{close}}
+\index{close@{close}!miosix::ConflictTable@{miosix\-::\-Conflict\-Table}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Conflict\-Table\-::close (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_conflict_table_a24a9284e4564f4ad87483a3edbd70adb}
+To be called when a file is closed. If the file is opened more times its reference count is decreased, otherwise it is removed from the conflict table. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & file descriptor of the file to remove. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_conflict_table_aa8f6c7d1fb129de0602e1319c6054023}{\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!miosix::ConflictTable@{miosix\-::\-Conflict\-Table}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Open\-State} miosix\-::\-Conflict\-Table\-::is\-Open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_conflict_table_aa8f6c7d1fb129de0602e1319c6054023}
+Given a file name, return its state 
+\begin{DoxyParams}{Parameters}
+{\em filename} & the file name, including its path (if present) Note that if the path is absent a / is added to the file name because file.\-txt and /file.txt are the same file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the file state 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_conflict_table_a11b1815d854928bd578b29da666d801f}{\index{miosix\-::\-Conflict\-Table@{miosix\-::\-Conflict\-Table}!open@{open}}
+\index{open@{open}!miosix::ConflictTable@{miosix\-::\-Conflict\-Table}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Conflict\-Table\-::open (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Open\-State}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_conflict_table_a11b1815d854928bd578b29da666d801f}
+Add a file to the conflict table. To be called when a file is opened. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & file descriptor, it is stored in the table and used to identify the file when closing it \\
+\hline
+{\em filename} & the file name, including its path (if present) Note that if the path is absent a / is added to the file name because file.\-txt and /file.txt are the same file. \\
+\hline
+{\em mode} & can be either O\-P\-E\-N\-\_\-\-R\-E\-A\-D or O\-P\-E\-N\-\_\-\-W\-R\-I\-T\-E, N\-O\-T\-\_\-\-O\-P\-E\-N is not allowed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/\-\_\-tools/unused/conflict\-\_\-table.\-h\item 
+miosix/\-\_\-tools/unused/conflict\-\_\-table.\-cpp\end{DoxyCompactItemize}

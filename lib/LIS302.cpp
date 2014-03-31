@@ -1,6 +1,6 @@
 /**
-* File:   pedometer.h
-*  \brief     This is the header file for the file LIS302.cpp
+* File:   LIS302.cpp
+*  \brief     LIS302 accelerometer
 *  \author    Emanuele De Donatis
 *  \author    Bruno Pistone
 *  \version   1.0

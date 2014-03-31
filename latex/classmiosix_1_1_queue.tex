@@ -1,0 +1,217 @@
+\hypertarget{classmiosix_1_1_queue}{\section{miosix\-:\-:Queue$<$ T, len $>$ Class Template Reference}
+\label{classmiosix_1_1_queue}\index{miosix\-::\-Queue$<$ T, len $>$@{miosix\-::\-Queue$<$ T, len $>$}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_queue_a45ac6bfe191bc6d52089215b52863732}{Queue} ()
+\item 
+bool \hyperlink{classmiosix_1_1_queue_a8d18f593639d0d7eef52b6267f83ce34}{is\-Empty} () const 
+\item 
+bool \hyperlink{classmiosix_1_1_queue_affa922a8101a173168daca418eed8c4b}{is\-Full} () const 
+\item 
+void \hyperlink{classmiosix_1_1_queue_af77abf62e5999b15fa5fcb3101f4801d}{wait\-Until\-Not\-Empty} ()
+\item 
+void \hyperlink{classmiosix_1_1_queue_af3809d4c8d0ae31774ca5e985b1810e5}{wait\-Until\-Not\-Full} ()
+\item 
+void \hyperlink{classmiosix_1_1_queue_ade3ad87c4c3fdac0a2bdd755ff3c8971}{get} (T \&elem)
+\item 
+void \hyperlink{classmiosix_1_1_queue_a40eac0f03500a45a6ec3a5af3e0909be}{put} (T elem)
+\item 
+bool \hyperlink{classmiosix_1_1_queue_a545ed38e44e319303e0d657de8195cec}{I\-R\-Qget} (T \&elem)
+\item 
+bool \hyperlink{classmiosix_1_1_queue_a2875b9df92f6a5db148b3e4f7ad989bf}{I\-R\-Qget} (T \&elem, bool \&hppw)
+\item 
+bool \hyperlink{classmiosix_1_1_queue_aebf1e9ff8643933b679b5d6e2ecfe343}{I\-R\-Qput} (T elem)
+\item 
+bool \hyperlink{classmiosix_1_1_queue_a8a0fd6d06459b6a2c72ed07afaad76fd}{I\-R\-Qput} (T elem, bool \&hppw)
+\item 
+void \hyperlink{classmiosix_1_1_queue_a36d52ae7f77126add31096faa97e45b0}{reset} ()
+\item 
+void \hyperlink{classmiosix_1_1_queue_a8d7aea4c62e78d4221dbaab13538e695}{I\-R\-Qreset} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_queue_a357f2c83da89ce3a526475cbf1e13be8}{static const unsigned int \hyperlink{classmiosix_1_1_queue_a357f2c83da89ce3a526475cbf1e13be8}{queue\-Size} =len}\label{classmiosix_1_1_queue_a357f2c83da89ce3a526475cbf1e13be8}
+
+\begin{DoxyCompactList}\small\item\em Size of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, unsigned int len$>$class miosix\-::\-Queue$<$ T, len $>$}
+
+A queue, used to transfer data between T\-W\-O threads, or between O\-N\-E thread and an I\-R\-Q.\par
+ If you need to tranfer data between more than two threads, you need to use mutexes to ensure that only one thread at a time calls get, and only one thread at a time calls put.\par
+ This queue is meant to be a static or global class. Dynamically creating a queue with new or on the stack must be done with care, to avoid deleting a queue with a waiting thread, and to avoid situations where a thread tries to access a deleted queue. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of elements in the queue \\
+\hline
+{\em len} & the length of the \hyperlink{classmiosix_1_1_queue}{Queue}. Value 0 is forbidden \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_queue_a45ac6bfe191bc6d52089215b52863732}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!Queue@{Queue}}
+\index{Queue@{Queue}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ {\bf miosix\-::\-Queue}$<$ T, len $>$\-::{\bf Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a45ac6bfe191bc6d52089215b52863732}
+Constructor, create a new empty queue. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_queue_ade3ad87c4c3fdac0a2bdd755ff3c8971}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!get@{get}}
+\index{get@{get}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ void {\bf miosix\-::\-Queue}$<$ T, len $>$\-::get (
+\begin{DoxyParamCaption}
+\item[{T \&}]{elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_ade3ad87c4c3fdac0a2bdd755ff3c8971}
+Get an element from the queue. If the queue is empty, then sleep until an element becomes available. 
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element from the queue \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_queue_a545ed38e44e319303e0d657de8195cec}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!I\-R\-Qget@{I\-R\-Qget}}
+\index{I\-R\-Qget@{I\-R\-Qget}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{I\-R\-Qget}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ bool {\bf miosix\-::\-Queue}$<$ T, len $>$\-::I\-R\-Qget (
+\begin{DoxyParamCaption}
+\item[{T \&}]{elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a545ed38e44e319303e0d657de8195cec}
+Get an element from the queue, only if the queue is not empty.\par
+ Can O\-N\-L\-Y be used inside an I\-R\-Q, or when interrupts are disabled. 
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element from the queue. The element is valid only if the return value is true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the queue was not empty 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_queue_a2875b9df92f6a5db148b3e4f7ad989bf}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!I\-R\-Qget@{I\-R\-Qget}}
+\index{I\-R\-Qget@{I\-R\-Qget}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{I\-R\-Qget}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ bool {\bf miosix\-::\-Queue}$<$ T, len $>$\-::I\-R\-Qget (
+\begin{DoxyParamCaption}
+\item[{T \&}]{elem, }
+\item[{bool \&}]{hppw}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a2875b9df92f6a5db148b3e4f7ad989bf}
+Get an element from the queue, only if the queue is not empty.\par
+ Can O\-N\-L\-Y be used inside an I\-R\-Q, or when interrupts are disabled. 
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element from the queue. The element is valid only if the return value is true \\
+\hline
+{\em hppw} & is not modified if no thread is woken or if the woken thread has a lower or equal priority than the currently running thread, else is set to true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the queue was not empty 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_queue_aebf1e9ff8643933b679b5d6e2ecfe343}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!I\-R\-Qput@{I\-R\-Qput}}
+\index{I\-R\-Qput@{I\-R\-Qput}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{I\-R\-Qput}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ bool {\bf miosix\-::\-Queue}$<$ T, len $>$\-::I\-R\-Qput (
+\begin{DoxyParamCaption}
+\item[{T}]{elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_aebf1e9ff8643933b679b5d6e2ecfe343}
+Put an element to the queue, only if th queue is not full.\par
+ Can O\-N\-L\-Y be used inside an I\-R\-Q, or when interrupts are disabled. 
+\begin{DoxyParams}{Parameters}
+{\em elem} & element to add. The element has been added only if the return value is true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the queue was not full. 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_queue_a8a0fd6d06459b6a2c72ed07afaad76fd}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!I\-R\-Qput@{I\-R\-Qput}}
+\index{I\-R\-Qput@{I\-R\-Qput}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{I\-R\-Qput}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ bool {\bf miosix\-::\-Queue}$<$ T, len $>$\-::I\-R\-Qput (
+\begin{DoxyParamCaption}
+\item[{T}]{elem, }
+\item[{bool \&}]{hppw}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a8a0fd6d06459b6a2c72ed07afaad76fd}
+Put an element to the queue, only if th queue is not full.\par
+ Can O\-N\-L\-Y be used inside an I\-R\-Q, or when interrupts are disabled. 
+\begin{DoxyParams}{Parameters}
+{\em elem} & element to add. The element has been added only if the return value is true \\
+\hline
+{\em hppw} & is not modified if no thread is woken or if the woken thread has a lower or equal priority than the currently running thread, else is set to true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the queue was not full. 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_queue_a8d7aea4c62e78d4221dbaab13538e695}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!I\-R\-Qreset@{I\-R\-Qreset}}
+\index{I\-R\-Qreset@{I\-R\-Qreset}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{I\-R\-Qreset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ void {\bf miosix\-::\-Queue}$<$ T, len $>$\-::I\-R\-Qreset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a8d7aea4c62e78d4221dbaab13538e695}
+Same as \hyperlink{classmiosix_1_1_queue_a36d52ae7f77126add31096faa97e45b0}{reset()}, but to be used only inside I\-R\-Qs or when interrupts are disabled. \hypertarget{classmiosix_1_1_queue_a8d18f593639d0d7eef52b6267f83ce34}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ bool {\bf miosix\-::\-Queue}$<$ T, len $>$\-::is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a8d18f593639d0d7eef52b6267f83ce34}
+\begin{DoxyReturn}{Returns}
+true if the queue is empty 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_queue_affa922a8101a173168daca418eed8c4b}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!is\-Full@{is\-Full}}
+\index{is\-Full@{is\-Full}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{is\-Full}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ bool {\bf miosix\-::\-Queue}$<$ T, len $>$\-::is\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_affa922a8101a173168daca418eed8c4b}
+\begin{DoxyReturn}{Returns}
+true if the queue is full 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_queue_a40eac0f03500a45a6ec3a5af3e0909be}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!put@{put}}
+\index{put@{put}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ void {\bf miosix\-::\-Queue}$<$ T, len $>$\-::put (
+\begin{DoxyParamCaption}
+\item[{T}]{elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a40eac0f03500a45a6ec3a5af3e0909be}
+Put an element to the queue. If the queue is full, then sleep until a place becomes available. 
+\begin{DoxyParams}{Parameters}
+{\em elem} & element to add to the queue \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_queue_a36d52ae7f77126add31096faa97e45b0}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!reset@{reset}}
+\index{reset@{reset}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ void {\bf miosix\-::\-Queue}$<$ T, len $>$\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_a36d52ae7f77126add31096faa97e45b0}
+Clear all items in the queue.\par
+ Cannot be used inside an I\-R\-Q \hypertarget{classmiosix_1_1_queue_af77abf62e5999b15fa5fcb3101f4801d}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!wait\-Until\-Not\-Empty@{wait\-Until\-Not\-Empty}}
+\index{wait\-Until\-Not\-Empty@{wait\-Until\-Not\-Empty}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{wait\-Until\-Not\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ void {\bf miosix\-::\-Queue}$<$ T, len $>$\-::wait\-Until\-Not\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_af77abf62e5999b15fa5fcb3101f4801d}
+If a queue is empty, waits until the queue is not empty. \hypertarget{classmiosix_1_1_queue_af3809d4c8d0ae31774ca5e985b1810e5}{\index{miosix\-::\-Queue@{miosix\-::\-Queue}!wait\-Until\-Not\-Full@{wait\-Until\-Not\-Full}}
+\index{wait\-Until\-Not\-Full@{wait\-Until\-Not\-Full}!miosix::Queue@{miosix\-::\-Queue}}
+\subsubsection[{wait\-Until\-Not\-Full}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, unsigned int len$>$ void {\bf miosix\-::\-Queue}$<$ T, len $>$\-::wait\-Until\-Not\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_queue_af3809d4c8d0ae31774ca5e985b1810e5}
+If a queue is full, waits until the queue is not full 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\end{DoxyCompactItemize}

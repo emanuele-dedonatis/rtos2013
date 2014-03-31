@@ -1,0 +1,80 @@
+\hypertarget{classmiosix_1_1_mountpoint_fs_directory}{\section{miosix\-:\-:Mountpoint\-Fs\-Directory Class Reference}
+\label{classmiosix_1_1_mountpoint_fs_directory}\index{miosix\-::\-Mountpoint\-Fs\-Directory@{miosix\-::\-Mountpoint\-Fs\-Directory}}
+}
+Inheritance diagram for miosix\-:\-:Mountpoint\-Fs\-Directory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classmiosix_1_1_mountpoint_fs_directory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_mountpoint_fs_directory_ad7e993495e2119b88e0fb07a37f8dd47}{Mountpoint\-Fs\-Directory} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_filesystem_base}{Filesystem\-Base} $>$ parent, \hyperlink{classmiosix_1_1_fast_mutex}{Fast\-Mutex} \&mutex, map$<$ \hyperlink{classmiosix_1_1_string_part}{String\-Part}, int $>$ \&dirs, bool root, int current\-Inode, int parent\-Inode)
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_directory_aeba5b518b43106859b68bff8f7ef01b1}{getdents} (void $\ast$dp, int len)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Directory class for \hyperlink{classmiosix_1_1_mountpoint_fs}{Mountpoint\-Fs} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_mountpoint_fs_directory_ad7e993495e2119b88e0fb07a37f8dd47}{\index{miosix\-::\-Mountpoint\-Fs\-Directory@{miosix\-::\-Mountpoint\-Fs\-Directory}!Mountpoint\-Fs\-Directory@{Mountpoint\-Fs\-Directory}}
+\index{Mountpoint\-Fs\-Directory@{Mountpoint\-Fs\-Directory}!miosix::MountpointFsDirectory@{miosix\-::\-Mountpoint\-Fs\-Directory}}
+\subsubsection[{Mountpoint\-Fs\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Mountpoint\-Fs\-Directory\-::\-Mountpoint\-Fs\-Directory (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Filesystem\-Base} $>$}]{parent, }
+\item[{{\bf Fast\-Mutex} \&}]{mutex, }
+\item[{map$<$ {\bf String\-Part}, int $>$ \&}]{dirs, }
+\item[{bool}]{root, }
+\item[{int}]{current\-Inode, }
+\item[{int}]{parent\-Inode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_mountpoint_fs_directory_ad7e993495e2119b88e0fb07a37f8dd47}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent filesystem \\
+\hline
+{\em mutex} & mutex to lock when accessing the file map \\
+\hline
+{\em dirs} & file map \\
+\hline
+{\em root} & true if we're listing the root directory \\
+\hline
+{\em current\-Inode} & inode of the directory we're listing \\
+\hline
+{\em parent\-Inode} & inode of the parent directory \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_mountpoint_fs_directory_aeba5b518b43106859b68bff8f7ef01b1}{\index{miosix\-::\-Mountpoint\-Fs\-Directory@{miosix\-::\-Mountpoint\-Fs\-Directory}!getdents@{getdents}}
+\index{getdents@{getdents}!miosix::MountpointFsDirectory@{miosix\-::\-Mountpoint\-Fs\-Directory}}
+\subsubsection[{getdents}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-Directory\-::getdents (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{dp, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_directory_aeba5b518b43106859b68bff8f7ef01b1}
+Also directories can be opened as files. In this case, this system call allows to retrieve directory entries. 
+\begin{DoxyParams}{Parameters}
+{\em dp} & pointer to a memory buffer where one or more struct dirent will be placed. dp must be four words aligned. \\
+\hline
+{\em len} & memory buffer size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes read on success, or a negative number on failure. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classmiosix_1_1_file_base_ac06d6bfddbe8399ac15584ea54175a67}{miosix\-::\-File\-Base}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/mountpointfs/mountpointfs.\-cpp\end{DoxyCompactItemize}

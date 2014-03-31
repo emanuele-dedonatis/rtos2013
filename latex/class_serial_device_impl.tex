@@ -1,0 +1,64 @@
+\hypertarget{class_serial_device_impl}{\section{Serial\-Device\-Impl Class Reference}
+\label{class_serial_device_impl}\index{Serial\-Device\-Impl@{Serial\-Device\-Impl}}
+}
+Inheritance diagram for Serial\-Device\-Impl\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_serial_device_impl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_serial_device_impl_a27356900b57e08fdb21222e6a80b0af3}{Serial\-Device\-Impl} (const \hyperlink{class_serial_options}{Serial\-Options} \&options)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_serial_device_impl_a337b221c16a48795fddbec40c7b454be}{io\-\_\-service \hyperlink{class_serial_device_impl_a337b221c16a48795fddbec40c7b454be}{io}}\label{class_serial_device_impl_a337b221c16a48795fddbec40c7b454be}
+
+\begin{DoxyCompactList}\small\item\em Io service object. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_accf7e65a232b49d15e4e2a7e12de27bb}{serial\-\_\-port \hyperlink{class_serial_device_impl_accf7e65a232b49d15e4e2a7e12de27bb}{port}}\label{class_serial_device_impl_accf7e65a232b49d15e4e2a7e12de27bb}
+
+\begin{DoxyCompactList}\small\item\em Serial port object. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_ab25811823605a6e26955d53dda6b548d}{deadline\-\_\-timer \hyperlink{class_serial_device_impl_ab25811823605a6e26955d53dda6b548d}{timer}}\label{class_serial_device_impl_ab25811823605a6e26955d53dda6b548d}
+
+\begin{DoxyCompactList}\small\item\em Timer for timeout. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_a07859d2a1b8517d1117e33098ca3d247}{posix\-\_\-time\-::time\-\_\-duration \hyperlink{class_serial_device_impl_a07859d2a1b8517d1117e33098ca3d247}{timeout}}\label{class_serial_device_impl_a07859d2a1b8517d1117e33098ca3d247}
+
+\begin{DoxyCompactList}\small\item\em Read/write timeout. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_a158f2217c596c920a606418914863db1}{enum Read\-Result \hyperlink{class_serial_device_impl_a158f2217c596c920a606418914863db1}{result}}\label{class_serial_device_impl_a158f2217c596c920a606418914863db1}
+
+\begin{DoxyCompactList}\small\item\em Used by read with timeout. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_a646a10d40ea753daceff2a751ceacc7d}{streamsize \hyperlink{class_serial_device_impl_a646a10d40ea753daceff2a751ceacc7d}{bytes\-Transferred}}\label{class_serial_device_impl_a646a10d40ea753daceff2a751ceacc7d}
+
+\begin{DoxyCompactList}\small\item\em Used by async read callback. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_a12189dc0f81ad342b3d575985bf8d39a}{char $\ast$ \hyperlink{class_serial_device_impl_a12189dc0f81ad342b3d575985bf8d39a}{read\-Buffer}}\label{class_serial_device_impl_a12189dc0f81ad342b3d575985bf8d39a}
+
+\begin{DoxyCompactList}\small\item\em Used to hold read data. \end{DoxyCompactList}\item 
+\hypertarget{class_serial_device_impl_a22ede5c2637b9e135eced2add0f212d7}{streamsize \hyperlink{class_serial_device_impl_a22ede5c2637b9e135eced2add0f212d7}{read\-Buffer\-Size}}\label{class_serial_device_impl_a22ede5c2637b9e135eced2add0f212d7}
+
+\begin{DoxyCompactList}\small\item\em Size of read data buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all data of the \hyperlink{class_serial_device}{Serial\-Device} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_serial_device_impl_a27356900b57e08fdb21222e6a80b0af3}{\index{Serial\-Device\-Impl@{Serial\-Device\-Impl}!Serial\-Device\-Impl@{Serial\-Device\-Impl}}
+\index{Serial\-Device\-Impl@{Serial\-Device\-Impl}!SerialDeviceImpl@{Serial\-Device\-Impl}}
+\subsubsection[{Serial\-Device\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}Serial\-Device\-Impl\-::\-Serial\-Device\-Impl (
+\begin{DoxyParamCaption}
+\item[{const {\bf Serial\-Options} \&}]{options}
+\end{DoxyParamCaption}
+)}}\label{class_serial_device_impl_a27356900b57e08fdb21222e6a80b0af3}
+Construct a \hyperlink{class_serial_device_impl}{Serial\-Device\-Impl} from a \hyperlink{class_serial_options}{Serial\-Options} class 
+\begin{DoxyParams}{Parameters}
+{\em options} & serial port options \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/\-\_\-tools/bootloaders/stm32/pc\-\_\-loader/serialstream.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{classmiosix_1_1_unlock}{\section{miosix\-:\-:Unlock$<$ T $>$ Class Template Reference}
+\label{classmiosix_1_1_unlock}\index{miosix\-::\-Unlock$<$ T $>$@{miosix\-::\-Unlock$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_unlock_a5ef3238bc134f5de60cf3ba88e3c8c3d}{Unlock} (\hyperlink{classmiosix_1_1_lock}{Lock}$<$ T $>$ \&l)
+\item 
+\hyperlink{classmiosix_1_1_unlock_a4c3c1864d2ba24597b2bd4913a36e248}{Unlock} (T \&m)
+\item 
+\hyperlink{classmiosix_1_1_unlock_a53f826f17c0c7792d296c4a8dff4fef5}{$\sim$\-Unlock} ()
+\item 
+T \& \hyperlink{classmiosix_1_1_unlock_a0185d0ca22404fe71d69bf831ff3266c}{get} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class miosix\-::\-Unlock$<$ T $>$}
+
+This class allows to temporarily re unlock a mutex in a scope where it is locked \par
+ Example\-: 
+\begin{DoxyCode}
+Mutex m;
+
+\textcolor{comment}{//Mutex unlocked}
+\{
+    Lock<Mutex> dLock(m);
+
+    \textcolor{comment}{//Now mutex locked}
+
+    \{
+        Unlock<Mutex> eLock(dLock);
+
+        \textcolor{comment}{//Now mutex back unlocked}
+    \}
+
+    \textcolor{comment}{//Now mutex again locked}
+\}
+\textcolor{comment}{//Finally mutex unlocked}
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_unlock_a5ef3238bc134f5de60cf3ba88e3c8c3d}{\index{miosix\-::\-Unlock@{miosix\-::\-Unlock}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!miosix::Unlock@{miosix\-::\-Unlock}}
+\subsubsection[{Unlock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf miosix\-::\-Unlock}$<$ T $>$\-::{\bf Unlock} (
+\begin{DoxyParamCaption}
+\item[{{\bf Lock}$<$ T $>$ \&}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classmiosix_1_1_unlock_a5ef3238bc134f5de60cf3ba88e3c8c3d}
+Constructor, unlock mutex. 
+\begin{DoxyParams}{Parameters}
+{\em l} & the \hyperlink{classmiosix_1_1_lock}{Lock} that locked the mutex. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_unlock_a4c3c1864d2ba24597b2bd4913a36e248}{\index{miosix\-::\-Unlock@{miosix\-::\-Unlock}!Unlock@{Unlock}}
+\index{Unlock@{Unlock}!miosix::Unlock@{miosix\-::\-Unlock}}
+\subsubsection[{Unlock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf miosix\-::\-Unlock}$<$ T $>$\-::{\bf Unlock} (
+\begin{DoxyParamCaption}
+\item[{T \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_unlock_a4c3c1864d2ba24597b2bd4913a36e248}
+Constructor, unlock mutex. 
+\begin{DoxyParams}{Parameters}
+{\em m} & a locked mutex. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_unlock_a53f826f17c0c7792d296c4a8dff4fef5}{\index{miosix\-::\-Unlock@{miosix\-::\-Unlock}!$\sim$\-Unlock@{$\sim$\-Unlock}}
+\index{$\sim$\-Unlock@{$\sim$\-Unlock}!miosix::Unlock@{miosix\-::\-Unlock}}
+\subsubsection[{$\sim$\-Unlock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf miosix\-::\-Unlock}$<$ T $>$\-::$\sim${\bf Unlock} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_unlock_a53f826f17c0c7792d296c4a8dff4fef5}
+Destructor. Disable back interrupts. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_unlock_a0185d0ca22404fe71d69bf831ff3266c}{\index{miosix\-::\-Unlock@{miosix\-::\-Unlock}!get@{get}}
+\index{get@{get}!miosix::Unlock@{miosix\-::\-Unlock}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T\& {\bf miosix\-::\-Unlock}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_unlock_a0185d0ca22404fe71d69bf831ff3266c}
+\begin{DoxyReturn}{Returns}
+the unlocked mutex 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\end{DoxyCompactItemize}

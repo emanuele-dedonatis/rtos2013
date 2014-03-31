@@ -1,0 +1,37 @@
+\hypertarget{group___s_t_m32_f10x___system___private___defines}{\section{S\-T\-M32\-F10x\-\_\-\-System\-\_\-\-Private\-\_\-\-Defines}
+\label{group___s_t_m32_f10x___system___private___defines}\index{S\-T\-M32\-F10x\-\_\-\-System\-\_\-\-Private\-\_\-\-Defines@{S\-T\-M32\-F10x\-\_\-\-System\-\_\-\-Private\-\_\-\-Defines}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___s_t_m32_f10x___system___private___defines_ga40e1495541cbb4acbe3f1819bd87a9fe}{V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T}~0x0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group___s_t_m32_f10x___system___private___defines_ga40e1495541cbb4acbe3f1819bd87a9fe}{\index{S\-T\-M32\-F10x\-\_\-\-System\-\_\-\-Private\-\_\-\-Defines@{S\-T\-M32\-F10x\-\_\-\-System\-\_\-\-Private\-\_\-\-Defines}!V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T@{V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T@{V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T}!STM32F10x_System_Private_Defines@{S\-T\-M32\-F10x\-\_\-\-System\-\_\-\-Private\-\_\-\-Defines}}
+\subsubsection[{V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T~0x0}}\label{group___s_t_m32_f10x___system___private___defines_ga40e1495541cbb4acbe3f1819bd87a9fe}
+$<$ Uncomment the line corresponding to the desired System clock (S\-Y\-S\-C\-L\-K) frequency (after reset the H\-S\-I is used as S\-Y\-S\-C\-L\-K source)
+
+\subsection*{I\-M\-P\-O\-R\-T\-A\-N\-T N\-O\-T\-E\-: }
+
+
+\begin{DoxyEnumerate}
+\item After each device reset the H\-S\-I is used as System clock source.
+\item Please make sure that the selected System clock doesn't exceed your device's maximum frequency.
+\item If none of the define below is enabled, the H\-S\-I is used as System clock source.
+\item The System clock configuration functions provided within this file assume that\-:
+\begin{DoxyItemize}
+\item For Low, Medium and High density Value line devices an external 8\-M\-Hz crystal is used to drive the System clock.
+\item For Low, Medium and High density devices an external 8\-M\-Hz crystal is used to drive the System clock.
+\item For Connectivity line devices an external 25\-M\-Hz crystal is used to drive the System clock. If you are using different crystal you have to adapt those functions accordingly.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+$<$ Uncomment the following line if you need to use external S\-R\-A\-M mounted on S\-T\-M3210\-E-\/\-E\-V\-A\-L board (S\-T\-M32 High density and X\-L-\/density devices) or on S\-T\-M32100\-E-\/\-E\-V\-A\-L board (S\-T\-M32 High-\/density value line devices) as data memory
+
+$<$ Uncomment the following line if you need to relocate your vector Table in Internal S\-R\-A\-M. Vector Table base offset field. This value must be a multiple of 0x200. 

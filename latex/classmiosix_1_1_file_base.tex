@@ -1,0 +1,237 @@
+\hypertarget{classmiosix_1_1_file_base}{\section{miosix\-:\-:File\-Base Class Reference}
+\label{classmiosix_1_1_file_base}\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}}
+}
+
+
+{\ttfamily \#include $<$file.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:File\-Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.962963cm]{classmiosix_1_1_file_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_file_base_ac2d9b02c994abc845bff1007ab5d5266}{File\-Base} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_filesystem_base}{Filesystem\-Base} $>$ parent)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}{write} (const void $\ast$data, size\-\_\-t len)=0
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}{read} (void $\ast$data, size\-\_\-t len)=0
+\item 
+virtual off\-\_\-t \hyperlink{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}{lseek} (off\-\_\-t pos, int whence)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}{fstat} (struct stat $\ast$pstat) const =0
+\item 
+virtual int \hyperlink{classmiosix_1_1_file_base_a2bedafef2ca811d26ec5a83897b75934}{isatty} () const 
+\item 
+virtual int \hyperlink{classmiosix_1_1_file_base_a80d4260e58c71125d3dcfa98350c41da}{sync} ()
+\item 
+virtual int \hyperlink{classmiosix_1_1_file_base_aa30007f86e2b02875942fed1f5c845e2}{fcntl} (int cmd, int opt)
+\item 
+virtual int \hyperlink{classmiosix_1_1_file_base_ac06d6bfddbe8399ac15584ea54175a67}{getdents} (void $\ast$dp, int len)
+\item 
+const \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}\\*
+$<$ \hyperlink{classmiosix_1_1_filesystem_base}{Filesystem\-Base} $>$ \hyperlink{classmiosix_1_1_file_base_aefd996e71e395cabc9cc08294b6e6a25}{get\-Parent} () const 
+\item 
+virtual \hyperlink{classmiosix_1_1_file_base_a8f7079b5d9b4a936856f7308ce064532}{$\sim$\-File\-Base} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The unix file abstraction. Also some device drivers are seen as files. Classes of this type are reference counted, must be allocated on the heap and managed through intrusive\-\_\-ref\-\_\-ptr$<$\-File\-Base$>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_file_base_ac2d9b02c994abc845bff1007ab5d5266}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!File\-Base@{File\-Base}}
+\index{File\-Base@{File\-Base}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{File\-Base}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-File\-Base\-::\-File\-Base (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Filesystem\-Base} $>$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_file_base_ac2d9b02c994abc845bff1007ab5d5266}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & the filesystem to which this file belongs \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_file_base_a8f7079b5d9b4a936856f7308ce064532}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!$\sim$\-File\-Base@{$\sim$\-File\-Base}}
+\index{$\sim$\-File\-Base@{$\sim$\-File\-Base}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{$\sim$\-File\-Base}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-File\-Base\-::$\sim$\-File\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_file_base_a8f7079b5d9b4a936856f7308ce064532}
+File destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_file_base_aa30007f86e2b02875942fed1f5c845e2}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!fcntl@{fcntl}}
+\index{fcntl@{fcntl}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{fcntl}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-File\-Base\-::fcntl (
+\begin{DoxyParamCaption}
+\item[{int}]{cmd, }
+\item[{int}]{opt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_file_base_aa30007f86e2b02875942fed1f5c845e2}
+Perform various operations on a file descriptor 
+\begin{DoxyParams}{Parameters}
+{\em cmd} & specifies the operation to perform \\
+\hline
+{\em opt} & optional argument that some operation require \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the exact return value depends on C\-M\-D, -\/1 is returned on error 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!fstat@{fstat}}
+\index{fstat@{fstat}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{fstat}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-File\-Base\-::fstat (
+\begin{DoxyParamCaption}
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}
+Return file information. 
+\begin{DoxyParams}{Parameters}
+{\em pstat} & pointer to stat struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_fat32_file_a4f6440d2309c0e44ec723eb602238626}{miosix\-::\-Fat32\-File}, \hyperlink{classmiosix_1_1_directory_base_a56bdd2d238298487d7e72bafa72f2dd4}{miosix\-::\-Directory\-Base}, \hyperlink{classmiosix_1_1_terminal_device_a0de68aeb912ccc7a4c99abe641a16c06}{miosix\-::\-Terminal\-Device}, and \hyperlink{classmiosix_1_1_console_device_add4a0374850b83a89d990b1dcd491063}{miosix\-::\-Console\-Device}.
+
+\hypertarget{classmiosix_1_1_file_base_ac06d6bfddbe8399ac15584ea54175a67}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!getdents@{getdents}}
+\index{getdents@{getdents}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{getdents}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-File\-Base\-::getdents (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{dp, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_file_base_ac06d6bfddbe8399ac15584ea54175a67}
+Also directories can be opened as files. In this case, this system call allows to retrieve directory entries. 
+\begin{DoxyParams}{Parameters}
+{\em dp} & pointer to a memory buffer where one or more struct dirent will be placed. dp must be four words aligned. \\
+\hline
+{\em len} & memory buffer size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes read on success, or a negative number on failure. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classmiosix_1_1_fat32_directory_a5ba7fd91334ac2ee3bc2d5d3c8bda850}{miosix\-::\-Fat32\-Directory}, and \hyperlink{classmiosix_1_1_mountpoint_fs_directory_aeba5b518b43106859b68bff8f7ef01b1}{miosix\-::\-Mountpoint\-Fs\-Directory}.
+
+\hypertarget{classmiosix_1_1_file_base_aefd996e71e395cabc9cc08294b6e6a25}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!get\-Parent@{get\-Parent}}
+\index{get\-Parent@{get\-Parent}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{get\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf intrusive\-\_\-ref\-\_\-ptr}$<${\bf Filesystem\-Base}$>$ miosix\-::\-File\-Base\-::get\-Parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_file_base_aefd996e71e395cabc9cc08294b6e6a25}
+\begin{DoxyReturn}{Returns}
+a pointer to the parent filesystem 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_file_base_a2bedafef2ca811d26ec5a83897b75934}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!isatty@{isatty}}
+\index{isatty@{isatty}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{isatty}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-File\-Base\-::isatty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_file_base_a2bedafef2ca811d26ec5a83897b75934}
+Check whether the file refers to a terminal. \begin{DoxyReturn}{Returns}
+1 if it is a terminal, 0 if it is not, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classmiosix_1_1_terminal_device_a1198b0926fad671a93c74bcf09689112}{miosix\-::\-Terminal\-Device}, and \hyperlink{classmiosix_1_1_console_device_a7f588f7daa3fdbd1f2129f1ba0c388ae}{miosix\-::\-Console\-Device}.
+
+\hypertarget{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!lseek@{lseek}}
+\index{lseek@{lseek}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{lseek}]{\setlength{\rightskip}{0pt plus 5cm}virtual off\-\_\-t miosix\-::\-File\-Base\-::lseek (
+\begin{DoxyParamCaption}
+\item[{off\-\_\-t}]{pos, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}
+Move file pointer, if the file supports random-\/access. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & offset to sum to the beginning of the file, current position or end of file, depending on whence \\
+\hline
+{\em whence} & S\-E\-E\-K\-\_\-\-S\-E\-T, S\-E\-E\-K\-\_\-\-C\-U\-R or S\-E\-E\-K\-\_\-\-E\-N\-D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the offset from the beginning of the file if the operation completed, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_fat32_file_ac0a287c08341752b1b709a994d9c69ff}{miosix\-::\-Fat32\-File}, \hyperlink{classmiosix_1_1_directory_base_a6f4fcb4b41924c76c93ef48272e857b8}{miosix\-::\-Directory\-Base}, \hyperlink{classmiosix_1_1_terminal_device_afbb392a9ddacccb30bb416d46d9e4ca3}{miosix\-::\-Terminal\-Device}, and \hyperlink{classmiosix_1_1_console_device_a0f121b9403c753b6ee1a660e8d982961}{miosix\-::\-Console\-Device}.
+
+\hypertarget{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!read@{read}}
+\index{read@{read}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual ssize\-\_\-t miosix\-::\-File\-Base\-::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}
+Read data from the file, if the file supports reading. 
+\begin{DoxyParams}{Parameters}
+{\em data} & buffer to store read data \\
+\hline
+{\em len} & the number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of read characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_fat32_file_a2afbaf8a9e351720160d47bf3c452b85}{miosix\-::\-Fat32\-File}, \hyperlink{classmiosix_1_1_directory_base_a9f30cc9d0b3d8350c0f547331c565206}{miosix\-::\-Directory\-Base}, \hyperlink{classmiosix_1_1_terminal_device_a43ccc1cf6ddbf97013aa6dca95179ee3}{miosix\-::\-Terminal\-Device}, \hyperlink{classmiosix_1_1_console_adapter_a6b9e9bd594b3725cce6761eaf5e9722e}{miosix\-::\-Console\-Adapter}, and \hyperlink{classmiosix_1_1_console_device_a289bc47b6fc9ddbb21b5f51b001a1dcc}{miosix\-::\-Console\-Device}.
+
+\hypertarget{classmiosix_1_1_file_base_a80d4260e58c71125d3dcfa98350c41da}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!sync@{sync}}
+\index{sync@{sync}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-File\-Base\-::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_file_base_a80d4260e58c71125d3dcfa98350c41da}
+Wait until all I/\-O operations have completed on this file. \begin{DoxyReturn}{Returns}
+0 on success, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classmiosix_1_1_fat32_file_a4d9a3a65b5893d9776ad4710ac2893f8}{miosix\-::\-Fat32\-File}, and \hyperlink{classmiosix_1_1_terminal_device_a9782c0195e384624f15dc25a636b5774}{miosix\-::\-Terminal\-Device}.
+
+\hypertarget{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}{\index{miosix\-::\-File\-Base@{miosix\-::\-File\-Base}!write@{write}}
+\index{write@{write}!miosix::FileBase@{miosix\-::\-File\-Base}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ssize\-\_\-t miosix\-::\-File\-Base\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}
+Write data to the file, if the file supports writing. 
+\begin{DoxyParams}{Parameters}
+{\em data} & the data to write \\
+\hline
+{\em len} & the number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of written characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_fat32_file_a1e8f5d2c86cd5748f23e443f9cdd64e4}{miosix\-::\-Fat32\-File}, \hyperlink{classmiosix_1_1_directory_base_afa8fdc455f5bb371cccdb0471943ac71}{miosix\-::\-Directory\-Base}, \hyperlink{classmiosix_1_1_terminal_device_a5af5b5ec018c37b74a2dda08771b5d89}{miosix\-::\-Terminal\-Device}, \hyperlink{classmiosix_1_1_console_adapter_afbbc3113ba82ea99de45fe5fd0bc53f2}{miosix\-::\-Console\-Adapter}, and \hyperlink{classmiosix_1_1_console_device_a8d54dd289d7856569fffb26fa12da419}{miosix\-::\-Console\-Device}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/file.\-h\item 
+miosix/filesystem/file.\-cpp\end{DoxyCompactItemize}

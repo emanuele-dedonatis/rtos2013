@@ -1,0 +1,47 @@
+\hypertarget{classmiosix_1_1_lower_priority}{\section{miosix\-:\-:Lower\-Priority Class Reference}
+\label{classmiosix_1_1_lower_priority}\index{miosix\-::\-Lower\-Priority@{miosix\-::\-Lower\-Priority}}
+}
+
+
+{\ttfamily \#include $<$kernel.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Lower\-Priority\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmiosix_1_1_lower_priority}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classmiosix_1_1_lower_priority_ae223edc017a90abdf70ab8996438cef2}{operator()} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$a, \hyperlink{classmiosix_1_1_thread}{Thread} $\ast$b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function object to compare the priority of two threads. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_lower_priority_ae223edc017a90abdf70ab8996438cef2}{\index{miosix\-::\-Lower\-Priority@{miosix\-::\-Lower\-Priority}!operator()@{operator()}}
+\index{operator()@{operator()}!miosix::LowerPriority@{miosix\-::\-Lower\-Priority}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Lower\-Priority\-::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf Thread} $\ast$}]{a, }
+\item[{{\bf Thread} $\ast$}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_lower_priority_ae223edc017a90abdf70ab8996438cef2}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & first thread to compare \\
+\hline
+{\em b} & second thread to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a-\/$>$get\-Priority() $<$ b-\/$>$get\-Priority()
+\end{DoxyReturn}
+Can be called when the kernel is paused. or with interrupts disabled 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/kernel.\-h\end{DoxyCompactItemize}

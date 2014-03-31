@@ -1,0 +1,153 @@
+\hypertarget{classmiosix_1_1_unicode}{\section{miosix\-:\-:Unicode Class Reference}
+\label{classmiosix_1_1_unicode}\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}}
+}
+
+
+{\ttfamily \#include $<$unicode.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771}{error} \{ \hyperlink{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771ad816215c1f9350a7a4e32db33d2458c0}{O\-K}, 
+\hyperlink{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771aff170a937bd05102ab71db0fce213a90}{I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-S\-P\-A\-C\-E}, 
+\hyperlink{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771a4dd7d16ca830b5b6a12bc08763142536}{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-R\-I\-N\-G}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\static char32\-\_\-t \hyperlink{classmiosix_1_1_unicode_adef16e910c66b96aeb3cb99aea8672cb}{next\-Utf8} (Iter \&it, Iter end)
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\static char32\-\_\-t \hyperlink{classmiosix_1_1_unicode_a95e732c7f1940110a1d53fa1fae6967d}{next\-Utf8} (Iter \&it)
+\item 
+static std\-::pair$<$ \hyperlink{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771}{error}, int $>$ \hyperlink{classmiosix_1_1_unicode_a721c5ac8ebed2615c2d0476091ba01e8}{utf8toutf16} (char16\-\_\-t $\ast$dst, int dst\-Size, const char $\ast$src)
+\item 
+static std\-::pair$<$ \hyperlink{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771}{error}, int $>$ \hyperlink{classmiosix_1_1_unicode_a4972117d08f36e1005d71c529c2d381f}{utf16toutf8} (char $\ast$dst, int dst\-Size, const char16\-\_\-t $\ast$src)
+\item 
+static std\-::pair$<$ bool, int $>$ \hyperlink{classmiosix_1_1_unicode_a6a43f77dfc0660495f835fc276003bb0}{validate\-Utf8} (const char $\ast$str)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_unicode_aa9ff887dca3ef8316219266da562b7ac}{static const char32\-\_\-t \hyperlink{classmiosix_1_1_unicode_aa9ff887dca3ef8316219266da562b7ac}{invalid} =0xffffffff}\label{classmiosix_1_1_unicode_aa9ff887dca3ef8316219266da562b7ac}
+
+\begin{DoxyCompactList}\small\item\em Represents an invalid code point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Result codes for unicode related conversion stuff 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771}{\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!error@{error}}
+\index{error@{error}!miosix::Unicode@{miosix\-::\-Unicode}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf miosix\-::\-Unicode\-::error}}}\label{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771}
+Possible errors for unicode string conversion \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{O\-K@{O\-K}!miosix\-::\-Unicode@{miosix\-::\-Unicode}}\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!O\-K@{O\-K}}\item[{\em 
+\hypertarget{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771ad816215c1f9350a7a4e32db33d2458c0}{O\-K}\label{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771ad816215c1f9350a7a4e32db33d2458c0}
+}]The string conversion completed successfully. \index{I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-S\-P\-A\-C\-E@{I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-S\-P\-A\-C\-E}!miosix\-::\-Unicode@{miosix\-::\-Unicode}}\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-S\-P\-A\-C\-E@{I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-S\-P\-A\-C\-E}}\item[{\em 
+\hypertarget{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771aff170a937bd05102ab71db0fce213a90}{I\-N\-S\-U\-F\-F\-I\-C\-I\-E\-N\-T\-\_\-\-S\-P\-A\-C\-E}\label{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771aff170a937bd05102ab71db0fce213a90}
+}]The source string is too long to fit. \index{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-R\-I\-N\-G@{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-R\-I\-N\-G}!miosix\-::\-Unicode@{miosix\-::\-Unicode}}\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-R\-I\-N\-G@{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-R\-I\-N\-G}}\item[{\em 
+\hypertarget{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771a4dd7d16ca830b5b6a12bc08763142536}{I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-R\-I\-N\-G}\label{classmiosix_1_1_unicode_a8ceeeb1a0494155d2af8f406bff8a771a4dd7d16ca830b5b6a12bc08763142536}
+}]The source string is an illegal unicode string. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_unicode_adef16e910c66b96aeb3cb99aea8672cb}{\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!next\-Utf8@{next\-Utf8}}
+\index{next\-Utf8@{next\-Utf8}!miosix::Unicode@{miosix\-::\-Unicode}}
+\subsubsection[{next\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iter $>$ static char32\-\_\-t miosix\-::\-Unicode\-::next\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{Iter \&}]{it, }
+\item[{Iter}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_unicode_adef16e910c66b96aeb3cb99aea8672cb}
+Peek an unicode code point out of an iterator into an utf8 string 
+\begin{DoxyParams}{Parameters}
+{\em it} & an iterator into an utf8 encoded string \\
+\hline
+{\em end} & iterator one past the last character of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an unicode code point, or \hyperlink{classmiosix_1_1_unicode_aa9ff887dca3ef8316219266da562b7ac}{Unicode\-::invalid} if the string contains an invalid code point. Returns 0 if the end of string is found, and it is not in the middle of a character 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_unicode_a95e732c7f1940110a1d53fa1fae6967d}{\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!next\-Utf8@{next\-Utf8}}
+\index{next\-Utf8@{next\-Utf8}!miosix::Unicode@{miosix\-::\-Unicode}}
+\subsubsection[{next\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iter $>$ static char32\-\_\-t miosix\-::\-Unicode\-::next\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{Iter \&}]{it}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_unicode_a95e732c7f1940110a1d53fa1fae6967d}
+Peek an unicode code point out of an iterator into an utf8 string 
+\begin{DoxyParams}{Parameters}
+{\em it} & an iterator into an utf8 encoded string, the string is assumed to be nul-\/terminated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an unicode code point, or \hyperlink{classmiosix_1_1_unicode_aa9ff887dca3ef8316219266da562b7ac}{Unicode\-::invalid} if the string contains an invalid code point. Returns 0 if the end of string is found, and it is not in the middle of a character 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_unicode_a4972117d08f36e1005d71c529c2d381f}{\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!utf16toutf8@{utf16toutf8}}
+\index{utf16toutf8@{utf16toutf8}!miosix::Unicode@{miosix\-::\-Unicode}}
+\subsubsection[{utf16toutf8}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf Unicode\-::error}, int $>$ miosix\-::\-Unicode\-::utf16toutf8 (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dst, }
+\item[{int}]{dst\-Size, }
+\item[{const char16\-\_\-t $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_unicode_a4972117d08f36e1005d71c529c2d381f}
+Convert an utf16 string in an utf8 one 
+\begin{DoxyParams}{Parameters}
+{\em dst} & an utf8 string \\
+\hline
+{\em dst\-Size} & size in bytes of dst, to prevent overflow \\
+\hline
+{\em src} & a nul-\/terminated utf16 string in system-\/dependent endianness (i.\-e\-: little endian in a little endian machine and big endian in a big endian one) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an error code and the length of the string written to dst 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_unicode_a721c5ac8ebed2615c2d0476091ba01e8}{\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!utf8toutf16@{utf8toutf16}}
+\index{utf8toutf16@{utf8toutf16}!miosix::Unicode@{miosix\-::\-Unicode}}
+\subsubsection[{utf8toutf16}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf Unicode\-::error}, int $>$ miosix\-::\-Unicode\-::utf8toutf16 (
+\begin{DoxyParamCaption}
+\item[{char16\-\_\-t $\ast$}]{dst, }
+\item[{int}]{dst\-Size, }
+\item[{const char $\ast$}]{src}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_unicode_a721c5ac8ebed2615c2d0476091ba01e8}
+Convert an utf8 string in an utf16 one 
+\begin{DoxyParams}{Parameters}
+{\em dst} & an utf16 string in system-\/dependent endianness (i.\-e\-: little endian in a little endian machine and big endian in a big endian one) \\
+\hline
+{\em dst\-Size} & size in units of char16\-\_\-t of dst, to prevent overflow \\
+\hline
+{\em src} & a nul-\/terminated utf8 string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an error code and the length (in units of char16\-\_\-t) of the string written to dst 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_unicode_a6a43f77dfc0660495f835fc276003bb0}{\index{miosix\-::\-Unicode@{miosix\-::\-Unicode}!validate\-Utf8@{validate\-Utf8}}
+\index{validate\-Utf8@{validate\-Utf8}!miosix::Unicode@{miosix\-::\-Unicode}}
+\subsubsection[{validate\-Utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ bool, int $>$ miosix\-::\-Unicode\-::validate\-Utf8 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_unicode_a6a43f77dfc0660495f835fc276003bb0}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & an utf8 encoded string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair with a bool that is true if the string is valid, and the string length in bytes, not code points 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/util/unicode.\-h\item 
+miosix/util/unicode.\-cpp\end{DoxyCompactItemize}

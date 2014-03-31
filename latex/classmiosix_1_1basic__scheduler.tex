@@ -1,0 +1,50 @@
+\hypertarget{classmiosix_1_1basic__scheduler}{\section{miosix\-:\-:basic\-\_\-scheduler$<$ T $>$ Class Template Reference}
+\label{classmiosix_1_1basic__scheduler}\index{miosix\-::basic\-\_\-scheduler$<$ T $>$@{miosix\-::basic\-\_\-scheduler$<$ T $>$}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_accc91ba2a9c6e701c381b7746a2d522c}{static bool {\bfseries P\-Kadd\-Thread} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$thread, Priority priority)}\label{classmiosix_1_1basic__scheduler_accc91ba2a9c6e701c381b7746a2d522c}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_a819761600a545d7e424707a0436e7885}{static bool {\bfseries P\-Kexists} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$thread)}\label{classmiosix_1_1basic__scheduler_a819761600a545d7e424707a0436e7885}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_a8ef3de8dd43cee776042b83468f93fe0}{static void {\bfseries P\-Kremove\-Dead\-Threads} ()}\label{classmiosix_1_1basic__scheduler_a8ef3de8dd43cee776042b83468f93fe0}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_a7733130a1db166617b55b69cf2c03538}{static void {\bfseries P\-Kset\-Priority} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$thread, Priority new\-Priority)}\label{classmiosix_1_1basic__scheduler_a7733130a1db166617b55b69cf2c03538}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_aec49b165e4695fc6fe474c0b534bd083}{static Priority {\bfseries get\-Priority} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$thread)}\label{classmiosix_1_1basic__scheduler_aec49b165e4695fc6fe474c0b534bd083}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_a4c3ef9bdb9ece0cb95a209143b1d42fc}{static Priority {\bfseries I\-R\-Qget\-Priority} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$thread)}\label{classmiosix_1_1basic__scheduler_a4c3ef9bdb9ece0cb95a209143b1d42fc}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_a55783b6b1be730bf959e3c9f419e84a1}{static void {\bfseries I\-R\-Qset\-Idle\-Thread} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$idle\-Thread)}\label{classmiosix_1_1basic__scheduler_a55783b6b1be730bf959e3c9f419e84a1}
+
+\item 
+\hypertarget{classmiosix_1_1basic__scheduler_a1a8a64a5529af1be707b561567f451f0}{static void {\bfseries I\-R\-Qwait\-Status\-Hook} ()}\label{classmiosix_1_1basic__scheduler_a1a8a64a5529af1be707b561567f451f0}
+
+\item 
+static void \hyperlink{classmiosix_1_1basic__scheduler_ad90b05282c1ce4aa0bfa119e78201948}{I\-R\-Qfind\-Next\-Thread} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1basic__scheduler_ad90b05282c1ce4aa0bfa119e78201948}{\index{miosix\-::basic\-\_\-scheduler@{miosix\-::basic\-\_\-scheduler}!I\-R\-Qfind\-Next\-Thread@{I\-R\-Qfind\-Next\-Thread}}
+\index{I\-R\-Qfind\-Next\-Thread@{I\-R\-Qfind\-Next\-Thread}!miosix::basic_scheduler@{miosix\-::basic\-\_\-scheduler}}
+\subsubsection[{I\-R\-Qfind\-Next\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static void {\bf miosix\-::basic\-\_\-scheduler}$<$ T $>$\-::I\-R\-Qfind\-Next\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1basic__scheduler_ad90b05282c1ce4aa0bfa119e78201948}
+This function is used to develop interrupt driven peripheral drivers.\par
+ Can be used O\-N\-L\-Y inside an I\-R\-Q (and not when interrupts are disabled) to find next thread in R\-E\-A\-D\-Y status. If the kernel is paused, does nothing. Can be used for example if an I\-R\-Q causes a higher priority thread to be woken, to change context. Note that to use this function the I\-R\-Q must use the macros to save/restore context defined in \hyperlink{portability_8h}{portability.\-h}
+
+If the kernel is paused does nothing. It's behaviour is to modify the global variable miosix\-::cur which always points to the currently running thread. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/scheduler/scheduler.\-h\end{DoxyCompactItemize}

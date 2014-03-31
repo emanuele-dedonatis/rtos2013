@@ -1,0 +1,186 @@
+\hypertarget{classmiosix_1_1_fat32_file}{\section{miosix\-:\-:Fat32\-File Class Reference}
+\label{classmiosix_1_1_fat32_file}\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}}
+}
+Inheritance diagram for miosix\-:\-:Fat32\-File\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classmiosix_1_1_fat32_file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_fat32_file_a7b41ad7ab02324d30b029eccfbae5104}{Fat32\-File} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_filesystem_base}{Filesystem\-Base} $>$ parent, \hyperlink{classmiosix_1_1_fast_mutex}{Fast\-Mutex} \&mutex)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_fat32_file_a1e8f5d2c86cd5748f23e443f9cdd64e4}{write} (const void $\ast$data, size\-\_\-t len)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_fat32_file_a2afbaf8a9e351720160d47bf3c452b85}{read} (void $\ast$data, size\-\_\-t len)
+\item 
+virtual off\-\_\-t \hyperlink{classmiosix_1_1_fat32_file_ac0a287c08341752b1b709a994d9c69ff}{lseek} (off\-\_\-t pos, int whence)
+\item 
+virtual int \hyperlink{classmiosix_1_1_fat32_file_a4f6440d2309c0e44ec723eb602238626}{fstat} (struct stat $\ast$pstat) const 
+\item 
+virtual int \hyperlink{classmiosix_1_1_fat32_file_a4d9a3a65b5893d9776ad4710ac2893f8}{sync} ()
+\item 
+\hyperlink{struct_f_i_l}{F\-I\-L} $\ast$ \hyperlink{classmiosix_1_1_fat32_file_a664a27cfa0eb301a30b2040411a66718}{fil} ()
+\item 
+void \hyperlink{classmiosix_1_1_fat32_file_adba8d693053b8f0b435c366284458c97}{set\-Inode} (int inode)
+\item 
+\hyperlink{classmiosix_1_1_fat32_file_a4e661b0b2d7874becbd339721e28b02b}{$\sim$\-Fat32\-File} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Files of the \hyperlink{classmiosix_1_1_fat32_fs}{Fat32\-Fs} filesystem 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_fat32_file_a7b41ad7ab02324d30b029eccfbae5104}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!Fat32\-File@{Fat32\-File}}
+\index{Fat32\-File@{Fat32\-File}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{Fat32\-File}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fat32\-File\-::\-Fat32\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Filesystem\-Base} $>$}]{parent, }
+\item[{{\bf Fast\-Mutex} \&}]{mutex}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_fat32_file_a7b41ad7ab02324d30b029eccfbae5104}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & the filesystem to which this file belongs \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_fat32_file_a4e661b0b2d7874becbd339721e28b02b}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!$\sim$\-Fat32\-File@{$\sim$\-Fat32\-File}}
+\index{$\sim$\-Fat32\-File@{$\sim$\-Fat32\-File}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{$\sim$\-Fat32\-File}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Fat32\-File\-::$\sim$\-Fat32\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_fat32_file_a4e661b0b2d7874becbd339721e28b02b}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_fat32_file_a664a27cfa0eb301a30b2040411a66718}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!fil@{fil}}
+\index{fil@{fil}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{fil}]{\setlength{\rightskip}{0pt plus 5cm}{\bf F\-I\-L}$\ast$ miosix\-::\-Fat32\-File\-::fil (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fat32_file_a664a27cfa0eb301a30b2040411a66718}
+\begin{DoxyReturn}{Returns}
+the Fat\-Fs \hyperlink{struct_f_i_l}{F\-I\-L} object 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fat32_file_a4f6440d2309c0e44ec723eb602238626}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!fstat@{fstat}}
+\index{fstat@{fstat}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{fstat}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Fat32\-File\-::fstat (
+\begin{DoxyParamCaption}
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_file_a4f6440d2309c0e44ec723eb602238626}
+Return file information. 
+\begin{DoxyParams}{Parameters}
+{\em pstat} & pointer to stat struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_fat32_file_ac0a287c08341752b1b709a994d9c69ff}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!lseek@{lseek}}
+\index{lseek@{lseek}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{lseek}]{\setlength{\rightskip}{0pt plus 5cm}off\-\_\-t miosix\-::\-Fat32\-File\-::lseek (
+\begin{DoxyParamCaption}
+\item[{off\-\_\-t}]{pos, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_file_ac0a287c08341752b1b709a994d9c69ff}
+Move file pointer, if the file supports random-\/access. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & offset to sum to the beginning of the file, current position or end of file, depending on whence \\
+\hline
+{\em whence} & S\-E\-E\-K\-\_\-\-S\-E\-T, S\-E\-E\-K\-\_\-\-C\-U\-R or S\-E\-E\-K\-\_\-\-E\-N\-D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the offset from the beginning of the file if the operation completed, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_fat32_file_a2afbaf8a9e351720160d47bf3c452b85}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!read@{read}}
+\index{read@{read}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Fat32\-File\-::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_file_a2afbaf8a9e351720160d47bf3c452b85}
+Read data from the file, if the file supports reading. 
+\begin{DoxyParams}{Parameters}
+{\em data} & buffer to store read data \\
+\hline
+{\em len} & the number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of read characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_fat32_file_adba8d693053b8f0b435c366284458c97}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!set\-Inode@{set\-Inode}}
+\index{set\-Inode@{set\-Inode}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{set\-Inode}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Fat32\-File\-::set\-Inode (
+\begin{DoxyParamCaption}
+\item[{int}]{inode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fat32_file_adba8d693053b8f0b435c366284458c97}
+
+\begin{DoxyParams}{Parameters}
+{\em inode} & file inode \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_fat32_file_a4d9a3a65b5893d9776ad4710ac2893f8}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!sync@{sync}}
+\index{sync@{sync}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Fat32\-File\-::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_file_a4d9a3a65b5893d9776ad4710ac2893f8}
+Wait until all I/\-O operations have completed on this file. \begin{DoxyReturn}{Returns}
+0 on success, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classmiosix_1_1_file_base_a80d4260e58c71125d3dcfa98350c41da}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_fat32_file_a1e8f5d2c86cd5748f23e443f9cdd64e4}{\index{miosix\-::\-Fat32\-File@{miosix\-::\-Fat32\-File}!write@{write}}
+\index{write@{write}!miosix::Fat32File@{miosix\-::\-Fat32\-File}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Fat32\-File\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_fat32_file_a1e8f5d2c86cd5748f23e443f9cdd64e4}
+Write data to the file, if the file supports writing. 
+\begin{DoxyParams}{Parameters}
+{\em data} & the data to write \\
+\hline
+{\em len} & the number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of written characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}{miosix\-::\-File\-Base}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/fat32/fat32.\-cpp\end{DoxyCompactItemize}

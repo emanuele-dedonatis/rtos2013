@@ -1,9 +1,11 @@
-/* 
- * File:   spi.cpp
- * Author: user
- * 
- * Created on March 13, 2014, 2:47 PM
- */
+/**
+* File:   spi.h
+*  \brief     SPI library on STM32F4
+*  \author    Emanuele De Donatis
+*  \author    Bruno Pistone
+*  \version   1.0
+*  \date      13/03/2014
+*/
 
 #include "spi.h"
 #include "miosix.h"

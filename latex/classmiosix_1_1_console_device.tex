@@ -1,0 +1,135 @@
+\hypertarget{classmiosix_1_1_console_device}{\section{miosix\-:\-:Console\-Device Class Reference}
+\label{classmiosix_1_1_console_device}\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}}
+}
+
+
+{\ttfamily \#include $<$console\-\_\-device.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Console\-Device\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classmiosix_1_1_console_device}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_console_device_a34a8833bb9692f3f5a0111afcbf288d9}{Console\-Device} ()
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_console_device_a8d54dd289d7856569fffb26fa12da419}{write} (const void $\ast$data, size\-\_\-t len)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_console_device_a289bc47b6fc9ddbb21b5f51b001a1dcc}{read} (void $\ast$data, size\-\_\-t len)
+\item 
+virtual off\-\_\-t \hyperlink{classmiosix_1_1_console_device_a0f121b9403c753b6ee1a660e8d982961}{lseek} (off\-\_\-t pos, int whence)
+\item 
+virtual int \hyperlink{classmiosix_1_1_console_device_add4a0374850b83a89d990b1dcd491063}{fstat} (struct stat $\ast$pstat) const 
+\item 
+virtual int \hyperlink{classmiosix_1_1_console_device_a7f588f7daa3fdbd1f2129f1ba0c388ae}{isatty} () const 
+\item 
+virtual void \hyperlink{classmiosix_1_1_console_device_a63debd964ea5419e2606323b1d6e5478}{I\-R\-Qwrite} (const char $\ast$str)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An extension to the \hyperlink{classmiosix_1_1_file_base}{File\-Base} interface that adds a new member function, which is used by the kernel to write debug information before the kernel is started or in case of serious errors, right before rebooting. This is not a pure virtual class, and the default implementation of all member functions does nothing, acting as a null console. To have a working console, board support packages should subclass it an implement \hyperlink{classmiosix_1_1_console_device_a289bc47b6fc9ddbb21b5f51b001a1dcc}{read()}, \hyperlink{classmiosix_1_1_console_device_a8d54dd289d7856569fffb26fa12da419}{write()} and \hyperlink{classmiosix_1_1_console_device_a63debd964ea5419e2606323b1d6e5478}{I\-R\-Qwrite()}. Classes of this type are reference counted, must be allocated on the heap and managed through intrusive\-\_\-ref\-\_\-ptr$<$\-Console\-Device$>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_console_device_a34a8833bb9692f3f5a0111afcbf288d9}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!Console\-Device@{Console\-Device}}
+\index{Console\-Device@{Console\-Device}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{Console\-Device}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Console\-Device\-::\-Console\-Device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_console_device_a34a8833bb9692f3f5a0111afcbf288d9}
+Constructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_console_device_add4a0374850b83a89d990b1dcd491063}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!fstat@{fstat}}
+\index{fstat@{fstat}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{fstat}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Console\-Device\-::fstat (
+\begin{DoxyParamCaption}
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_device_add4a0374850b83a89d990b1dcd491063}
+This implementation returns an error 
+
+Implements \hyperlink{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_console_device_a63debd964ea5419e2606323b1d6e5478}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!I\-R\-Qwrite@{I\-R\-Qwrite}}
+\index{I\-R\-Qwrite@{I\-R\-Qwrite}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{I\-R\-Qwrite}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Console\-Device\-::\-I\-R\-Qwrite (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_device_a63debd964ea5419e2606323b1d6e5478}
+Write a string to the \hyperlink{classmiosix_1_1_console}{Console}. Can O\-N\-L\-Y be called when the kernel is not yet started, paused or within an interrupt. This default implementation ignores writes. 
+\begin{DoxyParams}{Parameters}
+{\em str} & the string to write. The string must be N\-U\-L terminated. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classmiosix_1_1_console_adapter_a69f90d0638363783425d42a926325b98}{miosix\-::\-Console\-Adapter}.
+
+\hypertarget{classmiosix_1_1_console_device_a7f588f7daa3fdbd1f2129f1ba0c388ae}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!isatty@{isatty}}
+\index{isatty@{isatty}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{isatty}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Console\-Device\-::isatty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_device_a7f588f7daa3fdbd1f2129f1ba0c388ae}
+This implementation claims to be a tty 
+
+Reimplemented from \hyperlink{classmiosix_1_1_file_base_a2bedafef2ca811d26ec5a83897b75934}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_console_device_a0f121b9403c753b6ee1a660e8d982961}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!lseek@{lseek}}
+\index{lseek@{lseek}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{lseek}]{\setlength{\rightskip}{0pt plus 5cm}off\-\_\-t miosix\-::\-Console\-Device\-::lseek (
+\begin{DoxyParamCaption}
+\item[{off\-\_\-t}]{pos, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_device_a0f121b9403c753b6ee1a660e8d982961}
+This implementation claims to be a character device 
+
+Implements \hyperlink{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_console_device_a289bc47b6fc9ddbb21b5f51b001a1dcc}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!read@{read}}
+\index{read@{read}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Console\-Device\-::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_device_a289bc47b6fc9ddbb21b5f51b001a1dcc}
+This default implementation returns an error 
+
+Implements \hyperlink{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}{miosix\-::\-File\-Base}.
+
+
+
+Reimplemented in \hyperlink{classmiosix_1_1_console_adapter_a6b9e9bd594b3725cce6761eaf5e9722e}{miosix\-::\-Console\-Adapter}.
+
+\hypertarget{classmiosix_1_1_console_device_a8d54dd289d7856569fffb26fa12da419}{\index{miosix\-::\-Console\-Device@{miosix\-::\-Console\-Device}!write@{write}}
+\index{write@{write}!miosix::ConsoleDevice@{miosix\-::\-Console\-Device}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Console\-Device\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_console_device_a8d54dd289d7856569fffb26fa12da419}
+This default implementation returns as if the data was written, but does nothing 
+
+Implements \hyperlink{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}{miosix\-::\-File\-Base}.
+
+
+
+Reimplemented in \hyperlink{classmiosix_1_1_console_adapter_afbbc3113ba82ea99de45fe5fd0bc53f2}{miosix\-::\-Console\-Adapter}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/console/console\-\_\-device.\-h\item 
+miosix/filesystem/console/console\-\_\-device.\-cpp\end{DoxyCompactItemize}

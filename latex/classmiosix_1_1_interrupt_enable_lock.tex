@@ -1,0 +1,63 @@
+\hypertarget{classmiosix_1_1_interrupt_enable_lock}{\section{miosix\-:\-:Interrupt\-Enable\-Lock Class Reference}
+\label{classmiosix_1_1_interrupt_enable_lock}\index{miosix\-::\-Interrupt\-Enable\-Lock@{miosix\-::\-Interrupt\-Enable\-Lock}}
+}
+
+
+{\ttfamily \#include $<$kernel.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_interrupt_enable_lock_ae02c7390bbaf3839a4401b4ea3172173}{Interrupt\-Enable\-Lock} (\hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock} \&l)
+\item 
+\hyperlink{classmiosix_1_1_interrupt_enable_lock_a0e1b60ac838afe74d1f7a906e3bb2282}{$\sim$\-Interrupt\-Enable\-Lock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class allows to temporarily re enable interrpts in a scope where they are disabled with an \hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock}.\par
+ Example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{//Interrupts enabled}
+\{
+    InterruptDisableLock dLock;
+
+    \textcolor{comment}{//Now interrupts disabled}
+
+    \{
+        \hyperlink{classmiosix_1_1_interrupt_enable_lock_ae02c7390bbaf3839a4401b4ea3172173}{InterruptEnableLock} eLock(dLock);
+
+        \textcolor{comment}{//Now interrupts back enabled}
+    \}
+
+    \textcolor{comment}{//Now interrupts again disabled}
+\}
+\textcolor{comment}{//Finally interrupts enabled}
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_interrupt_enable_lock_ae02c7390bbaf3839a4401b4ea3172173}{\index{miosix\-::\-Interrupt\-Enable\-Lock@{miosix\-::\-Interrupt\-Enable\-Lock}!Interrupt\-Enable\-Lock@{Interrupt\-Enable\-Lock}}
+\index{Interrupt\-Enable\-Lock@{Interrupt\-Enable\-Lock}!miosix::InterruptEnableLock@{miosix\-::\-Interrupt\-Enable\-Lock}}
+\subsubsection[{Interrupt\-Enable\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Interrupt\-Enable\-Lock\-::\-Interrupt\-Enable\-Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Interrupt\-Disable\-Lock} \&}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_interrupt_enable_lock_ae02c7390bbaf3839a4401b4ea3172173}
+Constructor, enables back interrupts. 
+\begin{DoxyParams}{Parameters}
+{\em l} & the Interupt\-Disable\-Lock that disabled interrupts. Note that this parameter is not used internally. It is only required to prevent erroneous use of this class by making an instance of it without an active Interrupt\-Enabe\-Lock \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_interrupt_enable_lock_a0e1b60ac838afe74d1f7a906e3bb2282}{\index{miosix\-::\-Interrupt\-Enable\-Lock@{miosix\-::\-Interrupt\-Enable\-Lock}!$\sim$\-Interrupt\-Enable\-Lock@{$\sim$\-Interrupt\-Enable\-Lock}}
+\index{$\sim$\-Interrupt\-Enable\-Lock@{$\sim$\-Interrupt\-Enable\-Lock}!miosix::InterruptEnableLock@{miosix\-::\-Interrupt\-Enable\-Lock}}
+\subsubsection[{$\sim$\-Interrupt\-Enable\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Interrupt\-Enable\-Lock\-::$\sim$\-Interrupt\-Enable\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_interrupt_enable_lock_a0e1b60ac838afe74d1f7a906e3bb2282}
+Destructor. Disable back interrupts. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/kernel.\-h\end{DoxyCompactItemize}

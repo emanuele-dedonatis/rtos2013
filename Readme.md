@@ -1,6 +1,4 @@
-#STM32F4 PEDOMETER
-
-This repo contains a pedometer library for the STM32F4 Discovery board by ST Microelectronics.
+##INTRODUCTION
 
 This project is a part of a collaborative [project for the class of Real-Time Operating Systems](http://home.deib.polimi.it/bellasi/lib/exe/fetch.php?media=teaching:2013:201311_rtos_projectpresentation.pdf "RTOS Project Presentation") at Polytechnic University of Milan.
 

@@ -1,0 +1,60 @@
+\hypertarget{union_i_p_s_r___type}{\section{I\-P\-S\-R\-\_\-\-Type Union Reference}
+\label{union_i_p_s_r___type}\index{I\-P\-S\-R\-\_\-\-Type@{I\-P\-S\-R\-\_\-\-Type}}
+}
+
+
+Union type to access the Interrupt Program Status Register (I\-P\-S\-R).  
+
+
+
+
+{\ttfamily \#include $<$core\-\_\-cm3.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \hyperlink{union_i_p_s_r___type_ab46e5f1b2f4d17cfb9aca4fffcbb2fa5}{ISR}:9\\
+\>uint32\_t \hyperlink{union_i_p_s_r___type_ad2eb0a06de4f03f58874a727716aa9aa}{\_reserved0}:23\\
+\} \hyperlink{union_i_p_s_r___type_af8ce11ada7a21e0b119a0f48cb824ce2}{b}\\
+
+\end{tabbing}\item 
+uint32\-\_\-t \hyperlink{union_i_p_s_r___type_a4adca999d3a0bc1ae682d73ea7cfa879}{w}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint32\_t \hyperlink{union_i_p_s_r___type_ab46e5f1b2f4d17cfb9aca4fffcbb2fa5}{ISR}:9\\
+\>uint32\_t \hyperlink{union_i_p_s_r___type_ad2eb0a06de4f03f58874a727716aa9aa}{\_reserved0}:23\\
+\} \hyperlink{union_i_p_s_r___type_a8694433a871ae74beeb7aa9abeea37bb}{b}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Union type to access the Interrupt Program Status Register (I\-P\-S\-R). 
+
+\subsection{Member Data Documentation}
+\hypertarget{union_i_p_s_r___type_ad2eb0a06de4f03f58874a727716aa9aa}{\index{I\-P\-S\-R\-\_\-\-Type@{I\-P\-S\-R\-\_\-\-Type}!\-\_\-reserved0@{\-\_\-reserved0}}
+\index{\-\_\-reserved0@{\-\_\-reserved0}!IPSR_Type@{I\-P\-S\-R\-\_\-\-Type}}
+\subsubsection[{\-\_\-reserved0}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t I\-P\-S\-R\-\_\-\-Type\-::\-\_\-reserved0}}\label{union_i_p_s_r___type_ad2eb0a06de4f03f58874a727716aa9aa}
+bit\-: 9..31 Reserved \hypertarget{union_i_p_s_r___type_af8ce11ada7a21e0b119a0f48cb824ce2}{\index{I\-P\-S\-R\-\_\-\-Type@{I\-P\-S\-R\-\_\-\-Type}!b@{b}}
+\index{b@{b}!IPSR_Type@{I\-P\-S\-R\-\_\-\-Type}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   I\-P\-S\-R\-\_\-\-Type\-::b}}\label{union_i_p_s_r___type_af8ce11ada7a21e0b119a0f48cb824ce2}
+Structure used for bit access \hypertarget{union_i_p_s_r___type_a8694433a871ae74beeb7aa9abeea37bb}{\index{I\-P\-S\-R\-\_\-\-Type@{I\-P\-S\-R\-\_\-\-Type}!b@{b}}
+\index{b@{b}!IPSR_Type@{I\-P\-S\-R\-\_\-\-Type}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   I\-P\-S\-R\-\_\-\-Type\-::b}}\label{union_i_p_s_r___type_a8694433a871ae74beeb7aa9abeea37bb}
+Structure used for bit access \hypertarget{union_i_p_s_r___type_ab46e5f1b2f4d17cfb9aca4fffcbb2fa5}{\index{I\-P\-S\-R\-\_\-\-Type@{I\-P\-S\-R\-\_\-\-Type}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!IPSR_Type@{I\-P\-S\-R\-\_\-\-Type}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t I\-P\-S\-R\-\_\-\-Type\-::\-I\-S\-R}}\label{union_i_p_s_r___type_ab46e5f1b2f4d17cfb9aca4fffcbb2fa5}
+bit\-: 0.. 8 Exception number \hypertarget{union_i_p_s_r___type_a4adca999d3a0bc1ae682d73ea7cfa879}{\index{I\-P\-S\-R\-\_\-\-Type@{I\-P\-S\-R\-\_\-\-Type}!w@{w}}
+\index{w@{w}!IPSR_Type@{I\-P\-S\-R\-\_\-\-Type}}
+\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t I\-P\-S\-R\-\_\-\-Type\-::w}}\label{union_i_p_s_r___type_a4adca999d3a0bc1ae682d73ea7cfa879}
+Type used for word access 
+
+The documentation for this union was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/arch/cortex\-M3\-\_\-stm32l1/common/\-C\-M\-S\-I\-S/core\-\_\-cm3.\-h\item 
+miosix/arch/cortex\-M4\-\_\-stm32f4/common/\-C\-M\-S\-I\-S/\hyperlink{core__cm4_8h}{core\-\_\-cm4.\-h}\end{DoxyCompactItemize}

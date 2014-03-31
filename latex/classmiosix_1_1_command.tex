@@ -1,0 +1,242 @@
+\hypertarget{classmiosix_1_1_command}{\section{miosix\-:\-:Command Class Reference}
+\label{classmiosix_1_1_command}\index{miosix\-::\-Command@{miosix\-::\-Command}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Command\-Type} \{ \\*
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+{\bfseries C\-M\-D3} =3, 
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+\\*
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+{\bfseries C\-M\-D8} =8, 
+{\bfseries C\-M\-D9} =9, 
+\\*
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+{\bfseries C\-M\-D16} =16, 
+{\bfseries C\-M\-D17} =17, 
+\\*
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+{\bfseries C\-M\-D24} =24, 
+{\bfseries C\-M\-D25} =25, 
+\\*
+{\bfseries C\-M\-D55} =55, 
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+{\bfseries C\-M\-D3} =3, 
+\\*
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+{\bfseries C\-M\-D8} =8, 
+\\*
+{\bfseries C\-M\-D9} =9, 
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+{\bfseries C\-M\-D16} =16, 
+\\*
+{\bfseries C\-M\-D17} =17, 
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+{\bfseries C\-M\-D24} =24, 
+\\*
+{\bfseries C\-M\-D25} =25, 
+{\bfseries C\-M\-D55} =55, 
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+\\*
+{\bfseries C\-M\-D3} =3, 
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+\\*
+{\bfseries C\-M\-D8} =8, 
+{\bfseries C\-M\-D9} =9, 
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+\\*
+{\bfseries C\-M\-D16} =16, 
+{\bfseries C\-M\-D17} =17, 
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+\\*
+{\bfseries C\-M\-D24} =24, 
+{\bfseries C\-M\-D25} =25, 
+{\bfseries C\-M\-D55} =55
+ \}
+\item 
+enum {\bfseries Command\-Type} \{ \\*
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+{\bfseries C\-M\-D3} =3, 
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+\\*
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+{\bfseries C\-M\-D8} =8, 
+{\bfseries C\-M\-D9} =9, 
+\\*
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+{\bfseries C\-M\-D16} =16, 
+{\bfseries C\-M\-D17} =17, 
+\\*
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+{\bfseries C\-M\-D24} =24, 
+{\bfseries C\-M\-D25} =25, 
+\\*
+{\bfseries C\-M\-D55} =55, 
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+{\bfseries C\-M\-D3} =3, 
+\\*
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+{\bfseries C\-M\-D8} =8, 
+\\*
+{\bfseries C\-M\-D9} =9, 
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+{\bfseries C\-M\-D16} =16, 
+\\*
+{\bfseries C\-M\-D17} =17, 
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+{\bfseries C\-M\-D24} =24, 
+\\*
+{\bfseries C\-M\-D25} =25, 
+{\bfseries C\-M\-D55} =55, 
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+\\*
+{\bfseries C\-M\-D3} =3, 
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+\\*
+{\bfseries C\-M\-D8} =8, 
+{\bfseries C\-M\-D9} =9, 
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+\\*
+{\bfseries C\-M\-D16} =16, 
+{\bfseries C\-M\-D17} =17, 
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+\\*
+{\bfseries C\-M\-D24} =24, 
+{\bfseries C\-M\-D25} =25, 
+{\bfseries C\-M\-D55} =55
+ \}
+\item 
+enum {\bfseries Command\-Type} \{ \\*
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+{\bfseries C\-M\-D3} =3, 
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+\\*
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+{\bfseries C\-M\-D8} =8, 
+{\bfseries C\-M\-D9} =9, 
+\\*
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+{\bfseries C\-M\-D16} =16, 
+{\bfseries C\-M\-D17} =17, 
+\\*
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+{\bfseries C\-M\-D24} =24, 
+{\bfseries C\-M\-D25} =25, 
+\\*
+{\bfseries C\-M\-D55} =55, 
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+{\bfseries C\-M\-D3} =3, 
+\\*
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+{\bfseries C\-M\-D8} =8, 
+\\*
+{\bfseries C\-M\-D9} =9, 
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+{\bfseries C\-M\-D16} =16, 
+\\*
+{\bfseries C\-M\-D17} =17, 
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+{\bfseries C\-M\-D24} =24, 
+\\*
+{\bfseries C\-M\-D25} =25, 
+{\bfseries C\-M\-D55} =55, 
+{\bfseries C\-M\-D0} =0, 
+{\bfseries C\-M\-D2} =2, 
+\\*
+{\bfseries C\-M\-D3} =3, 
+{\bfseries A\-C\-M\-D6} =0x80 $\vert$ 6, 
+{\bfseries C\-M\-D7} =7, 
+{\bfseries A\-C\-M\-D41} =0x80 $\vert$ 41, 
+\\*
+{\bfseries C\-M\-D8} =8, 
+{\bfseries C\-M\-D9} =9, 
+{\bfseries C\-M\-D12} =12, 
+{\bfseries C\-M\-D13} =13, 
+\\*
+{\bfseries C\-M\-D16} =16, 
+{\bfseries C\-M\-D17} =17, 
+{\bfseries C\-M\-D18} =18, 
+{\bfseries A\-C\-M\-D23} =0x80 $\vert$ 23, 
+\\*
+{\bfseries C\-M\-D24} =24, 
+{\bfseries C\-M\-D25} =25, 
+{\bfseries C\-M\-D55} =55
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_command_ac86a6d537fec52e625e030d1c753ae33}{static \hyperlink{classmiosix_1_1_cmd_result}{Cmd\-Result} {\bfseries send} (Command\-Type cmd, unsigned int arg)}\label{classmiosix_1_1_command_ac86a6d537fec52e625e030d1c753ae33}
+
+\item 
+\hypertarget{classmiosix_1_1_command_a82655af9be57770493440448738b9f3f}{static \hyperlink{classmiosix_1_1_cmd_result}{Cmd\-Result} {\bfseries I\-R\-Qsend} (Command\-Type cmd, unsigned int arg)}\label{classmiosix_1_1_command_a82655af9be57770493440448738b9f3f}
+
+\item 
+\hypertarget{classmiosix_1_1_command_aec71139d95483d043542f415897c9b5b}{static void {\bfseries set\-Rca} (unsigned short r)}\label{classmiosix_1_1_command_aec71139d95483d043542f415897c9b5b}
+
+\item 
+\hypertarget{classmiosix_1_1_command_ab32045036b1fbd67df1f9e29f7e756fd}{static unsigned int {\bfseries get\-Rca} ()}\label{classmiosix_1_1_command_ab32045036b1fbd67df1f9e29f7e756fd}
+
+\item 
+\hypertarget{classmiosix_1_1_command_aac877adcf901905b1a28b4baa23cdccc}{static \hyperlink{classmiosix_1_1_cmd_result}{Cmd\-Result} {\bfseries send} (Command\-Type cmd, unsigned int arg)}\label{classmiosix_1_1_command_aac877adcf901905b1a28b4baa23cdccc}
+
+\item 
+\hypertarget{classmiosix_1_1_command_aec71139d95483d043542f415897c9b5b}{static void {\bfseries set\-Rca} (unsigned short r)}\label{classmiosix_1_1_command_aec71139d95483d043542f415897c9b5b}
+
+\item 
+\hypertarget{classmiosix_1_1_command_ab32045036b1fbd67df1f9e29f7e756fd}{static unsigned int {\bfseries get\-Rca} ()}\label{classmiosix_1_1_command_ab32045036b1fbd67df1f9e29f7e756fd}
+
+\item 
+\hypertarget{classmiosix_1_1_command_aac877adcf901905b1a28b4baa23cdccc}{static \hyperlink{classmiosix_1_1_cmd_result}{Cmd\-Result} {\bfseries send} (Command\-Type cmd, unsigned int arg)}\label{classmiosix_1_1_command_aac877adcf901905b1a28b4baa23cdccc}
+
+\item 
+\hypertarget{classmiosix_1_1_command_aec71139d95483d043542f415897c9b5b}{static void {\bfseries set\-Rca} (unsigned short r)}\label{classmiosix_1_1_command_aec71139d95483d043542f415897c9b5b}
+
+\item 
+\hypertarget{classmiosix_1_1_command_ab32045036b1fbd67df1f9e29f7e756fd}{static unsigned int {\bfseries get\-Rca} ()}\label{classmiosix_1_1_command_ab32045036b1fbd67df1f9e29f7e756fd}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/arch/cortex\-M3\-\_\-stm32/common/interfaces-\/impl/disk.\-cpp\end{DoxyCompactItemize}

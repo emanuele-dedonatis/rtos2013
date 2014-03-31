@@ -421,6 +421,7 @@
         <in>miosix.h</in>
       </df>
       <in>main.cpp</in>
+      <in>mainpage.dox</in>
     </df>
   </logicalFolder>
   <projectmakefile>miosix_np_2-Makefile.mk</projectmakefile>

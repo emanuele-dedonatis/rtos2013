@@ -1,0 +1,440 @@
+\hypertarget{group___hardware}{\section{Hardware}
+\label{group___hardware}\index{Hardware@{Hardware}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmiosix_1_1_time}{miosix\-::\-Time}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___hardware_ga7f802fb8b3e2bd4b837c798cb7baaede}{led\-On}()~I\-O\-C\-L\-R0=(1$<$$<$31)
+\item 
+\#define \hyperlink{group___hardware_ga53f74cd6a7d5774ef20ab95fcea03092}{led\-Off}()~I\-O\-S\-E\-T0=(1$<$$<$31)
+\item 
+\#define \hyperlink{group___hardware_ga52d3d285b9d92169c5a80480fa88b1eb}{sd\-Card\-Sense}()~(!(I\-O\-P\-I\-N0 \& (1$<$$<$11)))
+\item 
+\#define \hyperlink{group___hardware_ga4da6499c827570f986c91d87420ecb46}{U\-S\-Bstatus}()~(I\-O\-P\-I\-N0 \& (1$<$$<$15))
+\item 
+\#define \hyperlink{group___hardware_gad71ba85c3466ba5fd507f31185c50f66}{button\-Enter}()~(!(I\-O\-P\-I\-N0 \& (1$<$$<$14)))
+\item 
+\hypertarget{group___hardware_gad5fa15210c3870bf9c0579267e777c10}{\#define {\bfseries G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K}~0x7ee117fc}\label{group___hardware_gad5fa15210c3870bf9c0579267e777c10}
+
+\item 
+\#define \hyperlink{group___hardware_ga222a159c351bf50439a89772e143225c}{pin\-\_\-0\-\_\-set}(x)~\{ I\-O\-S\-E\-T0=((x) \& G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K); \}
+\item 
+\#define \hyperlink{group___hardware_ga0ed22ee93c03a21514f8e924e2bb4c0a}{pin\-\_\-0\-\_\-clr}(x)~\{ I\-O\-C\-L\-R0=((x) \& G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K); \}
+\item 
+\#define \hyperlink{group___hardware_ga50e5a6940e188e0fa4c83fbc2f27c207}{pin\-\_\-0\-\_\-read}()~(I\-O\-P\-I\-N0)
+\item 
+\#define \hyperlink{group___hardware_gad9fbd1103850090358db08bd264d022d}{mode\-\_\-0\-\_\-out}(x)~\{ I\-O\-D\-I\-R0 $\vert$= ((x) \& G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K); \}
+\item 
+\#define \hyperlink{group___hardware_ga5fe1c6e4e77acb3a1dd3859c2b72c9d5}{mode\-\_\-0\-\_\-in}(x)~\{ I\-O\-D\-I\-R0 \&= ((x) $\vert$ ($\sim$G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K)); \}
+\item 
+\#define \hyperlink{group___hardware_ga4785173bcae0c293591a666ea99a9680}{pin\-\_\-1\-\_\-set}(x)~\{ I\-O\-S\-E\-T1=(x); \}
+\item 
+\#define \hyperlink{group___hardware_gaf672b946469f63f54cbe46830600f236}{pin\-\_\-1\-\_\-clr}(x)~\{ I\-O\-C\-L\-R1=(x); \}
+\item 
+\#define \hyperlink{group___hardware_gaf5709fa8a29f0546ebcc4f2f75d97acb}{pin\-\_\-1\-\_\-read}()~(I\-O\-P\-I\-N1)
+\item 
+\#define \hyperlink{group___hardware_gac0e495a90072556ec081d20d07d62539}{mode\-\_\-1\-\_\-out}(x)~\{ I\-O\-D\-I\-R1 $\vert$= (x); \}
+\item 
+\#define \hyperlink{group___hardware_ga4e7d3157cae95d27c8c806670c23e5d7}{mode\-\_\-1\-\_\-in}(x)~\{ I\-O\-D\-I\-R1 \&= (x); \}
+\item 
+\hypertarget{group___hardware_ga527ec38c1ff74c1aab8cb74637cabb21}{\#define {\bfseries P\-C\-T\-I\-M0}~(1$<$$<$1)}\label{group___hardware_ga527ec38c1ff74c1aab8cb74637cabb21}
+
+\item 
+\hypertarget{group___hardware_ga8078d4303b5e40be680353814bf6fc35}{\#define {\bfseries P\-C\-T\-I\-M1}~(1$<$$<$2)}\label{group___hardware_ga8078d4303b5e40be680353814bf6fc35}
+
+\item 
+\hypertarget{group___hardware_ga205a29404ea45b8c07ec1617b3961e2d}{\#define {\bfseries P\-C\-U\-A\-R\-T0}~(1$<$$<$3)}\label{group___hardware_ga205a29404ea45b8c07ec1617b3961e2d}
+
+\item 
+\hypertarget{group___hardware_gaca086df62fb4764aa6b30eea36f3f631}{\#define {\bfseries P\-C\-U\-A\-R\-T1}~(1$<$$<$4)}\label{group___hardware_gaca086df62fb4764aa6b30eea36f3f631}
+
+\item 
+\hypertarget{group___hardware_ga87969a33ccefbc0452ea77f99a249ba1}{\#define {\bfseries P\-C\-P\-W\-M0}~(1$<$$<$5)}\label{group___hardware_ga87969a33ccefbc0452ea77f99a249ba1}
+
+\item 
+\hypertarget{group___hardware_ga698820d14f84b43b055e5e68c1225b66}{\#define {\bfseries P\-C\-I2\-C0}~(1$<$$<$7)}\label{group___hardware_ga698820d14f84b43b055e5e68c1225b66}
+
+\item 
+\hypertarget{group___hardware_gaa340de5a78e861266a03c9513ed156a7}{\#define {\bfseries P\-C\-S\-P\-I0}~(1$<$$<$8)}\label{group___hardware_gaa340de5a78e861266a03c9513ed156a7}
+
+\item 
+\hypertarget{group___hardware_ga997ba3839c0979bdc405317222da48c0}{\#define {\bfseries P\-C\-R\-T\-C}~(1$<$$<$9)}\label{group___hardware_ga997ba3839c0979bdc405317222da48c0}
+
+\item 
+\hypertarget{group___hardware_gac7012ac006ba3244a76de873f42f003b}{\#define {\bfseries P\-C\-S\-P\-I1}~(1$<$$<$10)}\label{group___hardware_gac7012ac006ba3244a76de873f42f003b}
+
+\item 
+\hypertarget{group___hardware_gab1f05013f1e95498677ac3266bd24bcf}{\#define {\bfseries P\-C\-A\-D0}~(1$<$$<$12)}\label{group___hardware_gab1f05013f1e95498677ac3266bd24bcf}
+
+\item 
+\hypertarget{group___hardware_ga0d8d51eddd9e62bc7ec7945efa19e115}{\#define {\bfseries P\-C\-I2\-C1}~(1$<$$<$19)}\label{group___hardware_ga0d8d51eddd9e62bc7ec7945efa19e115}
+
+\item 
+\hypertarget{group___hardware_ga69627708f391bd22c9b1286764c7083e}{\#define {\bfseries P\-C\-A\-D1}~(1$<$$<$20)}\label{group___hardware_ga69627708f391bd22c9b1286764c7083e}
+
+\item 
+\hypertarget{group___hardware_ga9f6add17233714c1ed5f9155f00cb8da}{\#define {\bfseries I\-D\-L}~(1$<$$<$0)}\label{group___hardware_ga9f6add17233714c1ed5f9155f00cb8da}
+
+\item 
+\hypertarget{group___hardware_ga960c2f6c3fca885af2c1ea2b88dee7b7}{\#define {\bfseries P\-D}~(1$<$$<$1)}\label{group___hardware_ga960c2f6c3fca885af2c1ea2b88dee7b7}
+
+\item 
+\hypertarget{group___hardware_ga06751e6c91351c6b774399765c9290bd}{\#define {\bfseries B\-O\-D\-P\-D\-M}~(1$<$$<$2)}\label{group___hardware_ga06751e6c91351c6b774399765c9290bd}
+
+\item 
+\hypertarget{group___hardware_ga9b992d1fc2e8787a9e3f037c72ed7073}{\#define {\bfseries B\-O\-G\-D}~(1$<$$<$3)}\label{group___hardware_ga9b992d1fc2e8787a9e3f037c72ed7073}
+
+\item 
+\hypertarget{group___hardware_ga7713253fff921baf139d31e24d04fe83}{\#define {\bfseries B\-O\-R\-D}~(1$<$$<$4)}\label{group___hardware_ga7713253fff921baf139d31e24d04fe83}
+
+\item 
+\#define \hyperlink{group___hardware_ga6c92c29fa8e83ab85e05543010e10d7c}{nop}()~\{ asm volatile(\char`\"{}nop\char`\"{}\-::); \}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___hardware_gaf48f3c548e2fa07d8cc734aedbd23619}{typedef Gpio$<$ G\-P\-I\-O\-C\-\_\-\-B\-A\-S\-E, 9 $>$ {\bfseries miosix\-::\-\_\-led}}\label{group___hardware_gaf48f3c548e2fa07d8cc734aedbd23619}
+
+\item 
+\hypertarget{group___hardware_ga1d025d1f4223e6fb914b47c303438953}{typedef Gpio$<$ G\-P\-I\-O\-B\-\_\-\-B\-A\-S\-E, 12 $>$ {\bfseries miosix\-::led}}\label{group___hardware_ga1d025d1f4223e6fb914b47c303438953}
+
+\item 
+\hypertarget{group___hardware_ga7fd1aeff5d1c25fee0b6c25a31fbe014}{typedef Gpio$<$ G\-P\-I\-O\-A\-\_\-\-B\-A\-S\-E, 8 $>$ {\bfseries miosix\-::sd\-Card\-Detect}}\label{group___hardware_ga7fd1aeff5d1c25fee0b6c25a31fbe014}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___hardware_ga24027ab4dbf8557211c0a82fb0dffcbf}{miosix\-::\-Day\-Of\-Week} \{ \\*
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfa962bfb6be11410d30c4406070a19c258}{miosix\-::\-M\-O\-N}, 
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfac3cdcd22d875a6100df4d9b731017962}{miosix\-::\-T\-U\-E}, 
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfab74451ba70e3887ee80b2a610e7ba4a6}{miosix\-::\-W\-E\-D}, 
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfac781efe7eb3004ee537bc9775649873b}{miosix\-::\-T\-H\-U}, 
+\\*
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfabd3c27af7a56a1b8c819ed28e62df294}{miosix\-::\-F\-R\-I}, 
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfa79c766ae1d0b17f35209890dd935874c}{miosix\-::\-S\-A\-T}, 
+\hyperlink{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfad5b4e6dd4a05ccf70b7f72c8716c0208}{miosix\-::\-S\-U\-N}
+ \}
+\item 
+enum {\bfseries Pll\-Values} \{ {\bfseries P\-L\-L\-\_\-4\-X} =4, 
+{\bfseries P\-L\-L\-\_\-2\-X} =2, 
+{\bfseries P\-L\-L\-\_\-\-O\-F\-F} =0, 
+{\bfseries P\-L\-L\-\_\-\-U\-N\-D\-E\-F} =-\/1
+ \}
+\item 
+enum {\bfseries A\-P\-B\-Values} \{ {\bfseries A\-P\-B\-\_\-\-D\-I\-V\-\_\-1} =1, 
+{\bfseries A\-P\-B\-\_\-\-D\-I\-V\-\_\-2} =2, 
+{\bfseries A\-P\-B\-\_\-\-D\-I\-V\-\_\-4} =0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{miosix\-::sleep} (Time $\ast$t)
+\item 
+\hypertarget{group___hardware_ga754a5465a237b59fe4c938804115e501}{void {\bfseries miosix\-::set\-Pll\-Freq} (Pll\-Values r)}\label{group___hardware_ga754a5465a237b59fe4c938804115e501}
+
+\item 
+\hypertarget{group___hardware_ga05de6820e307a66d6d5ef359ed869479}{Pll\-Values {\bfseries miosix\-::get\-Pll\-Freq} ()}\label{group___hardware_ga05de6820e307a66d6d5ef359ed869479}
+
+\item 
+\hypertarget{group___hardware_ga7c445244914cd7af079ac29fed41ecd6}{void {\bfseries miosix\-::set\-\_\-apb\-\_\-ratio} (A\-P\-B\-Values r)}\label{group___hardware_ga7c445244914cd7af079ac29fed41ecd6}
+
+\item 
+\hypertarget{group___hardware_ga7b210ba2df2b14811be3b416c0243e76}{A\-P\-B\-Values {\bfseries miosix\-::get\-\_\-apb\-\_\-ratio} ()}\label{group___hardware_ga7b210ba2df2b14811be3b416c0243e76}
+
+\item 
+\hypertarget{group___hardware_gae1c05bf01644e238fbae56e5d6f23e8b}{void {\bfseries miosix\-::led\-On} ()}\label{group___hardware_gae1c05bf01644e238fbae56e5d6f23e8b}
+
+\item 
+\hypertarget{group___hardware_ga7ece6a6978a1d814979dcaadd7498edb}{void {\bfseries miosix\-::led\-Off} ()}\label{group___hardware_ga7ece6a6978a1d814979dcaadd7498edb}
+
+\item 
+bool \hyperlink{group___hardware_ga4a7aa35796ec8da996784c562b9e12ac}{miosix\-::sd\-Card\-Sense} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hardware related functions
+
+Starting from Miosix 1.\-50 the kernel can be run on multiple platforms. It provides some facilities to access common features such as G\-P\-I\-Os in a platform independent way, and leaves the rest of the underlying hardware available for direct use. Including \hyperlink{miosix_8h_source}{miosix.\-h} in a source file will automaticaly include the header files with the register definitions of the selected microcontroller, so that it is possible to write code that makes use of its peripherals.
+
+Some hardware resources, however, are used by the kernel, and must not be used by user code, to avoid conflicts This usually include a serial port, used for redirecting printf, an \hyperlink{class_s_p_i}{S\-P\-I} or S\-D card hardware controller, for filesystem access, one or more hardware timers, used for preemption, and some interrupt handlers used for context switching. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group___hardware_gad71ba85c3466ba5fd507f31185c50f66}{\index{Hardware@{Hardware}!button\-Enter@{button\-Enter}}
+\index{button\-Enter@{button\-Enter}!Hardware@{Hardware}}
+\subsubsection[{button\-Enter}]{\setlength{\rightskip}{0pt plus 5cm}\#define button\-Enter(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(!(I\-O\-P\-I\-N0 \& (1$<$$<$14)))}}\label{group___hardware_gad71ba85c3466ba5fd507f31185c50f66}
+Polls the button on the miosix board \begin{DoxyReturn}{Returns}
+true if the button is pushed. 
+\end{DoxyReturn}
+\hypertarget{group___hardware_ga53f74cd6a7d5774ef20ab95fcea03092}{\index{Hardware@{Hardware}!led\-Off@{led\-Off}}
+\index{led\-Off@{led\-Off}!Hardware@{Hardware}}
+\subsubsection[{led\-Off}]{\setlength{\rightskip}{0pt plus 5cm}\#define led\-Off(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~I\-O\-S\-E\-T0=(1$<$$<$31)}}\label{group___hardware_ga53f74cd6a7d5774ef20ab95fcea03092}
+Turn off L\-E\-D connected to P0.\-31 \hypertarget{group___hardware_ga7f802fb8b3e2bd4b837c798cb7baaede}{\index{Hardware@{Hardware}!led\-On@{led\-On}}
+\index{led\-On@{led\-On}!Hardware@{Hardware}}
+\subsubsection[{led\-On}]{\setlength{\rightskip}{0pt plus 5cm}\#define led\-On(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~I\-O\-C\-L\-R0=(1$<$$<$31)}}\label{group___hardware_ga7f802fb8b3e2bd4b837c798cb7baaede}
+Turn on L\-E\-D connected to P0.\-31 \hypertarget{group___hardware_ga5fe1c6e4e77acb3a1dd3859c2b72c9d5}{\index{Hardware@{Hardware}!mode\-\_\-0\-\_\-in@{mode\-\_\-0\-\_\-in}}
+\index{mode\-\_\-0\-\_\-in@{mode\-\_\-0\-\_\-in}!Hardware@{Hardware}}
+\subsubsection[{mode\-\_\-0\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}\#define mode\-\_\-0\-\_\-in(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-D\-I\-R0 \&= ((x) $\vert$ ($\sim$G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K)); \}}}\label{group___hardware_ga5fe1c6e4e77acb3a1dd3859c2b72c9d5}
+Modify the state of one or more pin of port 0, so that they become input. Once the pin are input, you can read them using \hyperlink{group___hardware_ga50e5a6940e188e0fa4c83fbc2f27c207}{pin\-\_\-0\-\_\-read()} Available pin are p0.\-2 p0.\-3 p0.\-4 p0.\-5 p0.\-6 p0.\-7 p0.\-8 p0.\-9 p0.\-10 p0.\-12 p0.\-16 p0.\-21 p0.\-22 p0.\-23 p0.\-25 p0.\-26 p0.\-27 p0.\-28 p0.\-29 p0.\-30. To change the state of a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to set pin 4,7 and 8 as input use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_ga5fe1c6e4e77acb3a1dd3859c2b72c9d5}{mode\_0\_in}( (1<<4) | (1<<7) | (1<<8) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to set as input are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_gad9fbd1103850090358db08bd264d022d}{\index{Hardware@{Hardware}!mode\-\_\-0\-\_\-out@{mode\-\_\-0\-\_\-out}}
+\index{mode\-\_\-0\-\_\-out@{mode\-\_\-0\-\_\-out}!Hardware@{Hardware}}
+\subsubsection[{mode\-\_\-0\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}\#define mode\-\_\-0\-\_\-out(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-D\-I\-R0 $\vert$= ((x) \& G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K); \}}}\label{group___hardware_gad9fbd1103850090358db08bd264d022d}
+Modify the state of one or more pin of port 0, so that they become output. Once the pin are output, you can write to them using \hyperlink{group___hardware_ga222a159c351bf50439a89772e143225c}{pin\-\_\-0\-\_\-set()} and \hyperlink{group___hardware_ga0ed22ee93c03a21514f8e924e2bb4c0a}{pin\-\_\-0\-\_\-clr()} Available pin are p0.\-2 p0.\-3 p0.\-4 p0.\-5 p0.\-6 p0.\-7 p0.\-8 p0.\-9 p0.\-10 p0.\-12 p0.\-16 p0.\-21 p0.\-22 p0.\-23 p0.\-25 p0.\-26 p0.\-27 p0.\-28 p0.\-29 p0.\-30. To change the state of a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to set pin 4,7 and 8 as output use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_gad9fbd1103850090358db08bd264d022d}{mode\_0\_out}( (1<<4) | (1<<7) | (1<<8) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to set as output are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_ga4e7d3157cae95d27c8c806670c23e5d7}{\index{Hardware@{Hardware}!mode\-\_\-1\-\_\-in@{mode\-\_\-1\-\_\-in}}
+\index{mode\-\_\-1\-\_\-in@{mode\-\_\-1\-\_\-in}!Hardware@{Hardware}}
+\subsubsection[{mode\-\_\-1\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}\#define mode\-\_\-1\-\_\-in(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-D\-I\-R1 \&= (x); \}}}\label{group___hardware_ga4e7d3157cae95d27c8c806670c23e5d7}
+Modify the state of one or more pin of port 1, so that they become input. Once the pin are input, you can read them using \hyperlink{group___hardware_gaf5709fa8a29f0546ebcc4f2f75d97acb}{pin\-\_\-1\-\_\-read()} Available pin are in range from p0.\-16 to p0.\-31. To change the state of a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to set pin 16 and 18 as input use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_ga4e7d3157cae95d27c8c806670c23e5d7}{mode\_1\_in}( (1<<16) | (1<<18) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to set as input are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_gac0e495a90072556ec081d20d07d62539}{\index{Hardware@{Hardware}!mode\-\_\-1\-\_\-out@{mode\-\_\-1\-\_\-out}}
+\index{mode\-\_\-1\-\_\-out@{mode\-\_\-1\-\_\-out}!Hardware@{Hardware}}
+\subsubsection[{mode\-\_\-1\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}\#define mode\-\_\-1\-\_\-out(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-D\-I\-R1 $\vert$= (x); \}}}\label{group___hardware_gac0e495a90072556ec081d20d07d62539}
+Modify the state of one or more pin of port 1, so that they become output. Once the pin are output, you can write to them using \hyperlink{group___hardware_ga4785173bcae0c293591a666ea99a9680}{pin\-\_\-1\-\_\-set()} and \hyperlink{group___hardware_gaf672b946469f63f54cbe46830600f236}{pin\-\_\-1\-\_\-clr()} Available pin are in range from p0.\-16 to p0.\-31. To change the state of a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to set pin 16 and 18 as output use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_gac0e495a90072556ec081d20d07d62539}{mode\_1\_out}( (1<<16) | (1<<18) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to set as output are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_ga6c92c29fa8e83ab85e05543010e10d7c}{\index{Hardware@{Hardware}!nop@{nop}}
+\index{nop@{nop}!Hardware@{Hardware}}
+\subsubsection[{nop}]{\setlength{\rightskip}{0pt plus 5cm}\#define nop(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~\{ asm volatile(\char`\"{}nop\char`\"{}\-::); \}}}\label{group___hardware_ga6c92c29fa8e83ab85e05543010e10d7c}
+No operation instruction. Expands to an assembler \char`\"{}nop\char`\"{}. \hypertarget{group___hardware_ga0ed22ee93c03a21514f8e924e2bb4c0a}{\index{Hardware@{Hardware}!pin\-\_\-0\-\_\-clr@{pin\-\_\-0\-\_\-clr}}
+\index{pin\-\_\-0\-\_\-clr@{pin\-\_\-0\-\_\-clr}!Hardware@{Hardware}}
+\subsubsection[{pin\-\_\-0\-\_\-clr}]{\setlength{\rightskip}{0pt plus 5cm}\#define pin\-\_\-0\-\_\-clr(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-C\-L\-R0=((x) \& G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K); \}}}\label{group___hardware_ga0ed22ee93c03a21514f8e924e2bb4c0a}
+Clear one or more gpio pin of port 0. If the pin is selected as output, it will become low. Available pin are p0.\-2 p0.\-3 p0.\-4 p0.\-5 p0.\-6 p0.\-7 p0.\-8 p0.\-9 p0.\-10 p0.\-12 p0.\-16 p0.\-21 p0.\-22 p0.\-23 p0.\-25 p0.\-26 p0.\-27 p0.\-28 p0.\-29 p0.\-30. To clear a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to clear pin 4,7 and 8 use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_ga0ed22ee93c03a21514f8e924e2bb4c0a}{pin\_0\_clr}( (1<<4) | (1<<7) | (1<<8) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to clear are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_ga50e5a6940e188e0fa4c83fbc2f27c207}{\index{Hardware@{Hardware}!pin\-\_\-0\-\_\-read@{pin\-\_\-0\-\_\-read}}
+\index{pin\-\_\-0\-\_\-read@{pin\-\_\-0\-\_\-read}!Hardware@{Hardware}}
+\subsubsection[{pin\-\_\-0\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}\#define pin\-\_\-0\-\_\-read(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(I\-O\-P\-I\-N0)}}\label{group___hardware_ga50e5a6940e188e0fa4c83fbc2f27c207}
+Read one or more gpio pin of port 0. If the pin is selected as input, its value can be read. Available pin are p0.\-2 p0.\-3 p0.\-4 p0.\-5 p0.\-6 p0.\-7 p0.\-8 p0.\-9 p0.\-10 p0.\-12 p0.\-16 p0.\-21 p0.\-22 p0.\-23 p0.\-25 p0.\-26 p0.\-27 p0.\-28 p0.\-29 p0.\-30. If the pin with number k is high, the k-\/th bit in the x variable will be set. The value of pin selected as output and of non-\/gpio pins is unspecified. Example\-: to read pin 9 use\-: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(\hyperlink{group___hardware_ga50e5a6940e188e0fa4c83fbc2f27c207}{pin\_0\_read}() & (1<<9)) \{ pin 9 is high \} \textcolor{keywordflow}{else} \{ pin 9 is low \}
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+unsigned int where bits set are @ 1 
+\end{DoxyReturn}
+\hypertarget{group___hardware_ga222a159c351bf50439a89772e143225c}{\index{Hardware@{Hardware}!pin\-\_\-0\-\_\-set@{pin\-\_\-0\-\_\-set}}
+\index{pin\-\_\-0\-\_\-set@{pin\-\_\-0\-\_\-set}!Hardware@{Hardware}}
+\subsubsection[{pin\-\_\-0\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}\#define pin\-\_\-0\-\_\-set(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-S\-E\-T0=((x) \& G\-P\-I\-O\-\_\-0\-\_\-\-M\-A\-S\-K); \}}}\label{group___hardware_ga222a159c351bf50439a89772e143225c}
+Set one or more gpio pin of port 0. If the pin is selected as output, it will become high. Available pin are p0.\-2 p0.\-3 p0.\-4 p0.\-5 p0.\-6 p0.\-7 p0.\-8 p0.\-9 p0.\-10 p0.\-12 p0.\-16 p0.\-21 p0.\-22 p0.\-23 p0.\-25 p0.\-26 p0.\-27 p0.\-28 p0.\-29 p0.\-30. To set a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to set pin 4,7 and 8 use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_ga222a159c351bf50439a89772e143225c}{pin\_0\_set}( (1<<4) | (1<<7) | (1<<8) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to set are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_gaf672b946469f63f54cbe46830600f236}{\index{Hardware@{Hardware}!pin\-\_\-1\-\_\-clr@{pin\-\_\-1\-\_\-clr}}
+\index{pin\-\_\-1\-\_\-clr@{pin\-\_\-1\-\_\-clr}!Hardware@{Hardware}}
+\subsubsection[{pin\-\_\-1\-\_\-clr}]{\setlength{\rightskip}{0pt plus 5cm}\#define pin\-\_\-1\-\_\-clr(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-C\-L\-R1=(x); \}}}\label{group___hardware_gaf672b946469f63f54cbe46830600f236}
+Clear one or more gpio pin of port 1. If the pin is selected as output, it will become low. Available pin are in range from p0.\-16 to p0.\-31. To clear a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to clear pin 16 and 18 use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_gaf672b946469f63f54cbe46830600f236}{pin\_1\_clr}( (1<<16) | (1<<18) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to clear are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_gaf5709fa8a29f0546ebcc4f2f75d97acb}{\index{Hardware@{Hardware}!pin\-\_\-1\-\_\-read@{pin\-\_\-1\-\_\-read}}
+\index{pin\-\_\-1\-\_\-read@{pin\-\_\-1\-\_\-read}!Hardware@{Hardware}}
+\subsubsection[{pin\-\_\-1\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}\#define pin\-\_\-1\-\_\-read(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(I\-O\-P\-I\-N1)}}\label{group___hardware_gaf5709fa8a29f0546ebcc4f2f75d97acb}
+Read one or more gpio pin of port 1. If the pin is selected as input, its value can be read. Available pin are in range from p0.\-16 to p0.\-31. If the pin with number k is high, the k-\/th bit in the x variable will be set. The value of pin selected as output and of non-\/gpio pins is unspecified. Example\-: to read pin 19 use\-: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(\hyperlink{group___hardware_gaf5709fa8a29f0546ebcc4f2f75d97acb}{pin\_1\_read}() & (1<<19)) \{ pin 19 is high \} \textcolor{keywordflow}{else} \{ pin 19 is low \}
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+unsigned int where bits set are @ 1 
+\end{DoxyReturn}
+\hypertarget{group___hardware_ga4785173bcae0c293591a666ea99a9680}{\index{Hardware@{Hardware}!pin\-\_\-1\-\_\-set@{pin\-\_\-1\-\_\-set}}
+\index{pin\-\_\-1\-\_\-set@{pin\-\_\-1\-\_\-set}!Hardware@{Hardware}}
+\subsubsection[{pin\-\_\-1\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}\#define pin\-\_\-1\-\_\-set(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\{ I\-O\-S\-E\-T1=(x); \}}}\label{group___hardware_ga4785173bcae0c293591a666ea99a9680}
+Set one or more gpio pin of port 1. If the pin is selected as output, it will become high. Available pin are in range from p0.\-16 to p0.\-31. To set a pin with number k, the k-\/th bit in the x variable must be set. Example\-: to set pin 16 and 18 use\-: 
+\begin{DoxyCode}
+\hyperlink{group___hardware_ga4785173bcae0c293591a666ea99a9680}{pin\_1\_set}( (1<<16) | (1<<18) );
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & unsigned int where bits to set are @ 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___hardware_ga52d3d285b9d92169c5a80480fa88b1eb}{\index{Hardware@{Hardware}!sd\-Card\-Sense@{sd\-Card\-Sense}}
+\index{sd\-Card\-Sense@{sd\-Card\-Sense}!Hardware@{Hardware}}
+\subsubsection[{sd\-Card\-Sense}]{\setlength{\rightskip}{0pt plus 5cm}\#define sd\-Card\-Sense(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(!(I\-O\-P\-I\-N0 \& (1$<$$<$11)))}}\label{group___hardware_ga52d3d285b9d92169c5a80480fa88b1eb}
+Polls the S\-D card sense G\-P\-I\-O \begin{DoxyReturn}{Returns}
+true if there is an u\-S\-D card in the socket. 
+\end{DoxyReturn}
+\hypertarget{group___hardware_ga4da6499c827570f986c91d87420ecb46}{\index{Hardware@{Hardware}!U\-S\-Bstatus@{U\-S\-Bstatus}}
+\index{U\-S\-Bstatus@{U\-S\-Bstatus}!Hardware@{Hardware}}
+\subsubsection[{U\-S\-Bstatus}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-Bstatus(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(I\-O\-P\-I\-N0 \& (1$<$$<$15))}}\label{group___hardware_ga4da6499c827570f986c91d87420ecb46}
+\begin{DoxyReturn}{Returns}
+true if the U\-S\-B cable is connected. 
+\end{DoxyReturn}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{group___hardware_ga24027ab4dbf8557211c0a82fb0dffcbf}{\index{Hardware@{Hardware}!Day\-Of\-Week@{Day\-Of\-Week}}
+\index{Day\-Of\-Week@{Day\-Of\-Week}!Hardware@{Hardware}}
+\subsubsection[{Day\-Of\-Week}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf miosix\-::\-Day\-Of\-Week}}}\label{group___hardware_ga24027ab4dbf8557211c0a82fb0dffcbf}
+Day of week field in \hyperlink{structmiosix_1_1_time}{Time} struct \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-O\-N@{M\-O\-N}!Hardware@{Hardware}}\index{Hardware@{Hardware}!M\-O\-N@{M\-O\-N}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfa962bfb6be11410d30c4406070a19c258}{M\-O\-N}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfa962bfb6be11410d30c4406070a19c258}
+}]Monday. \index{T\-U\-E@{T\-U\-E}!Hardware@{Hardware}}\index{Hardware@{Hardware}!T\-U\-E@{T\-U\-E}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfac3cdcd22d875a6100df4d9b731017962}{T\-U\-E}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfac3cdcd22d875a6100df4d9b731017962}
+}]Tuesday. \index{W\-E\-D@{W\-E\-D}!Hardware@{Hardware}}\index{Hardware@{Hardware}!W\-E\-D@{W\-E\-D}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfab74451ba70e3887ee80b2a610e7ba4a6}{W\-E\-D}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfab74451ba70e3887ee80b2a610e7ba4a6}
+}]Wednesday. \index{T\-H\-U@{T\-H\-U}!Hardware@{Hardware}}\index{Hardware@{Hardware}!T\-H\-U@{T\-H\-U}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfac781efe7eb3004ee537bc9775649873b}{T\-H\-U}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfac781efe7eb3004ee537bc9775649873b}
+}]Thursday. \index{F\-R\-I@{F\-R\-I}!Hardware@{Hardware}}\index{Hardware@{Hardware}!F\-R\-I@{F\-R\-I}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfabd3c27af7a56a1b8c819ed28e62df294}{F\-R\-I}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfabd3c27af7a56a1b8c819ed28e62df294}
+}]Friday. \index{S\-A\-T@{S\-A\-T}!Hardware@{Hardware}}\index{Hardware@{Hardware}!S\-A\-T@{S\-A\-T}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfa79c766ae1d0b17f35209890dd935874c}{S\-A\-T}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfa79c766ae1d0b17f35209890dd935874c}
+}]Saturday. \index{S\-U\-N@{S\-U\-N}!Hardware@{Hardware}}\index{Hardware@{Hardware}!S\-U\-N@{S\-U\-N}}\item[{\em 
+\hypertarget{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfad5b4e6dd4a05ccf70b7f72c8716c0208}{S\-U\-N}\label{group___hardware_gga24027ab4dbf8557211c0a82fb0dffcbfad5b4e6dd4a05ccf70b7f72c8716c0208}
+}]Sunday. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___hardware_ga4a7aa35796ec8da996784c562b9e12ac}{\index{Hardware@{Hardware}!sd\-Card\-Sense@{sd\-Card\-Sense}}
+\index{sd\-Card\-Sense@{sd\-Card\-Sense}!Hardware@{Hardware}}
+\subsubsection[{sd\-Card\-Sense}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::sd\-Card\-Sense (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{group___hardware_ga4a7aa35796ec8da996784c562b9e12ac}
+Polls the S\-D card sense G\-P\-I\-O \begin{DoxyReturn}{Returns}
+true if there is an u\-S\-D card in the socket.
+\end{DoxyReturn}
+Polls the S\-D card sense G\-P\-I\-O.
+
+This board has no S\-D card whatsoever, but a card can be connected to the following G\-P\-I\-Os\-: D0 \-: P\-C8 D1 \-: P\-C9 D2 \-: P\-C10 (conflicts with C\-S43\-L22 S\-C\-K) D3 \-: P\-C11 C\-L\-K \-: P\-C12 (conflicts with C\-S43\-L22 S\-D\-I\-N) C\-M\-D \-: P\-D2
+
+The conflicts mean that it's not possible to use both the S\-D card and the audio playback feature on this board.
+
+\begin{DoxyReturn}{Returns}
+true. As there's no S\-D card sense switch, let's pretend that the card is present. 
+\end{DoxyReturn}
+\hypertarget{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{\index{Hardware@{Hardware}!sleep@{sleep}}
+\index{sleep@{sleep}!Hardware@{Hardware}}
+\subsubsection[{sleep}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::sleep (
+\begin{DoxyParamCaption}
+\item[{Time $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}
+This function disables filesystem (if enabled), serial port (if enabled) and puts the processor in deep sleep mode. After wakeup, the original status of filesystem and serial port is restored.\par
+If t is N\-U\-L\-L, wakeup only occurs when p0.\-14 goes low. If t is a valid time, wakeup occurs when that time is reached O\-R when p0.\-14 goes low, whichever occurs first.\par
+ Note that time support is only enabled if W\-I\-T\-H\-\_\-\-R\-T\-C is \#define'd in \hyperlink{miosix__settings_8h}{miosix\-\_\-settings.\-h}. If it is not defined, time will be ignored.\par
+ W\-A\-R\-N\-I\-N\-G\-: close all files before using this function, since it unmounts the filesystem.\par
+ Note\-: if using the wakeup time, it must be at least 2 seconds after the moment where \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{sleep()} is called, otherwise wakeup will not occur.\par
+ When in sleep mode, power consumption of the miosix board is reduced to $\sim$ 150u\-A, however, true power consumption depends on what is connected to the G\-P\-I\-O pins. The user is responsible to put the devices connected to the G\-P\-I\-O pin in the minimal power consumption mode before calling \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{sleep()}. Please note that to minimize power consumption all unused G\-P\-I\-O must be set as output high. 
+\begin{DoxyParams}{Parameters}
+{\em t} & wakeup time, or N\-U\-L\-L \\
+\hline
+\end{DoxyParams}

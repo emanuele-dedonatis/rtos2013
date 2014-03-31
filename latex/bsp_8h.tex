@@ -1,0 +1,36 @@
+\hypertarget{bsp_8h}{\section{miosix/interfaces/bsp.h File Reference}
+\label{bsp_8h}\index{miosix/interfaces/bsp.\-h@{miosix/interfaces/bsp.\-h}}
+}
+{\ttfamily \#include \char`\"{}interfaces-\/impl/bsp\-\_\-impl.\-h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacemiosix}{miosix}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___interfaces_gaeb88457f0a1ad58c9dd7e7bef0783428}{void {\bfseries miosix\-::\-I\-R\-Qbsp\-Init} ()}\label{group___interfaces_gaeb88457f0a1ad58c9dd7e7bef0783428}
+
+\item 
+\hypertarget{group___interfaces_gab7a59706596b512a2349a9539c9520d8}{void {\bfseries miosix\-::bsp\-Init2} ()}\label{group___interfaces_gab7a59706596b512a2349a9539c9520d8}
+
+\item 
+void \hyperlink{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}{miosix\-::shutdown} ()
+\item 
+void \hyperlink{group___interfaces_ga6f70fdbc3b5d6afa41b5dbc5272cc6a0}{miosix\-::reboot} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains architecture specific board support package. It must at least provide these four functions\-:
+
+I\-R\-Qbsp\-Init(), to initialize the board to a known state early in the boot process (before the kernel is started, and when interrupts are disabled)
+
+bsp\-Init2(), to perform the remaining part of the initialization, once the kernel is started
+
+\hyperlink{group___interfaces_gae0495cbfc806a0db0cdf2ff023945516}{shutdown()}, for system shutdown. This function is called in case main() returns, and is available to be called by user code.
+
+\hyperlink{group___interfaces_ga6f70fdbc3b5d6afa41b5dbc5272cc6a0}{reboot()}, a function that can be called to reboot the system under normal (non error) conditions. It should sync and unmount the filesystem, and perform a reboot. This function is available for user code.
+
+\hyperlink{class_other}{Other} than this, the board support package might contain other functions, classes, macros etc. to support peripherals and or board hardware. 

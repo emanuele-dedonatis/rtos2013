@@ -1,0 +1,430 @@
+\hypertarget{classmiosix_1_1_thread}{\section{miosix\-:\-:Thread Class Reference}
+\label{classmiosix_1_1_thread}\index{miosix\-::\-Thread@{miosix\-::\-Thread}}
+}
+
+
+{\ttfamily \#include $<$kernel.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daaf}{Options} \{ \hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa03df086cf889e215d75222d10486b71e}{D\-E\-F\-A\-U\-L\-T} =0, 
+\hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa785d69b0e6b95b648735efe54b588df7}{J\-O\-I\-N\-A\-B\-L\-E} =1$<$$<$0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Priority \hyperlink{classmiosix_1_1_thread_aacba6298a092d5335f6dbefe56a611ec}{get\-Priority} ()
+\item 
+void \hyperlink{classmiosix_1_1_thread_ae086b5bf2b3b55972ad696ec820c8f5e}{terminate} ()
+\item 
+void \hyperlink{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}{wakeup} ()
+\item 
+void \hyperlink{classmiosix_1_1_thread_a88af678dc4032a5f92da12917947d881}{P\-Kwakeup} ()
+\item 
+void \hyperlink{classmiosix_1_1_thread_ae7817dd59f317a04d3ce3793419d25a4}{detach} ()
+\item 
+bool \hyperlink{classmiosix_1_1_thread_afb1d97df689c7104bec35858bbaf4ae6}{is\-Detached} () const 
+\item 
+bool \hyperlink{classmiosix_1_1_thread_a968b43a36ecdf124d72a5d8ddfa2a3b9}{join} (void $\ast$$\ast$\hyperlink{classmiosix_1_1_thread_a448486b757b8ede4edaa8edc39962b17}{result}=N\-U\-L\-L)
+\item 
+Priority \hyperlink{classmiosix_1_1_thread_a585c7966f59855aafd771c7733a38296}{I\-R\-Qget\-Priority} ()
+\item 
+void \hyperlink{classmiosix_1_1_thread_ab34c3cbac8aa609a5c6e4abc384a9faa}{I\-R\-Qwakeup} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classmiosix_1_1_thread}{Thread} $\ast$ \hyperlink{classmiosix_1_1_thread_ac5a454f2617a4a28f00842b1097fc363}{create} (void $\ast$($\ast$startfunc)(void $\ast$), unsigned int stacksize, Priority priority=Priority(), void $\ast$argv=N\-U\-L\-L, unsigned short options=\hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa03df086cf889e215d75222d10486b71e}{D\-E\-F\-A\-U\-L\-T})
+\item 
+static \hyperlink{classmiosix_1_1_thread}{Thread} $\ast$ \hyperlink{classmiosix_1_1_thread_a12d19634d30226cb4441a77b233a5bf2}{create} (void($\ast$startfunc)(void $\ast$), unsigned int stacksize, Priority priority=Priority(), void $\ast$argv=N\-U\-L\-L, unsigned short options=\hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa03df086cf889e215d75222d10486b71e}{D\-E\-F\-A\-U\-L\-T})
+\item 
+static void \hyperlink{classmiosix_1_1_thread_a75823b1288a7defcb715fd6591a23b2d}{yield} ()
+\item 
+static bool \hyperlink{classmiosix_1_1_thread_a0ef492878827009d2d55442266d13b99}{test\-Terminate} ()
+\item 
+static void \hyperlink{classmiosix_1_1_thread_ad7f738dc69a918960fe814a062696c5c}{sleep} (unsigned int ms)
+\item 
+static void \hyperlink{classmiosix_1_1_thread_aac116a322826366c7b3269db3ab4be73}{sleep\-Until} (long long absolute\-Time)
+\item 
+static \hyperlink{classmiosix_1_1_thread}{Thread} $\ast$ \hyperlink{classmiosix_1_1_thread_a884bfd106afeb274c339d383702b4aec}{get\-Current\-Thread} ()
+\item 
+static bool \hyperlink{classmiosix_1_1_thread_adb06c8f5761db66d1089a61db71dcf92}{exists} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$p)
+\item 
+static void \hyperlink{classmiosix_1_1_thread_af6c4237506c533c00a0144632685b17d}{set\-Priority} (Priority pr)
+\item 
+static void \hyperlink{classmiosix_1_1_thread_a435fe4527c1fdfcbebf886cd748a3fd4}{wait} ()
+\item 
+static \hyperlink{classmiosix_1_1_thread}{Thread} $\ast$ \hyperlink{classmiosix_1_1_thread_ae3918e86d91bbe3062f907004ba7f579}{I\-R\-Qget\-Current\-Thread} ()
+\item 
+static void \hyperlink{classmiosix_1_1_thread_a6aed14f0f04e69f922aba8f0cf7ac0c6}{I\-R\-Qwait} ()
+\item 
+static bool \hyperlink{classmiosix_1_1_thread_a572b87e4c6174ad4137f964e40bbe515}{I\-R\-Qexists} (\hyperlink{classmiosix_1_1_thread}{Thread} $\ast$p)
+\item 
+\hypertarget{classmiosix_1_1_thread_a7c548e88ddd4ee0f555f1332e00d36af}{static const unsigned int $\ast$ {\bfseries get\-Stack\-Bottom} ()}\label{classmiosix_1_1_thread_a7c548e88ddd4ee0f555f1332e00d36af}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a645f06c3aacd91de8a620f9520b28a19}{static const int {\bfseries get\-Stack\-Size} ()}\label{classmiosix_1_1_thread_a645f06c3aacd91de8a620f9520b28a19}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_thread_a0299a51a8b97fb3200509d92ba10fa2c}{class {\bfseries Mutex}}\label{classmiosix_1_1_thread_a0299a51a8b97fb3200509d92ba10fa2c}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_ab270e49e575fdf0fe1a4f2ee911df116}{class {\bfseries Condition\-Variable}}\label{classmiosix_1_1_thread_ab270e49e575fdf0fe1a4f2ee911df116}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_af22ee38d5c5f8f0e8f6a4b4ac10f74e6}{class {\bfseries Priority\-Scheduler}}\label{classmiosix_1_1_thread_af22ee38d5c5f8f0e8f6a4b4ac10f74e6}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_af59484a761a3671aa7a7955169aecd70}{class {\bfseries Control\-Scheduler}}\label{classmiosix_1_1_thread_af59484a761a3671aa7a7955169aecd70}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a71ebf1420d5ff18bb785abe0a8b247ac}{class {\bfseries E\-D\-F\-Scheduler}}\label{classmiosix_1_1_thread_a71ebf1420d5ff18bb785abe0a8b247ac}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a50d12034b3fec16c639239e059894524}{class {\bfseries C\-Reentrancy\-Accessor}}\label{classmiosix_1_1_thread_a50d12034b3fec16c639239e059894524}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_abec53b1d1198012c3c7d28ba495f8b8c}{class {\bfseries Cpp\-Reentrancy\-Accessor}}\label{classmiosix_1_1_thread_abec53b1d1198012c3c7d28ba495f8b8c}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_ada350af94668c645cfe2f52d172da513}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qstack\-Overflow\-Check} ()}\label{classmiosix_1_1_thread_ada350af94668c645cfe2f52d172da513}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a40d27a24e1981da39a7e3c2535a65100}{void {\bfseries I\-R\-Qadd\-To\-Sleeping\-List} (\hyperlink{structmiosix_1_1_sleep_data}{Sleep\-Data} $\ast$x)}\label{classmiosix_1_1_thread_a40d27a24e1981da39a7e3c2535a65100}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a198c0ce2b2ee1f076fae416f22100614}{bool {\bfseries I\-R\-Qwake\-Threads} ()}\label{classmiosix_1_1_thread_a198c0ce2b2ee1f076fae416f22100614}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a3d9b5cd3ae98fecda0f20b1d15049cad}{void $\ast$ {\bfseries idle\-Thread} (void $\ast$argv)}\label{classmiosix_1_1_thread_a3d9b5cd3ae98fecda0f20b1d15049cad}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a2553567e64baf56df9a20ce1b777acf4}{void {\bfseries start\-Kernel} ()}\label{classmiosix_1_1_thread_a2553567e64baf56df9a20ce1b777acf4}
+
+\item 
+\hypertarget{classmiosix_1_1_thread_a6682370c85e8fb1787a85388e91221f6}{void {\bfseries miosix\-\_\-private\-::init\-Ctxsave} (unsigned int $\ast$ctxsave, void $\ast$($\ast$pc)(void $\ast$), unsigned int $\ast$sp, void $\ast$argv)}\label{classmiosix_1_1_thread_a6682370c85e8fb1787a85388e91221f6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a thread. It has methods for creating, deleting and handling threads.\par
+It has private constructor and destructor, since memory for a thread is handled by the kernel.\par
+To create a thread use the static producer method \hyperlink{classmiosix_1_1_thread_ac5a454f2617a4a28f00842b1097fc363}{create()}.\par
+ Methods that have an effect on the current thread, that is, the thread that is calling the method are static.\par
+ Calls to non static methods must be done with care, because a thread can terminate at any time. For example, if you call \hyperlink{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}{wakeup()} on a terminated thread, the behavior is undefined. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daaf}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!Options@{Options}}
+\index{Options@{Options}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{Options}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf miosix\-::\-Thread\-::\-Options}}}\label{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daaf}
+\hyperlink{classmiosix_1_1_thread}{Thread} options, can be passed to \hyperlink{classmiosix_1_1_thread_ac5a454f2617a4a28f00842b1097fc363}{Thread\-::create} to set additional options of the thread. More options can be specified simultaneously by O\-Ring them together. The D\-E\-F\-A\-U\-L\-T option indicates the default thread creation. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\-E\-F\-A\-U\-L\-T@{D\-E\-F\-A\-U\-L\-T}!miosix\-::\-Thread@{miosix\-::\-Thread}}\index{miosix\-::\-Thread@{miosix\-::\-Thread}!D\-E\-F\-A\-U\-L\-T@{D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa03df086cf889e215d75222d10486b71e}{D\-E\-F\-A\-U\-L\-T}\label{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa03df086cf889e215d75222d10486b71e}
+}]Default thread options. \index{J\-O\-I\-N\-A\-B\-L\-E@{J\-O\-I\-N\-A\-B\-L\-E}!miosix\-::\-Thread@{miosix\-::\-Thread}}\index{miosix\-::\-Thread@{miosix\-::\-Thread}!J\-O\-I\-N\-A\-B\-L\-E@{J\-O\-I\-N\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa785d69b0e6b95b648735efe54b588df7}{J\-O\-I\-N\-A\-B\-L\-E}\label{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa785d69b0e6b95b648735efe54b588df7}
+}]\hyperlink{classmiosix_1_1_thread}{Thread} is joinable instead of detached. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_thread_ac5a454f2617a4a28f00842b1097fc363}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!create@{create}}
+\index{create@{create}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread} $\ast$ miosix\-::\-Thread\-::create (
+\begin{DoxyParamCaption}
+\item[{void $\ast$($\ast$)(void $\ast$)}]{startfunc, }
+\item[{unsigned int}]{stacksize, }
+\item[{Priority}]{priority = {\ttfamily Priority()}, }
+\item[{void $\ast$}]{argv = {\ttfamily NULL}, }
+\item[{unsigned short}]{options = {\ttfamily {\bf D\-E\-F\-A\-U\-L\-T}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_ac5a454f2617a4a28f00842b1097fc363}
+Producer method, creates a new thread. 
+\begin{DoxyParams}{Parameters}
+{\em startfunc} & the entry point function for the thread \\
+\hline
+{\em stacksize} & size of thread stack, its minimum is the constant S\-T\-A\-C\-K\-\_\-\-M\-I\-N. The size of the stack must be divisible by 4, otherwise it will be rounded to a number divisible by 4. \\
+\hline
+{\em priority} & the thread's priority, between 0 (lower) and P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-A\-X-\/1 (higher) \\
+\hline
+{\em argv} & a void$\ast$ pointer that is passed as pararmeter to the entry point function \\
+\hline
+{\em options} & thread options, such ad \hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa785d69b0e6b95b648735efe54b588df7}{Thread\-::\-J\-O\-I\-N\-A\-B\-L\-E} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the thread created, that can be used, for example, to delete it, or N\-U\-L\-L in case of errors.
+\end{DoxyReturn}
+Calls error\-Handler(\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R\-S) if stacksize or priority are invalid, and error\-Handler(\-O\-U\-T\-\_\-\-O\-F\-\_\-\-M\-E\-M\-O\-R\-Y) if the heap is full. Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a12d19634d30226cb4441a77b233a5bf2}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!create@{create}}
+\index{create@{create}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread} $\ast$ miosix\-::\-Thread\-::create (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(void $\ast$)}]{startfunc, }
+\item[{unsigned int}]{stacksize, }
+\item[{Priority}]{priority = {\ttfamily Priority()}, }
+\item[{void $\ast$}]{argv = {\ttfamily NULL}, }
+\item[{unsigned short}]{options = {\ttfamily {\bf D\-E\-F\-A\-U\-L\-T}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a12d19634d30226cb4441a77b233a5bf2}
+Same as create(void ({\itshape startfunc)(void $\ast$), unsigned int stacksize, Priority priority=1, void $\ast$argv=N\-U\-L\-L) but in this case the entry point of the thread returns a void} 
+\begin{DoxyParams}{Parameters}
+{\em startfunc} & the entry point function for the thread \\
+\hline
+{\em stacksize} & size of thread stack, its minimum is the constant S\-T\-A\-C\-K\-\_\-\-M\-I\-N. The size of the stack must be divisible by 4, otherwise it will be rounded to a number divisible by 4. \\
+\hline
+{\em priority} & the thread's priority, between 0 (lower) and P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-A\-X-\/1 (higher) \\
+\hline
+{\em argv} & a void$\ast$ pointer that is passed as pararmeter to the entry point function \\
+\hline
+{\em options} & thread options, such ad \hyperlink{classmiosix_1_1_thread_acaef68f0e93f6ad933442d87c210daafa785d69b0e6b95b648735efe54b588df7}{Thread\-::\-J\-O\-I\-N\-A\-B\-L\-E} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the thread created, that can be used, for example, to delete it, or N\-U\-L\-L in case of errors. 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_thread_ae7817dd59f317a04d3ce3793419d25a4}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!detach@{detach}}
+\index{detach@{detach}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_ae7817dd59f317a04d3ce3793419d25a4}
+Detach the thread if it was joinable, otherwise do nothing.\par
+ If called on a deleted joinable thread on which join was not yet called, it allows the thread's memory to be deallocated.\par
+ If called on a thread that is not yet deleted, the call detaches the thread without deleting it. If called on an already detached thread, it has undefined behaviour. \hypertarget{classmiosix_1_1_thread_adb06c8f5761db66d1089a61db71dcf92}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!exists@{exists}}
+\index{exists@{exists}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{exists}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Thread\-::exists (
+\begin{DoxyParamCaption}
+\item[{{\bf Thread} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_adb06c8f5761db66d1089a61db71dcf92}
+Check if a thread exists 
+\begin{DoxyParams}{Parameters}
+{\em p} & thread to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if thread exists, false if does not exist or has been deleted. A joinable thread is considered existing until it has been joined, even if it returns from its entry point (unless it is detached and terminates).
+\end{DoxyReturn}
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a884bfd106afeb274c339d383702b4aec}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!get\-Current\-Thread@{get\-Current\-Thread}}
+\index{get\-Current\-Thread@{get\-Current\-Thread}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{get\-Current\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread} $\ast$ miosix\-::\-Thread\-::get\-Current\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a884bfd106afeb274c339d383702b4aec}
+Return a pointer to the \hyperlink{classmiosix_1_1_thread}{Thread} class of the current thread. \begin{DoxyReturn}{Returns}
+a pointer to the current thread.
+\end{DoxyReturn}
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_aacba6298a092d5335f6dbefe56a611ec}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!get\-Priority@{get\-Priority}}
+\index{get\-Priority@{get\-Priority}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{get\-Priority}]{\setlength{\rightskip}{0pt plus 5cm}Priority miosix\-::\-Thread\-::get\-Priority (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_aacba6298a092d5335f6dbefe56a611ec}
+Returns the priority of a thread.\par
+ To get the priority of the current thread use\-: 
+\begin{DoxyCode}
+\hyperlink{classmiosix_1_1_thread_a884bfd106afeb274c339d383702b4aec}{Thread::getCurrentThread}()->\hyperlink{classmiosix_1_1_thread_aacba6298a092d5335f6dbefe56a611ec}{getPriority}(); 
+\end{DoxyCode}
+ If the thread is currently locking one or more mutexes, this member function returns the current priority, which can be higher than the original priority due to priority inheritance. \begin{DoxyReturn}{Returns}
+current priority of the thread
+\end{DoxyReturn}
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a572b87e4c6174ad4137f964e40bbe515}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!I\-R\-Qexists@{I\-R\-Qexists}}
+\index{I\-R\-Qexists@{I\-R\-Qexists}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{I\-R\-Qexists}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Thread\-::\-I\-R\-Qexists (
+\begin{DoxyParamCaption}
+\item[{{\bf Thread} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a572b87e4c6174ad4137f964e40bbe515}
+Same as \hyperlink{classmiosix_1_1_thread_adb06c8f5761db66d1089a61db71dcf92}{exists()} but is meant to be called only inside an I\-R\-Q or when interrupts are disabled. \hypertarget{classmiosix_1_1_thread_ae3918e86d91bbe3062f907004ba7f579}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!I\-R\-Qget\-Current\-Thread@{I\-R\-Qget\-Current\-Thread}}
+\index{I\-R\-Qget\-Current\-Thread@{I\-R\-Qget\-Current\-Thread}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{I\-R\-Qget\-Current\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread} $\ast$ miosix\-::\-Thread\-::\-I\-R\-Qget\-Current\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_ae3918e86d91bbe3062f907004ba7f579}
+Same as get\-\_\-current\-\_\-thread(), but meant to be used insida an I\-R\-Q, when interrupts are disabled or when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a585c7966f59855aafd771c7733a38296}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!I\-R\-Qget\-Priority@{I\-R\-Qget\-Priority}}
+\index{I\-R\-Qget\-Priority@{I\-R\-Qget\-Priority}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{I\-R\-Qget\-Priority}]{\setlength{\rightskip}{0pt plus 5cm}Priority miosix\-::\-Thread\-::\-I\-R\-Qget\-Priority (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_a585c7966f59855aafd771c7733a38296}
+Same as \hyperlink{classmiosix_1_1_thread_aacba6298a092d5335f6dbefe56a611ec}{get\-Priority()}, but meant to be used inside an I\-R\-Q, when interrupts are disabled or when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a6aed14f0f04e69f922aba8f0cf7ac0c6}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!I\-R\-Qwait@{I\-R\-Qwait}}
+\index{I\-R\-Qwait@{I\-R\-Qwait}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{I\-R\-Qwait}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::\-I\-R\-Qwait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a6aed14f0f04e69f922aba8f0cf7ac0c6}
+Same as \hyperlink{classmiosix_1_1_thread_a435fe4527c1fdfcbebf886cd748a3fd4}{wait()}, but is meant to be used only inside an I\-R\-Q or when interrupts are disabled.\par
+ Note\-: this method is meant to put the current thread in wait status in a piece of code where interrupts are disbled; it returns immediately, so the user is responsible for re-\/enabling interrupts and calling yield to effectively put the thread in wait status.
+
+
+\begin{DoxyCode}
+\hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disableInterrupts}();
+...
+Thread::IRQwait();\textcolor{comment}{//Return immediately}
+\hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enableInterrupts}();
+\hyperlink{classmiosix_1_1_thread_a75823b1288a7defcb715fd6591a23b2d}{Thread::yield}();\textcolor{comment}{//After this, thread is in wait status}
+\end{DoxyCode}
+ \hypertarget{classmiosix_1_1_thread_ab34c3cbac8aa609a5c6e4abc384a9faa}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!I\-R\-Qwakeup@{I\-R\-Qwakeup}}
+\index{I\-R\-Qwakeup@{I\-R\-Qwakeup}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{I\-R\-Qwakeup}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::\-I\-R\-Qwakeup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_ab34c3cbac8aa609a5c6e4abc384a9faa}
+Same as \hyperlink{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}{wakeup()}, but is meant to be used only inside an I\-R\-Q or when interrupts are disabled. \hypertarget{classmiosix_1_1_thread_afb1d97df689c7104bec35858bbaf4ae6}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!is\-Detached@{is\-Detached}}
+\index{is\-Detached@{is\-Detached}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{is\-Detached}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Thread\-::is\-Detached (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_thread_afb1d97df689c7104bec35858bbaf4ae6}
+\begin{DoxyReturn}{Returns}
+true if the thread is detached 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_thread_a968b43a36ecdf124d72a5d8ddfa2a3b9}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!join@{join}}
+\index{join@{join}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Thread\-::join (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{result = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_a968b43a36ecdf124d72a5d8ddfa2a3b9}
+Wait until a joinable thread is terminated.\par
+ If the thread already terminated, this function returns immediately.\par
+ Calling \hyperlink{classmiosix_1_1_thread_a968b43a36ecdf124d72a5d8ddfa2a3b9}{join()} on the same thread multiple times, from the same or multiple threads is not recomended, but in the current implementation the first call will wait for join, and the other will return false.\par
+ Trying to join the thread join is called in returns false, but must be avoided.\par
+ Calling join on a detached thread might cause undefined behaviour. 
+\begin{DoxyParams}{Parameters}
+{\em result} & If the entry point function of the thread to join returns void $\ast$, the return value of the entry point is stored here, otherwise the content of this variable is undefined. If N\-U\-L\-L is passed as result the return value will not be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_thread_a88af678dc4032a5f92da12917947d881}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!P\-Kwakeup@{P\-Kwakeup}}
+\index{P\-Kwakeup@{P\-Kwakeup}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{P\-Kwakeup}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::\-P\-Kwakeup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_a88af678dc4032a5f92da12917947d881}
+Wakeup a thread. \par
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_af6c4237506c533c00a0144632685b17d}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!set\-Priority@{set\-Priority}}
+\index{set\-Priority@{set\-Priority}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{set\-Priority}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::set\-Priority (
+\begin{DoxyParamCaption}
+\item[{Priority}]{pr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_af6c4237506c533c00a0144632685b17d}
+Set the priority of this thread.\par
+ This member function changed from previous Miosix versions since it is now static. This implies a thread can no longer set the priority of another thread. 
+\begin{DoxyParams}{Parameters}
+{\em pr} & desired priority. Must be 0$<$=pr$<$P\-R\-I\-O\-R\-I\-T\-Y\-\_\-\-M\-A\-X\\
+\hline
+\end{DoxyParams}
+Calls error\-Handler(\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R\-S) if pr is not within bounds.
+
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_ad7f738dc69a918960fe814a062696c5c}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!sleep@{sleep}}
+\index{sleep@{sleep}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{sleep}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::sleep (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_ad7f738dc69a918960fe814a062696c5c}
+Put the thread to sleep for a number of milliseconds.\par
+The actual precision depends on the kernel tick used. If the specified wait time is lower than the tick accuracy, the thread will be put to sleep for one tick.\par
+Maximum sleep time is (2$^\wedge$32-\/1) / T\-I\-C\-K\-\_\-\-F\-R\-E\-Q. If a sleep time higher than that value is specified, the behaviour is undefined. 
+\begin{DoxyParams}{Parameters}
+{\em ms} & the number of millisecond. If it is ==0 this method will return immediately\\
+\hline
+\end{DoxyParams}
+C\-A\-N\-N\-O\-T be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_aac116a322826366c7b3269db3ab4be73}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!sleep\-Until@{sleep\-Until}}
+\index{sleep\-Until@{sleep\-Until}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{sleep\-Until}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::sleep\-Until (
+\begin{DoxyParamCaption}
+\item[{long long}]{absolute\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_aac116a322826366c7b3269db3ab4be73}
+Put the thread to sleep until the specified absolute time is reached. If the time is in the past, returns immediately. To make a periodic thread, this is the recomended way 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} periodicThread()
+\{
+    \textcolor{comment}{//Run every 90 milliseconds}
+    \textcolor{keyword}{const} \textcolor{keywordtype}{int} period=\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\hyperlink{group___settings_ga81e4cfce99dd185b6ada00ead4f39342}{TICK\_FREQ}*0.09);
+    \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} tick=\hyperlink{group___kernel_gad16c495ced6659e8bc0bb371362674ef}{getTick}();
+    \textcolor{keywordflow}{for}(;;)
+    \{
+        \textcolor{comment}{//Do work}
+        tick+=period;
+        \hyperlink{classmiosix_1_1_thread_aac116a322826366c7b3269db3ab4be73}{Thread::sleepUntil}(tick);
+    \}
+\}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em absolute\-Time} & when to wake up\\
+\hline
+\end{DoxyParams}
+C\-A\-N\-N\-O\-T be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_ae086b5bf2b3b55972ad696ec820c8f5e}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!terminate@{terminate}}
+\index{terminate@{terminate}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{terminate}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::terminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_ae086b5bf2b3b55972ad696ec820c8f5e}
+Suggests a thread to terminate itself. Note that this method only makes \hyperlink{classmiosix_1_1_thread_a0ef492878827009d2d55442266d13b99}{test\-Terminate()} return true on the specified thread. If the thread does not call \hyperlink{classmiosix_1_1_thread_a0ef492878827009d2d55442266d13b99}{test\-Terminate()}, or if it calls it but does not delete itself by returning from entry point function, it will N\-E\-V\-E\-R terminate. The user is responsible for implementing correctly this functionality.\par
+\hyperlink{classmiosix_1_1_thread}{Thread} termination is implemented like this to give time to a thread to deallocate resources, close files... before terminating. \par
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a0ef492878827009d2d55442266d13b99}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!test\-Terminate@{test\-Terminate}}
+\index{test\-Terminate@{test\-Terminate}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{test\-Terminate}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Thread\-::test\-Terminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a0ef492878827009d2d55442266d13b99}
+This method needs to be called periodically inside the thread's main loop. \begin{DoxyReturn}{Returns}
+true if somebody outside the thread called \hyperlink{classmiosix_1_1_thread_ae086b5bf2b3b55972ad696ec820c8f5e}{terminate()} on this thread.
+\end{DoxyReturn}
+If it returns true the thread must free all resources and terminate by returning from its main function. \par
+Can be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a435fe4527c1fdfcbebf886cd748a3fd4}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!wait@{wait}}
+\index{wait@{wait}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::wait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a435fe4527c1fdfcbebf886cd748a3fd4}
+This method stops the thread until another thread calls \hyperlink{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}{wakeup()} on this thread.\par
+Calls to wait are not cumulative. If \hyperlink{classmiosix_1_1_thread_a435fe4527c1fdfcbebf886cd748a3fd4}{wait()} is called two times, only one call to \hyperlink{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}{wakeup()} is needed to wake the thread. \par
+C\-A\-N\-N\-O\-T be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!wakeup@{wakeup}}
+\index{wakeup@{wakeup}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{wakeup}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::wakeup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_thread_af19b8a2ab852ea771a2e2b95bb0ba2a8}
+Wakeup a thread. \par
+C\-A\-N\-N\-O\-T be called when the kernel is paused. \hypertarget{classmiosix_1_1_thread_a75823b1288a7defcb715fd6591a23b2d}{\index{miosix\-::\-Thread@{miosix\-::\-Thread}!yield@{yield}}
+\index{yield@{yield}!miosix::Thread@{miosix\-::\-Thread}}
+\subsubsection[{yield}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Thread\-::yield (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_thread_a75823b1288a7defcb715fd6591a23b2d}
+When called, suggests the kernel to pause the current thread, and run another one. \par
+C\-A\-N\-N\-O\-T be called when the kernel is paused. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/kernel.\-h\item 
+miosix/kernel/kernel.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+\hypertarget{group___c_m_s_i_s___m_i_s_r_a___exceptions}{\section{C\-M\-S\-I\-S M\-I\-S\-R\-A-\/\-C\-:2004 Compliance Exceptions}
+\label{group___c_m_s_i_s___m_i_s_r_a___exceptions}\index{C\-M\-S\-I\-S M\-I\-S\-R\-A-\/\-C\-:2004 Compliance Exceptions@{C\-M\-S\-I\-S M\-I\-S\-R\-A-\/\-C\-:2004 Compliance Exceptions}}
+}
+C\-M\-S\-I\-S violates following M\-I\-S\-R\-A-\/\-C2004 Rules\-:
+
+
+\begin{DoxyItemize}
+\item Violates M\-I\-S\-R\-A 2004 Required Rule 8.\-5, object/function definition in header file.\par
+ Function definitions in header files are used to allow 'inlining'.
+\item Violates M\-I\-S\-R\-A 2004 Required Rule 18.\-4, declaration of union type or object of union type\-: '\{...\}'.\par
+ Unions are used for effective representation of core registers.
+\item Violates M\-I\-S\-R\-A 2004 Advisory Rule 19.\-7, Function-\/like macro defined.\par
+ Function-\/like macros are used to allow more efficient code. 
+\end{DoxyItemize}

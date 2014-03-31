@@ -1,0 +1,148 @@
+\hypertarget{group___c_m_s_i_s___c_m3__core__register}{\section{C\-M\-S\-I\-S C\-M3 Core Register}
+\label{group___c_m_s_i_s___c_m3__core__register}\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___c_m_s_i_s___c_m3___n_v_i_c}{C\-M\-S\-I\-S C\-M3 N\-V\-I\-C}
+\item 
+\hyperlink{group___c_m_s_i_s___c_m3___s_c_b}{C\-M\-S\-I\-S C\-M3 S\-C\-B}
+\item 
+\hyperlink{group___c_m_s_i_s___c_m3___sys_tick}{C\-M\-S\-I\-S C\-M3 Sys\-Tick}
+\item 
+\hyperlink{group___c_m_s_i_s___c_m3___i_t_m}{C\-M\-S\-I\-S C\-M3 I\-T\-M}
+\item 
+\hyperlink{group___c_m_s_i_s___c_m3___interrupt_type}{C\-M\-S\-I\-S C\-M3 Interrupt Type}
+\item 
+\hyperlink{group___c_m_s_i_s___c_m3___core_debug}{C\-M\-S\-I\-S C\-M3 Core Debug}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E}~(0x\-E000\-E000)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gadd76251e412a195ec0a8f47227a8359e}{I\-T\-M\-\_\-\-B\-A\-S\-E}~(0x\-E0000000)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga680604dbcda9e9b31a1639fcffe5230b}{Core\-Debug\-\_\-\-B\-A\-S\-E}~(0x\-E000\-E\-D\-F0)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga58effaac0b93006b756d33209e814646}{Sys\-Tick\-\_\-\-B\-A\-S\-E}~(\hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0010)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gaa0288691785a5f868238e0468b39523d}{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}~(\hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0100)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}{S\-C\-B\-\_\-\-B\-A\-S\-E}~(\hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0\-D00)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga164238adbad56f07c7dd4e912af748dd}{Interrupt\-Type}~((\hyperlink{struct_interrupt_type___type}{Interrupt\-Type\-\_\-\-Type} $\ast$) \hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gaaaf6477c2bde2f00f99e3c2fd1060b01}{S\-C\-B}~((\hyperlink{struct_s_c_b___type}{S\-C\-B\-\_\-\-Type} $\ast$)           \hyperlink{group___c_m_s_i_s__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}{S\-C\-B\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gacd96c53beeaff8f603fcda425eb295de}{Sys\-Tick}~((\hyperlink{struct_sys_tick___type}{Sys\-Tick\-\_\-\-Type} $\ast$)       \hyperlink{group___c_m_s_i_s__core__register_ga58effaac0b93006b756d33209e814646}{Sys\-Tick\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gac8e97e8ce56ae9f57da1363a937f8a17}{N\-V\-I\-C}~((\hyperlink{struct_n_v_i_c___type}{N\-V\-I\-C\-\_\-\-Type} $\ast$)          \hyperlink{group___c_m_s_i_s__core__register_gaa0288691785a5f868238e0468b39523d}{N\-V\-I\-C\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gabae7cdf882def602cb787bb039ff6a43}{I\-T\-M}~((\hyperlink{struct_i_t_m___type}{I\-T\-M\-\_\-\-Type} $\ast$)           \hyperlink{group___c_m_s_i_s__core__register_gadd76251e412a195ec0a8f47227a8359e}{I\-T\-M\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gab6e30a2b802d9021619dbb0be7f5d63d}{Core\-Debug}~((\hyperlink{struct_core_debug___type}{Core\-Debug\-\_\-\-Type} $\ast$)     \hyperlink{group___c_m_s_i_s__core__register_ga680604dbcda9e9b31a1639fcffe5230b}{Core\-Debug\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E}~(0x\-E000\-E000)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gadd76251e412a195ec0a8f47227a8359e}{I\-T\-M\-\_\-\-B\-A\-S\-E}~(0x\-E0000000)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga680604dbcda9e9b31a1639fcffe5230b}{Core\-Debug\-\_\-\-B\-A\-S\-E}~(0x\-E000\-E\-D\-F0)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga58effaac0b93006b756d33209e814646}{Sys\-Tick\-\_\-\-B\-A\-S\-E}~(\hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0010)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gaa0288691785a5f868238e0468b39523d}{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}~(\hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0100)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}{S\-C\-B\-\_\-\-B\-A\-S\-E}~(\hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0\-D00)
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_ga164238adbad56f07c7dd4e912af748dd}{Interrupt\-Type}~((\hyperlink{struct_interrupt_type___type}{Interrupt\-Type\-\_\-\-Type} $\ast$) \hyperlink{group___c_m_s_i_s__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{S\-C\-S\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gaaaf6477c2bde2f00f99e3c2fd1060b01}{S\-C\-B}~((\hyperlink{struct_s_c_b___type}{S\-C\-B\-\_\-\-Type} $\ast$)           \hyperlink{group___c_m_s_i_s__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}{S\-C\-B\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gacd96c53beeaff8f603fcda425eb295de}{Sys\-Tick}~((\hyperlink{struct_sys_tick___type}{Sys\-Tick\-\_\-\-Type} $\ast$)       \hyperlink{group___c_m_s_i_s__core__register_ga58effaac0b93006b756d33209e814646}{Sys\-Tick\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gac8e97e8ce56ae9f57da1363a937f8a17}{N\-V\-I\-C}~((\hyperlink{struct_n_v_i_c___type}{N\-V\-I\-C\-\_\-\-Type} $\ast$)          \hyperlink{group___c_m_s_i_s__core__register_gaa0288691785a5f868238e0468b39523d}{N\-V\-I\-C\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gabae7cdf882def602cb787bb039ff6a43}{I\-T\-M}~((\hyperlink{struct_i_t_m___type}{I\-T\-M\-\_\-\-Type} $\ast$)           \hyperlink{group___c_m_s_i_s__core__register_gadd76251e412a195ec0a8f47227a8359e}{I\-T\-M\-\_\-\-B\-A\-S\-E})
+\item 
+\#define \hyperlink{group___c_m_s_i_s___c_m3__core__register_gab6e30a2b802d9021619dbb0be7f5d63d}{Core\-Debug}~((\hyperlink{struct_core_debug___type}{Core\-Debug\-\_\-\-Type} $\ast$)     \hyperlink{group___c_m_s_i_s__core__register_ga680604dbcda9e9b31a1639fcffe5230b}{Core\-Debug\-\_\-\-B\-A\-S\-E})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group___c_m_s_i_s___c_m3__core__register_gab6e30a2b802d9021619dbb0be7f5d63d}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Core\-Debug@{Core\-Debug}}
+\index{Core\-Debug@{Core\-Debug}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Core\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}\#define Core\-Debug~(({\bf Core\-Debug\-\_\-\-Type} $\ast$)     {\bf Core\-Debug\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gab6e30a2b802d9021619dbb0be7f5d63d}
+Core Debug configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gab6e30a2b802d9021619dbb0be7f5d63d}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Core\-Debug@{Core\-Debug}}
+\index{Core\-Debug@{Core\-Debug}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Core\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}\#define Core\-Debug~(({\bf Core\-Debug\-\_\-\-Type} $\ast$)     {\bf Core\-Debug\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gab6e30a2b802d9021619dbb0be7f5d63d}
+Core Debug configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga680604dbcda9e9b31a1639fcffe5230b}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Core\-Debug\-\_\-\-B\-A\-S\-E@{Core\-Debug\-\_\-\-B\-A\-S\-E}}
+\index{Core\-Debug\-\_\-\-B\-A\-S\-E@{Core\-Debug\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Core\-Debug\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Core\-Debug\-\_\-\-B\-A\-S\-E~(0x\-E000\-E\-D\-F0)}}\label{group___c_m_s_i_s___c_m3__core__register_ga680604dbcda9e9b31a1639fcffe5230b}
+Core Debug Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga680604dbcda9e9b31a1639fcffe5230b}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Core\-Debug\-\_\-\-B\-A\-S\-E@{Core\-Debug\-\_\-\-B\-A\-S\-E}}
+\index{Core\-Debug\-\_\-\-B\-A\-S\-E@{Core\-Debug\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Core\-Debug\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Core\-Debug\-\_\-\-B\-A\-S\-E~(0x\-E000\-E\-D\-F0)}}\label{group___c_m_s_i_s___c_m3__core__register_ga680604dbcda9e9b31a1639fcffe5230b}
+Core Debug Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga164238adbad56f07c7dd4e912af748dd}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Interrupt\-Type@{Interrupt\-Type}}
+\index{Interrupt\-Type@{Interrupt\-Type}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Interrupt\-Type}]{\setlength{\rightskip}{0pt plus 5cm}\#define Interrupt\-Type~(({\bf Interrupt\-Type\-\_\-\-Type} $\ast$) {\bf S\-C\-S\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_ga164238adbad56f07c7dd4e912af748dd}
+Interrupt Type Register \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga164238adbad56f07c7dd4e912af748dd}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Interrupt\-Type@{Interrupt\-Type}}
+\index{Interrupt\-Type@{Interrupt\-Type}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Interrupt\-Type}]{\setlength{\rightskip}{0pt plus 5cm}\#define Interrupt\-Type~(({\bf Interrupt\-Type\-\_\-\-Type} $\ast$) {\bf S\-C\-S\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_ga164238adbad56f07c7dd4e912af748dd}
+Interrupt Type Register \hypertarget{group___c_m_s_i_s___c_m3__core__register_gabae7cdf882def602cb787bb039ff6a43}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!I\-T\-M@{I\-T\-M}}
+\index{I\-T\-M@{I\-T\-M}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{I\-T\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-T\-M~(({\bf I\-T\-M\-\_\-\-Type} $\ast$)           {\bf I\-T\-M\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gabae7cdf882def602cb787bb039ff6a43}
+I\-T\-M configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gabae7cdf882def602cb787bb039ff6a43}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!I\-T\-M@{I\-T\-M}}
+\index{I\-T\-M@{I\-T\-M}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{I\-T\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-T\-M~(({\bf I\-T\-M\-\_\-\-Type} $\ast$)           {\bf I\-T\-M\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gabae7cdf882def602cb787bb039ff6a43}
+I\-T\-M configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gadd76251e412a195ec0a8f47227a8359e}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!I\-T\-M\-\_\-\-B\-A\-S\-E@{I\-T\-M\-\_\-\-B\-A\-S\-E}}
+\index{I\-T\-M\-\_\-\-B\-A\-S\-E@{I\-T\-M\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{I\-T\-M\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-T\-M\-\_\-\-B\-A\-S\-E~(0x\-E0000000)}}\label{group___c_m_s_i_s___c_m3__core__register_gadd76251e412a195ec0a8f47227a8359e}
+I\-T\-M Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_gadd76251e412a195ec0a8f47227a8359e}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!I\-T\-M\-\_\-\-B\-A\-S\-E@{I\-T\-M\-\_\-\-B\-A\-S\-E}}
+\index{I\-T\-M\-\_\-\-B\-A\-S\-E@{I\-T\-M\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{I\-T\-M\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-T\-M\-\_\-\-B\-A\-S\-E~(0x\-E0000000)}}\label{group___c_m_s_i_s___c_m3__core__register_gadd76251e412a195ec0a8f47227a8359e}
+I\-T\-M Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_gac8e97e8ce56ae9f57da1363a937f8a17}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!N\-V\-I\-C@{N\-V\-I\-C}}
+\index{N\-V\-I\-C@{N\-V\-I\-C}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{N\-V\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-V\-I\-C~(({\bf N\-V\-I\-C\-\_\-\-Type} $\ast$)          {\bf N\-V\-I\-C\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gac8e97e8ce56ae9f57da1363a937f8a17}
+N\-V\-I\-C configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gac8e97e8ce56ae9f57da1363a937f8a17}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!N\-V\-I\-C@{N\-V\-I\-C}}
+\index{N\-V\-I\-C@{N\-V\-I\-C}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{N\-V\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-V\-I\-C~(({\bf N\-V\-I\-C\-\_\-\-Type} $\ast$)          {\bf N\-V\-I\-C\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gac8e97e8ce56ae9f57da1363a937f8a17}
+N\-V\-I\-C configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gaa0288691785a5f868238e0468b39523d}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!N\-V\-I\-C\-\_\-\-B\-A\-S\-E@{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}}
+\index{N\-V\-I\-C\-\_\-\-B\-A\-S\-E@{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-V\-I\-C\-\_\-\-B\-A\-S\-E~({\bf S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0100)}}\label{group___c_m_s_i_s___c_m3__core__register_gaa0288691785a5f868238e0468b39523d}
+N\-V\-I\-C Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_gaa0288691785a5f868238e0468b39523d}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!N\-V\-I\-C\-\_\-\-B\-A\-S\-E@{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}}
+\index{N\-V\-I\-C\-\_\-\-B\-A\-S\-E@{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{N\-V\-I\-C\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-V\-I\-C\-\_\-\-B\-A\-S\-E~({\bf S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0100)}}\label{group___c_m_s_i_s___c_m3__core__register_gaa0288691785a5f868238e0468b39523d}
+N\-V\-I\-C Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_gaaaf6477c2bde2f00f99e3c2fd1060b01}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!S\-C\-B@{S\-C\-B}}
+\index{S\-C\-B@{S\-C\-B}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{S\-C\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-B~(({\bf S\-C\-B\-\_\-\-Type} $\ast$)           {\bf S\-C\-B\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gaaaf6477c2bde2f00f99e3c2fd1060b01}
+S\-C\-B configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gaaaf6477c2bde2f00f99e3c2fd1060b01}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!S\-C\-B@{S\-C\-B}}
+\index{S\-C\-B@{S\-C\-B}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{S\-C\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-B~(({\bf S\-C\-B\-\_\-\-Type} $\ast$)           {\bf S\-C\-B\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gaaaf6477c2bde2f00f99e3c2fd1060b01}
+S\-C\-B configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!S\-C\-B\-\_\-\-B\-A\-S\-E@{S\-C\-B\-\_\-\-B\-A\-S\-E}}
+\index{S\-C\-B\-\_\-\-B\-A\-S\-E@{S\-C\-B\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{S\-C\-B\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-B\-\_\-\-B\-A\-S\-E~({\bf S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0\-D00)}}\label{group___c_m_s_i_s___c_m3__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}
+System Control Block Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!S\-C\-B\-\_\-\-B\-A\-S\-E@{S\-C\-B\-\_\-\-B\-A\-S\-E}}
+\index{S\-C\-B\-\_\-\-B\-A\-S\-E@{S\-C\-B\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{S\-C\-B\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-B\-\_\-\-B\-A\-S\-E~({\bf S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0\-D00)}}\label{group___c_m_s_i_s___c_m3__core__register_gad55a7ddb8d4b2398b0c1cfec76c0d9fd}
+System Control Block Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!S\-C\-S\-\_\-\-B\-A\-S\-E@{S\-C\-S\-\_\-\-B\-A\-S\-E}}
+\index{S\-C\-S\-\_\-\-B\-A\-S\-E@{S\-C\-S\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{S\-C\-S\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-S\-\_\-\-B\-A\-S\-E~(0x\-E000\-E000)}}\label{group___c_m_s_i_s___c_m3__core__register_ga3c14ed93192c8d9143322bbf77ebf770}
+System Control Space Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga3c14ed93192c8d9143322bbf77ebf770}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!S\-C\-S\-\_\-\-B\-A\-S\-E@{S\-C\-S\-\_\-\-B\-A\-S\-E}}
+\index{S\-C\-S\-\_\-\-B\-A\-S\-E@{S\-C\-S\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{S\-C\-S\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-S\-\_\-\-B\-A\-S\-E~(0x\-E000\-E000)}}\label{group___c_m_s_i_s___c_m3__core__register_ga3c14ed93192c8d9143322bbf77ebf770}
+System Control Space Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_gacd96c53beeaff8f603fcda425eb295de}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Sys\-Tick@{Sys\-Tick}}
+\index{Sys\-Tick@{Sys\-Tick}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Sys\-Tick}]{\setlength{\rightskip}{0pt plus 5cm}\#define Sys\-Tick~(({\bf Sys\-Tick\-\_\-\-Type} $\ast$)       {\bf Sys\-Tick\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gacd96c53beeaff8f603fcda425eb295de}
+Sys\-Tick configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_gacd96c53beeaff8f603fcda425eb295de}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Sys\-Tick@{Sys\-Tick}}
+\index{Sys\-Tick@{Sys\-Tick}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Sys\-Tick}]{\setlength{\rightskip}{0pt plus 5cm}\#define Sys\-Tick~(({\bf Sys\-Tick\-\_\-\-Type} $\ast$)       {\bf Sys\-Tick\-\_\-\-B\-A\-S\-E})}}\label{group___c_m_s_i_s___c_m3__core__register_gacd96c53beeaff8f603fcda425eb295de}
+Sys\-Tick configuration struct \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga58effaac0b93006b756d33209e814646}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Sys\-Tick\-\_\-\-B\-A\-S\-E@{Sys\-Tick\-\_\-\-B\-A\-S\-E}}
+\index{Sys\-Tick\-\_\-\-B\-A\-S\-E@{Sys\-Tick\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Sys\-Tick\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Sys\-Tick\-\_\-\-B\-A\-S\-E~({\bf S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0010)}}\label{group___c_m_s_i_s___c_m3__core__register_ga58effaac0b93006b756d33209e814646}
+Sys\-Tick Base Address \hypertarget{group___c_m_s_i_s___c_m3__core__register_ga58effaac0b93006b756d33209e814646}{\index{C\-M\-S\-I\-S C\-M3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}!Sys\-Tick\-\_\-\-B\-A\-S\-E@{Sys\-Tick\-\_\-\-B\-A\-S\-E}}
+\index{Sys\-Tick\-\_\-\-B\-A\-S\-E@{Sys\-Tick\-\_\-\-B\-A\-S\-E}!CMSIS CM3 Core Register@{C\-M\-S\-I\-S C\-M3 Core Register}}
+\subsubsection[{Sys\-Tick\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define Sys\-Tick\-\_\-\-B\-A\-S\-E~({\bf S\-C\-S\-\_\-\-B\-A\-S\-E} +  0x0010)}}\label{group___c_m_s_i_s___c_m3__core__register_ga58effaac0b93006b756d33209e814646}
+Sys\-Tick Base Address 

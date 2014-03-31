@@ -1,0 +1,63 @@
+\hypertarget{classmiosix_1_1_restart_kernel_lock}{\section{miosix\-:\-:Restart\-Kernel\-Lock Class Reference}
+\label{classmiosix_1_1_restart_kernel_lock}\index{miosix\-::\-Restart\-Kernel\-Lock@{miosix\-::\-Restart\-Kernel\-Lock}}
+}
+
+
+{\ttfamily \#include $<$kernel.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_restart_kernel_lock_a56fdd23f84789f624cf85cd3ff54d045}{Restart\-Kernel\-Lock} (\hyperlink{classmiosix_1_1_pause_kernel_lock}{Pause\-Kernel\-Lock} \&l)
+\item 
+\hyperlink{classmiosix_1_1_restart_kernel_lock_ac026033adfae754118e6025ad7ce01bb}{$\sim$\-Restart\-Kernel\-Lock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class allows to temporarily restart kernel in a scope where it is paused with an \hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock}.\par
+ Example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{//Kernel started}
+\{
+    PauseKernelLock dLock;
+
+    \textcolor{comment}{//Now kernel paused}
+
+    \{
+        \hyperlink{classmiosix_1_1_restart_kernel_lock_a56fdd23f84789f624cf85cd3ff54d045}{RestartKernelLock} eLock(dLock);
+
+        \textcolor{comment}{//Now kernel back started}
+    \}
+
+    \textcolor{comment}{//Now kernel again paused}
+\}
+\textcolor{comment}{//Finally kernel started}
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_restart_kernel_lock_a56fdd23f84789f624cf85cd3ff54d045}{\index{miosix\-::\-Restart\-Kernel\-Lock@{miosix\-::\-Restart\-Kernel\-Lock}!Restart\-Kernel\-Lock@{Restart\-Kernel\-Lock}}
+\index{Restart\-Kernel\-Lock@{Restart\-Kernel\-Lock}!miosix::RestartKernelLock@{miosix\-::\-Restart\-Kernel\-Lock}}
+\subsubsection[{Restart\-Kernel\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Restart\-Kernel\-Lock\-::\-Restart\-Kernel\-Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Pause\-Kernel\-Lock} \&}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_restart_kernel_lock_a56fdd23f84789f624cf85cd3ff54d045}
+Constructor, restarts kernel. 
+\begin{DoxyParams}{Parameters}
+{\em l} & the \hyperlink{classmiosix_1_1_pause_kernel_lock}{Pause\-Kernel\-Lock} that disabled interrupts. Note that this parameter is not used internally. It is only required to prevent erroneous use of this class by making an instance of it without an active \hyperlink{classmiosix_1_1_pause_kernel_lock}{Pause\-Kernel\-Lock} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_restart_kernel_lock_ac026033adfae754118e6025ad7ce01bb}{\index{miosix\-::\-Restart\-Kernel\-Lock@{miosix\-::\-Restart\-Kernel\-Lock}!$\sim$\-Restart\-Kernel\-Lock@{$\sim$\-Restart\-Kernel\-Lock}}
+\index{$\sim$\-Restart\-Kernel\-Lock@{$\sim$\-Restart\-Kernel\-Lock}!miosix::RestartKernelLock@{miosix\-::\-Restart\-Kernel\-Lock}}
+\subsubsection[{$\sim$\-Restart\-Kernel\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Restart\-Kernel\-Lock\-::$\sim$\-Restart\-Kernel\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_restart_kernel_lock_ac026033adfae754118e6025ad7ce01bb}
+Destructor. Disable back interrupts. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/kernel.\-h\end{DoxyCompactItemize}

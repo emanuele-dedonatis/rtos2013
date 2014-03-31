@@ -1,6 +1,6 @@
 /**
 * File:   pedometer.h
-*  \brief     This is the header file for the file LIS302.cpp
+*  \brief     LIS302 accelerometer
 *  \author    Emanuele De Donatis
 *  \author    Bruno Pistone
 *  \version   1.0
@@ -22,16 +22,22 @@ public:
     static void init();
     
     /**
+     * Read value from x-axis
+     * 
      * \return value of x-axis
      */
     static signed char readX();
 
     /**
+     * Read value from y-axis
+     * 
      * \return value of y-axis
      */    
     static signed char readY();
       
     /**
+     * Read value from z-axis
+     * 
      * \return value of z-axis
      */  
     static signed char readZ();

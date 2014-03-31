@@ -1,0 +1,185 @@
+\hypertarget{classmiosix_1_1_mountpoint_fs}{\section{miosix\-:\-:Mountpoint\-Fs Class Reference}
+\label{classmiosix_1_1_mountpoint_fs}\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}}
+}
+
+
+{\ttfamily \#include $<$mountpointfs.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Mountpoint\-Fs\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.962963cm]{classmiosix_1_1_mountpoint_fs}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_mountpoint_fs_ad4a9516d403dce0cffacfcde4f7e95c3}{Mountpoint\-Fs} ()
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_ad27fe12dd7a0ebf4710e3c1239fa4f11}{open} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_file_base}{File\-Base} $>$ \&file, \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, int flags, int mode)
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_ae5edc737cac9355b1df1e70f05ed28c7}{lstat} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, struct stat $\ast$pstat)
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_a91111599924d60eee312661a8fca544b}{unlink} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name)
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_ab24e62499734c86f42c9a6ccfd28ae7e}{rename} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&old\-Name, \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&new\-Name)
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_aa5660ee6a136c9e3a9e3512a800c1069}{mkdir} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, int mode)
+\item 
+virtual int \hyperlink{classmiosix_1_1_mountpoint_fs_a41c03e60fca3733f7f2d9902063efc2e}{rmdir} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classmiosix_1_1_mountpoint_fs}{Mountpoint\-Fs} is a special filesystem whose purpose is to create directories to be used as mountpoints for other filesystems. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_mountpoint_fs_ad4a9516d403dce0cffacfcde4f7e95c3}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!Mountpoint\-Fs@{Mountpoint\-Fs}}
+\index{Mountpoint\-Fs@{Mountpoint\-Fs}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{Mountpoint\-Fs}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Mountpoint\-Fs\-::\-Mountpoint\-Fs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_mountpoint_fs_ad4a9516d403dce0cffacfcde4f7e95c3}
+Constructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_mountpoint_fs_ae5edc737cac9355b1df1e70f05ed28c7}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!lstat@{lstat}}
+\index{lstat@{lstat}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{lstat}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-::lstat (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_ae5edc737cac9355b1df1e70f05ed28c7}
+Obtain information on a file, identified by a path name. Does not follow symlinks 
+\begin{DoxyParams}{Parameters}
+{\em name} & path name, relative to the local filesystem \\
+\hline
+{\em pstat} & file information is stored here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_filesystem_base_a505e54a95daa86fa7219518b69159ba7}{miosix\-::\-Filesystem\-Base}.
+
+\hypertarget{classmiosix_1_1_mountpoint_fs_aa5660ee6a136c9e3a9e3512a800c1069}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{mkdir}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-::mkdir (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_aa5660ee6a136c9e3a9e3512a800c1069}
+Create a directory 
+\begin{DoxyParams}{Parameters}
+{\em name} & directory name \\
+\hline
+{\em mode} & directory permissions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_filesystem_base_a475ecc9a46c125d27187ec1b1dc4b8ba}{miosix\-::\-Filesystem\-Base}.
+
+\hypertarget{classmiosix_1_1_mountpoint_fs_ad27fe12dd7a0ebf4710e3c1239fa4f11}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!open@{open}}
+\index{open@{open}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf File\-Base} $>$ \&}]{file, }
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{int}]{flags, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_ad27fe12dd7a0ebf4710e3c1239fa4f11}
+Open a file 
+\begin{DoxyParams}{Parameters}
+{\em file} & the file object will be stored here, if the call succeeds \\
+\hline
+{\em name} & the name of the file to open, relative to the local filesystem \\
+\hline
+{\em flags} & file flags (open for reading, writing, ...) \\
+\hline
+{\em mode} & file permissions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_filesystem_base_ab593a305da9f37233d125835ed7dda60}{miosix\-::\-Filesystem\-Base}.
+
+\hypertarget{classmiosix_1_1_mountpoint_fs_ab24e62499734c86f42c9a6ccfd28ae7e}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!rename@{rename}}
+\index{rename@{rename}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{rename}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-::rename (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{old\-Name, }
+\item[{{\bf String\-Part} \&}]{new\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_ab24e62499734c86f42c9a6ccfd28ae7e}
+Rename a file or directory 
+\begin{DoxyParams}{Parameters}
+{\em old\-Name} & old file name \\
+\hline
+{\em new\-Name} & new file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_filesystem_base_a462c0615135088ad23d133a0b21f6c42}{miosix\-::\-Filesystem\-Base}.
+
+\hypertarget{classmiosix_1_1_mountpoint_fs_a41c03e60fca3733f7f2d9902063efc2e}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{rmdir}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-::rmdir (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_a41c03e60fca3733f7f2d9902063efc2e}
+Remove a directory if empty 
+\begin{DoxyParams}{Parameters}
+{\em name} & directory name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_filesystem_base_a061bac84c7f5f18e1efc6b938ebc0d66}{miosix\-::\-Filesystem\-Base}.
+
+\hypertarget{classmiosix_1_1_mountpoint_fs_a91111599924d60eee312661a8fca544b}{\index{miosix\-::\-Mountpoint\-Fs@{miosix\-::\-Mountpoint\-Fs}!unlink@{unlink}}
+\index{unlink@{unlink}!miosix::MountpointFs@{miosix\-::\-Mountpoint\-Fs}}
+\subsubsection[{unlink}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Mountpoint\-Fs\-::unlink (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_mountpoint_fs_a91111599924d60eee312661a8fca544b}
+Remove a file or directory 
+\begin{DoxyParams}{Parameters}
+{\em name} & path name of file or directory to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_filesystem_base_a465d109102a95aced48265cd506e3368}{miosix\-::\-Filesystem\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/mountpointfs/mountpointfs.\-h\item 
+miosix/filesystem/mountpointfs/mountpointfs.\-cpp\end{DoxyCompactItemize}

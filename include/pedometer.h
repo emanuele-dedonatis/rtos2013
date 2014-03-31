@@ -1,6 +1,6 @@
 /**
 * File:   pedometer.h
-*  \brief     This is the header file for the file Pedometer.cpp
+*  \brief     Pedometer functionalities using LIS302 accelerometer.
 *  \author    Emanuele De Donatis
 *  \author    Bruno Pistone
 *  \version   1.0
@@ -17,10 +17,16 @@ class Pedometer {
 public:
 
    /**
-    * Constants used by getMode method
-    */
+    * @brief Steady mode contant used by getMode
+   */
    static const int MODE_STEADY = 1;
+   /**
+    * @brief Walk mode contant used by getMode
+   */   
    static const int MODE_WALK = 2;
+   /**
+    * @brief Run mode contant used by getMode
+   */   
    static const int MODE_RUN = 3;
    
    /**
@@ -29,7 +35,7 @@ public:
    static Pedometer& instance();    
    
    /**
-    * Initialize SPI and accelerometer sensor
+    * Initialize SPI and accelerometer sensor LIS302
     */
    void init();
    
@@ -52,14 +58,7 @@ public:
     * \return current number of steps
     */
    int getSteps();
-   
-   /**
-    * Compare own steps with others steps
-    * 
-    * \param otherSteps other steps to compare
-    */
-   void compareSteps(int otherSteps);
-      
+  
    /**
     * \return the current training mode 
     */

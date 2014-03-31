@@ -1,0 +1,259 @@
+\hypertarget{classmiosix_1_1_filesystem_base}{\section{miosix\-:\-:Filesystem\-Base Class Reference}
+\label{classmiosix_1_1_filesystem_base}\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}}
+}
+
+
+{\ttfamily \#include $<$file.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Filesystem\-Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.962963cm]{classmiosix_1_1_filesystem_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_filesystem_base_a47506f99792ce1b28cb34518f42982d6}{Filesystem\-Base} ()
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_ab593a305da9f37233d125835ed7dda60}{open} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_file_base}{File\-Base} $>$ \&file, \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, int flags, int mode)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_a505e54a95daa86fa7219518b69159ba7}{lstat} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, struct stat $\ast$pstat)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_a465d109102a95aced48265cd506e3368}{unlink} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_a462c0615135088ad23d133a0b21f6c42}{rename} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&old\-Name, \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&new\-Name)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_a475ecc9a46c125d27187ec1b1dc4b8ba}{mkdir} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, int mode)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_a061bac84c7f5f18e1efc6b938ebc0d66}{rmdir} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name)=0
+\item 
+virtual int \hyperlink{classmiosix_1_1_filesystem_base_a932012bd05958cef730ebb26970b791b}{readlink} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&name, std\-::string \&target)
+\item 
+virtual bool \hyperlink{classmiosix_1_1_filesystem_base_a0e6f164ff15a418572f7bcc3c0a6bdd5}{supports\-Symlinks} () const 
+\item 
+\hypertarget{classmiosix_1_1_filesystem_base_a8d4650a784d18f7b719eb69e38dda517}{bool {\bfseries are\-All\-Files\-Closed} ()}\label{classmiosix_1_1_filesystem_base_a8d4650a784d18f7b719eb69e38dda517}
+
+\item 
+\hypertarget{classmiosix_1_1_filesystem_base_a8af7a800e3e4cf97ea2ca1d9d7aa4bb4}{void {\bfseries new\-File\-Opened} ()}\label{classmiosix_1_1_filesystem_base_a8af7a800e3e4cf97ea2ca1d9d7aa4bb4}
+
+\item 
+\hypertarget{classmiosix_1_1_filesystem_base_a9c67a564264f8703e2495fe81c911ddb}{void {\bfseries file\-Close\-Hook} ()}\label{classmiosix_1_1_filesystem_base_a9c67a564264f8703e2495fe81c911ddb}
+
+\item 
+\hypertarget{classmiosix_1_1_filesystem_base_a82820b7321009a13fc509f35c14734ec}{void {\bfseries set\-Parent\-Fs\-Mountpoint\-Inode} (int inode)}\label{classmiosix_1_1_filesystem_base_a82820b7321009a13fc509f35c14734ec}
+
+\item 
+short int \hyperlink{classmiosix_1_1_filesystem_base_a020d26bbcda93a848025c94b8f1b26a5}{get\-Fs\-Id} () const 
+\item 
+virtual \hyperlink{classmiosix_1_1_filesystem_base_acffcb1fe373a7b69fc8bb63ee7df9b1d}{$\sim$\-Filesystem\-Base} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_filesystem_base_a5326080d985506aa1c6ae654fe8fb375}{const short int \hyperlink{classmiosix_1_1_filesystem_base_a5326080d985506aa1c6ae654fe8fb375}{filesystem\-Id}}\label{classmiosix_1_1_filesystem_base_a5326080d985506aa1c6ae654fe8fb375}
+
+\begin{DoxyCompactList}\small\item\em The unique filesystem id, used by lstat. \end{DoxyCompactList}\item 
+\hypertarget{classmiosix_1_1_filesystem_base_ab664739c4610f7c25416a1a7678cd73a}{int \hyperlink{classmiosix_1_1_filesystem_base_ab664739c4610f7c25416a1a7678cd73a}{parent\-Fs\-Mountpoint\-Inode}}\label{classmiosix_1_1_filesystem_base_ab664739c4610f7c25416a1a7678cd73a}
+
+\begin{DoxyCompactList}\small\item\em The inode of the directory in the parent fs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+All filesystems derive from this class. Classes of this type are reference counted, must be allocated on the heap and managed through intrusive\-\_\-ref\-\_\-ptr$<$\-Filesystem\-Base$>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_filesystem_base_a47506f99792ce1b28cb34518f42982d6}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!Filesystem\-Base@{Filesystem\-Base}}
+\index{Filesystem\-Base@{Filesystem\-Base}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{Filesystem\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Filesystem\-Base\-::\-Filesystem\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_filesystem_base_a47506f99792ce1b28cb34518f42982d6}
+Constructor \hypertarget{classmiosix_1_1_filesystem_base_acffcb1fe373a7b69fc8bb63ee7df9b1d}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!$\sim$\-Filesystem\-Base@{$\sim$\-Filesystem\-Base}}
+\index{$\sim$\-Filesystem\-Base@{$\sim$\-Filesystem\-Base}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{$\sim$\-Filesystem\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Filesystem\-Base\-::$\sim$\-Filesystem\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_filesystem_base_acffcb1fe373a7b69fc8bb63ee7df9b1d}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_filesystem_base_a020d26bbcda93a848025c94b8f1b26a5}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!get\-Fs\-Id@{get\-Fs\-Id}}
+\index{get\-Fs\-Id@{get\-Fs\-Id}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{get\-Fs\-Id}]{\setlength{\rightskip}{0pt plus 5cm}short int miosix\-::\-Filesystem\-Base\-::get\-Fs\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_filesystem_base_a020d26bbcda93a848025c94b8f1b26a5}
+\begin{DoxyReturn}{Returns}
+filesystem id 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_filesystem_base_a505e54a95daa86fa7219518b69159ba7}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!lstat@{lstat}}
+\index{lstat@{lstat}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{lstat}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::lstat (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_filesystem_base_a505e54a95daa86fa7219518b69159ba7}
+Obtain information on a file, identified by a path name. Does not follow symlinks 
+\begin{DoxyParams}{Parameters}
+{\em name} & path name, relative to the local filesystem \\
+\hline
+{\em pstat} & file information is stored here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_mountpoint_fs_ae5edc737cac9355b1df1e70f05ed28c7}{miosix\-::\-Mountpoint\-Fs}, and \hyperlink{classmiosix_1_1_fat32_fs_ab31602401504dfc9550fc83a59ec0f6d}{miosix\-::\-Fat32\-Fs}.
+
+\hypertarget{classmiosix_1_1_filesystem_base_a475ecc9a46c125d27187ec1b1dc4b8ba}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{mkdir}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::mkdir (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_filesystem_base_a475ecc9a46c125d27187ec1b1dc4b8ba}
+Create a directory 
+\begin{DoxyParams}{Parameters}
+{\em name} & directory name \\
+\hline
+{\em mode} & directory permissions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_mountpoint_fs_aa5660ee6a136c9e3a9e3512a800c1069}{miosix\-::\-Mountpoint\-Fs}, and \hyperlink{classmiosix_1_1_fat32_fs_ae33c37782ecd749ddb115277f3ae61a9}{miosix\-::\-Fat32\-Fs}.
+
+\hypertarget{classmiosix_1_1_filesystem_base_ab593a305da9f37233d125835ed7dda60}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!open@{open}}
+\index{open@{open}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf File\-Base} $>$ \&}]{file, }
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{int}]{flags, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_filesystem_base_ab593a305da9f37233d125835ed7dda60}
+Open a file 
+\begin{DoxyParams}{Parameters}
+{\em file} & the file object will be stored here, if the call succeeds \\
+\hline
+{\em name} & the name of the file to open, relative to the local filesystem \\
+\hline
+{\em flags} & file flags (open for reading, writing, ...) \\
+\hline
+{\em mode} & file permissions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_mountpoint_fs_ad27fe12dd7a0ebf4710e3c1239fa4f11}{miosix\-::\-Mountpoint\-Fs}, and \hyperlink{classmiosix_1_1_fat32_fs_ad0c85f5f0c53342ab005f80e725a9533}{miosix\-::\-Fat32\-Fs}.
+
+\hypertarget{classmiosix_1_1_filesystem_base_a932012bd05958cef730ebb26970b791b}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!readlink@{readlink}}
+\index{readlink@{readlink}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{readlink}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::readlink (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name, }
+\item[{std\-::string \&}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_filesystem_base_a932012bd05958cef730ebb26970b791b}
+Follows a symbolic link 
+\begin{DoxyParams}{Parameters}
+{\em path} & path identifying a symlink, relative to the local filesystem \\
+\hline
+{\em target} & the link target is returned here if the call succeeds. Note that the returned path is not relative to this filesystem, and can be either relative or absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative number on failure 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_filesystem_base_a462c0615135088ad23d133a0b21f6c42}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!rename@{rename}}
+\index{rename@{rename}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{rename}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::rename (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{old\-Name, }
+\item[{{\bf String\-Part} \&}]{new\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_filesystem_base_a462c0615135088ad23d133a0b21f6c42}
+Rename a file or directory 
+\begin{DoxyParams}{Parameters}
+{\em old\-Name} & old file name \\
+\hline
+{\em new\-Name} & new file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_mountpoint_fs_ab24e62499734c86f42c9a6ccfd28ae7e}{miosix\-::\-Mountpoint\-Fs}, and \hyperlink{classmiosix_1_1_fat32_fs_aa03f9f0a00ac17013cdc1cc990902913}{miosix\-::\-Fat32\-Fs}.
+
+\hypertarget{classmiosix_1_1_filesystem_base_a061bac84c7f5f18e1efc6b938ebc0d66}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{rmdir}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::rmdir (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_filesystem_base_a061bac84c7f5f18e1efc6b938ebc0d66}
+Remove a directory if empty 
+\begin{DoxyParams}{Parameters}
+{\em name} & directory name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_mountpoint_fs_a41c03e60fca3733f7f2d9902063efc2e}{miosix\-::\-Mountpoint\-Fs}, and \hyperlink{classmiosix_1_1_fat32_fs_a14e40b5dfb8cb0d0c912d6ae761932a3}{miosix\-::\-Fat32\-Fs}.
+
+\hypertarget{classmiosix_1_1_filesystem_base_a0e6f164ff15a418572f7bcc3c0a6bdd5}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!supports\-Symlinks@{supports\-Symlinks}}
+\index{supports\-Symlinks@{supports\-Symlinks}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{supports\-Symlinks}]{\setlength{\rightskip}{0pt plus 5cm}bool Filesystem\-Base\-::supports\-Symlinks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_filesystem_base_a0e6f164ff15a418572f7bcc3c0a6bdd5}
+\begin{DoxyReturn}{Returns}
+true if the filesystem supports symbolic links. In this case, the filesystem should override readlink 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_filesystem_base_a465d109102a95aced48265cd506e3368}{\index{miosix\-::\-Filesystem\-Base@{miosix\-::\-Filesystem\-Base}!unlink@{unlink}}
+\index{unlink@{unlink}!miosix::FilesystemBase@{miosix\-::\-Filesystem\-Base}}
+\subsubsection[{unlink}]{\setlength{\rightskip}{0pt plus 5cm}virtual int miosix\-::\-Filesystem\-Base\-::unlink (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmiosix_1_1_filesystem_base_a465d109102a95aced48265cd506e3368}
+Remove a file or directory 
+\begin{DoxyParams}{Parameters}
+{\em name} & path name of file or directory to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classmiosix_1_1_mountpoint_fs_a91111599924d60eee312661a8fca544b}{miosix\-::\-Mountpoint\-Fs}, and \hyperlink{classmiosix_1_1_fat32_fs_a422bdf2a4f7ec233ee851c13103e1b1d}{miosix\-::\-Fat32\-Fs}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/file.\-h\item 
+miosix/filesystem/file.\-cpp\end{DoxyCompactItemize}

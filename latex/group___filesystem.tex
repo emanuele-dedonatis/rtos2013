@@ -1,0 +1,12 @@
+\hypertarget{group___filesystem}{\section{Filesystem}
+\label{group___filesystem}\index{Filesystem@{Filesystem}}
+}
+Filesystem related functions
+
+File handling will not be described here since it is done using the C or C++ standard library (fopen, fprintf, istream, remove, mkdir, ...).\par
+ All file related function of the C and C++ standard library should work, except rename() and link() which are not implemented.\par
+ The maximum number of files that can be opened at the same time is defined in the constant M\-A\-X\-\_\-\-O\-P\-E\-N\-\_\-\-F\-I\-L\-E\-S in \hyperlink{miosix__settings_8h}{miosix/config/miosix\-\_\-settings.\-h}, All files are opened in binary mode. Therefore there is no differnce between fopen(\char`\"{}file.\-txt\char`\"{},\char`\"{}r\char`\"{}) and fopen(\char`\"{}file.\-txt\char`\"{},\char`\"{}rb\char`\"{}). For filesystem write access, the S\-Y\-N\-C\-\_\-\-A\-F\-T\-E\-R\-\_\-\-W\-R\-I\-T\-E option in \hyperlink{miosix__settings_8h}{miosix\-\_\-settings.\-h} allows to choose a faster or safer implementation.
+
+Directory listing is not done using the standard opendir() and readdir() functions, but using the Directory class.
+
+Mounting and unmounting the filesystem is done through the Filesystem class. Note that the filesystem is mounted automatically at boot time, except in case of errors (like no u\-S\-D card in the socket). 

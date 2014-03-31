@@ -1,0 +1,266 @@
+\hypertarget{classmiosix_1_1intrusive__ref__ptr}{\section{miosix\-:\-:intrusive\-\_\-ref\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classmiosix_1_1intrusive__ref__ptr}\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr$<$ T $>$@{miosix\-::intrusive\-\_\-ref\-\_\-ptr$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$intrusive.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmiosix_1_1intrusive__ref__ptr_1_1_safe_bool_struct}{Safe\-Bool\-Struct}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a77db2e55c011e31533b8b637e45a4bf5}{typedef T \hyperlink{classmiosix_1_1intrusive__ref__ptr_a77db2e55c011e31533b8b637e45a4bf5}{element\-\_\-type}}\label{classmiosix_1_1intrusive__ref__ptr_a77db2e55c011e31533b8b637e45a4bf5}
+
+\begin{DoxyCompactList}\small\item\em As shared\-\_\-ptr, expose the managed type. \end{DoxyCompactList}\item 
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_aab447eb87c4ffc44a2a84688954de282}{typedef void $\ast$Safe\-Bool\-Struct\-::$\ast$ {\bfseries Safe\-Bool}}\label{classmiosix_1_1intrusive__ref__ptr_aab447eb87c4ffc44a2a84688954de282}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr_a90ba1266a44c5e343e7e4f76cdabd9d3}{intrusive\-\_\-ref\-\_\-ptr} ()
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr_aa90e4f2cfd44cfd9debe0347bbf23dbd}{intrusive\-\_\-ref\-\_\-ptr} (T $\ast$o)
+\item 
+{\footnotesize template$<$typename U $>$ }\\\hyperlink{classmiosix_1_1intrusive__ref__ptr_aa196115ec5e223fb88e312bc9590069b}{intrusive\-\_\-ref\-\_\-ptr} (U $\ast$o)
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr_af2d9b0d3f64827ff80e7798c5cfb0bdf}{intrusive\-\_\-ref\-\_\-ptr} (const \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \&rhs)
+\item 
+{\footnotesize template$<$typename U $>$ }\\\hyperlink{classmiosix_1_1intrusive__ref__ptr_a04ba216b6085adcf33bf98ca09c69b8a}{intrusive\-\_\-ref\-\_\-ptr} (const \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ U $>$ \&rhs)
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \& \hyperlink{classmiosix_1_1intrusive__ref__ptr_a97850214e47356f5ed505eda0629e8e9}{operator=} (const \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \&rhs)
+\item 
+{\footnotesize template$<$typename U $>$ }\\\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \& \hyperlink{classmiosix_1_1intrusive__ref__ptr_abacfd437cfff16c20e24113c3efa5e75}{operator=} (const \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ U $>$ \&rhs)
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \& \hyperlink{classmiosix_1_1intrusive__ref__ptr_aab8558f7cfea4a1e76dc553392c4c6ea}{operator=} (T $\ast$o)
+\item 
+T $\ast$ \hyperlink{classmiosix_1_1intrusive__ref__ptr_aa72585017bb338ee29ac0f8645af80f3}{get} () const 
+\item 
+T \& \hyperlink{classmiosix_1_1intrusive__ref__ptr_a43d1966f73cceeed64728e7c326c5350}{operator$\ast$} () const 
+\item 
+T $\ast$ \hyperlink{classmiosix_1_1intrusive__ref__ptr_ab8da77341bdf726f59654734504f20a5}{operator-\/$>$} () const 
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr_a31052b6734e890c0ada97802d3c93b27}{operator Safe\-Bool} () const 
+\item 
+void \hyperlink{classmiosix_1_1intrusive__ref__ptr_ae18b634a51ea78219eb073a40cd9adfe}{swap} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \&rhs)
+\item 
+void \hyperlink{classmiosix_1_1intrusive__ref__ptr_a6ac0bfc8ad709346328c7daa157d89e1}{reset} ()
+\item 
+int \hyperlink{classmiosix_1_1intrusive__ref__ptr_ac530978dc3eb430e5845b4166e3d0395}{use\-\_\-count} () const 
+\item 
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a379c406ea6285861137d8de6efd747d1}{\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} {\bfseries atomic\-\_\-load} () const }\label{classmiosix_1_1intrusive__ref__ptr_a379c406ea6285861137d8de6efd747d1}
+
+\item 
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_ad30d0133e10223766c4011005e243799}{\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} {\bfseries atomic\-\_\-exchange} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} \&r)}\label{classmiosix_1_1intrusive__ref__ptr_ad30d0133e10223766c4011005e243799}
+
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr_a2346627ae66994ad943b3672ecdb8355}{$\sim$intrusive\-\_\-ref\-\_\-ptr} ()
+\item 
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a65c069c536167fbb21f503f8b2764a70}{{\footnotesize template$<$typename U $>$ }\\\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$ \& {\bfseries operator=} (const \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ U $>$ \&rhs)}\label{classmiosix_1_1intrusive__ref__ptr_a65c069c536167fbb21f503f8b2764a70}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class miosix\-::intrusive\-\_\-ref\-\_\-ptr$<$ T $>$}
+
+Reference counted pointer to intrusively reference counted objects. This class is made in a way to resemble the shared\-\_\-ptr class, as specified in chapter 20.\-7.\-2.\-2 of the C++11 standard.
+
+\hyperlink{classmiosix_1_1_thread}{Thread} safety of this class is the same as shared\-\_\-ptr. The reference count is updated using atomic operations, but this does not make all kind of concurrent access to the same \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} safe. A good reference that explains why is www.\-drdobbs.\-com/cpp/a-\/base-\/class-\/for-\/intrusively-\/reference-\/c/229218807?pgno=3
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & type to which the object points \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a90ba1266a44c5e343e7e4f76cdabd9d3}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}}
+\index{intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{intrusive\-\_\-ref\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::{\bf intrusive\-\_\-ref\-\_\-ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_a90ba1266a44c5e343e7e4f76cdabd9d3}
+Default constructor \hypertarget{classmiosix_1_1intrusive__ref__ptr_aa90e4f2cfd44cfd9debe0347bbf23dbd}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}}
+\index{intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{intrusive\-\_\-ref\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::{\bf intrusive\-\_\-ref\-\_\-ptr} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classmiosix_1_1intrusive__ref__ptr_aa90e4f2cfd44cfd9debe0347bbf23dbd}
+Constructor, with raw pointer 
+\begin{DoxyParams}{Parameters}
+{\em object} & object to manage \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_aa196115ec5e223fb88e312bc9590069b}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}}
+\index{intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{intrusive\-\_\-ref\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename U $>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::{\bf intrusive\-\_\-ref\-\_\-ptr} (
+\begin{DoxyParamCaption}
+\item[{U $\ast$}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classmiosix_1_1intrusive__ref__ptr_aa196115ec5e223fb88e312bc9590069b}
+Generalized constructor, with raw pointer 
+\begin{DoxyParams}{Parameters}
+{\em object} & object to manage \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_af2d9b0d3f64827ff80e7798c5cfb0bdf}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}}
+\index{intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{intrusive\-\_\-ref\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::{\bf intrusive\-\_\-ref\-\_\-ptr} (
+\begin{DoxyParamCaption}
+\item[{const {\bf intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_af2d9b0d3f64827ff80e7798c5cfb0bdf}
+Copy constructor, with same type of managed pointer 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to manage \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a04ba216b6085adcf33bf98ca09c69b8a}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}}
+\index{intrusive\-\_\-ref\-\_\-ptr@{intrusive\-\_\-ref\-\_\-ptr}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{intrusive\-\_\-ref\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename U $>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::{\bf intrusive\-\_\-ref\-\_\-ptr} (
+\begin{DoxyParamCaption}
+\item[{const {\bf intrusive\-\_\-ref\-\_\-ptr}$<$ U $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_a04ba216b6085adcf33bf98ca09c69b8a}
+Generalized copy constructor, to support upcast among refcounted pointers 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to manage \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a2346627ae66994ad943b3672ecdb8355}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!$\sim$intrusive\-\_\-ref\-\_\-ptr@{$\sim$intrusive\-\_\-ref\-\_\-ptr}}
+\index{$\sim$intrusive\-\_\-ref\-\_\-ptr@{$\sim$intrusive\-\_\-ref\-\_\-ptr}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{$\sim$intrusive\-\_\-ref\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::$\sim${\bf intrusive\-\_\-ref\-\_\-ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_a2346627ae66994ad943b3672ecdb8355}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_aa72585017bb338ee29ac0f8645af80f3}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!get@{get}}
+\index{get@{get}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_aa72585017bb338ee29ac0f8645af80f3}
+\begin{DoxyReturn}{Returns}
+a pointer to the managed object 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a31052b6734e890c0ada97802d3c93b27}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!operator Safe\-Bool@{operator Safe\-Bool}}
+\index{operator Safe\-Bool@{operator Safe\-Bool}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{operator Safe\-Bool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::operator Safe\-Bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_a31052b6734e890c0ada97802d3c93b27}
+\begin{DoxyReturn}{Returns}
+true if the object contains a callback 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a43d1966f73cceeed64728e7c326c5350}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_a43d1966f73cceeed64728e7c326c5350}
+\begin{DoxyReturn}{Returns}
+a reference to the managed object 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_ab8da77341bdf726f59654734504f20a5}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_ab8da77341bdf726f59654734504f20a5}
+Allows this class to behave like the managed type \begin{DoxyReturn}{Returns}
+a pointer to the managed object 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a97850214e47356f5ed505eda0629e8e9}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$ \& {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1intrusive__ref__ptr_a97850214e47356f5ed505eda0629e8e9}
+Operator=, with same type of managed pointer 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to manage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to $\ast$this 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_abacfd437cfff16c20e24113c3efa5e75}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename U $>$ {\bf intrusive\-\_\-ref\-\_\-ptr}\& {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf intrusive\-\_\-ref\-\_\-ptr}$<$ U $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1intrusive__ref__ptr_abacfd437cfff16c20e24113c3efa5e75}
+Generalized perator=, to support upcast among refcounted pointers 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to manage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to $\ast$this 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_aab8558f7cfea4a1e76dc553392c4c6ea}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$ \& {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{o}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1intrusive__ref__ptr_aab8558f7cfea4a1e76dc553392c4c6ea}
+Operator=, with raw pointer 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & object to manage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to $\ast$this 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_a6ac0bfc8ad709346328c7daa157d89e1}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!reset@{reset}}
+\index{reset@{reset}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_a6ac0bfc8ad709346328c7daa157d89e1}
+After a call to this member function, this \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} no longer points to the managed object. The managed object is deleted if this was the only pointer at it \hypertarget{classmiosix_1_1intrusive__ref__ptr_ae18b634a51ea78219eb073a40cd9adfe}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!swap@{swap}}
+\index{swap@{swap}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_ae18b634a51ea78219eb073a40cd9adfe}
+Swap the managed object with another \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the other smart pointer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1intrusive__ref__ptr_ac530978dc3eb430e5845b4166e3d0395}{\index{miosix\-::intrusive\-\_\-ref\-\_\-ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}!use\-\_\-count@{use\-\_\-count}}
+\index{use\-\_\-count@{use\-\_\-count}!miosix::intrusive_ref_ptr@{miosix\-::intrusive\-\_\-ref\-\_\-ptr}}
+\subsubsection[{use\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ int {\bf miosix\-::intrusive\-\_\-ref\-\_\-ptr}$<$ T $>$\-::use\-\_\-count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1intrusive__ref__ptr_ac530978dc3eb430e5845b4166e3d0395}
+\begin{DoxyReturn}{Returns}
+the number of \hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr} that point to the managed object. If return 0, than this points to nullptr 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/intrusive.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\hypertarget{classmiosix_1_1_gpio}{\section{miosix\-:\-:Gpio$<$ P, N $>$ Class Template Reference}
+\label{classmiosix_1_1_gpio}\index{miosix\-::\-Gpio$<$ P, N $>$@{miosix\-::\-Gpio$<$ P, N $>$}}
+}
+
+
+{\ttfamily \#include $<$gpio\-\_\-impl.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmiosix_1_1_gpio_aa1e29d5527c827e76d9b053de809a9f2}{mode} (\hyperlink{classmiosix_1_1_mode_a481b1664f08bbe862f80be59ab0ffcf9}{Mode\-::\-Mode\-\_\-} m)
+\item 
+static void \hyperlink{classmiosix_1_1_gpio_ac28009264f0e6bdb113173eab89b0398}{high} ()
+\item 
+static void \hyperlink{classmiosix_1_1_gpio_a0e9d95f5e83dcb5f0c491c0ad58779db}{low} ()
+\item 
+static int \hyperlink{classmiosix_1_1_gpio_a3f92bfeb2135dd493d6d7a371e6b82eb}{value} ()
+\item 
+static \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} \hyperlink{classmiosix_1_1_gpio_afb7e5fb071ed0e444b0759711da63342}{get\-Pin} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int P, unsigned char N$>$class miosix\-::\-Gpio$<$ P, N $>$}
+
+\hyperlink{classmiosix_1_1_gpio}{Gpio} template class 
+\begin{DoxyParams}{Parameters}
+{\em P} & G\-P\-I\-O0\-\_\-\-B\-A\-S\-E or G\-P\-I\-O1\-\_\-\-B\-A\-S\-E. Select which port \\
+\hline
+{\em N} & which pin (0 to 31) The intended use is to make a typedef to this class with a meaningful name. 
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} Gpio<GPIO0\_BASE,0> green\_led;
+green\_led::mode(\hyperlink{classmiosix_1_1_mode_a481b1664f08bbe862f80be59ab0ffcf9ae0bbb74d2f8cb3136ff00befbd6c8b5f}{Mode::OUTPUT});
+green\_led::high();\textcolor{comment}{//Turn on LED}
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_gpio_afb7e5fb071ed0e444b0759711da63342}{\index{miosix\-::\-Gpio@{miosix\-::\-Gpio}!get\-Pin@{get\-Pin}}
+\index{get\-Pin@{get\-Pin}!miosix::Gpio@{miosix\-::\-Gpio}}
+\subsubsection[{get\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int P, unsigned char N$>$ static {\bf Gpio\-Pin} {\bf miosix\-::\-Gpio}$<$ P, N $>$\-::get\-Pin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_gpio_afb7e5fb071ed0e444b0759711da63342}
+\begin{DoxyReturn}{Returns}
+this \hyperlink{classmiosix_1_1_gpio}{Gpio} converted as a \hyperlink{classmiosix_1_1_gpio_pin}{Gpio\-Pin} class 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_gpio_ac28009264f0e6bdb113173eab89b0398}{\index{miosix\-::\-Gpio@{miosix\-::\-Gpio}!high@{high}}
+\index{high@{high}!miosix::Gpio@{miosix\-::\-Gpio}}
+\subsubsection[{high}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int P, unsigned char N$>$ static void {\bf miosix\-::\-Gpio}$<$ P, N $>$\-::high (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_gpio_ac28009264f0e6bdb113173eab89b0398}
+Set the pin to 1, if it is an output \hypertarget{classmiosix_1_1_gpio_a0e9d95f5e83dcb5f0c491c0ad58779db}{\index{miosix\-::\-Gpio@{miosix\-::\-Gpio}!low@{low}}
+\index{low@{low}!miosix::Gpio@{miosix\-::\-Gpio}}
+\subsubsection[{low}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int P, unsigned char N$>$ static void {\bf miosix\-::\-Gpio}$<$ P, N $>$\-::low (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_gpio_a0e9d95f5e83dcb5f0c491c0ad58779db}
+Set the pin to 0, if it is an output \hypertarget{classmiosix_1_1_gpio_aa1e29d5527c827e76d9b053de809a9f2}{\index{miosix\-::\-Gpio@{miosix\-::\-Gpio}!mode@{mode}}
+\index{mode@{mode}!miosix::Gpio@{miosix\-::\-Gpio}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int P, unsigned char N$>$ static void {\bf miosix\-::\-Gpio}$<$ P, N $>$\-::mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Mode\-::\-Mode\-\_\-}}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_gpio_aa1e29d5527c827e76d9b053de809a9f2}
+Set the G\-P\-I\-O to the desired mode (I\-N\-P\-U\-T, O\-U\-T\-P\-U\-T) 
+\begin{DoxyParams}{Parameters}
+{\em m} & enum Mode\-\_\- \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_gpio_a3f92bfeb2135dd493d6d7a371e6b82eb}{\index{miosix\-::\-Gpio@{miosix\-::\-Gpio}!value@{value}}
+\index{value@{value}!miosix::Gpio@{miosix\-::\-Gpio}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int P, unsigned char N$>$ static int {\bf miosix\-::\-Gpio}$<$ P, N $>$\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_gpio_a3f92bfeb2135dd493d6d7a371e6b82eb}
+Allows to read the pin status \begin{DoxyReturn}{Returns}
+0 or 1 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/arch/arm7\-\_\-lpc2000/lpc2138\-\_\-miosix\-\_\-board/interfaces-\/impl/gpio\-\_\-impl.\-h\end{DoxyCompactItemize}

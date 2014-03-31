@@ -1,0 +1,58 @@
+\hypertarget{system__stm32f10x_8c}{\section{miosix/arch/cortex\-M3\-\_\-stm32/common/\-C\-M\-S\-I\-S/system\-\_\-stm32f10x.c File Reference}
+\label{system__stm32f10x_8c}\index{miosix/arch/cortex\-M3\-\_\-stm32/common/\-C\-M\-S\-I\-S/system\-\_\-stm32f10x.\-c@{miosix/arch/cortex\-M3\-\_\-stm32/common/\-C\-M\-S\-I\-S/system\-\_\-stm32f10x.\-c}}
+}
+
+
+C\-M\-S\-I\-S Cortex-\/\-M3 Device Peripheral Access Layer System Source File.  
+
+
+{\ttfamily \#include \char`\"{}stm32f10x.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___s_t_m32_f10x___system___private___defines_ga40e1495541cbb4acbe3f1819bd87a9fe}{V\-E\-C\-T\-\_\-\-T\-A\-B\-\_\-\-O\-F\-F\-S\-E\-T}~0x0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\-Init} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system Initialize the Embedded Flash Interface, the P\-L\-L and update the System\-Core\-Clock variable. \end{DoxyCompactList}\item 
+void \hyperlink{group___s_t_m32_f10x___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\-Core\-Clock\-Update} (void)
+\begin{DoxyCompactList}\small\item\em Update System\-Core\-Clock variable according to Clock Register Values. The System\-Core\-Clock variable contains the core clock (H\-C\-L\-K), it can be used by the user application to setup the Sys\-Tick timer or configure other parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group___s_t_m32_f10x___system___private___variables_gaa3cd3e43291e81e795d642b79b6088e6}{System\-Core\-Clock} = \hyperlink{group___library__configuration__section_gaaa8c76e274d0f6dd2cefb5d0b17fbc37}{H\-S\-I\-\_\-\-V\-A\-L\-U\-E}
+\item 
+\hypertarget{group___s_t_m32_f10x___system___private___variables_gacdc3ef54c0704c90e69a8a84fb2d970d}{\hyperlink{group___c_m_s_i_s__core__definitions_gaf63697ed9952cc71e1225efe205f6cd3}{\-\_\-\-\_\-\-I} uint8\-\_\-t {\bfseries A\-H\-B\-Presc\-Table} \mbox{[}16\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}}\label{group___s_t_m32_f10x___system___private___variables_gacdc3ef54c0704c90e69a8a84fb2d970d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\-M\-S\-I\-S Cortex-\/\-M3 Device Peripheral Access Layer System Source File. \begin{DoxyAuthor}{Author}
+M\-C\-D Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\-5.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/\-March-\/2011
+\begin{DoxyEnumerate}
+\item This file provides two functions and one global variable to be called from user application\-:
+\begin{DoxyItemize}
+\item \hyperlink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\-Init()}\-: Setups the system clock (System clock source, P\-L\-L Multiplier factors, A\-H\-B/\-A\-P\-Bx prescalers and Flash settings). This function is called at startup just after reset and before branch to main program. This call is made inside the \char`\"{}startup\-\_\-stm32f10x\-\_\-xx.\-s\char`\"{} file.
+\item System\-Core\-Clock variable\-: Contains the core clock (H\-C\-L\-K), it can be used by the user application to setup the Sys\-Tick timer or configure other parameters.
+\item \hyperlink{group___s_t_m32_f10x___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\-Core\-Clock\-Update()}\-: Updates the variable System\-Core\-Clock and must be called whenever the core clock is changed during program execution.
+\end{DoxyItemize}
+\item After each device reset the H\-S\-I (8 M\-Hz) is used as system clock source. Then \hyperlink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\-Init()} function is called, in \char`\"{}startup\-\_\-stm32f10x\-\_\-xx.\-s\char`\"{} file, to configure the system clock before to branch to main program.
+\item If the system clock source selected by user fails to startup, the \hyperlink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\-Init()} function will do nothing and H\-S\-I still used as system clock source. User can add some code to deal with this issue inside the Set\-Sys\-Clock() function.
+\item The default value of H\-S\-E crystal is set to 8 M\-Hz (or 25 M\-Hz, depedning on the product used), refer to \char`\"{}\-H\-S\-E\-\_\-\-V\-A\-L\-U\-E\char`\"{} define in \char`\"{}stm32f10x.\-h\char`\"{} file. When H\-S\-E is used as system clock source, directly or through P\-L\-L, and you are using different crystal you have to adapt the H\-S\-E value to your own configuration.
+\end{DoxyEnumerate}
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+T\-H\-E P\-R\-E\-S\-E\-N\-T F\-I\-R\-M\-W\-A\-R\-E W\-H\-I\-C\-H I\-S F\-O\-R G\-U\-I\-D\-A\-N\-C\-E O\-N\-L\-Y A\-I\-M\-S A\-T P\-R\-O\-V\-I\-D\-I\-N\-G C\-U\-S\-T\-O\-M\-E\-R\-S W\-I\-T\-H C\-O\-D\-I\-N\-G I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N R\-E\-G\-A\-R\-D\-I\-N\-G T\-H\-E\-I\-R P\-R\-O\-D\-U\-C\-T\-S I\-N O\-R\-D\-E\-R F\-O\-R T\-H\-E\-M T\-O S\-A\-V\-E T\-I\-M\-E. A\-S A R\-E\-S\-U\-L\-T, S\-T\-M\-I\-C\-R\-O\-E\-L\-E\-C\-T\-R\-O\-N\-I\-C\-S S\-H\-A\-L\-L N\-O\-T B\-E H\-E\-L\-D L\-I\-A\-B\-L\-E F\-O\-R A\-N\-Y D\-I\-R\-E\-C\-T, I\-N\-D\-I\-R\-E\-C\-T O\-R C\-O\-N\-S\-E\-Q\-U\-E\-N\-T\-I\-A\-L D\-A\-M\-A\-G\-E\-S W\-I\-T\-H R\-E\-S\-P\-E\-C\-T T\-O A\-N\-Y C\-L\-A\-I\-M\-S A\-R\-I\-S\-I\-N\-G F\-R\-O\-M T\-H\-E C\-O\-N\-T\-E\-N\-T O\-F S\-U\-C\-H F\-I\-R\-M\-W\-A\-R\-E A\-N\-D/\-O\-R T\-H\-E U\-S\-E M\-A\-D\-E B\-Y C\-U\-S\-T\-O\-M\-E\-R\-S O\-F T\-H\-E C\-O\-D\-I\-N\-G I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N C\-O\-N\-T\-A\-I\-N\-E\-D H\-E\-R\-E\-I\-N I\-N C\-O\-N\-N\-E\-C\-T\-I\-O\-N W\-I\-T\-H T\-H\-E\-I\-R P\-R\-O\-D\-U\-C\-T\-S.
+
+\subsubsection*{\begin{center}\copyright{} C\-O\-P\-Y\-R\-I\-G\-H\-T 2011 S\-T\-Microelectronics\end{center} }

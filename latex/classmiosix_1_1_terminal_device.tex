@@ -1,0 +1,223 @@
+\hypertarget{classmiosix_1_1_terminal_device}{\section{miosix\-:\-:Terminal\-Device Class Reference}
+\label{classmiosix_1_1_terminal_device}\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}}
+}
+
+
+{\ttfamily \#include $<$console\-\_\-device.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Terminal\-Device\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classmiosix_1_1_terminal_device}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_terminal_device_a341ad1ca71eeeab010d337779626fd2e}{Terminal\-Device} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_file_base}{File\-Base} $>$ device)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_terminal_device_a5af5b5ec018c37b74a2dda08771b5d89}{write} (const void $\ast$data, size\-\_\-t len)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_terminal_device_a43ccc1cf6ddbf97013aa6dca95179ee3}{read} (void $\ast$data, size\-\_\-t len)
+\item 
+virtual off\-\_\-t \hyperlink{classmiosix_1_1_terminal_device_afbb392a9ddacccb30bb416d46d9e4ca3}{lseek} (off\-\_\-t pos, int whence)
+\item 
+virtual int \hyperlink{classmiosix_1_1_terminal_device_a0de68aeb912ccc7a4c99abe641a16c06}{fstat} (struct stat $\ast$pstat) const 
+\item 
+virtual int \hyperlink{classmiosix_1_1_terminal_device_a1198b0926fad671a93c74bcf09689112}{isatty} () const 
+\item 
+virtual int \hyperlink{classmiosix_1_1_terminal_device_a9782c0195e384624f15dc25a636b5774}{sync} ()
+\item 
+void \hyperlink{classmiosix_1_1_terminal_device_ada45a5c2ada67fe01b49293f1a8cdf01}{set\-Echo} (bool echo\-Mode)
+\item 
+bool \hyperlink{classmiosix_1_1_terminal_device_a168dd3ac17071260f32f9fc1e42233da}{is\-Echo\-Enabled} () const 
+\item 
+void \hyperlink{classmiosix_1_1_terminal_device_abe7bee8e4558ea911ea806151c0f78e5}{set\-Binary} (bool binary\-Mode)
+\item 
+bool \hyperlink{classmiosix_1_1_terminal_device_aaff3d9c0aa1a4dfaf8ebfe07dd44004a}{is\-Binary} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Teriminal device, proxy object supporting additional terminal-\/specific features 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_terminal_device_a341ad1ca71eeeab010d337779626fd2e}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!Terminal\-Device@{Terminal\-Device}}
+\index{Terminal\-Device@{Terminal\-Device}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{Terminal\-Device}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Terminal\-Device\-::\-Terminal\-Device (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf File\-Base} $>$}]{device}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_terminal_device_a341ad1ca71eeeab010d337779626fd2e}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em device} & proxed device. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_terminal_device_a0de68aeb912ccc7a4c99abe641a16c06}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!fstat@{fstat}}
+\index{fstat@{fstat}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{fstat}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Terminal\-Device\-::fstat (
+\begin{DoxyParamCaption}
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_terminal_device_a0de68aeb912ccc7a4c99abe641a16c06}
+Return file information. 
+\begin{DoxyParams}{Parameters}
+{\em pstat} & pointer to stat struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_terminal_device_a1198b0926fad671a93c74bcf09689112}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!isatty@{isatty}}
+\index{isatty@{isatty}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{isatty}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Terminal\-Device\-::isatty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_terminal_device_a1198b0926fad671a93c74bcf09689112}
+Check whether the file refers to a terminal. \begin{DoxyReturn}{Returns}
+1 if it is a terminal, 0 if it is not, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classmiosix_1_1_file_base_a2bedafef2ca811d26ec5a83897b75934}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_terminal_device_aaff3d9c0aa1a4dfaf8ebfe07dd44004a}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!is\-Binary@{is\-Binary}}
+\index{is\-Binary@{is\-Binary}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{is\-Binary}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Terminal\-Device\-::is\-Binary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_terminal_device_aaff3d9c0aa1a4dfaf8ebfe07dd44004a}
+\begin{DoxyReturn}{Returns}
+true if the terminal allows binary data 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_terminal_device_a168dd3ac17071260f32f9fc1e42233da}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!is\-Echo\-Enabled@{is\-Echo\-Enabled}}
+\index{is\-Echo\-Enabled@{is\-Echo\-Enabled}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{is\-Echo\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Terminal\-Device\-::is\-Echo\-Enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_terminal_device_a168dd3ac17071260f32f9fc1e42233da}
+\begin{DoxyReturn}{Returns}
+true if echo is enabled 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_terminal_device_afbb392a9ddacccb30bb416d46d9e4ca3}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!lseek@{lseek}}
+\index{lseek@{lseek}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{lseek}]{\setlength{\rightskip}{0pt plus 5cm}off\-\_\-t miosix\-::\-Terminal\-Device\-::lseek (
+\begin{DoxyParamCaption}
+\item[{off\-\_\-t}]{pos, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_terminal_device_afbb392a9ddacccb30bb416d46d9e4ca3}
+Move file pointer, if the file supports random-\/access. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & offset to sum to the beginning of the file, current position or end of file, depending on whence \\
+\hline
+{\em whence} & S\-E\-E\-K\-\_\-\-S\-E\-T, S\-E\-E\-K\-\_\-\-C\-U\-R or S\-E\-E\-K\-\_\-\-E\-N\-D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the offset from the beginning of the file if the operation completed, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_terminal_device_a43ccc1cf6ddbf97013aa6dca95179ee3}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!read@{read}}
+\index{read@{read}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Terminal\-Device\-::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_terminal_device_a43ccc1cf6ddbf97013aa6dca95179ee3}
+Read data from the file, if the file supports reading. 
+\begin{DoxyParams}{Parameters}
+{\em data} & buffer to store read data \\
+\hline
+{\em len} & the number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of read characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_terminal_device_abe7bee8e4558ea911ea806151c0f78e5}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!set\-Binary@{set\-Binary}}
+\index{set\-Binary@{set\-Binary}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{set\-Binary}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Terminal\-Device\-::set\-Binary (
+\begin{DoxyParamCaption}
+\item[{bool}]{binary\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_terminal_device_abe7bee8e4558ea911ea806151c0f78e5}
+Selects whether the terminal sholud be transparent to non A\-S\-C\-I\-I data 
+\begin{DoxyParams}{Parameters}
+{\em raw\-Mode} & true if raw mode is required \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_terminal_device_ada45a5c2ada67fe01b49293f1a8cdf01}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!set\-Echo@{set\-Echo}}
+\index{set\-Echo@{set\-Echo}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{set\-Echo}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Terminal\-Device\-::set\-Echo (
+\begin{DoxyParamCaption}
+\item[{bool}]{echo\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_terminal_device_ada45a5c2ada67fe01b49293f1a8cdf01}
+Enables or disables echo of commands on the terminal 
+\begin{DoxyParams}{Parameters}
+{\em echo} & true to enable echo, false to disable it \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_terminal_device_a9782c0195e384624f15dc25a636b5774}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!sync@{sync}}
+\index{sync@{sync}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Terminal\-Device\-::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_terminal_device_a9782c0195e384624f15dc25a636b5774}
+Wait until all I/\-O operations have completed on this file. \begin{DoxyReturn}{Returns}
+0 on success, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classmiosix_1_1_file_base_a80d4260e58c71125d3dcfa98350c41da}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_terminal_device_a5af5b5ec018c37b74a2dda08771b5d89}{\index{miosix\-::\-Terminal\-Device@{miosix\-::\-Terminal\-Device}!write@{write}}
+\index{write@{write}!miosix::TerminalDevice@{miosix\-::\-Terminal\-Device}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Terminal\-Device\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_terminal_device_a5af5b5ec018c37b74a2dda08771b5d89}
+Write data to the file, if the file supports writing. 
+\begin{DoxyParams}{Parameters}
+{\em data} & the data to write \\
+\hline
+{\em len} & the number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of written characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}{miosix\-::\-File\-Base}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/console/console\-\_\-device.\-h\item 
+miosix/filesystem/console/console\-\_\-device.\-cpp\end{DoxyCompactItemize}

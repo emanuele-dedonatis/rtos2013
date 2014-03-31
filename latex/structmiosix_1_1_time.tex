@@ -1,0 +1,55 @@
+\hypertarget{structmiosix_1_1_time}{\section{miosix\-:\-:Time Struct Reference}
+\label{structmiosix_1_1_time}\index{miosix\-::\-Time@{miosix\-::\-Time}}
+}
+
+
+{\ttfamily \#include $<$bsp\-\_\-impl.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structmiosix_1_1_time_a04df8f20000785df381311586aa3c3f1}{unsigned char \hyperlink{structmiosix_1_1_time_a04df8f20000785df381311586aa3c3f1}{sec}}\label{structmiosix_1_1_time_a04df8f20000785df381311586aa3c3f1}
+
+\begin{DoxyCompactList}\small\item\em Seconds, in range 0..59. \end{DoxyCompactList}\item 
+\hypertarget{structmiosix_1_1_time_a42a4aa9118e73cdc73685919e73a4299}{unsigned char \hyperlink{structmiosix_1_1_time_a42a4aa9118e73cdc73685919e73a4299}{min}}\label{structmiosix_1_1_time_a42a4aa9118e73cdc73685919e73a4299}
+
+\begin{DoxyCompactList}\small\item\em Minutes, in range 0..59. \end{DoxyCompactList}\item 
+\hypertarget{structmiosix_1_1_time_abf699a0aa658d1595f181420c88014ae}{unsigned char \hyperlink{structmiosix_1_1_time_abf699a0aa658d1595f181420c88014ae}{hour}}\label{structmiosix_1_1_time_abf699a0aa658d1595f181420c88014ae}
+
+\begin{DoxyCompactList}\small\item\em Hours, in range 0..23. \end{DoxyCompactList}\item 
+\hypertarget{structmiosix_1_1_time_a1876747788d5cc51d9e9b6e5c7cce14b}{unsigned char \hyperlink{structmiosix_1_1_time_a1876747788d5cc51d9e9b6e5c7cce14b}{day}}\label{structmiosix_1_1_time_a1876747788d5cc51d9e9b6e5c7cce14b}
+
+\begin{DoxyCompactList}\small\item\em Day, in range 1..31. \end{DoxyCompactList}\item 
+\hypertarget{structmiosix_1_1_time_ac5d8119e311cfef42508a8637678ab9d}{unsigned char \hyperlink{structmiosix_1_1_time_ac5d8119e311cfef42508a8637678ab9d}{month}}\label{structmiosix_1_1_time_ac5d8119e311cfef42508a8637678ab9d}
+
+\begin{DoxyCompactList}\small\item\em Month, in range 1..12. \end{DoxyCompactList}\item 
+\hypertarget{structmiosix_1_1_time_a28a4595cab58ff297e79affa464492c0}{unsigned int \hyperlink{structmiosix_1_1_time_a28a4595cab58ff297e79affa464492c0}{year}}\label{structmiosix_1_1_time_a28a4595cab58ff297e79affa464492c0}
+
+\begin{DoxyCompactList}\small\item\em Year, in range 0..4095 ;) \end{DoxyCompactList}\item 
+\hypertarget{structmiosix_1_1_time_aacbdf35ea594010eb1febd8df080ebfa}{\hyperlink{group___hardware_ga24027ab4dbf8557211c0a82fb0dffcbf}{Day\-Of\-Week} \hyperlink{structmiosix_1_1_time_aacbdf35ea594010eb1febd8df080ebfa}{dow}}\label{structmiosix_1_1_time_aacbdf35ea594010eb1febd8df080ebfa}
+
+\begin{DoxyCompactList}\small\item\em Day of week. This is not taken into account for wakeup time. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{structmiosix_1_1_time_a3673fc828b66c204ab68cf1a1fb1020a}{wakeup\-\_\-mask}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{structmiosix_1_1_time}{Time} struct, used to get/set time. It can also be passed to \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{sleep()} to automatically wakeup the device at any given time. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structmiosix_1_1_time_a3673fc828b66c204ab68cf1a1fb1020a}{\index{miosix\-::\-Time@{miosix\-::\-Time}!wakeup\-\_\-mask@{wakeup\-\_\-mask}}
+\index{wakeup\-\_\-mask@{wakeup\-\_\-mask}!miosix::Time@{miosix\-::\-Time}}
+\subsubsection[{wakeup\-\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char miosix\-::\-Time\-::wakeup\-\_\-mask}}\label{structmiosix_1_1_time_a3673fc828b66c204ab68cf1a1fb1020a}
+This is only used for wakeup time
+\begin{DoxyItemize}
+\item bit 0 = if @ 1, sec is not considered for wakeup time
+\item bit 1 = if @ 1, min is not considered for wakeup time
+\item bit 2 = if @ 1, hour is not considered for wakeup time
+\item bit 3 = if @ 1, day is not considered for wakeup time
+\item bit 4 = if @ 1, month is not considered for wakeup time
+\item bit 5 = if @ 1, year is not considered for wakeup time 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/arch/arm7\-\_\-lpc2000/lpc2138\-\_\-miosix\-\_\-board/interfaces-\/impl/bsp\-\_\-impl.\-h\end{DoxyCompactItemize}

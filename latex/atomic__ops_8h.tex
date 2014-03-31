@@ -1,0 +1,28 @@
+\hypertarget{atomic__ops_8h}{\section{miosix/interfaces/atomic\-\_\-ops.h File Reference}
+\label{atomic__ops_8h}\index{miosix/interfaces/atomic\-\_\-ops.\-h@{miosix/interfaces/atomic\-\_\-ops.\-h}}
+}
+{\ttfamily \#include \char`\"{}interfaces-\/impl/atomic\-\_\-ops\-\_\-impl.\-h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacemiosix}{miosix}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespacemiosix_a255e5aa443a97bb24652ae2223eb3dcf}{miosix\-::atomic\-Swap} (volatile int $\ast$p, int v)
+\item 
+void \hyperlink{namespacemiosix_a5b8368b53c183f68f890ce009577955c}{miosix\-::atomic\-Add} (volatile int $\ast$p, int incr)
+\item 
+int \hyperlink{namespacemiosix_aae061ab6b48f0b59593b60f1f7bf0468}{miosix\-::atomic\-Add\-Exchange} (volatile int $\ast$p, int incr)
+\item 
+int \hyperlink{namespacemiosix_ac5ca8a635f3a0a8e5308ff0d25379326}{miosix\-::atomic\-Compare\-And\-Swap} (volatile int $\ast$p, int prev, int next)
+\item 
+void $\ast$ \hyperlink{namespacemiosix_ac000ad5b9d1713812427bd7d73fd016d}{miosix\-::atomic\-Fetch\-And\-Increment} (void $\ast$const volatile $\ast$p, int offset, int incr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains various atomic operations useful for implementing lock-\/free algorithms.
+
+For architectures without hardware support for these operations, they are emulated by disabling interrupts. Note that these functions should be safe to be called also with interrupts disabled, so implementations that disable interrupts should be careful not to accidentally re-\/enable them if these functions are called with interupts disabled. 

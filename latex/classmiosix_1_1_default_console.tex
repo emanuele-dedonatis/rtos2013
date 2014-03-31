@@ -1,0 +1,101 @@
+\hypertarget{classmiosix_1_1_default_console}{\section{miosix\-:\-:Default\-Console Class Reference}
+\label{classmiosix_1_1_default_console}\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}}
+}
+
+
+{\ttfamily \#include $<$console\-\_\-device.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmiosix_1_1_default_console_abaec87e68e90acc9d1e1bab73ef96622}{I\-R\-Qset} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_console_device}{Console\-Device} $>$ console)
+\item 
+void \hyperlink{classmiosix_1_1_default_console_a1762a1605ac63dd9a369d5d053f7a503}{set} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_console_device}{Console\-Device} $>$ console)
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_console_device}{Console\-Device} $>$ \hyperlink{classmiosix_1_1_default_console_af5afb386e33e8f02067d04f66da99c1a}{get} ()
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_console_device}{Console\-Device} $>$ \hyperlink{classmiosix_1_1_default_console_af3fc3053af0b3a4061433aea6f7187b7}{I\-R\-Qget} ()
+\item 
+\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_terminal_device}{Terminal\-Device} $>$ \hyperlink{classmiosix_1_1_default_console_abba6810e78a777cfbc9862d7b0038283}{get\-Terminal} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classmiosix_1_1_default_console}{Default\-Console} \& \hyperlink{classmiosix_1_1_default_console_af8ca2910d652b57755d4319abb0d2136}{instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds the file object related to the console, that is set by the board support package, and used to populate /dev/console in Dev\-Fs 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_default_console_af5afb386e33e8f02067d04f66da99c1a}{\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}!get@{get}}
+\index{get@{get}!miosix::DefaultConsole@{miosix\-::\-Default\-Console}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf intrusive\-\_\-ref\-\_\-ptr}$<${\bf Console\-Device}$>$ miosix\-::\-Default\-Console\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_default_console_af5afb386e33e8f02067d04f66da99c1a}
+\begin{DoxyReturn}{Returns}
+the currently installed console device, wrapped in a \hyperlink{classmiosix_1_1_terminal_device}{Terminal\-Device} 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_default_console_abba6810e78a777cfbc9862d7b0038283}{\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}!get\-Terminal@{get\-Terminal}}
+\index{get\-Terminal@{get\-Terminal}!miosix::DefaultConsole@{miosix\-::\-Default\-Console}}
+\subsubsection[{get\-Terminal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf intrusive\-\_\-ref\-\_\-ptr}$<${\bf Terminal\-Device}$>$ miosix\-::\-Default\-Console\-::get\-Terminal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_default_console_abba6810e78a777cfbc9862d7b0038283}
+\begin{DoxyReturn}{Returns}
+the terminal device, when filesystem support is disabled. If filesystem is enabled, the terminal device can be found in the File\-Descriptor\-Table 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_default_console_af8ca2910d652b57755d4319abb0d2136}{\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}!instance@{instance}}
+\index{instance@{instance}!miosix::DefaultConsole@{miosix\-::\-Default\-Console}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Default\-Console} \& miosix\-::\-Default\-Console\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_default_console_af8ca2910d652b57755d4319abb0d2136}
+\begin{DoxyReturn}{Returns}
+an instance of this class (singleton) 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_default_console_af3fc3053af0b3a4061433aea6f7187b7}{\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}!I\-R\-Qget@{I\-R\-Qget}}
+\index{I\-R\-Qget@{I\-R\-Qget}!miosix::DefaultConsole@{miosix\-::\-Default\-Console}}
+\subsubsection[{I\-R\-Qget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf intrusive\-\_\-ref\-\_\-ptr}$<${\bf Console\-Device}$>$ miosix\-::\-Default\-Console\-::\-I\-R\-Qget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_default_console_af3fc3053af0b3a4061433aea6f7187b7}
+\begin{DoxyReturn}{Returns}
+the currently installed console device. Can be called with interrupts disabled or within an interrupt routine. 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_default_console_abaec87e68e90acc9d1e1bab73ef96622}{\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}!I\-R\-Qset@{I\-R\-Qset}}
+\index{I\-R\-Qset@{I\-R\-Qset}!miosix::DefaultConsole@{miosix\-::\-Default\-Console}}
+\subsubsection[{I\-R\-Qset}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Default\-Console\-::\-I\-R\-Qset (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Console\-Device} $>$}]{console}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_default_console_abaec87e68e90acc9d1e1bab73ef96622}
+Called by the board support package, in particular I\-R\-Qbsp\-Init(), to pass to the kernel the console device. This device file is used as the default one for stdin/stdout/stderr. Notes\-: this has to be called in I\-R\-Qbsp\-Init(), since if it's called too late the console gets initialized with a Null\-File. Also, calling this a second time to dynamically change the console device is probably a bad idea, as the device is cached around in the filesystem code and will result in some processes using the old device and some other the new one. 
+\begin{DoxyParams}{Parameters}
+{\em console} & device file handling console I/\-O. Can only be called with interrupts disabled. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_default_console_a1762a1605ac63dd9a369d5d053f7a503}{\index{miosix\-::\-Default\-Console@{miosix\-::\-Default\-Console}!set@{set}}
+\index{set@{set}!miosix::DefaultConsole@{miosix\-::\-Default\-Console}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Default\-Console\-::set (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Console\-Device} $>$}]{console}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_default_console_a1762a1605ac63dd9a369d5d053f7a503}
+Same as \hyperlink{classmiosix_1_1_default_console_abaec87e68e90acc9d1e1bab73ef96622}{I\-R\-Qset()}, but can be called with interrupts enabled 
+\begin{DoxyParams}{Parameters}
+{\em console} & device file handling console I/\-O. Can only be called with interrupts disabled. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/console/console\-\_\-device.\-h\item 
+miosix/filesystem/console/console\-\_\-device.\-cpp\end{DoxyCompactItemize}

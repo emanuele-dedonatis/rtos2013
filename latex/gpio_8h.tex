@@ -1,0 +1,83 @@
+\hypertarget{gpio_8h}{\section{miosix/interfaces/gpio.h File Reference}
+\label{gpio_8h}\index{miosix/interfaces/gpio.\-h@{miosix/interfaces/gpio.\-h}}
+}
+{\ttfamily \#include \char`\"{}interfaces-\/impl/gpio\-\_\-impl.\-h\char`\"{}}\\*
+
+
+\subsection{Detailed Description}
+The interface to gpios provided by Miosix is in the form of templates, therefore this file can only include gpio\-\_\-impl.\-h with the architecture dependand code.
+
+The interface should be as follows\-: First a class Mode containing an enum Mode\-\_\- needs to be defined. Its minimum implementation is this\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }Mode
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{enum} Mode\_
+    \{
+        INPUT,
+        OUTPUT
+    \};
+\textcolor{keyword}{private}:
+    Mode(); \textcolor{comment}{//Just a wrapper class, disallow creating instances}
+\};
+\end{DoxyCode}
+
+
+This class should define the possible configurations of a gpio pin. The minimum required is I\-N\-P\-U\-T and O\-U\-T\-P\-U\-T, but this can be extended to other options to reflect the hardware capabilities of gpios. For example, if gpios can be set as input with pull up, it is possible to add I\-N\-P\-U\-T\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P to the enum.
+
+Then a template Gpio class should be provided, with at least the following member functions\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} P, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} N>
+\textcolor{keyword}{class }Gpio
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{static} \textcolor{keywordtype}{void} mode(Mode::Mode\_ m);
+    \textcolor{keyword}{static} \textcolor{keywordtype}{void} high();
+    \textcolor{keyword}{static} \textcolor{keywordtype}{void} low();
+    \textcolor{keyword}{static} \textcolor{keywordtype}{int} value();
+\textcolor{keyword}{private}:
+    Gpio();\textcolor{comment}{//Only static member functions, disallow creating instances}
+\};
+\end{DoxyCode}
+
+
+mode() should take a Mode\-::\-Mode\-\_\- enum and set the mode of the gpio (input, output or other architecture specific)
+
+high() should set a gpio configured as output to high logic level
+
+low() should set a gpio configured as output to low logic level
+
+value() should return either 1 or 0 to refect the state of a gpio configured as input
+
+Lastly, a number of constants must be provided to be passed as first template parameter of the Gpio class, usually identifying the gpio port, while the second template parameter should be used to specify a gpio pin within a port.
+
+The intended use is this\-: considering an architecture with two ports, P\-O\-R\-T\-A and P\-O\-R\-T\-B each with 8 pins. The header gpio\-\_\-impl.\-h should provide two constants, for example named G\-P\-I\-O\-A\-\_\-\-B\-A\-S\-E and G\-P\-I\-O\-B\-\_\-\-B\-A\-S\-E.
+
+The user can declare the hardware mapping between gpios and what is connected to them, usually in an header file. If for example P\-O\-R\-T\-A.\-0 is connected to a button while P\-O\-R\-T\-B.\-4 to a led, the header file might contain\-:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} Gpio<GPIOA\_BASE,0> button;
+\textcolor{keyword}{typedef} Gpio<GPIOB\_BASE,4> led;
+\end{DoxyCode}
+
+
+This allows the rest of the code to be written in terms of leds and buttons, without a reference to which pin they are connected to, something that might change.
+
+A simple code using these gpios could be\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} blinkUntilButtonPressed()
+\{
+    led::mode(Mode::OUTPUT);
+    button::mode(Mode::INPUT);
+    \textcolor{keywordflow}{for}(;;)
+    \{
+        \textcolor{keywordflow}{if}(button::value()==1) \textcolor{keywordflow}{break};
+        led::high();
+        \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{Thread::sleep}(250);
+        led::low();
+        \hyperlink{group___hardware_ga030255d7e5175ed1ab2c4ce48276ef23}{Thread::sleep}(250);
+    \}
+\}
+\end{DoxyCode}
+ 

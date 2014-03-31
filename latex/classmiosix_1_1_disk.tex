@@ -1,0 +1,106 @@
+\hypertarget{classmiosix_1_1_disk}{\section{miosix\-:\-:Disk Class Reference}
+\label{classmiosix_1_1_disk}\index{miosix\-::\-Disk@{miosix\-::\-Disk}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classmiosix_1_1_disk_a17d20dd748da7d0026c22177a4b7699b}{is\-Available} ()
+\item 
+static bool \hyperlink{classmiosix_1_1_disk_ac5d9bbd6f156e04fd713264c602f2f03}{is\-Initialized} ()
+\item 
+static void \hyperlink{classmiosix_1_1_disk_a6678632db08a30b9419c77fa6ff8673b}{init} ()
+\item 
+static bool \hyperlink{classmiosix_1_1_disk_a9c1dc9ba4dd052858ca6d2299faa48ea}{read} (unsigned char $\ast$buffer, unsigned int lba, unsigned char n\-Sectors)
+\item 
+static bool \hyperlink{classmiosix_1_1_disk_a148d46d5d74b85590a36c0eeb9d411f4}{write} (const unsigned char $\ast$buffer, unsigned int lba, unsigned char n\-Sectors)
+\item 
+static bool \hyperlink{classmiosix_1_1_disk_a59604600ebd0168cbc12417531bb0bed}{sync} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_disk_a6678632db08a30b9419c77fa6ff8673b}{\index{miosix\-::\-Disk@{miosix\-::\-Disk}!init@{init}}
+\index{init@{init}!miosix::Disk@{miosix\-::\-Disk}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Disk\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_disk_a6678632db08a30b9419c77fa6ff8673b}
+Initialize the block device. This function is called when the filesystem is mounted. \hypertarget{classmiosix_1_1_disk_a17d20dd748da7d0026c22177a4b7699b}{\index{miosix\-::\-Disk@{miosix\-::\-Disk}!is\-Available@{is\-Available}}
+\index{is\-Available@{is\-Available}!miosix::Disk@{miosix\-::\-Disk}}
+\subsubsection[{is\-Available}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Disk\-::is\-Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_disk_a17d20dd748da7d0026c22177a4b7699b}
+If the block device is removable, this function must return true if the disk is attached and therefore available for read and write operations, and return false if the device is not attached. If the device is not removable this function must always return true. \begin{DoxyReturn}{Returns}
+true if the device is available for read-\/write operations 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_disk_ac5d9bbd6f156e04fd713264c602f2f03}{\index{miosix\-::\-Disk@{miosix\-::\-Disk}!is\-Initialized@{is\-Initialized}}
+\index{is\-Initialized@{is\-Initialized}!miosix::Disk@{miosix\-::\-Disk}}
+\subsubsection[{is\-Initialized}]{\setlength{\rightskip}{0pt plus 5cm}static bool miosix\-::\-Disk\-::is\-Initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_disk_ac5d9bbd6f156e04fd713264c602f2f03}
+At system boot, before \hyperlink{classmiosix_1_1_disk_a6678632db08a30b9419c77fa6ff8673b}{init()} has been called this function must return false. After the device has been initialized with \hyperlink{classmiosix_1_1_disk_a6678632db08a30b9419c77fa6ff8673b}{init()} it must return true or false depending whether the initialization succeeded or not. \begin{DoxyReturn}{Returns}
+true if the device is initialized. 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_disk_a9c1dc9ba4dd052858ca6d2299faa48ea}{\index{miosix\-::\-Disk@{miosix\-::\-Disk}!read@{read}}
+\index{read@{read}!miosix::Disk@{miosix\-::\-Disk}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Disk\-::read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned int}]{lba, }
+\item[{unsigned char}]{n\-Sectors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_disk_a9c1dc9ba4dd052858ca6d2299faa48ea}
+Read a specified number of disk sectors from the device. The size of a sector must be 512 Bytes. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & place where data read from the device is to be written \\
+\hline
+{\em lba} & Logical Block Address to read, if n\-Sectors is 1. If n\-Sectors is greater than 1 lba is the address of the first block to read. \\
+\hline
+{\em n\-Sectors} & number of sectors to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_disk_a59604600ebd0168cbc12417531bb0bed}{\index{miosix\-::\-Disk@{miosix\-::\-Disk}!sync@{sync}}
+\index{sync@{sync}!miosix::Disk@{miosix\-::\-Disk}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Disk\-::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_disk_a59604600ebd0168cbc12417531bb0bed}
+This function should return only after all ongoing write operations on the device are completed. \begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_disk_a148d46d5d74b85590a36c0eeb9d411f4}{\index{miosix\-::\-Disk@{miosix\-::\-Disk}!write@{write}}
+\index{write@{write}!miosix::Disk@{miosix\-::\-Disk}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Disk\-::write (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{buffer, }
+\item[{unsigned int}]{lba, }
+\item[{unsigned char}]{n\-Sectors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_disk_a148d46d5d74b85590a36c0eeb9d411f4}
+Write a specified number of sectors to the device. The size of a sector is 512 Bytes. If the device does not support write operations, this function must always return false. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & a buffer containing the data to be written \\
+\hline
+{\em lba} & Logical Block Address to write, if n\-Sectors is 1. If n\-Sectors is greater than 1 lba is the address of the first block to write. \\
+\hline
+{\em n\-Sectors} & number of sectors to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/interfaces/\hyperlink{disk_8h}{disk.\-h}\item 
+miosix/arch/arm7\-\_\-lpc2000/lpc2138\-\_\-miosix\-\_\-board/interfaces-\/impl/disk.\-cpp\end{DoxyCompactItemize}

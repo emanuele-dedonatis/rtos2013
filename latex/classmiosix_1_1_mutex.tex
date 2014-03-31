@@ -1,0 +1,98 @@
+\hypertarget{classmiosix_1_1_mutex}{\section{miosix\-:\-:Mutex Class Reference}
+\label{classmiosix_1_1_mutex}\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2f}{Options} \{ \hyperlink{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fa84dda8357cdf60e9ce2b81c0f78c36d8}{D\-E\-F\-A\-U\-L\-T}, 
+\hyperlink{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fadadaee3cc9d507680b8652a09c3de4a5}{R\-E\-C\-U\-R\-S\-I\-V\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_mutex_a63a4d940d2bbb57522dcb23f0fc704a2}{Mutex} (\hyperlink{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2f}{Options} opt=\hyperlink{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fa84dda8357cdf60e9ce2b81c0f78c36d8}{D\-E\-F\-A\-U\-L\-T})
+\item 
+void \hyperlink{classmiosix_1_1_mutex_a6ff0ea4734654c2048ef44cec62b5ed6}{lock} ()
+\item 
+bool \hyperlink{classmiosix_1_1_mutex_a3e7e51aa095528a36e49dd5f672ddc74}{try\-Lock} ()
+\item 
+void \hyperlink{classmiosix_1_1_mutex_a10974326b33d887fa7ad1f910b70ed50}{unlock} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_mutex_ab270e49e575fdf0fe1a4f2ee911df116}{class {\bfseries Condition\-Variable}}\label{classmiosix_1_1_mutex_ab270e49e575fdf0fe1a4f2ee911df116}
+
+\item 
+\hypertarget{classmiosix_1_1_mutex_adbc148eaddd341d7ae4d07c9e9e33bfd}{class {\bfseries Thread}}\label{classmiosix_1_1_mutex_adbc148eaddd341d7ae4d07c9e9e33bfd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A mutex class with support for priority inheritance. If a thread tries to enter a critical section which is not free, it will be put to sleep and added to a queue of sleeping threads, ordered by priority. The thread that is into the critical section inherits the highest priority among the threads that are waiting if it is higher than its original priority.\par
+ This mutex is meant to be a static or global class. Dynamically creating a mutex with new or on the stack must be done with care, to avoid deleting a locked mutex, and to avoid situations where a thread tries to lock a deleted mutex.\par
+ 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2f}{\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!Options@{Options}}
+\index{Options@{Options}!miosix::Mutex@{miosix\-::\-Mutex}}
+\subsubsection[{Options}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf miosix\-::\-Mutex\-::\-Options}}}\label{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2f}
+\hyperlink{classmiosix_1_1_mutex}{Mutex} options, passed to the constructor to set additional options.\par
+ The D\-E\-F\-A\-U\-L\-T option indicates the default \hyperlink{classmiosix_1_1_mutex}{Mutex} type. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\-E\-F\-A\-U\-L\-T@{D\-E\-F\-A\-U\-L\-T}!miosix\-::\-Mutex@{miosix\-::\-Mutex}}\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!D\-E\-F\-A\-U\-L\-T@{D\-E\-F\-A\-U\-L\-T}}\item[{\em 
+\hypertarget{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fa84dda8357cdf60e9ce2b81c0f78c36d8}{D\-E\-F\-A\-U\-L\-T}\label{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fa84dda8357cdf60e9ce2b81c0f78c36d8}
+}]Default mutex. \index{R\-E\-C\-U\-R\-S\-I\-V\-E@{R\-E\-C\-U\-R\-S\-I\-V\-E}!miosix\-::\-Mutex@{miosix\-::\-Mutex}}\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!R\-E\-C\-U\-R\-S\-I\-V\-E@{R\-E\-C\-U\-R\-S\-I\-V\-E}}\item[{\em 
+\hypertarget{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fadadaee3cc9d507680b8652a09c3de4a5}{R\-E\-C\-U\-R\-S\-I\-V\-E}\label{classmiosix_1_1_mutex_acdb0fa35e637a14b1504a8f58c8bba2fadadaee3cc9d507680b8652a09c3de4a5}
+}]\hyperlink{classmiosix_1_1_mutex}{Mutex} is recursive. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_mutex_a63a4d940d2bbb57522dcb23f0fc704a2}{\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!miosix::Mutex@{miosix\-::\-Mutex}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Mutex\-::\-Mutex (
+\begin{DoxyParamCaption}
+\item[{{\bf Options}}]{opt = {\ttfamily {\bf D\-E\-F\-A\-U\-L\-T}}}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_mutex_a63a4d940d2bbb57522dcb23f0fc704a2}
+Constructor, initializes the mutex. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_mutex_a6ff0ea4734654c2048ef44cec62b5ed6}{\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!lock@{lock}}
+\index{lock@{lock}!miosix::Mutex@{miosix\-::\-Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_mutex_a6ff0ea4734654c2048ef44cec62b5ed6}
+Locks the critical section. If the critical section is already locked, the thread will be queued in a wait list. \hypertarget{classmiosix_1_1_mutex_a3e7e51aa095528a36e49dd5f672ddc74}{\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!try\-Lock@{try\-Lock}}
+\index{try\-Lock@{try\-Lock}!miosix::Mutex@{miosix\-::\-Mutex}}
+\subsubsection[{try\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Mutex\-::try\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_mutex_a3e7e51aa095528a36e49dd5f672ddc74}
+Acquires the lock only if the critical section is not already locked by other threads. Attempting to lock again a recursive mutex will fail, and the mutex' lock count will not be incremented. \begin{DoxyReturn}{Returns}
+true if the lock was acquired 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_mutex_a10974326b33d887fa7ad1f910b70ed50}{\index{miosix\-::\-Mutex@{miosix\-::\-Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!miosix::Mutex@{miosix\-::\-Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_mutex_a10974326b33d887fa7ad1f910b70ed50}
+Unlocks the critical section. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\item 
+miosix/kernel/sync.\-cpp\end{DoxyCompactItemize}

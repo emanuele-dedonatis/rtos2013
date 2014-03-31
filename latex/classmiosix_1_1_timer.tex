@@ -1,0 +1,87 @@
+\hypertarget{classmiosix_1_1_timer}{\section{miosix\-:\-:Timer Class Reference}
+\label{classmiosix_1_1_timer}\index{miosix\-::\-Timer@{miosix\-::\-Timer}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_timer_a18fe7d4606d1370054aee4dbc956f3a2}{Timer} ()
+\item 
+void \hyperlink{classmiosix_1_1_timer_afe2e62decbd592394b3278febf6097f7}{start} ()
+\item 
+void \hyperlink{classmiosix_1_1_timer_ad14fa7e00b7d9646b31bb85ecd475671}{stop} ()
+\item 
+bool \hyperlink{classmiosix_1_1_timer_a9644000ad11c2ee1208e597bed72ff5a}{is\-Running} () const 
+\item 
+int \hyperlink{classmiosix_1_1_timer_ade4ade4f99dfcb3b6fc0b02b3f112371}{interval} () const 
+\item 
+void \hyperlink{classmiosix_1_1_timer_adb3725edbcdf2bdf9d3ec7912947af95}{clear} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A timer that can be used to measure time intervals.\par
+Its resolution equals the kernel tick.\par
+Maximum interval is 2$^\wedge$31-\/1 ticks. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_timer_a18fe7d4606d1370054aee4dbc956f3a2}{\index{miosix\-::\-Timer@{miosix\-::\-Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!miosix::Timer@{miosix\-::\-Timer}}
+\subsubsection[{Timer}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Timer\-::\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_timer_a18fe7d4606d1370054aee4dbc956f3a2}
+Constructor. \hyperlink{classmiosix_1_1_timer}{Timer} is initialized in stopped status. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_timer_adb3725edbcdf2bdf9d3ec7912947af95}{\index{miosix\-::\-Timer@{miosix\-::\-Timer}!clear@{clear}}
+\index{clear@{clear}!miosix::Timer@{miosix\-::\-Timer}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Timer\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_timer_adb3725edbcdf2bdf9d3ec7912947af95}
+Clear the timer and set it to not running state. \hypertarget{classmiosix_1_1_timer_ade4ade4f99dfcb3b6fc0b02b3f112371}{\index{miosix\-::\-Timer@{miosix\-::\-Timer}!interval@{interval}}
+\index{interval@{interval}!miosix::Timer@{miosix\-::\-Timer}}
+\subsubsection[{interval}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Timer\-::interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_timer_ade4ade4f99dfcb3b6fc0b02b3f112371}
+get the interval, in kernel ticks. \begin{DoxyReturn}{Returns}
+the number of tick between start and stop. Returns -\/1 if the timer was never started, if interval is called after start but before stop, or if it overflowed.
+\end{DoxyReturn}
+To read the vaue of a timer without stopping it, you can use its copy constructor to create another timer, and stop it while the first timer keeps running. \hypertarget{classmiosix_1_1_timer_a9644000ad11c2ee1208e597bed72ff5a}{\index{miosix\-::\-Timer@{miosix\-::\-Timer}!is\-Running@{is\-Running}}
+\index{is\-Running@{is\-Running}!miosix::Timer@{miosix\-::\-Timer}}
+\subsubsection[{is\-Running}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-Timer\-::is\-Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_timer_a9644000ad11c2ee1208e597bed72ff5a}
+\begin{DoxyReturn}{Returns}
+true if timer is running 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_timer_afe2e62decbd592394b3278febf6097f7}{\index{miosix\-::\-Timer@{miosix\-::\-Timer}!start@{start}}
+\index{start@{start}!miosix::Timer@{miosix\-::\-Timer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Timer\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_timer_afe2e62decbd592394b3278febf6097f7}
+Start the timer \hypertarget{classmiosix_1_1_timer_ad14fa7e00b7d9646b31bb85ecd475671}{\index{miosix\-::\-Timer@{miosix\-::\-Timer}!stop@{stop}}
+\index{stop@{stop}!miosix::Timer@{miosix\-::\-Timer}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-Timer\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_timer_ad14fa7e00b7d9646b31bb85ecd475671}
+Stop the timer. After stop, \hyperlink{classmiosix_1_1_timer}{Timer} can be started and stopped again to count non-\/contiguous timer intervals. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\item 
+miosix/kernel/sync.\-cpp\end{DoxyCompactItemize}

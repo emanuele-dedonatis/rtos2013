@@ -1,0 +1,338 @@
+\hypertarget{group___drivers}{\section{Drivers}
+\label{group___drivers}\index{Drivers@{Drivers}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries save\-Context\-From\-Swi}()
+\item 
+\#define \hyperlink{group___drivers_ga5bc7a8d3a87aba81cecd73c4d0972449}{save\-Context\-From\-Irq}()
+\item 
+\#define \hyperlink{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{restore\-Context}()
+\item 
+\#define \hyperlink{group___drivers_gab1359cc5bc2531333baf9ef3e4718336}{enable\-I\-R\-Qand\-F\-I\-Q}()
+\item 
+\#define \hyperlink{group___drivers_ga21a05ff59779a634de98b1d3436fd608}{disable\-I\-R\-Qand\-F\-I\-Q}()
+\item 
+\#define {\bfseries save\-Context}()
+\item 
+\#define \hyperlink{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{restore\-Context}()
+\item 
+\#define {\bfseries save\-Context}()
+\item 
+\#define \hyperlink{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{restore\-Context}()
+\item 
+\#define {\bfseries save\-Context}()
+\item 
+\#define \hyperlink{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{restore\-Context}()
+\item 
+\#define {\bfseries save\-Context}()
+\item 
+\#define \hyperlink{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{restore\-Context}()
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___drivers_gabde377c6777ad3f4aecde34ee1e26df4}{void {\bfseries miosix\-\_\-private\-::do\-Yield} ()}\label{group___drivers_gabde377c6777ad3f4aecde34ee1e26df4}
+
+\item 
+\hypertarget{group___drivers_ga961407a501c1247188dcdf5f60e8f301}{void {\bfseries miosix\-\_\-private\-::do\-Disable\-Interrupts} ()}\label{group___drivers_ga961407a501c1247188dcdf5f60e8f301}
+
+\item 
+\hypertarget{group___drivers_ga81e39c3699a44c981d94c17a64722f41}{void {\bfseries miosix\-\_\-private\-::do\-Enable\-Interrupts} ()}\label{group___drivers_ga81e39c3699a44c981d94c17a64722f41}
+
+\item 
+\hypertarget{group___drivers_ga392ef99b87ee6feb2805dee3790f9648}{bool {\bfseries miosix\-\_\-private\-::check\-Are\-Interrupts\-Enabled} ()}\label{group___drivers_ga392ef99b87ee6feb2805dee3790f9648}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}{volatile unsigned int $\ast$ {\bfseries ctxsave}}\label{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}
+
+\item 
+\hypertarget{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}{volatile unsigned int $\ast$ {\bfseries ctxsave}}\label{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}
+
+\item 
+\hypertarget{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}{volatile unsigned int $\ast$ {\bfseries ctxsave}}\label{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}
+
+\item 
+\hypertarget{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}{volatile unsigned int $\ast$ {\bfseries ctxsave}}\label{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}
+
+\item 
+\hypertarget{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}{volatile unsigned int $\ast$ {\bfseries ctxsave}}\label{group___drivers_ga8a5f91e2c91d35597d0f7ba85f99898b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Miosix drivers A\-P\-I
+
+Contains functions and macros that can be used to write drivers for hardware peripherals. These functions, plus the I\-R\-Q methods of the Queue class provide a way to transfer data between an interrupt routine and user code, and a way to cause preemption inside an interrupt routine to wake a higher priority Thread waiting on some hardware peripheral.
+
+Also contains the default drivers for each architecture. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group___drivers_ga21a05ff59779a634de98b1d3436fd608}{\index{Drivers@{Drivers}!disable\-I\-R\-Qand\-F\-I\-Q@{disable\-I\-R\-Qand\-F\-I\-Q}}
+\index{disable\-I\-R\-Qand\-F\-I\-Q@{disable\-I\-R\-Qand\-F\-I\-Q}!Drivers@{Drivers}}
+\subsubsection[{disable\-I\-R\-Qand\-F\-I\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define disable\-I\-R\-Qand\-F\-I\-Q(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga21a05ff59779a634de98b1d3436fd608}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                               \(\backslash\)
+ asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{".set  I\_BIT, 0x80            \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{".set  F\_BIT, 0x40            \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{"mrs r0, cpsr             \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{"orr r0, r0, #I\_BIT|F\_BIT                 \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{"msr cpsr\_c, r0               \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              :::\textcolor{stringliteral}{"r0"});                                                         \(\backslash\)
+\}
+\end{DoxyCode}
+Disable interrupts (both irq and fiq)\par
+ If you are not using F\-I\-Q you should use \hyperlink{group___kernel_ga36adaaa176d004747d2a01b822c9fea5}{enable\-Interrupts()} \hypertarget{group___drivers_gab1359cc5bc2531333baf9ef3e4718336}{\index{Drivers@{Drivers}!enable\-I\-R\-Qand\-F\-I\-Q@{enable\-I\-R\-Qand\-F\-I\-Q}}
+\index{enable\-I\-R\-Qand\-F\-I\-Q@{enable\-I\-R\-Qand\-F\-I\-Q}!Drivers@{Drivers}}
+\subsubsection[{enable\-I\-R\-Qand\-F\-I\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define enable\-I\-R\-Qand\-F\-I\-Q(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_gab1359cc5bc2531333baf9ef3e4718336}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                               \(\backslash\)
+ asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{".set  I\_BIT, 0x80            \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{".set  F\_BIT, 0x40                        \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{"mrs r0, cpsr                             \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{"and r0, r0, #~(I\_BIT|F\_BIT)              \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              \textcolor{stringliteral}{"msr cpsr\_c, r0               \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+              :::\textcolor{stringliteral}{"r0"});                                                         \(\backslash\)
+\}
+\end{DoxyCode}
+Enable interrupts (both irq and fiq)\par
+ If you are not using F\-I\-Q you should use \hyperlink{group___kernel_gacd7ef6e968c5c0b2ff45bf102388ea4d}{disable\-Interrupts()} F\-I\-Q means fast interrupts, is another level of interrupts available in the A\-R\-M7 cpu. They are not used in miosix, and are available to the user. The main advantage of F\-I\-Q is that they can even interrupt I\-R\-Q, so they have a so high priority that can interrupt the kernel itself.\par
+The disadvantage is that, since can interrupt the kernel at any time, all functions, including those marked as I\-R\-Q cannot be called when I\-R\-Q and F\-I\-Q are disabled. Therefore, data transfer between user code and F\-I\-Q is more difficult to implement than I\-R\-Q. Another disadvantage is that they are only available in the A\-R\-M cpu, so if the kernel will be ported to another cpu, they won't be available.\par
+ To use F\-I\-Q the user must change the code of the default F\-I\-Q interrupt routine defined in miosix/drivers/interrupts.\-cpp\par
+By default F\-I\-Q are enabled but no peripheral is associated with F\-I\-Q, so no F\-I\-Q interrupts will occur. \hypertarget{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{\index{Drivers@{Drivers}!restore\-Context@{restore\-Context}}
+\index{restore\-Context@{restore\-Context}!Drivers@{Drivers}}
+\subsubsection[{restore\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define restore\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"ldr   r0,  =ctxsave    \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get current context*/}        \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  [r0]        \(\backslash\)n\(\backslash\)t"}                                \(\backslash\)
+                 \textcolor{stringliteral}{"ldmia r0,  \{r1,r4-r11\} \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*restore r4-r11 + r1=psp*/}    \(\backslash\)
+                 \textcolor{stringliteral}{"msr   psp, r1          \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*restore PROCESS sp*/}         \(\backslash\)
+                 \textcolor{stringliteral}{"ldmia sp!, \{pc\}        \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*return*/}                     \(\backslash\)
+                 );                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+Restore context in an I\-R\-Q where save\-Context() is used. Must be the last line of an I\-R\-Q where a context switch can happen. The I\-R\-Q must be \char`\"{}naked\char`\"{} to prevent the compiler from generating context restore. \hypertarget{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{\index{Drivers@{Drivers}!restore\-Context@{restore\-Context}}
+\index{restore\-Context@{restore\-Context}!Drivers@{Drivers}}
+\subsubsection[{restore\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define restore\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"ldr   r0,  =ctxsave    \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get current context*/}        \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  [r0]        \(\backslash\)n\(\backslash\)t"}                                \(\backslash\)
+                 \textcolor{stringliteral}{"ldmia r0,  \{r1,r4-r11\} \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*restore r4-r11 + r1=psp*/}    \(\backslash\)
+                 \textcolor{stringliteral}{"msr   psp, r1          \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*restore PROCESS sp*/}         \(\backslash\)
+                 \textcolor{stringliteral}{"ldmia sp!, \{pc\}        \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*return*/}                     \(\backslash\)
+                 );                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+Restore context in an I\-R\-Q where save\-Context() is used. Must be the last line of an I\-R\-Q where a context switch can happen. The I\-R\-Q must be \char`\"{}naked\char`\"{} to prevent the compiler from generating context restore. \hypertarget{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{\index{Drivers@{Drivers}!restore\-Context@{restore\-Context}}
+\index{restore\-Context@{restore\-Context}!Drivers@{Drivers}}
+\subsubsection[{restore\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define restore\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"ldr   r0,  =ctxsave    \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get current context*/}        \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  [r0]        \(\backslash\)n\(\backslash\)t"}                                \(\backslash\)
+                 \textcolor{stringliteral}{"ldmia r0,  \{r1,r4-r11\} \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*restore r4-r11 + r1=psp*/}    \(\backslash\)
+                 \textcolor{stringliteral}{"msr   psp, r1          \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*restore PROCESS sp*/}         \(\backslash\)
+                 \textcolor{stringliteral}{"ldmia sp!, \{pc\}        \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*return*/}                     \(\backslash\)
+                 );                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+Restore context in an I\-R\-Q where save\-Context() is used. Must be the last line of an I\-R\-Q where a context switch can happen. The I\-R\-Q must be \char`\"{}naked\char`\"{} to prevent the compiler from generating context restore. \hypertarget{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{\index{Drivers@{Drivers}!restore\-Context@{restore\-Context}}
+\index{restore\-Context@{restore\-Context}!Drivers@{Drivers}}
+\subsubsection[{restore\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define restore\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                              \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"   ldr    r0,  =ctxsave       \(\backslash\)n"}\textcolor{comment}{/*get current context    */} \(\backslash\)
+                 \textcolor{stringliteral}{"   ldr    r0,  [r0]           \(\backslash\)n"}                            \(\backslash\)
+                 \textcolor{stringliteral}{"   ldmia  r0!, \{r1,r4-r11,lr\} \(\backslash\)n"}\textcolor{comment}{/*load r1(psp),r4-r11,lr */} \(\backslash\)
+                 \textcolor{stringliteral}{"   lsls   r2,  lr,  #27       \(\backslash\)n"}\textcolor{comment}{/*check if bit #4 is set */} \(\backslash\)
+                 \textcolor{stringliteral}{"   bmi    0f                  \(\backslash\)n"}                            \(\backslash\)
+                 \textcolor{stringliteral}{"   vldmia.32 r0, \{s16-s31\}    \(\backslash\)n"}\textcolor{comment}{/*restore s16-s31 if need*/} \(\backslash\)
+                 \textcolor{stringliteral}{"0: msr    psp, r1             \(\backslash\)n"}\textcolor{comment}{/*restore PROCESS sp*/}      \(\backslash\)
+                 \textcolor{stringliteral}{"   bx     lr                  \(\backslash\)n"}\textcolor{comment}{/*return*/}                  \(\backslash\)
+                 );                                                            \(\backslash\)
+\}
+\end{DoxyCode}
+Restore context in an I\-R\-Q where save\-Context() is used. Must be the last line of an I\-R\-Q where a context switch can happen. The I\-R\-Q must be \char`\"{}naked\char`\"{} to prevent the compiler from generating context restore. \hypertarget{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}{\index{Drivers@{Drivers}!restore\-Context@{restore\-Context}}
+\index{restore\-Context@{restore\-Context}!Drivers@{Drivers}}
+\subsubsection[{restore\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define restore\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga9c44075f57f61dc7b14637f1973776bc}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                               \(\backslash\)
+    asm \textcolor{keyword}{volatile}(   \textcolor{comment}{/*load ctxsave and dereference the pointer*/}            \(\backslash\)
+                    \textcolor{comment}{/*also add 64 to make it point to "top of stack"*/}          \(\backslash\)
+                    \textcolor{stringliteral}{"ldr    lr,=ctxsave     \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"ldr    lr,[lr]         \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"add    lr,lr,#64       \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*restore spsr*/}                                            \(\backslash\)
+                    \textcolor{comment}{/*after this instructions, lr points to ctxsave[15] (return address)*/}  \(\backslash\)
+                    \textcolor{stringliteral}{"ldmda  lr!,\{r1\}        \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"msr    spsr,r1         \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*restore all thread registers except pc*/}                  \(\backslash\)
+                    \textcolor{stringliteral}{"ldmdb  lr,\{r0-lr\}^     \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*add a nop as required after ldm ^ (read ARM reference about ldm(2))*/} \(\backslash\)
+                    \textcolor{stringliteral}{"nop                                \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*now that lr points to return address, return from interrupt*/}         \(\backslash\)
+                    \textcolor{stringliteral}{"ldr    lr,[lr]         \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"movs   pc,lr           \(\backslash\)n\(\backslash\)t"});                 \(\backslash\)
+\}
+\end{DoxyCode}
+Restore context in an I\-R\-Q where \hyperlink{group___drivers_ga5bc7a8d3a87aba81cecd73c4d0972449}{save\-Context\-From\-Irq()} (or save\-Context\-From\-Swi() ) is used. Must be the last line of an I\-R\-Q where a context switch can happen. The I\-R\-Q must be \char`\"{}naked\char`\"{} to prevent the compiler from generating context restore. \hypertarget{group___drivers_ga95d67df1cf6117ce43766d06b8113297}{\index{Drivers@{Drivers}!save\-Context@{save\-Context}}
+\index{save\-Context@{save\-Context}!Drivers@{Drivers}}
+\subsubsection[{save\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define save\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga95d67df1cf6117ce43766d06b8113297}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"stmdb sp!, \{lr\}        \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*save lr on MAIN stack*/}      \(\backslash\)
+                 \textcolor{stringliteral}{"mrs   r1,  psp         \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get PROCESS stack pointer*/}  \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  =ctxsave    \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get current context*/}        \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  [r0]        \(\backslash\)n\(\backslash\)t"}                                \(\backslash\)
+                 \textcolor{stringliteral}{"stmia r0,  \{r1,r4-r11\} \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*save PROCESS sp + r4-r11*/}   \(\backslash\)
+                 );                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{group___drivers_ga95d67df1cf6117ce43766d06b8113297}{\index{Drivers@{Drivers}!save\-Context@{save\-Context}}
+\index{save\-Context@{save\-Context}!Drivers@{Drivers}}
+\subsubsection[{save\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define save\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga95d67df1cf6117ce43766d06b8113297}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"stmdb sp!, \{lr\}        \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*save lr on MAIN stack*/}      \(\backslash\)
+                 \textcolor{stringliteral}{"mrs   r1,  psp         \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get PROCESS stack pointer*/}  \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  =ctxsave    \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get current context*/}        \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  [r0]        \(\backslash\)n\(\backslash\)t"}                                \(\backslash\)
+                 \textcolor{stringliteral}{"stmia r0,  \{r1,r4-r11\} \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*save PROCESS sp + r4-r11*/}   \(\backslash\)
+                 );                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{group___drivers_ga95d67df1cf6117ce43766d06b8113297}{\index{Drivers@{Drivers}!save\-Context@{save\-Context}}
+\index{save\-Context@{save\-Context}!Drivers@{Drivers}}
+\subsubsection[{save\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define save\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga95d67df1cf6117ce43766d06b8113297}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"stmdb sp!, \{lr\}        \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*save lr on MAIN stack*/}      \(\backslash\)
+                 \textcolor{stringliteral}{"mrs   r1,  psp         \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get PROCESS stack pointer*/}  \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  =ctxsave    \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*get current context*/}        \(\backslash\)
+                 \textcolor{stringliteral}{"ldr   r0,  [r0]        \(\backslash\)n\(\backslash\)t"}                                \(\backslash\)
+                 \textcolor{stringliteral}{"stmia r0,  \{r1,r4-r11\} \(\backslash\)n\(\backslash\)t"} \textcolor{comment}{/*save PROCESS sp + r4-r11*/}   \(\backslash\)
+                 );                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{group___drivers_ga95d67df1cf6117ce43766d06b8113297}{\index{Drivers@{Drivers}!save\-Context@{save\-Context}}
+\index{save\-Context@{save\-Context}!Drivers@{Drivers}}
+\subsubsection[{save\-Context}]{\setlength{\rightskip}{0pt plus 5cm}\#define save\-Context(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga95d67df1cf6117ce43766d06b8113297}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                              \(\backslash\)
+    asm \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"   mrs    r1,  psp            \(\backslash\)n"}\textcolor{comment}{/*get PROCESS stack ptr  */} \(\backslash\)
+                 \textcolor{stringliteral}{"   ldr    r0,  =ctxsave       \(\backslash\)n"}\textcolor{comment}{/*get current context    */} \(\backslash\)
+                 \textcolor{stringliteral}{"   ldr    r0,  [r0]           \(\backslash\)n"}                            \(\backslash\)
+                 \textcolor{stringliteral}{"   stmia  r0!, \{r1,r4-r11,lr\} \(\backslash\)n"}\textcolor{comment}{/*save r1(psp),r4-r11,lr */} \(\backslash\)
+                 \textcolor{stringliteral}{"   lsls   r2,  lr,  #27       \(\backslash\)n"}\textcolor{comment}{/*check if bit #4 is set */} \(\backslash\)
+                 \textcolor{stringliteral}{"   bmi    0f                  \(\backslash\)n"}                            \(\backslash\)
+                 \textcolor{stringliteral}{"   vstmia.32 r0, \{s16-s31\}    \(\backslash\)n"}\textcolor{comment}{/*save s16-s31 if we need*/} \(\backslash\)
+                 \textcolor{stringliteral}{"0:                            \(\backslash\)n"}                            \(\backslash\)
+                 );                                                            \(\backslash\)
+\}
+\end{DoxyCode}
+\hypertarget{group___drivers_ga5bc7a8d3a87aba81cecd73c4d0972449}{\index{Drivers@{Drivers}!save\-Context\-From\-Irq@{save\-Context\-From\-Irq}}
+\index{save\-Context\-From\-Irq@{save\-Context\-From\-Irq}!Drivers@{Drivers}}
+\subsubsection[{save\-Context\-From\-Irq}]{\setlength{\rightskip}{0pt plus 5cm}\#define save\-Context\-From\-Irq(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga5bc7a8d3a87aba81cecd73c4d0972449}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                               \(\backslash\)
+    asm \textcolor{keyword}{volatile}(   \textcolor{comment}{/*Adjust lr, because the return address in a ISR has a 4 bytes offset*/} \(\backslash\)
+                    \textcolor{stringliteral}{"sub    lr,lr,#4        \(\backslash\)n\(\backslash\)t"});                 \(\backslash\)
+    saveContextFromSwi();                                                \(\backslash\)
+\}
+\end{DoxyCode}
+Save context from an I\-R\-Q\par
+ Must be the first line of an I\-R\-Q where a context switch can happen. The I\-R\-Q must be \char`\"{}naked\char`\"{} to prevent the compiler from generating context save. \hypertarget{group___drivers_ga63e91009cf974e4c121ad89e7fe9beb0}{\index{Drivers@{Drivers}!save\-Context\-From\-Swi@{save\-Context\-From\-Swi}}
+\index{save\-Context\-From\-Swi@{save\-Context\-From\-Swi}!Drivers@{Drivers}}
+\subsubsection[{save\-Context\-From\-Swi}]{\setlength{\rightskip}{0pt plus 5cm}\#define save\-Context\-From\-Swi(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group___drivers_ga63e91009cf974e4c121ad89e7fe9beb0}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                               \(\backslash\)
+    asm \textcolor{keyword}{volatile}(   \textcolor{comment}{/*push lr on stack, to use it as a general purpose reg.*/}   \(\backslash\)
+                    \textcolor{stringliteral}{"stmfd  sp!,\{lr\}        \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*load ctxsave and dereference the pointer*/}                \(\backslash\)
+                    \textcolor{stringliteral}{"ldr    lr,=ctxsave     \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"ldr    lr,[lr]         \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*save all thread registers except pc*/}                     \(\backslash\)
+                    \textcolor{stringliteral}{"stmia  lr,\{r0-lr\}^     \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*add a nop as required after stm ^ (read ARM reference about stm(2))*/} \(\backslash\)
+                    \textcolor{stringliteral}{"nop                \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*move lr to r0, restore original lr (return address) and save it*/}     \(\backslash\)
+                    \textcolor{stringliteral}{"add    r0,lr,#60       \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"ldmfd  sp!,\{lr\}        \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"stmia  r0!,\{lr\}        \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{comment}{/*save spsr on top of ctxsave*/}                             \(\backslash\)
+                    \textcolor{stringliteral}{"mrs    r1,spsr         \(\backslash\)n\(\backslash\)t"}                   \(\backslash\)
+                    \textcolor{stringliteral}{"stmia  r0,\{r1\}         \(\backslash\)n\(\backslash\)t"});                 \(\backslash\)
+\}
+\end{DoxyCode}

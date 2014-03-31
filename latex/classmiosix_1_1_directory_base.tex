@@ -1,0 +1,233 @@
+\hypertarget{classmiosix_1_1_directory_base}{\section{miosix\-:\-:Directory\-Base Class Reference}
+\label{classmiosix_1_1_directory_base}\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}}
+}
+
+
+{\ttfamily \#include $<$file.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Directory\-Base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classmiosix_1_1_directory_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_directory_base_ad6a63f0d1cb90fd2371873cf1a0db4a6}{Directory\-Base} (\hyperlink{classmiosix_1_1intrusive__ref__ptr}{intrusive\-\_\-ref\-\_\-ptr}$<$ \hyperlink{classmiosix_1_1_filesystem_base}{Filesystem\-Base} $>$ parent)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_directory_base_afa8fdc455f5bb371cccdb0471943ac71}{write} (const void $\ast$data, size\-\_\-t len)
+\item 
+virtual ssize\-\_\-t \hyperlink{classmiosix_1_1_directory_base_a9f30cc9d0b3d8350c0f547331c565206}{read} (void $\ast$data, size\-\_\-t len)
+\item 
+virtual off\-\_\-t \hyperlink{classmiosix_1_1_directory_base_a6f4fcb4b41924c76c93ef48272e857b8}{lseek} (off\-\_\-t pos, int whence)
+\item 
+virtual int \hyperlink{classmiosix_1_1_directory_base_a56bdd2d238298487d7e72bafa72f2dd4}{fstat} (struct stat $\ast$pstat) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classmiosix_1_1_directory_base_a0f691e7e64473cb386783ccf2545ff41}{add\-Entry} (char $\ast$$\ast$pos, char $\ast$end, int ino, char type, const \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&n)
+\item 
+static int \hyperlink{classmiosix_1_1_directory_base_aac875ba349b5e834a825ea06b2060904}{add\-Default\-Entries} (char $\ast$$\ast$pos, int this\-Ino, int up\-Ino)
+\item 
+static int \hyperlink{classmiosix_1_1_directory_base_a7daa9aedc5a0f6f0cc859e76c52af574}{add\-Terminating\-Entry} (char $\ast$$\ast$pos, char $\ast$end)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classmiosix_1_1_directory_base_af9d3fa9038ca46e67fa1de0d8439d8ac}{dirent\-Header\-Size\-No\-Padding} =11
+\item 
+static const int \hyperlink{classmiosix_1_1_directory_base_ad907c19d39fed139feee02f57189783c}{dirent\-Header\-Size} =16
+\item 
+\hypertarget{classmiosix_1_1_directory_base_a82be4b186b115f5ca877b6babc10908c}{static const int \hyperlink{classmiosix_1_1_directory_base_a82be4b186b115f5ca877b6babc10908c}{minimum\-Buffer\-Size} =3$\ast$\hyperlink{classmiosix_1_1_directory_base_ad907c19d39fed139feee02f57189783c}{dirent\-Header\-Size}}\label{classmiosix_1_1_directory_base_a82be4b186b115f5ca877b6babc10908c}
+
+\begin{DoxyCompactList}\small\item\em Minimum buffer accepted by getdents, two for . and .., plus terminating. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Directories are a special kind of files that implement the \hyperlink{classmiosix_1_1_file_base_ac06d6bfddbe8399ac15584ea54175a67}{getdents()} call Classes of this type are reference counted, must be allocated on the heap and managed through intrusive\-\_\-ref\-\_\-ptr$<$\-Directory\-Base$>$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_directory_base_ad6a63f0d1cb90fd2371873cf1a0db4a6}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!Directory\-Base@{Directory\-Base}}
+\index{Directory\-Base@{Directory\-Base}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{Directory\-Base}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-Directory\-Base\-::\-Directory\-Base (
+\begin{DoxyParamCaption}
+\item[{{\bf intrusive\-\_\-ref\-\_\-ptr}$<$ {\bf Filesystem\-Base} $>$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_directory_base_ad6a63f0d1cb90fd2371873cf1a0db4a6}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & the filesystem to which this file belongs \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_directory_base_aac875ba349b5e834a825ea06b2060904}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!add\-Default\-Entries@{add\-Default\-Entries}}
+\index{add\-Default\-Entries@{add\-Default\-Entries}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{add\-Default\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Directory\-Base\-::add\-Default\-Entries (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{pos, }
+\item[{int}]{this\-Ino, }
+\item[{int}]{up\-Ino}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmiosix_1_1_directory_base_aac875ba349b5e834a825ea06b2060904}
+Helper function to add the default directory entries . and .. to a buffer 
+\begin{DoxyParams}{Parameters}
+{\em pos} & position where to add the entry (four word aligned). Pointer is incremented. The caller is responsible to guarantee that there is at least space for 2$\ast$dirent\-Header\-Size \\
+\hline
+{\em this\-Ino} & inode number of . \\
+\hline
+{\em up\-Inode} & inode number of .. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes written 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_directory_base_a0f691e7e64473cb386783ccf2545ff41}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!add\-Entry@{add\-Entry}}
+\index{add\-Entry@{add\-Entry}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{add\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Directory\-Base\-::add\-Entry (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{pos, }
+\item[{char $\ast$}]{end, }
+\item[{int}]{ino, }
+\item[{char}]{type, }
+\item[{const {\bf String\-Part} \&}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmiosix_1_1_directory_base_a0f691e7e64473cb386783ccf2545ff41}
+Helper function to add a directory entry to a buffer 
+\begin{DoxyParams}{Parameters}
+{\em pos} & position where to add the entry (four word aligned). Pointer is incremented. \\
+\hline
+{\em end} & end of buffer (one char past the last), for bound checking \\
+\hline
+{\em ino} & inode of file \\
+\hline
+{\em type} & file type \\
+\hline
+{\em name} & file name to append after the Dirent\-Header \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes written or -\/1 on failure (no space in buffer) 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_directory_base_a7daa9aedc5a0f6f0cc859e76c52af574}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!add\-Terminating\-Entry@{add\-Terminating\-Entry}}
+\index{add\-Terminating\-Entry@{add\-Terminating\-Entry}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{add\-Terminating\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Directory\-Base\-::add\-Terminating\-Entry (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{pos, }
+\item[{char $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmiosix_1_1_directory_base_a7daa9aedc5a0f6f0cc859e76c52af574}
+Add an entry with d\-\_\-reclen=0 which is used to terminate directory listing 
+\begin{DoxyParams}{Parameters}
+{\em pos} & position where to add the entry (four word aligned). Pointer is incremented. The caller is responsible to guarantee that there is at least space for dirent\-Header\-Size, including padding \\
+\hline
+{\em end} & end of buffer (one char past the last), for bound checking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes written or -\/1 on failure (no space in buffer) 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_directory_base_a56bdd2d238298487d7e72bafa72f2dd4}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!fstat@{fstat}}
+\index{fstat@{fstat}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{fstat}]{\setlength{\rightskip}{0pt plus 5cm}int miosix\-::\-Directory\-Base\-::fstat (
+\begin{DoxyParamCaption}
+\item[{struct stat $\ast$}]{pstat}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_directory_base_a56bdd2d238298487d7e72bafa72f2dd4}
+Return file information. 
+\begin{DoxyParams}{Parameters}
+{\em pstat} & pointer to stat struct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative number on failure 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_ac1874a6f08cae88d52844d6ba7e1d1da}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_directory_base_a6f4fcb4b41924c76c93ef48272e857b8}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!lseek@{lseek}}
+\index{lseek@{lseek}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{lseek}]{\setlength{\rightskip}{0pt plus 5cm}off\-\_\-t miosix\-::\-Directory\-Base\-::lseek (
+\begin{DoxyParamCaption}
+\item[{off\-\_\-t}]{pos, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_directory_base_a6f4fcb4b41924c76c93ef48272e857b8}
+Move file pointer, if the file supports random-\/access. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & offset to sum to the beginning of the file, current position or end of file, depending on whence \\
+\hline
+{\em whence} & S\-E\-E\-K\-\_\-\-S\-E\-T, S\-E\-E\-K\-\_\-\-C\-U\-R or S\-E\-E\-K\-\_\-\-E\-N\-D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the offset from the beginning of the file if the operation completed, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_ae5b8dee32e80dd804c2cb657d9ad0cfc}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_directory_base_a9f30cc9d0b3d8350c0f547331c565206}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!read@{read}}
+\index{read@{read}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Directory\-Base\-::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_directory_base_a9f30cc9d0b3d8350c0f547331c565206}
+Read data from the file, if the file supports reading. 
+\begin{DoxyParams}{Parameters}
+{\em data} & buffer to store read data \\
+\hline
+{\em len} & the number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of read characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_a89159ade6da3c9a183646b57ea8799fd}{miosix\-::\-File\-Base}.
+
+\hypertarget{classmiosix_1_1_directory_base_afa8fdc455f5bb371cccdb0471943ac71}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!write@{write}}
+\index{write@{write}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t miosix\-::\-Directory\-Base\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmiosix_1_1_directory_base_afa8fdc455f5bb371cccdb0471943ac71}
+Write data to the file, if the file supports writing. 
+\begin{DoxyParams}{Parameters}
+{\em data} & the data to write \\
+\hline
+{\em len} & the number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of written characters, or a negative number in case of errors 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmiosix_1_1_file_base_a81ce4c4c059767a23625acdc3223a27d}{miosix\-::\-File\-Base}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmiosix_1_1_directory_base_ad907c19d39fed139feee02f57189783c}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!dirent\-Header\-Size@{dirent\-Header\-Size}}
+\index{dirent\-Header\-Size@{dirent\-Header\-Size}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{dirent\-Header\-Size}]{\setlength{\rightskip}{0pt plus 5cm}const int miosix\-::\-Directory\-Base\-::dirent\-Header\-Size =16\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmiosix_1_1_directory_base_ad907c19d39fed139feee02f57189783c}
+Size of struct dirent including 5 bytes of padding, which has two purposes, rounding the size to a multiple of 4 bytes, and making room for the \char`\"{}.\char`\"{} and \char`\"{}..\char`\"{} string in d\-\_\-name, including terminating \textbackslash{}0 \hypertarget{classmiosix_1_1_directory_base_af9d3fa9038ca46e67fa1de0d8439d8ac}{\index{miosix\-::\-Directory\-Base@{miosix\-::\-Directory\-Base}!dirent\-Header\-Size\-No\-Padding@{dirent\-Header\-Size\-No\-Padding}}
+\index{dirent\-Header\-Size\-No\-Padding@{dirent\-Header\-Size\-No\-Padding}!miosix::DirectoryBase@{miosix\-::\-Directory\-Base}}
+\subsubsection[{dirent\-Header\-Size\-No\-Padding}]{\setlength{\rightskip}{0pt plus 5cm}const int miosix\-::\-Directory\-Base\-::dirent\-Header\-Size\-No\-Padding =11\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmiosix_1_1_directory_base_af9d3fa9038ca46e67fa1de0d8439d8ac}
+Size of struct dirent excluding d\-\_\-name. Tha is, the size of d\-\_\-ino, d\-\_\-off, d\-\_\-reclen and d\-\_\-type. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/file.\-h\item 
+miosix/filesystem/file.\-cpp\end{DoxyCompactItemize}

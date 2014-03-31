@@ -1,0 +1,61 @@
+\hypertarget{classmiosix_1_1_lock}{\section{miosix\-:\-:Lock$<$ T $>$ Class Template Reference}
+\label{classmiosix_1_1_lock}\index{miosix\-::\-Lock$<$ T $>$@{miosix\-::\-Lock$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$sync.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_lock_aefcff605f9b21d592febe4c1bffa7807}{Lock} (T \&m)
+\item 
+\hyperlink{classmiosix_1_1_lock_ad8e9566c5eead737472fda2fce2a0c88}{$\sim$\-Lock} ()
+\item 
+T \& \hyperlink{classmiosix_1_1_lock_a28807e63ba20acd9df2b55bccf8af2bf}{get} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class miosix\-::\-Lock$<$ T $>$}
+
+Very simple R\-A\-I\-I style class to lock a mutex in an exception-\/safe way. \hyperlink{classmiosix_1_1_mutex}{Mutex} is acquired by the constructor and released by the destructor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_lock_aefcff605f9b21d592febe4c1bffa7807}{\index{miosix\-::\-Lock@{miosix\-::\-Lock}!Lock@{Lock}}
+\index{Lock@{Lock}!miosix::Lock@{miosix\-::\-Lock}}
+\subsubsection[{Lock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::\-Lock}$<$ T $>$\-::{\bf Lock} (
+\begin{DoxyParamCaption}
+\item[{T \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classmiosix_1_1_lock_aefcff605f9b21d592febe4c1bffa7807}
+Constructor\-: locks the mutex 
+\begin{DoxyParams}{Parameters}
+{\em m} & mutex to lock \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_lock_ad8e9566c5eead737472fda2fce2a0c88}{\index{miosix\-::\-Lock@{miosix\-::\-Lock}!$\sim$\-Lock@{$\sim$\-Lock}}
+\index{$\sim$\-Lock@{$\sim$\-Lock}!miosix::Lock@{miosix\-::\-Lock}}
+\subsubsection[{$\sim$\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf miosix\-::\-Lock}$<$ T $>$\-::$\sim${\bf Lock} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_lock_ad8e9566c5eead737472fda2fce2a0c88}
+Destructor\-: unlocks the mutex 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_lock_a28807e63ba20acd9df2b55bccf8af2bf}{\index{miosix\-::\-Lock@{miosix\-::\-Lock}!get@{get}}
+\index{get@{get}!miosix::Lock@{miosix\-::\-Lock}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf miosix\-::\-Lock}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_lock_a28807e63ba20acd9df2b55bccf8af2bf}
+\begin{DoxyReturn}{Returns}
+the locked mutex 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/sync.\-h\end{DoxyCompactItemize}

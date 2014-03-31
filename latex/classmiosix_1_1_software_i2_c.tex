@@ -1,0 +1,98 @@
+\hypertarget{classmiosix_1_1_software_i2_c}{\section{miosix\-:\-:Software\-I2\-C$<$ S\-D\-A, S\-C\-L $>$ Class Template Reference}
+\label{classmiosix_1_1_software_i2_c}\index{miosix\-::\-Software\-I2\-C$<$ S\-D\-A, S\-C\-L $>$@{miosix\-::\-Software\-I2\-C$<$ S\-D\-A, S\-C\-L $>$}}
+}
+
+
+{\ttfamily \#include $<$software\-\_\-i2c.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmiosix_1_1_software_i2_c_affca2c005e549cf0d244064d69808313}{init} ()
+\item 
+static void \hyperlink{classmiosix_1_1_software_i2_c_abcbeb09130637bce45c8827e8098a5ff}{send\-Start} ()
+\item 
+static void \hyperlink{classmiosix_1_1_software_i2_c_a66a312f667a52046e45035588caff0b4}{send\-Stop} ()
+\item 
+static bool \hyperlink{classmiosix_1_1_software_i2_c_a6e0535020ec3adf027a4ac77481e6e01}{send} (unsigned char data)
+\item 
+static unsigned char \hyperlink{classmiosix_1_1_software_i2_c_ad16eb98c9e1089e21571d1f7c552a151}{recv\-With\-Ack} ()
+\item 
+static unsigned char \hyperlink{classmiosix_1_1_software_i2_c_a48d8aeebedba01e3dc11866710b873fb}{recv\-With\-Nack} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename S\-D\-A, typename S\-C\-L$>$class miosix\-::\-Software\-I2\-C$<$ S\-D\-A, S\-C\-L $>$}
+
+Software I2\-C class. 
+\begin{DoxyParams}{Parameters}
+{\em S\-D\-A} & S\-D\-A gpio pin. Pass a Gpio$<$\-P,\-N$>$ class \\
+\hline
+{\em S\-C\-L} & S\-C\-L gpio pin. Pass a Gpio$<$\-P,\-N$>$ class \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_software_i2_c_affca2c005e549cf0d244064d69808313}{\index{miosix\-::\-Software\-I2\-C@{miosix\-::\-Software\-I2\-C}!init@{init}}
+\index{init@{init}!miosix::SoftwareI2C@{miosix\-::\-Software\-I2\-C}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-D\-A , typename S\-C\-L $>$ void {\bf miosix\-::\-Software\-I2\-C}$<$ S\-D\-A, S\-C\-L $>$\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_i2_c_affca2c005e549cf0d244064d69808313}
+Initializes the \hyperlink{class_s_p_i}{S\-P\-I} software peripheral \hypertarget{classmiosix_1_1_software_i2_c_ad16eb98c9e1089e21571d1f7c552a151}{\index{miosix\-::\-Software\-I2\-C@{miosix\-::\-Software\-I2\-C}!recv\-With\-Ack@{recv\-With\-Ack}}
+\index{recv\-With\-Ack@{recv\-With\-Ack}!miosix::SoftwareI2C@{miosix\-::\-Software\-I2\-C}}
+\subsubsection[{recv\-With\-Ack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-D\-A , typename S\-C\-L $>$ unsigned char {\bf miosix\-::\-Software\-I2\-C}$<$ S\-D\-A, S\-C\-L $>$\-::recv\-With\-Ack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_i2_c_ad16eb98c9e1089e21571d1f7c552a151}
+Receive a byte from a device. Always acknowledges back. \begin{DoxyReturn}{Returns}
+the received byte 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_software_i2_c_a48d8aeebedba01e3dc11866710b873fb}{\index{miosix\-::\-Software\-I2\-C@{miosix\-::\-Software\-I2\-C}!recv\-With\-Nack@{recv\-With\-Nack}}
+\index{recv\-With\-Nack@{recv\-With\-Nack}!miosix::SoftwareI2C@{miosix\-::\-Software\-I2\-C}}
+\subsubsection[{recv\-With\-Nack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-D\-A , typename S\-C\-L $>$ unsigned char {\bf miosix\-::\-Software\-I2\-C}$<$ S\-D\-A, S\-C\-L $>$\-::recv\-With\-Nack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_i2_c_a48d8aeebedba01e3dc11866710b873fb}
+Receive a byte from a device. Never acknowledges back. \begin{DoxyReturn}{Returns}
+the received byte 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_software_i2_c_a6e0535020ec3adf027a4ac77481e6e01}{\index{miosix\-::\-Software\-I2\-C@{miosix\-::\-Software\-I2\-C}!send@{send}}
+\index{send@{send}!miosix::SoftwareI2C@{miosix\-::\-Software\-I2\-C}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-D\-A , typename S\-C\-L $>$ bool {\bf miosix\-::\-Software\-I2\-C}$<$ S\-D\-A, S\-C\-L $>$\-::send (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_i2_c_a6e0535020ec3adf027a4ac77481e6e01}
+Send a byte to a device. 
+\begin{DoxyParams}{Parameters}
+{\em data} & byte to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the device acknowledged the byte 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_software_i2_c_abcbeb09130637bce45c8827e8098a5ff}{\index{miosix\-::\-Software\-I2\-C@{miosix\-::\-Software\-I2\-C}!send\-Start@{send\-Start}}
+\index{send\-Start@{send\-Start}!miosix::SoftwareI2C@{miosix\-::\-Software\-I2\-C}}
+\subsubsection[{send\-Start}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-D\-A , typename S\-C\-L $>$ void {\bf miosix\-::\-Software\-I2\-C}$<$ S\-D\-A, S\-C\-L $>$\-::send\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_i2_c_abcbeb09130637bce45c8827e8098a5ff}
+Send a start condition \hypertarget{classmiosix_1_1_software_i2_c_a66a312f667a52046e45035588caff0b4}{\index{miosix\-::\-Software\-I2\-C@{miosix\-::\-Software\-I2\-C}!send\-Stop@{send\-Stop}}
+\index{send\-Stop@{send\-Stop}!miosix::SoftwareI2C@{miosix\-::\-Software\-I2\-C}}
+\subsubsection[{send\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-D\-A , typename S\-C\-L $>$ void {\bf miosix\-::\-Software\-I2\-C}$<$ S\-D\-A, S\-C\-L $>$\-::send\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_i2_c_a66a312f667a52046e45035588caff0b4}
+Send a stop condition 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/util/software\-\_\-i2c.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,247 @@
+\hypertarget{classmiosix_1_1_string_part}{\section{miosix\-:\-:String\-Part Class Reference}
+\label{classmiosix_1_1_string_part}\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_string_part_a467c71b395ace21c939e71494063dc3e}{String\-Part} ()
+\item 
+\hyperlink{classmiosix_1_1_string_part_abc7455dcf4c627e4ce530ba982e7b314}{String\-Part} (std\-::string \&\hyperlink{classmiosix_1_1_string_part_ae726e5874d5bbdb6aca5111a8b73e620}{str}, unsigned int idx=std\-::string\-::npos, unsigned int off=0)
+\item 
+\hyperlink{classmiosix_1_1_string_part_a516436d0b0910c4e5959586d63ea7dc2}{String\-Part} (char $\ast$s, unsigned int idx=std\-::string\-::npos, unsigned int off=0)
+\item 
+\hyperlink{classmiosix_1_1_string_part_a1bc55fffc94510932dc46b942f8b7859}{String\-Part} (const char $\ast$s)
+\item 
+\hyperlink{classmiosix_1_1_string_part_a523d75598b4bf437c0a29e2cc4261eba}{String\-Part} (\hyperlink{classmiosix_1_1_string_part}{String\-Part} \&rhs, unsigned int idx, unsigned int off=0)
+\item 
+\hyperlink{classmiosix_1_1_string_part_a01b70b1877be9846a64e54924c8dde60}{String\-Part} (const \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&rhs)
+\item 
+\hyperlink{classmiosix_1_1_string_part}{String\-Part} \& \hyperlink{classmiosix_1_1_string_part_a4c859bf24470a3a94241dd929354450b}{operator=} (const \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&rhs)
+\item 
+bool \hyperlink{classmiosix_1_1_string_part_abe703fcc4db35b28e63bcb66870d2334}{operator$<$} (const \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&rhs) const 
+\item 
+bool \hyperlink{classmiosix_1_1_string_part_a9fac47e3cdf561377162ea4a4674e034}{starts\-With} (const \hyperlink{classmiosix_1_1_string_part}{String\-Part} \&rhs) const 
+\item 
+unsigned int \hyperlink{classmiosix_1_1_string_part_a5b43ad4108cfb42518165ed477b6652a}{find\-Last\-Of} (char c) const 
+\item 
+unsigned int \hyperlink{classmiosix_1_1_string_part_ad04cce060bd75ed75f9696dedffff2df}{length} () const 
+\item 
+const char $\ast$ \hyperlink{classmiosix_1_1_string_part_a76e99ccb0a74ecfe46875fe3a8ff523c}{c\-\_\-str} () const 
+\item 
+char \hyperlink{classmiosix_1_1_string_part_af39bce70e2b975b2589a012d1cc07686}{operator\mbox{[}$\,$\mbox{]}} (unsigned int index) const 
+\item 
+bool \hyperlink{classmiosix_1_1_string_part_ac6d39462db19b88c245561710d94ad8b}{empty} () const 
+\item 
+void \hyperlink{classmiosix_1_1_string_part_a5356ca70f6efc0cab726fbd8a2c6bf5a}{clear} ()
+\item 
+\hyperlink{classmiosix_1_1_string_part_ae80637683f6a1b14285a1eb1e32f3587}{$\sim$\-String\-Part} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_string_part_a467c71b395ace21c939e71494063dc3e}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!String\-Part@{String\-Part}}
+\index{String\-Part@{String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::\-String\-Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_string_part_a467c71b395ace21c939e71494063dc3e}
+Default constructor \hypertarget{classmiosix_1_1_string_part_abc7455dcf4c627e4ce530ba982e7b314}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!String\-Part@{String\-Part}}
+\index{String\-Part@{String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::\-String\-Part (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{str, }
+\item[{unsigned int}]{idx = {\ttfamily std\-:\-:string\-:\-:npos}, }
+\item[{unsigned int}]{off = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classmiosix_1_1_string_part_abc7455dcf4c627e4ce530ba982e7b314}
+Constructor from C++ string 
+\begin{DoxyParams}{Parameters}
+{\em str} & original string. A pointer to the string is taken, the string is N\-O\-T copied. Therefore, the caller is responsible to guarantee the string won't be deallocated while this class is alive. Note that the original string is modified by inserting a '\textbackslash{}0' at the index position, if index is given. The string will be restored to the exact original content only when this class is destroyed. \\
+\hline
+{\em idx} & if this parameter is given, this class becomes an in-\/place substring of the original string. Otherwise, this class will store the entire string passed. In this case, the original string will not be modified. \\
+\hline
+{\em off} & if this parameter is given, the first off characters of the string are skipped. Note that idx calculations take place {\bfseries before} offset computation, so idx is relative to the original string. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_string_part_a516436d0b0910c4e5959586d63ea7dc2}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!String\-Part@{String\-Part}}
+\index{String\-Part@{String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::\-String\-Part (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s, }
+\item[{unsigned int}]{idx = {\ttfamily std\-:\-:string\-:\-:npos}, }
+\item[{unsigned int}]{off = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classmiosix_1_1_string_part_a516436d0b0910c4e5959586d63ea7dc2}
+Constructor from C string 
+\begin{DoxyParams}{Parameters}
+{\em s} & original string. A pointer to the string is taken, the string is N\-O\-T copied. Therefore, the caller is responsible to guarantee the string won't be deallocated while this class is alive. Note that the original string is modified by inserting a '\textbackslash{}0' at the index position, if index is given. The string will be restored to the exact original content only when this class is destroyed. \\
+\hline
+{\em idx} & if this parameter is given, this class becomes an in-\/place substring of the original string. Otherwise, this class will store the entire string passed. In this case, the original string will not be modified. \\
+\hline
+{\em off} & if this parameter is given, the first off characters of the string are skipped. Note that idx calculations take place {\bfseries before} offset computation, so idx is relative to the original string. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_string_part_a1bc55fffc94510932dc46b942f8b7859}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!String\-Part@{String\-Part}}
+\index{String\-Part@{String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::\-String\-Part (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classmiosix_1_1_string_part_a1bc55fffc94510932dc46b942f8b7859}
+Constructor from const C string 
+\begin{DoxyParams}{Parameters}
+{\em s} & original string. A pointer to the string is taken, the string is N\-O\-T copied. Therefore, the caller is responsible to guarantee the string won't be deallocated while this class is alive. Note that this constructor misses the idx and off parameters as it's not possible to make an in-\/place substring of a string if it's const. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_string_part_a523d75598b4bf437c0a29e2cc4261eba}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!String\-Part@{String\-Part}}
+\index{String\-Part@{String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::\-String\-Part (
+\begin{DoxyParamCaption}
+\item[{{\bf String\-Part} \&}]{rhs, }
+\item[{unsigned int}]{idx, }
+\item[{unsigned int}]{off = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_string_part_a523d75598b4bf437c0a29e2cc4261eba}
+Substring constructor. Given a \hyperlink{classmiosix_1_1_string_part}{String\-Part}, produce another \hyperlink{classmiosix_1_1_string_part}{String\-Part} holding a substring of the original \hyperlink{classmiosix_1_1_string_part}{String\-Part}. Unlike the normal copy constructor that does deep copy, this one does shallow copy, and therefore the newly created object will share the same string pointer as rhs. Useful for making substrings of a substring without memory allocation. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & a \hyperlink{classmiosix_1_1_string_part}{String\-Part} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_string_part_a01b70b1877be9846a64e54924c8dde60}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!String\-Part@{String\-Part}}
+\index{String\-Part@{String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::\-String\-Part (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-Part} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_string_part_a01b70b1877be9846a64e54924c8dde60}
+Copy constructor. Note that deep copying is used, so that the newly created \hyperlink{classmiosix_1_1_string_part}{String\-Part} is a self-\/contained string. It has been done like that to be able to store the paths of mounted filesystems in an std\-::map 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & a \hyperlink{classmiosix_1_1_string_part}{String\-Part} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_string_part_ae80637683f6a1b14285a1eb1e32f3587}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!$\sim$\-String\-Part@{$\sim$\-String\-Part}}
+\index{$\sim$\-String\-Part@{$\sim$\-String\-Part}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{$\sim$\-String\-Part}]{\setlength{\rightskip}{0pt plus 5cm}miosix\-::\-String\-Part\-::$\sim$\-String\-Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_string_part_ae80637683f6a1b14285a1eb1e32f3587}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_string_part_a76e99ccb0a74ecfe46875fe3a8ff523c}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!c\-\_\-str@{c\-\_\-str}}
+\index{c\-\_\-str@{c\-\_\-str}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{c\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ miosix\-::\-String\-Part\-::c\-\_\-str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_string_part_a76e99ccb0a74ecfe46875fe3a8ff523c}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classmiosix_1_1_string_part}{String\-Part} as a C string 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_string_part_a5356ca70f6efc0cab726fbd8a2c6bf5a}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!clear@{clear}}
+\index{clear@{clear}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void miosix\-::\-String\-Part\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_string_part_a5356ca70f6efc0cab726fbd8a2c6bf5a}
+Make this an empty string \hypertarget{classmiosix_1_1_string_part_ac6d39462db19b88c245561710d94ad8b}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!empty@{empty}}
+\index{empty@{empty}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-String\-Part\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_string_part_ac6d39462db19b88c245561710d94ad8b}
+\begin{DoxyReturn}{Returns}
+true if the string is empty 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_string_part_a5b43ad4108cfb42518165ed477b6652a}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!find\-Last\-Of@{find\-Last\-Of}}
+\index{find\-Last\-Of@{find\-Last\-Of}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{find\-Last\-Of}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int miosix\-::\-String\-Part\-::find\-Last\-Of (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_string_part_a5b43ad4108cfb42518165ed477b6652a}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & char to find in the string, starting from the end \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the last occurrence of c, or string\-::npos 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_string_part_ad04cce060bd75ed75f9696dedffff2df}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!length@{length}}
+\index{length@{length}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int miosix\-::\-String\-Part\-::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_string_part_ad04cce060bd75ed75f9696dedffff2df}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classmiosix_1_1_string_part}{String\-Part} length, which is the same as strlen(this-\/$>$\hyperlink{classmiosix_1_1_string_part_a76e99ccb0a74ecfe46875fe3a8ff523c}{c\-\_\-str()}) 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_string_part_abe703fcc4db35b28e63bcb66870d2334}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-String\-Part\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-Part} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_string_part_abe703fcc4db35b28e63bcb66870d2334}
+Compare two String\-Parts for inequality 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & second \hyperlink{classmiosix_1_1_string_part}{String\-Part} to compare to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if $\ast$this $<$ rhs 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_string_part_a4c859bf24470a3a94241dd929354450b}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!operator=@{operator=}}
+\index{operator=@{operator=}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\-Part} \& miosix\-::\-String\-Part\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-Part} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classmiosix_1_1_string_part_a4c859bf24470a3a94241dd929354450b}
+Operator = Note that deep copying is used, so that the assigned \hyperlink{classmiosix_1_1_string_part}{String\-Part} becomes a self-\/contained string. It has been done like that to be able to store the paths of mounted filesystems in an std\-::map 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & a \hyperlink{classmiosix_1_1_string_part}{String\-Part} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_string_part_af39bce70e2b975b2589a012d1cc07686}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}char miosix\-::\-String\-Part\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_string_part_af39bce70e2b975b2589a012d1cc07686}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index into the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the equivalent of this-\/$>$\hyperlink{classmiosix_1_1_string_part_a76e99ccb0a74ecfe46875fe3a8ff523c}{c\-\_\-str()}\mbox{[}index\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_string_part_a9fac47e3cdf561377162ea4a4674e034}{\index{miosix\-::\-String\-Part@{miosix\-::\-String\-Part}!starts\-With@{starts\-With}}
+\index{starts\-With@{starts\-With}!miosix::StringPart@{miosix\-::\-String\-Part}}
+\subsubsection[{starts\-With}]{\setlength{\rightskip}{0pt plus 5cm}bool miosix\-::\-String\-Part\-::starts\-With (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-Part} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classmiosix_1_1_string_part_a9fac47e3cdf561377162ea4a4674e034}
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & a \hyperlink{classmiosix_1_1_string_part}{String\-Part} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this starts with rhs 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/filesystem/stringpart.\-h\item 
+miosix/filesystem/stringpart.\-cpp\end{DoxyCompactItemize}

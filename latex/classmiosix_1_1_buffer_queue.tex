@@ -1,0 +1,172 @@
+\hypertarget{classmiosix_1_1_buffer_queue}{\section{miosix\-:\-:Buffer\-Queue$<$ T, size, numbuf $>$ Class Template Reference}
+\label{classmiosix_1_1_buffer_queue}\index{miosix\-::\-Buffer\-Queue$<$ T, size, numbuf $>$@{miosix\-::\-Buffer\-Queue$<$ T, size, numbuf $>$}}
+}
+
+
+{\ttfamily \#include $<$buffer\-\_\-queue.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_buffer_queue_ad76f164835965da281ca5e16764cbe11}{Buffer\-Queue} ()
+\item 
+bool \hyperlink{classmiosix_1_1_buffer_queue_a75896b85560f89be25ede35052de7829}{I\-R\-Qis\-Empty} () const 
+\item 
+bool \hyperlink{classmiosix_1_1_buffer_queue_a48088e1cab1aac8505c3893a193ea5dc}{I\-R\-Qis\-Full} () const 
+\item 
+bool \hyperlink{classmiosix_1_1_buffer_queue_a97c6c15cd7c09028b9c30291272d0129}{I\-R\-Qget\-Writable\-Buffer} (T $\ast$\&buffer)
+\item 
+void \hyperlink{classmiosix_1_1_buffer_queue_a550133b3f1824f81241c88339340008e}{I\-R\-Qbuffer\-Filled} (unsigned int actual\-Size)
+\item 
+unsigned char \hyperlink{classmiosix_1_1_buffer_queue_a81461eb6dc8c5c5015e385fa480fd639}{I\-R\-Qavailable\-For\-Writing} () const 
+\item 
+bool \hyperlink{classmiosix_1_1_buffer_queue_a605ae0b1ae5eb2466fd46df48a2eadae}{I\-R\-Qget\-Readable\-Buffer} (const T $\ast$\&buffer, unsigned int \&actual\-Size)
+\item 
+void \hyperlink{classmiosix_1_1_buffer_queue_aa02dd3a85ba611dcc63acfa94da1a9ba}{I\-R\-Qbuffer\-Emptied} ()
+\item 
+unsigned char \hyperlink{classmiosix_1_1_buffer_queue_ab13eb4109caf0f258e6dfd6795513a40}{I\-R\-Qavailable\-For\-Reading} () const 
+\item 
+void \hyperlink{classmiosix_1_1_buffer_queue_aecbbd37c0ef8a6bbd4ac9e447d2f95e8}{I\-R\-Qreset} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmiosix_1_1_buffer_queue_a58aceb714cca14390a70d16c209d0734}{static const unsigned int \hyperlink{classmiosix_1_1_buffer_queue_a58aceb714cca14390a70d16c209d0734}{buffer\-Max\-Size} =size}\label{classmiosix_1_1_buffer_queue_a58aceb714cca14390a70d16c209d0734}
+
+\begin{DoxyCompactList}\small\item\em Maximum size of a buffer. \end{DoxyCompactList}\item 
+\hypertarget{classmiosix_1_1_buffer_queue_a12df0bf851baa1179dfc220270a8300a}{static const unsigned char \hyperlink{classmiosix_1_1_buffer_queue_a12df0bf851baa1179dfc220270a8300a}{number\-Of\-Buffers} =numbuf}\label{classmiosix_1_1_buffer_queue_a12df0bf851baa1179dfc220270a8300a}
+
+\begin{DoxyCompactList}\small\item\em Number of buffers available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, unsigned int size, unsigned char numbuf = 2$>$class miosix\-::\-Buffer\-Queue$<$ T, size, numbuf $>$}
+
+A class to handle double buffering, but also triple buffering and in general N-\/buffering. Works between two threads but is especially suited to synchronize between a thread and an interrupt routine.\par
+ Note that unlike \hyperlink{classmiosix_1_1_queue}{Queue}, this class is only a data structure and not a synchronization primitive. The synchronization between the thread and the I\-R\-Q (or the other thread) must be done by the caller. Therefore, to avoid race conditions all the member function are on purpose marked I\-R\-Q meaning that can only be called with interrupt disabled or within an I\-R\-Q.\par
+ The internal implementation treats the buffers as a circular queue of N elements, hence the name. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of elements of the buffer, usually char or unsigned char \\
+\hline
+{\em size} & maximum size of a buffer \\
+\hline
+{\em numbuf} & number of buffers, the default is two resulting in a double buffering scheme. Values 0 and 1 are forbidden \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_buffer_queue_ad76f164835965da281ca5e16764cbe11}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!Buffer\-Queue@{Buffer\-Queue}}
+\index{Buffer\-Queue@{Buffer\-Queue}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{Buffer\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::{\bf Buffer\-Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_ad76f164835965da281ca5e16764cbe11}
+Constructor, all buffers are empty 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_buffer_queue_ab13eb4109caf0f258e6dfd6795513a40}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qavailable\-For\-Reading@{I\-R\-Qavailable\-For\-Reading}}
+\index{I\-R\-Qavailable\-For\-Reading@{I\-R\-Qavailable\-For\-Reading}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qavailable\-For\-Reading}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ unsigned char {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qavailable\-For\-Reading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_ab13eb4109caf0f258e6dfd6795513a40}
+\begin{DoxyReturn}{Returns}
+The number of buffers available for reading (0, to numbuf) 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_buffer_queue_a81461eb6dc8c5c5015e385fa480fd639}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qavailable\-For\-Writing@{I\-R\-Qavailable\-For\-Writing}}
+\index{I\-R\-Qavailable\-For\-Writing@{I\-R\-Qavailable\-For\-Writing}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qavailable\-For\-Writing}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ unsigned char {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qavailable\-For\-Writing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_a81461eb6dc8c5c5015e385fa480fd639}
+\begin{DoxyReturn}{Returns}
+The number of buffers available for writing (0 to numbuf) 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_buffer_queue_aa02dd3a85ba611dcc63acfa94da1a9ba}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qbuffer\-Emptied@{I\-R\-Qbuffer\-Emptied}}
+\index{I\-R\-Qbuffer\-Emptied@{I\-R\-Qbuffer\-Emptied}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qbuffer\-Emptied}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ void {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qbuffer\-Emptied (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_aa02dd3a85ba611dcc63acfa94da1a9ba}
+After having called get\-Readable\-Buffer() or \hyperlink{classmiosix_1_1_buffer_queue_a605ae0b1ae5eb2466fd46df48a2eadae}{I\-R\-Qget\-Readable\-Buffer()} to retrieve a buffer and having read it, this member function allows to mark the buffer as available on the writer side. \hypertarget{classmiosix_1_1_buffer_queue_a550133b3f1824f81241c88339340008e}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qbuffer\-Filled@{I\-R\-Qbuffer\-Filled}}
+\index{I\-R\-Qbuffer\-Filled@{I\-R\-Qbuffer\-Filled}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qbuffer\-Filled}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ void {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qbuffer\-Filled (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{actual\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_a550133b3f1824f81241c88339340008e}
+After having called get\-Writable\-Buffer() or \hyperlink{classmiosix_1_1_buffer_queue_a97c6c15cd7c09028b9c30291272d0129}{I\-R\-Qget\-Writable\-Buffer()} to retrieve a buffer and having filled it, this member function allows to mark the buffer as available on the reader side. 
+\begin{DoxyParams}{Parameters}
+{\em actual\-Size} & actual size of buffer. It usually equals buffer\-Max\-Size but can be a lower value in case there is less available data \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_buffer_queue_a605ae0b1ae5eb2466fd46df48a2eadae}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qget\-Readable\-Buffer@{I\-R\-Qget\-Readable\-Buffer}}
+\index{I\-R\-Qget\-Readable\-Buffer@{I\-R\-Qget\-Readable\-Buffer}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qget\-Readable\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ bool {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qget\-Readable\-Buffer (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$\&}]{buffer, }
+\item[{unsigned int \&}]{actual\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_a605ae0b1ae5eb2466fd46df48a2eadae}
+This member function allows to retrieve a buffer ready to be read, if available. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the available buffer will be assigned here if available \\
+\hline
+{\em actual\-Size} & the actual size of the buffer, as reported by the writer side \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a readable buffer has been found, false otherwise. In this case the buffer and actual\-Size parameters are not modified 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_buffer_queue_a97c6c15cd7c09028b9c30291272d0129}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qget\-Writable\-Buffer@{I\-R\-Qget\-Writable\-Buffer}}
+\index{I\-R\-Qget\-Writable\-Buffer@{I\-R\-Qget\-Writable\-Buffer}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qget\-Writable\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ bool {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qget\-Writable\-Buffer (
+\begin{DoxyParamCaption}
+\item[{T $\ast$\&}]{buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_a97c6c15cd7c09028b9c30291272d0129}
+This member function allows to retrieve a buffer ready to be written, if available. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the available buffer will be assigned here if available \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a writable buffer has been found, false otherwise. In this case the buffer parameter is not modified 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_buffer_queue_a75896b85560f89be25ede35052de7829}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qis\-Empty@{I\-R\-Qis\-Empty}}
+\index{I\-R\-Qis\-Empty@{I\-R\-Qis\-Empty}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qis\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ bool {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qis\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_a75896b85560f89be25ede35052de7829}
+\begin{DoxyReturn}{Returns}
+true if no buffer is available for reading 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_buffer_queue_a48088e1cab1aac8505c3893a193ea5dc}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qis\-Full@{I\-R\-Qis\-Full}}
+\index{I\-R\-Qis\-Full@{I\-R\-Qis\-Full}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qis\-Full}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ bool {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qis\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_a48088e1cab1aac8505c3893a193ea5dc}
+\begin{DoxyReturn}{Returns}
+true if no buffer is available for writing 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_buffer_queue_aecbbd37c0ef8a6bbd4ac9e447d2f95e8}{\index{miosix\-::\-Buffer\-Queue@{miosix\-::\-Buffer\-Queue}!I\-R\-Qreset@{I\-R\-Qreset}}
+\index{I\-R\-Qreset@{I\-R\-Qreset}!miosix::BufferQueue@{miosix\-::\-Buffer\-Queue}}
+\subsubsection[{I\-R\-Qreset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , unsigned int size, unsigned char numbuf = 2$>$ void {\bf miosix\-::\-Buffer\-Queue}$<$ T, size, numbuf $>$\-::I\-R\-Qreset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_buffer_queue_aecbbd37c0ef8a6bbd4ac9e447d2f95e8}
+Reset the buffers. As a consequence, the queue becomes empty. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/kernel/buffer\-\_\-queue.\-h\end{DoxyCompactItemize}

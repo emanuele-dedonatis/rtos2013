@@ -1,0 +1,191 @@
+\hypertarget{classmiosix_1_1_fixed_event_queue}{\section{miosix\-:\-:Fixed\-Event\-Queue$<$ Num\-Slots, Slot\-Size $>$ Class Template Reference}
+\label{classmiosix_1_1_fixed_event_queue}\index{miosix\-::\-Fixed\-Event\-Queue$<$ Num\-Slots, Slot\-Size $>$@{miosix\-::\-Fixed\-Event\-Queue$<$ Num\-Slots, Slot\-Size $>$}}
+}
+
+
+{\ttfamily \#include $<$e20.\-h$>$}
+
+Inheritance diagram for miosix\-:\-:Fixed\-Event\-Queue$<$ Num\-Slots, Slot\-Size $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmiosix_1_1_fixed_event_queue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmiosix_1_1_fixed_event_queue_a7e27900a2e7c23cbe7155ec950f010ef}{Fixed\-Event\-Queue} ()
+\item 
+void \hyperlink{classmiosix_1_1_fixed_event_queue_a8ca9a4c812f569d8cf1e27f67cf9175d}{post} (\hyperlink{classmiosix_1_1_callback}{Callback}$<$ Slot\-Size $>$ event)
+\item 
+bool \hyperlink{classmiosix_1_1_fixed_event_queue_addf92b2a4f2f18057efb912f05ccf2d4}{post\-Non\-Blocking} (\hyperlink{classmiosix_1_1_callback}{Callback}$<$ Slot\-Size $>$ event)
+\item 
+bool \hyperlink{classmiosix_1_1_fixed_event_queue_a6a9c49cda044a0de508c2912dc116790}{I\-R\-Qpost} (\hyperlink{classmiosix_1_1_callback}{Callback}$<$ Slot\-Size $>$ event)
+\item 
+bool \hyperlink{classmiosix_1_1_fixed_event_queue_a707b2d5cfca7b04c738937d61d02adc8}{I\-R\-Qpost} (\hyperlink{classmiosix_1_1_callback}{Callback}$<$ Slot\-Size $>$ event, bool \&hppw)
+\item 
+void \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run} ()
+\item 
+void \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One} ()
+\item 
+unsigned int \hyperlink{classmiosix_1_1_fixed_event_queue_a59ccdcb8e2a141fb72fb3f7e00f314e5}{size} () const 
+\item 
+unsigned int \hyperlink{classmiosix_1_1_fixed_event_queue_a44a72fcfb6cefdbc44b732da5cc4d2f5}{empty} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$class miosix\-::\-Fixed\-Event\-Queue$<$ Num\-Slots, Slot\-Size $>$}
+
+A fixed size event queue.
+
+This guarantees it makes no use of the heap, therefore events can be posted also from within interrupt handlers. This simplifies the development of device drivers.
+
+This class acts as a synchronization point, multiple threads (and I\-R\-Qs) can post events, and multiple threads can call \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run()} or \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One()} (thread pooling).
+
+Events are function that are posted by a thread through \hyperlink{classmiosix_1_1_fixed_event_queue_a8ca9a4c812f569d8cf1e27f67cf9175d}{post()} but executed in the context of the thread that calls \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run()} or \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Num\-Slots} & maximum queue length \\
+\hline
+{\em Slot\-Size} & size of the \hyperlink{classmiosix_1_1_callback}{Callback} objects. This limits the maximum number of parameters that can be bound to a function. If you get compile-\/time errors in \hyperlink{callback_8h_source}{callback.\-h}, consider increasing this value. The default is 20 bytes, which is enough to bind a member function pointer, a \char`\"{}this\char`\"{} pointer and two byte or pointer sized parameters. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a7e27900a2e7c23cbe7155ec950f010ef}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!Fixed\-Event\-Queue@{Fixed\-Event\-Queue}}
+\index{Fixed\-Event\-Queue@{Fixed\-Event\-Queue}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{Fixed\-Event\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::{\bf Fixed\-Event\-Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a7e27900a2e7c23cbe7155ec950f010ef}
+Constructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a44a72fcfb6cefdbc44b732da5cc4d2f5}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!empty@{empty}}
+\index{empty@{empty}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ unsigned int {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a44a72fcfb6cefdbc44b732da5cc4d2f5}
+\begin{DoxyReturn}{Returns}
+true if the queue has no events 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a6a9c49cda044a0de508c2912dc116790}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!I\-R\-Qpost@{I\-R\-Qpost}}
+\index{I\-R\-Qpost@{I\-R\-Qpost}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{I\-R\-Qpost}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ bool {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::I\-R\-Qpost (
+\begin{DoxyParamCaption}
+\item[{{\bf Callback}$<$ Slot\-Size $>$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a6a9c49cda044a0de508c2912dc116790}
+Post an event in the queue, or return if the queue was full. Can be called only with interrupts disabled or within an interrupt handler, allowing device drivers to post an event to a thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & function function to be called in the thread that calls \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run()} or \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One()}. Bind can be used to bind parameters to the function. Unlike with the \hyperlink{classmiosix_1_1_event_queue}{Event\-Queue}, the operator= of the bound parameters have the restriction that they need to be callable with interrupts disabled so they must not open files, print, ...\\
+\hline
+\end{DoxyParams}
+If the call is made from within an \hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock} the copy constructors can allocate memory, while if the call is made from an interrupt handler or a Fast\-Interrupt\-Fisable\-Lock memory allocation is forbidden. \begin{DoxyReturn}{Returns}
+false if there was no space in the queue 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a707b2d5cfca7b04c738937d61d02adc8}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!I\-R\-Qpost@{I\-R\-Qpost}}
+\index{I\-R\-Qpost@{I\-R\-Qpost}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{I\-R\-Qpost}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ bool {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::I\-R\-Qpost (
+\begin{DoxyParamCaption}
+\item[{{\bf Callback}$<$ Slot\-Size $>$}]{event, }
+\item[{bool \&}]{hppw}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a707b2d5cfca7b04c738937d61d02adc8}
+Post an event in the queue, or return if the queue was full. Can be called only with interrupts disabled or within an interrupt handler, allowing device drivers to post an event to a thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & function function to be called in the thread that calls \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run()} or \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One()}. Bind can be used to bind parameters to the function. Unlike with the \hyperlink{classmiosix_1_1_event_queue}{Event\-Queue}, the operator= of the bound parameters have the restriction that they need to be callable with interrupts disabled so they must not open files, print, ...\\
+\hline
+\end{DoxyParams}
+If the call is made from within an \hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock} the copy constructors can allocate memory, while if the call is made from an interrupt handler or a Fast\-Interrupt\-Fisable\-Lock memory allocation is forbidden. 
+\begin{DoxyParams}{Parameters}
+{\em hppw} & returns true if a higher priority thread was awakened as part of posting the event. Can be used inside an I\-R\-Q to call the scheduler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there was no space in the queue 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a8ca9a4c812f569d8cf1e27f67cf9175d}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!post@{post}}
+\index{post@{post}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ void {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::post (
+\begin{DoxyParamCaption}
+\item[{{\bf Callback}$<$ Slot\-Size $>$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a8ca9a4c812f569d8cf1e27f67cf9175d}
+Post an event, blocking if the event queue is full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & function function to be called in the thread that calls \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run()} or \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One()}. Bind can be used to bind parameters to the function. Unlike with the \hyperlink{classmiosix_1_1_event_queue}{Event\-Queue}, the operator= of the bound parameters have the restriction that they need to be callable from inside a \hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock} without causing undefined behaviour, so they must not, open files, print, ... but can allocate memory. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmiosix_1_1_fixed_event_queue_addf92b2a4f2f18057efb912f05ccf2d4}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!post\-Non\-Blocking@{post\-Non\-Blocking}}
+\index{post\-Non\-Blocking@{post\-Non\-Blocking}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{post\-Non\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ bool {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::post\-Non\-Blocking (
+\begin{DoxyParamCaption}
+\item[{{\bf Callback}$<$ Slot\-Size $>$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_addf92b2a4f2f18057efb912f05ccf2d4}
+Post an event in the queue, or return if the queue was full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & function function to be called in the thread that calls \hyperlink{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{run()} or \hyperlink{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{run\-One()}. Bind can be used to bind parameters to the function. Unlike with the \hyperlink{classmiosix_1_1_event_queue}{Event\-Queue}, the operator= of the bound parameters have the restriction that they need to be callable from inside a \hyperlink{classmiosix_1_1_interrupt_disable_lock}{Interrupt\-Disable\-Lock} without causing undefined behaviour, so they must not open files, print, ... but can allocate memory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there was no space in the queue 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!run@{run}}
+\index{run@{run}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ void {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a57c1a42529747f00c9e2dfcbd0aadffe}
+This function blocks waiting for events being posted, and when available it calls the event function. To return from this event loop an event function must throw an exception.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em any} & exception that is thrown by the event functions \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!run\-One@{run\-One}}
+\index{run\-One@{run\-One}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{run\-One}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ void {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::run\-One (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_ae861b6c4a206878671abc5d7c302470f}
+Run at most one event. This function does not block.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em any} & exception that is thrown by the event functions \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classmiosix_1_1_fixed_event_queue_a59ccdcb8e2a141fb72fb3f7e00f314e5}{\index{miosix\-::\-Fixed\-Event\-Queue@{miosix\-::\-Fixed\-Event\-Queue}!size@{size}}
+\index{size@{size}!miosix::FixedEventQueue@{miosix\-::\-Fixed\-Event\-Queue}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned Num\-Slots, unsigned Slot\-Size = 20$>$ unsigned int {\bf miosix\-::\-Fixed\-Event\-Queue}$<$ Num\-Slots, Slot\-Size $>$\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmiosix_1_1_fixed_event_queue_a59ccdcb8e2a141fb72fb3f7e00f314e5}
+\begin{DoxyReturn}{Returns}
+the number of events in the queue 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/e20/e20.\-h\end{DoxyCompactItemize}

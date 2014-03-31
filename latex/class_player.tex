@@ -1,0 +1,63 @@
+\hypertarget{class_player}{\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+}
+
+
+{\ttfamily \#include $<$player.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_player_a895c8c46a9862e1c424720be3aa5e7d1}{play} (\hyperlink{class_sound}{Sound} \&sound)
+\item 
+bool \hyperlink{class_player_a10022c6ffc3a93436a74c584b52a4948}{is\-Playing} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_player}{Player} \& \hyperlink{class_player_a2bf5cfb2a54c9fde1432fed9eb46fe49}{instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to play an audio file on the S\-T\-M32's D\-A\-C 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_player_a2bf5cfb2a54c9fde1432fed9eb46fe49}{\index{Player@{Player}!instance@{instance}}
+\index{instance@{instance}!Player@{Player}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} \& Player\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_player_a2bf5cfb2a54c9fde1432fed9eb46fe49}
+\begin{DoxyReturn}{Returns}
+an instance of the player (singleton) 
+\end{DoxyReturn}
+\hypertarget{class_player_a10022c6ffc3a93436a74c584b52a4948}{\index{Player@{Player}!is\-Playing@{is\-Playing}}
+\index{is\-Playing@{is\-Playing}!Player@{Player}}
+\subsubsection[{is\-Playing}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::is\-Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_player_a10022c6ffc3a93436a74c584b52a4948}
+\begin{DoxyReturn}{Returns}
+true if the resource is busy 
+\end{DoxyReturn}
+\hypertarget{class_player_a895c8c46a9862e1c424720be3aa5e7d1}{\index{Player@{Player}!play@{play}}
+\index{play@{play}!Player@{Player}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::play (
+\begin{DoxyParamCaption}
+\item[{{\bf Sound} \&}]{sound}
+\end{DoxyParamCaption}
+)}}\label{class_player_a895c8c46a9862e1c424720be3aa5e7d1}
+Play an audio file, returning after the file has coompleted playing 
+\begin{DoxyParams}{Parameters}
+{\em sound} & sound file to play \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+miosix/\-\_\-examples/sad\-\_\-trombone/player.\-h\item 
+miosix/\-\_\-examples/sad\-\_\-trombone/player.\-cpp\end{DoxyCompactItemize}

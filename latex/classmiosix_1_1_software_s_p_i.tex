@@ -1,0 +1,114 @@
+\hypertarget{classmiosix_1_1_software_s_p_i}{\section{miosix\-:\-:Software\-S\-P\-I$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$ Class Template Reference}
+\label{classmiosix_1_1_software_s_p_i}\index{miosix\-::\-Software\-S\-P\-I$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$@{miosix\-::\-Software\-S\-P\-I$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$}}
+}
+
+
+{\ttfamily \#include $<$software\-\_\-spi.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmiosix_1_1_software_s_p_i_a0d8dc57b9c5bbca82f830a286e1e43e3}{init} ()
+\item 
+static unsigned char \hyperlink{classmiosix_1_1_software_s_p_i_a28c74624fdf2699bbd9a16a0b4041df4}{send\-Recv\-Char} (unsigned char data)
+\item 
+static unsigned short \hyperlink{classmiosix_1_1_software_s_p_i_aa4087c723fe51f7172c54c24a51e56c3}{send\-Recv\-Short} (unsigned short data)
+\item 
+static unsigned int \hyperlink{classmiosix_1_1_software_s_p_i_a2338776e2f0242f95b8e416b269ae4e7}{send\-Recv\-Long} (unsigned int data)
+\item 
+static void \hyperlink{classmiosix_1_1_software_s_p_i_a357a64d9abe58149039a90813a0e710c}{ce\-Low} ()
+\item 
+static void \hyperlink{classmiosix_1_1_software_s_p_i_a7e2ba605d5a06df4e27c346f23b7559c}{ce\-High} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename S\-I, typename S\-O, typename S\-C\-K, typename C\-E, unsigned num\-Nops$>$class miosix\-::\-Software\-S\-P\-I$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$}
+
+Software implementation of the \hyperlink{class_s_p_i}{S\-P\-I} protocol mode 0 (C\-P\-O\-L=0, C\-P\-H\-A=0 mode) 
+\begin{DoxyParams}{Parameters}
+{\em S\-I} & an instance of the \hyperlink{classmiosix_1_1_gpio}{Gpio} class indicating the \hyperlink{class_s_p_i}{S\-P\-I} input pin \\
+\hline
+{\em S\-O} & an instance of the \hyperlink{classmiosix_1_1_gpio}{Gpio} class indicating the \hyperlink{class_s_p_i}{S\-P\-I} output pin \\
+\hline
+{\em S\-C\-K} & an instance of the \hyperlink{classmiosix_1_1_gpio}{Gpio} class indicating the \hyperlink{class_s_p_i}{S\-P\-I} clock pin \\
+\hline
+{\em C\-E} & an instance of the \hyperlink{classmiosix_1_1_gpio}{Gpio} class indicating the \hyperlink{class_s_p_i}{S\-P\-I} chip enable pin \\
+\hline
+{\em num\-Nops} & number of nops to add to the send loop to slow down \hyperlink{class_s_p_i}{S\-P\-I} clock \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmiosix_1_1_software_s_p_i_a7e2ba605d5a06df4e27c346f23b7559c}{\index{miosix\-::\-Software\-S\-P\-I@{miosix\-::\-Software\-S\-P\-I}!ce\-High@{ce\-High}}
+\index{ce\-High@{ce\-High}!miosix::SoftwareSPI@{miosix\-::\-Software\-S\-P\-I}}
+\subsubsection[{ce\-High}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-I , typename S\-O , typename S\-C\-K , typename C\-E , unsigned num\-Nops$>$ static void {\bf miosix\-::\-Software\-S\-P\-I}$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$\-::ce\-High (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_software_s_p_i_a7e2ba605d5a06df4e27c346f23b7559c}
+Pull C\-E high, indicating transmission end. \hypertarget{classmiosix_1_1_software_s_p_i_a357a64d9abe58149039a90813a0e710c}{\index{miosix\-::\-Software\-S\-P\-I@{miosix\-::\-Software\-S\-P\-I}!ce\-Low@{ce\-Low}}
+\index{ce\-Low@{ce\-Low}!miosix::SoftwareSPI@{miosix\-::\-Software\-S\-P\-I}}
+\subsubsection[{ce\-Low}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-I , typename S\-O , typename S\-C\-K , typename C\-E , unsigned num\-Nops$>$ static void {\bf miosix\-::\-Software\-S\-P\-I}$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$\-::ce\-Low (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_software_s_p_i_a357a64d9abe58149039a90813a0e710c}
+Pull C\-E low, indicating transmission start. \hypertarget{classmiosix_1_1_software_s_p_i_a0d8dc57b9c5bbca82f830a286e1e43e3}{\index{miosix\-::\-Software\-S\-P\-I@{miosix\-::\-Software\-S\-P\-I}!init@{init}}
+\index{init@{init}!miosix::SoftwareSPI@{miosix\-::\-Software\-S\-P\-I}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-I , typename S\-O , typename S\-C\-K , typename C\-E , unsigned num\-Nops$>$ static void {\bf miosix\-::\-Software\-S\-P\-I}$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmiosix_1_1_software_s_p_i_a0d8dc57b9c5bbca82f830a286e1e43e3}
+Initialize the \hyperlink{class_s_p_i}{S\-P\-I} interface \hypertarget{classmiosix_1_1_software_s_p_i_a28c74624fdf2699bbd9a16a0b4041df4}{\index{miosix\-::\-Software\-S\-P\-I@{miosix\-::\-Software\-S\-P\-I}!send\-Recv\-Char@{send\-Recv\-Char}}
+\index{send\-Recv\-Char@{send\-Recv\-Char}!miosix::SoftwareSPI@{miosix\-::\-Software\-S\-P\-I}}
+\subsubsection[{send\-Recv\-Char}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-I , typename S\-O , typename S\-C\-K , typename C\-E , unsigned num\-Nops$>$ unsigned char {\bf miosix\-::\-Software\-S\-P\-I}$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$\-::send\-Recv\-Char (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_s_p_i_a28c74624fdf2699bbd9a16a0b4041df4}
+Send a byte and, since \hyperlink{class_s_p_i}{S\-P\-I} is full duplex, simultaneously receive a byte 
+\begin{DoxyParams}{Parameters}
+{\em data} & to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data received 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_software_s_p_i_a2338776e2f0242f95b8e416b269ae4e7}{\index{miosix\-::\-Software\-S\-P\-I@{miosix\-::\-Software\-S\-P\-I}!send\-Recv\-Long@{send\-Recv\-Long}}
+\index{send\-Recv\-Long@{send\-Recv\-Long}!miosix::SoftwareSPI@{miosix\-::\-Software\-S\-P\-I}}
+\subsubsection[{send\-Recv\-Long}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-I , typename S\-O , typename S\-C\-K , typename C\-E , unsigned num\-Nops$>$ unsigned int {\bf miosix\-::\-Software\-S\-P\-I}$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$\-::send\-Recv\-Long (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_s_p_i_a2338776e2f0242f95b8e416b269ae4e7}
+Send an int and, since \hyperlink{class_s_p_i}{S\-P\-I} is full duplex, simultaneously receive an int 
+\begin{DoxyParams}{Parameters}
+{\em data} & to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data received 
+\end{DoxyReturn}
+\hypertarget{classmiosix_1_1_software_s_p_i_aa4087c723fe51f7172c54c24a51e56c3}{\index{miosix\-::\-Software\-S\-P\-I@{miosix\-::\-Software\-S\-P\-I}!send\-Recv\-Short@{send\-Recv\-Short}}
+\index{send\-Recv\-Short@{send\-Recv\-Short}!miosix::SoftwareSPI@{miosix\-::\-Software\-S\-P\-I}}
+\subsubsection[{send\-Recv\-Short}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S\-I , typename S\-O , typename S\-C\-K , typename C\-E , unsigned num\-Nops$>$ unsigned short {\bf miosix\-::\-Software\-S\-P\-I}$<$ S\-I, S\-O, S\-C\-K, C\-E, num\-Nops $>$\-::send\-Recv\-Short (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmiosix_1_1_software_s_p_i_aa4087c723fe51f7172c54c24a51e56c3}
+Send an unsigned short and, since \hyperlink{class_s_p_i}{S\-P\-I} is full duplex, simultaneously receive an unsigned short 
+\begin{DoxyParams}{Parameters}
+{\em data} & to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data received 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+miosix/util/software\-\_\-spi.\-h\end{DoxyCompactItemize}

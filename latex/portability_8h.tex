@@ -1,0 +1,46 @@
+\hypertarget{portability_8h}{\section{miosix/interfaces/portability.h File Reference}
+\label{portability_8h}\index{miosix/interfaces/portability.\-h@{miosix/interfaces/portability.\-h}}
+}
+{\ttfamily \#include \char`\"{}config/miosix\-\_\-settings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}interfaces-\/impl/portability\-\_\-impl.\-h\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacemiosix__pivate}{miosix\-\_\-pivate}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___interfaces_gac4d0a63745010331da4c5e9275665ccd}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qsystem\-Reboot} ()}\label{group___interfaces_gac4d0a63745010331da4c5e9275665ccd}
+
+\item 
+\hypertarget{group___drivers_gabde377c6777ad3f4aecde34ee1e26df4}{void {\bfseries miosix\-\_\-private\-::do\-Yield} ()}\label{group___drivers_gabde377c6777ad3f4aecde34ee1e26df4}
+
+\item 
+\hypertarget{group___interfaces_gad6e1b120330ae5e0c580061c1f83cde1}{void {\bfseries miosix\-\_\-private\-::init\-Ctxsave} (unsigned int $\ast$ctxsave, void $\ast$($\ast$pc)(void $\ast$), unsigned int $\ast$sp, void $\ast$argv)}\label{group___interfaces_gad6e1b120330ae5e0c580061c1f83cde1}
+
+\item 
+\hypertarget{group___interfaces_ga9702b5fb892928b5a330ffedda094d2b}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qstack\-Overflow\-Check} ()}\label{group___interfaces_ga9702b5fb892928b5a330ffedda094d2b}
+
+\item 
+\hypertarget{group___interfaces_gae4130aa3e4b9ba0666de5e86b2242a95}{void {\bfseries miosix\-\_\-private\-::\-I\-R\-Qportable\-Start\-Kernel} ()}\label{group___interfaces_gae4130aa3e4b9ba0666de5e86b2242a95}
+
+\item 
+\hypertarget{group___drivers_ga961407a501c1247188dcdf5f60e8f301}{void {\bfseries miosix\-\_\-private\-::do\-Disable\-Interrupts} ()}\label{group___drivers_ga961407a501c1247188dcdf5f60e8f301}
+
+\item 
+\hypertarget{group___drivers_ga81e39c3699a44c981d94c17a64722f41}{void {\bfseries miosix\-\_\-private\-::do\-Enable\-Interrupts} ()}\label{group___drivers_ga81e39c3699a44c981d94c17a64722f41}
+
+\item 
+\hypertarget{group___drivers_ga392ef99b87ee6feb2805dee3790f9648}{bool {\bfseries miosix\-\_\-private\-::check\-Are\-Interrupts\-Enabled} ()}\label{group___drivers_ga392ef99b87ee6feb2805dee3790f9648}
+
+\item 
+\hypertarget{group___interfaces_ga38787e05f2b382978b829168c039ff0e}{void {\bfseries miosix\-\_\-private\-::sleep\-Cpu} ()}\label{group___interfaces_ga38787e05f2b382978b829168c039ff0e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file is the interface from the Miosix kernel to the hardware. It ccontains what is required to perform a context switch, disable interrupts, set up the stack frame and registers of a newly created thread, and contains iterrupt handlers for preemption and yield.
+
+Since some of the functions in this file must be inline for speed reasons, and context switch code must be macros, at the end of this file the file portability\-\_\-impl.\-h is included. This file should contain the implementation of those inline functions. 

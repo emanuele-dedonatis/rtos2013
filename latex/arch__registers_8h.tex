@@ -1,0 +1,14 @@
+\hypertarget{arch__registers_8h}{\section{miosix/interfaces/arch\-\_\-registers.h File Reference}
+\label{arch__registers_8h}\index{miosix/interfaces/arch\-\_\-registers.\-h@{miosix/interfaces/arch\-\_\-registers.\-h}}
+}
+{\ttfamily \#include \char`\"{}interfaces-\/impl/arch\-\_\-registers\-\_\-impl.\-h\char`\"{}}\\*
+
+
+\subsection{Detailed Description}
+This file should contain the list of hardware registers of the selected architecture, to allow application to directly access the hardware.
+
+The list of these registers is usually provided by the chip vendor in the form of one or more header files.
+
+To include these registers in a portable way, here we only include arch\-\_\-registers\-\_\-impl.\-h, which will be an header file in arch/arch name/board name/interfaces\-\_\-impl
+
+The usual implementation of arch\-\_\-registers\-\_\-impl.\-h is simply to include the header files provided by the chip vendor. 

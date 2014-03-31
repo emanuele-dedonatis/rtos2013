@@ -1,9 +1,11 @@
-/* 
- * File:   pedometer.cpp
- * Author: user
- * 
- * Created on March 12, 2014, 1:12 AM
- */
+/**
+* File:   pedometer.cpp
+*  \brief     Pedometer functionalities using LIS302 accelerometer.
+*  \author    Emanuele De Donatis
+*  \author    Bruno Pistone
+*  \version   1.0
+*  \date      11/03/2014
+*/
 
 #include <stdio.h>
 #include <ctime>
