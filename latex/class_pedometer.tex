@@ -13,39 +13,43 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_pedometer_a8f0c7938e375751d3d34fdcb6c4880c6}{init} ()
-\item 
-void \hyperlink{class_pedometer_a6ba723efbe52177d23c41aa63d4f55d1}{start} ()
-\item 
-void \hyperlink{class_pedometer_a81c83bde8af270c3596ffc08f256cf65}{pause} ()
-\item 
-void \hyperlink{class_pedometer_ae9beddf74190d07ff611e21a9c490faa}{restart} ()
-\item 
+\hypertarget{class_pedometer_a8f0c7938e375751d3d34fdcb6c4880c6}{void \hyperlink{class_pedometer_a8f0c7938e375751d3d34fdcb6c4880c6}{init} ()}\label{class_pedometer_a8f0c7938e375751d3d34fdcb6c4880c6}
+
+\begin{DoxyCompactList}\small\item\em Initialize \hyperlink{class_s_p_i}{S\-P\-I} and accelerometer sensor \hyperlink{class_l_i_s302}{L\-I\-S302}. \end{DoxyCompactList}\item 
+\hypertarget{class_pedometer_a6ba723efbe52177d23c41aa63d4f55d1}{void \hyperlink{class_pedometer_a6ba723efbe52177d23c41aa63d4f55d1}{start} ()}\label{class_pedometer_a6ba723efbe52177d23c41aa63d4f55d1}
+
+\begin{DoxyCompactList}\small\item\em Start the counting. \end{DoxyCompactList}\item 
+\hypertarget{class_pedometer_a81c83bde8af270c3596ffc08f256cf65}{void \hyperlink{class_pedometer_a81c83bde8af270c3596ffc08f256cf65}{pause} ()}\label{class_pedometer_a81c83bde8af270c3596ffc08f256cf65}
+
+\begin{DoxyCompactList}\small\item\em Pause the counting. \end{DoxyCompactList}\item 
+\hypertarget{class_pedometer_ae9beddf74190d07ff611e21a9c490faa}{void \hyperlink{class_pedometer_ae9beddf74190d07ff611e21a9c490faa}{restart} ()}\label{class_pedometer_ae9beddf74190d07ff611e21a9c490faa}
+
+\begin{DoxyCompactList}\small\item\em Restart the counting. \end{DoxyCompactList}\item 
 int \hyperlink{class_pedometer_a4d48e84820e8c2448d5147d1c7e2693a}{get\-Steps} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current number of steps. \end{DoxyCompactList}\item 
 int \hyperlink{class_pedometer_a854089e4420736acb78b25d9ca037084}{get\-Mode} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current training mode (S\-T\-E\-A\-D\-Y or W\-A\-L\-K or R\-U\-N) \end{DoxyCompactList}\item 
 bool \hyperlink{class_pedometer_ab1a681e46f1f0a157cf5cf2ebff5b609}{is\-Steady} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Ask if is in steady mode. \end{DoxyCompactList}\item 
 bool \hyperlink{class_pedometer_a1944eba109a4f2cd9d9948c0677627df}{is\-Walk} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Ask if is in walk mode. \end{DoxyCompactList}\item 
 bool \hyperlink{class_pedometer_ab2cadd5ca49b6e3ce1f844603fcf3a08}{is\-Run} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Ask if is in run mode. \end{DoxyCompactList}\item 
 void \hyperlink{class_pedometer_a0f2085c2686f6acd824411a3cd75132f}{set\-Height} (float m)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the user's height. \end{DoxyCompactList}\item 
 void \hyperlink{class_pedometer_a25dd27f55bf919dcd7e7db0fa2b0aa1f}{set\-Weight} (float kg)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the user's weight. \end{DoxyCompactList}\item 
 float \hyperlink{class_pedometer_a2120dca6727a59a76339ca2273841797}{get\-Distance} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current distance in km. \end{DoxyCompactList}\item 
 float \hyperlink{class_pedometer_a2e2ce2a5ddb05410aa7e2c1eb0746da0}{get\-Speed} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the current speed in km/sec. \end{DoxyCompactList}\item 
 float \hyperlink{class_pedometer_a6470da610c09e3ea71fa1b8a67351da1}{get\-Calories} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the current calories burned in K\-Cal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_pedometer}{Pedometer} \& \hyperlink{class_pedometer_a0c788457ae234fd7dd76f73fa1455036}{instance} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the instance of the pedometer, since it is a singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,8 +88,12 @@ Bruno Pistone
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a6470da610c09e3ea71fa1b8a67351da1}
+
+
+Get the current calories burned in K\-Cal. 
+
 \begin{DoxyReturn}{Returns}
-current calories burned 
+current calories burned \mbox{[}Kcal\mbox{]} 
 \end{DoxyReturn}
 \hypertarget{class_pedometer_a2120dca6727a59a76339ca2273841797}{\index{Pedometer@{Pedometer}!get\-Distance@{get\-Distance}}
 \index{get\-Distance@{get\-Distance}!Pedometer@{Pedometer}}
@@ -94,6 +102,10 @@ current calories burned
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a2120dca6727a59a76339ca2273841797}
+
+
+Get the current distance in km. 
+
 \begin{DoxyReturn}{Returns}
 current distance \mbox{[}km\mbox{]} 
 \end{DoxyReturn}
@@ -104,6 +116,10 @@ current distance \mbox{[}km\mbox{]}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a854089e4420736acb78b25d9ca037084}
+
+
+Get the current training mode (S\-T\-E\-A\-D\-Y or W\-A\-L\-K or R\-U\-N) 
+
 \begin{DoxyReturn}{Returns}
 the current training mode 
 \end{DoxyReturn}
@@ -114,6 +130,10 @@ the current training mode
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a2e2ce2a5ddb05410aa7e2c1eb0746da0}
+
+
+Get the current speed in km/sec. 
+
 \begin{DoxyReturn}{Returns}
 current speed \mbox{[}km/sec\mbox{]} 
 \end{DoxyReturn}
@@ -124,23 +144,24 @@ current speed \mbox{[}km/sec\mbox{]}
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a4d48e84820e8c2448d5147d1c7e2693a}
+
+
+Get the current number of steps. 
+
 \begin{DoxyReturn}{Returns}
 current number of steps 
 \end{DoxyReturn}
-\hypertarget{class_pedometer_a8f0c7938e375751d3d34fdcb6c4880c6}{\index{Pedometer@{Pedometer}!init@{init}}
-\index{init@{init}!Pedometer@{Pedometer}}
-\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Pedometer\-::init (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_pedometer_a8f0c7938e375751d3d34fdcb6c4880c6}
-Initialize \hyperlink{class_s_p_i}{S\-P\-I} and accelerometer sensor \hyperlink{class_l_i_s302}{L\-I\-S302} \hypertarget{class_pedometer_a0c788457ae234fd7dd76f73fa1455036}{\index{Pedometer@{Pedometer}!instance@{instance}}
+\hypertarget{class_pedometer_a0c788457ae234fd7dd76f73fa1455036}{\index{Pedometer@{Pedometer}!instance@{instance}}
 \index{instance@{instance}!Pedometer@{Pedometer}}
 \subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pedometer} \& Pedometer\-::instance (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{class_pedometer_a0c788457ae234fd7dd76f73fa1455036}
+
+
+Get the instance of the pedometer, since it is a singleton. 
+
 \begin{DoxyReturn}{Returns}
 an instance of the pedometer (singleton) 
 \end{DoxyReturn}
@@ -151,6 +172,10 @@ an instance of the pedometer (singleton)
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_ab2cadd5ca49b6e3ce1f844603fcf3a08}
+
+
+Ask if is in run mode. 
+
 \begin{DoxyReturn}{Returns}
 true if is run mode 
 \end{DoxyReturn}
@@ -161,6 +186,10 @@ true if is run mode
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_ab1a681e46f1f0a157cf5cf2ebff5b609}
+
+
+Ask if is in steady mode. 
+
 \begin{DoxyReturn}{Returns}
 true if is steady mode 
 \end{DoxyReturn}
@@ -171,31 +200,23 @@ true if is steady mode
 {}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a1944eba109a4f2cd9d9948c0677627df}
+
+
+Ask if is in walk mode. 
+
 \begin{DoxyReturn}{Returns}
 true if is walk mode 
 \end{DoxyReturn}
-\hypertarget{class_pedometer_a81c83bde8af270c3596ffc08f256cf65}{\index{Pedometer@{Pedometer}!pause@{pause}}
-\index{pause@{pause}!Pedometer@{Pedometer}}
-\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void Pedometer\-::pause (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_pedometer_a81c83bde8af270c3596ffc08f256cf65}
-Pause the counting \hypertarget{class_pedometer_ae9beddf74190d07ff611e21a9c490faa}{\index{Pedometer@{Pedometer}!restart@{restart}}
-\index{restart@{restart}!Pedometer@{Pedometer}}
-\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}void Pedometer\-::restart (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_pedometer_ae9beddf74190d07ff611e21a9c490faa}
-Restart the counting \hypertarget{class_pedometer_a0f2085c2686f6acd824411a3cd75132f}{\index{Pedometer@{Pedometer}!set\-Height@{set\-Height}}
+\hypertarget{class_pedometer_a0f2085c2686f6acd824411a3cd75132f}{\index{Pedometer@{Pedometer}!set\-Height@{set\-Height}}
 \index{set\-Height@{set\-Height}!Pedometer@{Pedometer}}
 \subsubsection[{set\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void Pedometer\-::set\-Height (
 \begin{DoxyParamCaption}
 \item[{float}]{m}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a0f2085c2686f6acd824411a3cd75132f}
-Set the user's height
+
+
+Set the user's height. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -209,21 +230,16 @@ Set the user's height
 \item[{float}]{kg}
 \end{DoxyParamCaption}
 )}}\label{class_pedometer_a25dd27f55bf919dcd7e7db0fa2b0aa1f}
-Set the user's weight
+
+
+Set the user's weight. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em kg} & Weight in kilos \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_pedometer_a6ba723efbe52177d23c41aa63d4f55d1}{\index{Pedometer@{Pedometer}!start@{start}}
-\index{start@{start}!Pedometer@{Pedometer}}
-\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void Pedometer\-::start (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_pedometer_a6ba723efbe52177d23c41aa63d4f55d1}
-Start the counting 
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

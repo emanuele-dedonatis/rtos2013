@@ -4,10 +4,16 @@
     <df root=".." name="0">
       <df name="grp12">
       </df>
+      <df name="html">
+        <df name="search">
+        </df>
+      </df>
       <df name="include">
         <in>LIS302.h</in>
         <in>pedometer.h</in>
         <in>spi.h</in>
+      </df>
+      <df name="latex">
       </df>
       <df name="lib">
         <in>LIS302.cpp</in>
@@ -421,7 +427,6 @@
         <in>miosix.h</in>
       </df>
       <in>main.cpp</in>
-      <in>mainpage.dox</in>
     </df>
   </logicalFolder>
   <projectmakefile>miosix_np_2-Makefile.mk</projectmakefile>

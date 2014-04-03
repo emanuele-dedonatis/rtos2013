@@ -413,7 +413,6 @@
         <in>miosix.h</in>
       </df>
       <in>main.cpp</in>
-      <in>mainpage.dox</in>
     </df>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -491,8 +490,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
@@ -1624,8 +1621,6 @@
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
             tool="3"
@@ -2751,8 +2746,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
@@ -3882,8 +3875,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
@@ -5018,8 +5009,6 @@
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
             tool="3"
@@ -6147,8 +6136,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
@@ -7278,8 +7265,6 @@
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
             tool="3"
@@ -8408,8 +8393,6 @@
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
             tool="3"
@@ -9535,8 +9518,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
@@ -10664,8 +10645,6 @@
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
             tool="3"
@@ -11791,8 +11770,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
@@ -12920,8 +12897,6 @@
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
             tool="3"
@@ -14047,8 +14022,6 @@
       <item path="../lib/spi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="../mainpage.dox" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../miosix/arch/arm7_lpc2000/common/arch_settings.h"
             ex="false"
