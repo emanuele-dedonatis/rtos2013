@@ -228,6 +228,6 @@ float Pedometer::getSpeed() {
     return speed;
 }
 
-float Pedometer::getCalories() {
+int Pedometer::getCalories() {
     return dist * weight;
 }

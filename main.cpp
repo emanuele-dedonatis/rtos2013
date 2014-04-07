@@ -93,13 +93,13 @@ int main()
         lcd.go(27,0);
         lcd.printf("    ");
         lcd.go(27,0);
-        lcd.printf("%.1f", pedo.getSpeed());
+        lcd.printf("%.1f ", pedo.getSpeed());
         //DISTANCE
         lcd.go(24,1);
         lcd.printf("%.1f", pedo.getDistance());
         //CALORIES
         lcd.go(35,1);
-        lcd.printf("%.1f", pedo.getCalories());
+        lcd.printf("%d", pedo.getCalories());
         if(button::value())
              Pedometer::instance().restart();
         usleep(50000);
