@@ -9,6 +9,56 @@
         </df>
       </df>
       <df name="include">
+        <df name="audio">
+          <df name="suoni">
+            <in>array-sound.h</in>
+            <in>cento.h</in>
+            <in>cinquanta.h</in>
+            <in>cinque.h</in>
+            <in>diciannove.h</in>
+            <in>diciassette.h</in>
+            <in>diciotto.h</in>
+            <in>dieci.h</in>
+            <in>dodici.h</in>
+            <in>due.h</in>
+            <in>haifatto.h</in>
+            <in>haiperso.h</in>
+            <in>haivinto.h</in>
+            <in>mila.h</in>
+            <in>milione.h</in>
+            <in>milioni.h</in>
+            <in>mille.h</in>
+            <in>novanta.h</in>
+            <in>nove.h</in>
+            <in>ottanta.h</in>
+            <in>otto.h</in>
+            <in>passi.h</in>
+            <in>quaranta.h</in>
+            <in>quattordici.h</in>
+            <in>quattro.h</in>
+            <in>quindici.h</in>
+            <in>sedici.h</in>
+            <in>sei.h</in>
+            <in>sessanta.h</in>
+            <in>settanta.h</in>
+            <in>sette.h</in>
+            <in>tre.h</in>
+            <in>tredici.h</in>
+            <in>trenta.h</in>
+            <in>undici.h</in>
+            <in>uno.h</in>
+            <in>venti.h</in>
+            <in>zero.h</in>
+          </df>
+          <in>adpcm.c</in>
+          <in>adpcm.h</in>
+          <in>convert.cpp</in>
+          <in>demo.cpp</in>
+          <in>player.cpp</in>
+          <in>player.h</in>
+          <in>slice-and-play.cpp</in>
+          <in>slice-and-play.h</in>
+        </df>
         <in>LIS302.h</in>
         <in>pedometer.h</in>
         <in>spi.h</in>

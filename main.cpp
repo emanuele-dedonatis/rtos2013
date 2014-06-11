@@ -3,6 +3,7 @@
 #include "miosix.h"
 #include "pedometer.h"
 #include "util/lcd44780.h"
+#include "audio/slice-and-play.h"
 
 using namespace std;
 using namespace miosix;
@@ -48,6 +49,16 @@ void pedometerTask(void *argv) {
     Pedometer::instance().start();
 }
 
+void audioTask(void *argv) {
+    for(;;){
+        sleep(30);  
+        int steps = Pedometer::instance().getSteps();
+        if(steps!=0) {
+                ring::instance().play_n_of_step(steps,100);
+        }
+    }
+}
+
 void initLcd() {
     lcd.clear();
     lcd.go(0,0);
@@ -69,6 +80,10 @@ int main()
     initLcd();
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
+    
+        
+    Thread *audio_t;
+    audio_t = Thread::create(audioTask, 2048, 1, NULL, Thread::JOINABLE);
     
     Pedometer& pedo = Pedometer::instance();
     for(;;){
