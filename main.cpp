@@ -26,7 +26,7 @@ using namespace miosix;
  * 
  *   |20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|
  * 0 |S |P |E |E |D |: |  |* |* |. |* |  |K |m |/ |h |  |  |  |  |
- * 1 |K |M |: |  |* |* |. |* |  |K |C |A |L |: |  |* |* |* |* |  |
+ * 1 |K |M |: |  |* |* |. |* |* |  |K |C |A |L |: |  |* |* |* |* |
  */
 
 typedef Gpio<GPIOE_BASE,7>  rs;         //pin4
@@ -60,7 +60,7 @@ void initLcd() {
     lcd.printf("Km/h");
     lcd.go(20,1);
     lcd.printf("KM:");
-    lcd.go(29,1);
+    lcd.go(30,1);
     lcd.printf("KCAL:");
 }
 
@@ -96,9 +96,9 @@ int main()
         lcd.printf("%.1f ", pedo.getSpeed());
         //DISTANCE
         lcd.go(24,1);
-        lcd.printf("%.1f", pedo.getDistance());
+        lcd.printf("%.2f", pedo.getDistance());
         //CALORIES
-        lcd.go(35,1);
+        lcd.go(36,1);
         lcd.printf("%d", pedo.getCalories());
         if(button::value())
              Pedometer::instance().restart();

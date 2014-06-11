@@ -38,7 +38,7 @@ long old_time, new_time, current_time;
 bool active;
 int mode;
 float height, weight;
-float dist, speed;
+float lenght_run, lenght_walk , dist, speed;
 
 Pedometer& Pedometer::instance() {
     static Pedometer singleton;
@@ -175,6 +175,8 @@ void Pedometer::restart() {
     counter = 0;
     height = 1.75;
     weight = 85;
+    lenght_walk = height/6.0;  //lenght in m
+    lenght_run = height/3.0;    //lenght in m
     dist = 0;
     speed = 0;
     x_max = -MAX_VALUE;
@@ -192,14 +194,15 @@ void Pedometer::newStep() {
 
     if (time >= 200 && time <= 2000) { //human range for step
         steps++;
-        if (time <= 500) {
+        if (time < 500) {
             mode = Pedometer::MODE_RUN;
+            dist += lenght_run;
+            speed = lenght_run / time; //instant speed in m/msec
         } else {
             mode = Pedometer::MODE_WALK;
+            dist += lenght_walk;
+            speed = lenght_walk / time; //instant speed in m/msec
         }
-        float lenght = height / (time / 200); //(obtained experimentally) lenght in m of last step
-        dist += (lenght / 1000);
-        speed = lenght * 3600 / time; //instant speed in km/h
     }
 }
 
@@ -221,13 +224,13 @@ void Pedometer::setWeight(float kg) {
 }
 
 float Pedometer::getDistance() {
-    return dist;
+    return dist/1000.0; //from meters to kmeters
 }
 
 float Pedometer::getSpeed() {
-    return speed;
+    return speed*3600.0;        //from m/ms to km/h
 }
 
 int Pedometer::getCalories() {
-    return dist * weight;
+    return (dist/1000.0) * weight;
 }
