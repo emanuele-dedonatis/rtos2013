@@ -48,6 +48,16 @@ void pedometerTask(void *argv) {
     Pedometer::instance().start();
 }
 
+void introGUI() {
+    lcd.clear();
+    lcd.go(2,1);
+    lcd.printf("PERSONAL TRAINER");
+    lcd.go(26,0);
+    lcd.printf("RTOS2013");
+    sleep(5);
+    lcd.clear();
+    return;
+}
 void initLcd() {
     lcd.clear();
     lcd.go(0,0);
@@ -66,6 +76,7 @@ void initLcd() {
 
 int main()
 {
+    introGUI();
     initLcd();
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);

@@ -9,6 +9,8 @@
         </df>
       </df>
       <df name="include">
+        <df name="audio">
+        </df>
         <in>LIS302.h</in>
         <in>pedometer.h</in>
         <in>spi.h</in>
