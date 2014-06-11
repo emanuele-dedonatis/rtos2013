@@ -45,8 +45,12 @@ Pedometer& Pedometer::instance() {
     return singleton;
 }
 
-void Pedometer::init() {
+void Pedometer::init(float usr_height, float usr_weight) {
     LIS302::init();
+    height = usr_height;
+    weight = usr_weight;
+    lenght_walk = height/6.0;  //lenght in m
+    lenght_run = height/3.0;    //lenght in m
     restart();
 }
 
@@ -173,10 +177,6 @@ void Pedometer::restart() {
     mode = Pedometer::MODE_STEADY;
     steps = 0;
     counter = 0;
-    height = 1.75;
-    weight = 85;
-    lenght_walk = height/6.0;  //lenght in m
-    lenght_run = height/3.0;    //lenght in m
     dist = 0;
     speed = 0;
     x_max = -MAX_VALUE;

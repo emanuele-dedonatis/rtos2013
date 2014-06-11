@@ -39,7 +39,7 @@ public:
    /**
     * @brief Initialize SPI and accelerometer sensor LIS302
     */
-   void init();
+   void init(float usr_height, float usr_weights);
    
    /**
     * @brief Start the counting 

@@ -36,26 +36,70 @@ typedef Gpio<GPIOE_BASE,10>  d5;        //pin12
 typedef Gpio<GPIOE_BASE,11>  d6;        //pin13
 typedef Gpio<GPIOE_BASE,12>  d7;        //pin14
 
-typedef Gpio<GPIOA_BASE,0>  button;        //board button
+typedef Gpio<GPIOE_BASE,13>  btn_UP;
+typedef Gpio<GPIOE_BASE,14>  btn_OK;
+typedef Gpio<GPIOE_BASE,15> btn_DOWN;
 
 #define LCD_ROW         4
 #define LCD_COL         40
 
 Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
 
+float usr_height = 1.75;
+float usr_weight = 85;
+
 void pedometerTask(void *argv) {
-    Pedometer::instance().init();
+    Pedometer::instance().init(usr_height, usr_weight);
     Pedometer::instance().start();
 }
 
 void introGUI() {
+    
+    //INITIAL SCREENSHOT
     lcd.clear();
     lcd.go(2,1);
     lcd.printf("PERSONAL TRAINER");
     lcd.go(26,0);
     lcd.printf("RTOS2013");
     sleep(5);
+    
+    btn_UP::mode(Mode::INPUT_PULL_UP);
+    btn_DOWN::mode(Mode::INPUT_PULL_UP);
+    btn_OK::mode(Mode::INPUT_PULL_UP);
+    
+    //HEIGHT INPUT
     lcd.clear();
+    lcd.go(0,1);
+    lcd.printf("< - >  < OK >  < + >");
+    lcd.go(27,0);
+    lcd.printf("HEIGHT");
+    bool height_saved = false;
+    while(!height_saved){
+           if(btn_UP::value()==0) usr_height = usr_height + 0.01;
+           if(btn_DOWN::value()==0) usr_height = usr_height - 0.01;
+           if(btn_OK::value()==0) height_saved = true;
+           lcd.go(27,1);
+           lcd.printf("%.2f m", usr_height);
+           Thread::sleep(100);
+    }
+    
+    Thread::sleep(500);
+    
+    //WEIGHT INPUT
+    lcd.clear();
+    lcd.go(0,1);
+    lcd.printf("< - >  < OK >  < + >");
+    lcd.go(27,0);
+    lcd.printf("WEIGHT");
+    bool weight_saved = false;
+    while(!weight_saved){
+           if(btn_UP::value()==0) usr_weight = usr_weight + 1;
+           if(btn_DOWN::value()==0) usr_weight = usr_weight - 1;
+           if(btn_OK::value()==0) weight_saved = true;
+           lcd.go(27,1);
+           lcd.printf("%.0f kg", usr_weight);
+           Thread::sleep(100);
+    }
     return;
 }
 void initLcd() {
@@ -111,8 +155,6 @@ int main()
         //CALORIES
         lcd.go(36,1);
         lcd.printf("%d", pedo.getCalories());
-        if(button::value())
-             Pedometer::instance().restart();
         usleep(50000);
     }
 }
