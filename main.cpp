@@ -69,7 +69,7 @@ void introGUI() {
     
     //HEIGHT INPUT
     lcd.clear();
-    lcd.go(0,1);
+    lcd.go(0,0);
     lcd.printf("< - >  < OK >  < + >");
     lcd.go(27,0);
     lcd.printf("HEIGHT");
@@ -87,7 +87,7 @@ void introGUI() {
     
     //WEIGHT INPUT
     lcd.clear();
-    lcd.go(0,1);
+    lcd.go(0,0);
     lcd.printf("< - >  < OK >  < + >");
     lcd.go(27,0);
     lcd.printf("WEIGHT");
