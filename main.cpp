@@ -102,7 +102,7 @@ void introGUI() {
     }
     return;
 }
-void initLcd() {
+void mainGUI() {
     lcd.clear();
     lcd.go(0,0);
     lcd.printf("STEPS:");
@@ -121,7 +121,8 @@ void initLcd() {
 int main()
 {
     introGUI();
-    initLcd();
+    mainGUI();
+    
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
     
