@@ -42,6 +42,7 @@ typedef Gpio<GPIOE_BASE,15> btn_DOWN;
 
 #define LCD_ROW         4
 #define LCD_COL         40
+#define LCD_REFRESH		50000
 
 Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
 
@@ -79,13 +80,19 @@ void introGUI() {
            if(btn_DOWN::value()==0) usr_height = usr_height - 0.01;
            if(btn_OK::value()==0) height_saved = true;
            lcd.go(27,1);
-           lcd.printf("%.2f m", usr_height);
+           lcd.printf("%.2f m ", usr_height);
            Thread::sleep(100);
     }
     
-    Thread::sleep(500);
-    
-    //WEIGHT INPUT
+	lcd.clear();
+	Thread::sleep(500);
+    lcd.go(9,1);
+    lcd.printf("OK");
+    Thread::sleep(1000);
+	lcd.clear();
+	Thread::sleep(500);
+	
+	//WEIGHT INPUT
     lcd.clear();
     lcd.go(0,0);
     lcd.printf("< - >  < OK >  < + >");
@@ -97,9 +104,18 @@ void introGUI() {
            if(btn_DOWN::value()==0) usr_weight = usr_weight - 1;
            if(btn_OK::value()==0) weight_saved = true;
            lcd.go(27,1);
-           lcd.printf("%.0f kg", usr_weight);
+           lcd.printf("%.0f kg ", usr_weight);
            Thread::sleep(100);
     }
+    
+	lcd.clear();
+	Thread::sleep(500);
+    lcd.go(9,1);
+    lcd.printf("OK");
+    Thread::sleep(1000);
+	lcd.clear();
+	Thread::sleep(500);
+	
     return;
 }
 void mainGUI() {
@@ -156,6 +172,6 @@ int main()
         //CALORIES
         lcd.go(36,1);
         lcd.printf("%d", pedo.getCalories());
-        usleep(50000);
+        usleep(LCD_REFRESH);
     }
 }
