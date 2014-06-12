@@ -23,6 +23,9 @@ using namespace miosix;
 #define MAX_VALUE               255
 #define MIN_INTERVAL            10
 #define MAX_INTERVAL            100
+#define MIN_TIMEWIN				200
+#define MAX_TIMEWIN				2000
+#define MIN_TIMEWALK			500
 
 volatile signed char x[FILTER_SAMPLE], y[FILTER_SAMPLE], z[FILTER_SAMPLE];
 volatile int x_max, x_min, y_max, y_min, z_max, z_min;
@@ -38,7 +41,7 @@ long old_time, new_time, current_time;
 bool active;
 int mode;
 float height, weight;
-float lenght_run, lenght_walk , dist, speed;
+float length_run, length_walk , dist, speed, calories;
 
 Pedometer& Pedometer::instance() {
     static Pedometer singleton;
@@ -49,8 +52,8 @@ void Pedometer::init(float usr_height, float usr_weight) {
     LIS302::init();
     height = usr_height;
     weight = usr_weight;
-    lenght_walk = height/6.0;  //lenght in m
-    lenght_run = height/3.0;    //lenght in m
+    length_walk = height/6.0;  //length in m
+    length_run = height/3.0;    //length in m
     restart();
 }
 
@@ -192,23 +195,23 @@ void Pedometer::newStep() {
     new_time = getTick(); //time in msec of new step
     float time = new_time - old_time; //time in msec between last two steps
 
-    if (time >= 200 && time <= 2000) { //human range for step
+    if (time >= MIN_TIMEWIN && time <= MAX_TIMEWIN) { //human range for step
         steps++;
-        if (time < 500) {
+        if (time < MIN_TIMEWALK) {
             mode = Pedometer::MODE_RUN;
-            dist += lenght_run;
-            speed = lenght_run / time; //instant speed in m/msec
+            dist += length_run;
+            speed = length_run / time; //instant speed in m/msec
         } else {
             mode = Pedometer::MODE_WALK;
-            dist += lenght_walk;
-            speed = lenght_walk / time; //instant speed in m/msec
+            dist += length_walk;
+            speed = length_walk / time; //instant speed in m/msec
         }
     }
 }
 
 int Pedometer::getMode() {
     current_time = getTick();
-    if (current_time - new_time > 2000) {
+    if (current_time - new_time > MAX_TIMEWIN) {
         mode = Pedometer::MODE_STEADY;
         speed = 0;
     }
