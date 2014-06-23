@@ -43,7 +43,9 @@ typedef Gpio<GPIOE_BASE,15> btn_DOWN;
 
 #define LCD_ROW         4
 #define LCD_COL         40
-#define LCD_REFRESH		50000
+#define LCD_REFRESH     50000
+
+#define SOUND_DELAY     30
 
 Lcd44780 lcd(rs::getPin(), e::getPin(), d4::getPin(), d5::getPin(), d6::getPin(), d7::getPin(), LCD_ROW, LCD_COL);
 
@@ -57,7 +59,7 @@ void pedometerTask(void *argv) {
 
 void audioTask(void *argv) {
     for(;;){
-        sleep(30);  
+        sleep(SOUND_DELAY);  
         int steps = Pedometer::instance().getSteps();
         if(steps!=0) {
                 ring::instance().play_n_of_step(steps,100);
@@ -96,12 +98,14 @@ void introGUI() {
     }
     
 	lcd.clear();
-	Thread::sleep(500);
+	Thread::sleep(100);
     lcd.go(9,1);
     lcd.printf("OK");
+               lcd.go(27,0);
+           lcd.printf("%.2f m ", usr_height);
     Thread::sleep(1000);
 	lcd.clear();
-	Thread::sleep(500);
+	Thread::sleep(100);
 	
 	//WEIGHT INPUT
     lcd.clear();
@@ -120,12 +124,14 @@ void introGUI() {
     }
     
 	lcd.clear();
-	Thread::sleep(500);
+	Thread::sleep(100);
     lcd.go(9,1);
     lcd.printf("OK");
+           lcd.go(27,0);
+           lcd.printf("%.0f kg ", usr_weight);
     Thread::sleep(1000);
 	lcd.clear();
-	Thread::sleep(500);
+	Thread::sleep(100);
 	
     return;
 }
@@ -152,6 +158,9 @@ int main()
     
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
+    
+     Thread *audio_t;
+    audio_t = Thread::create(audioTask, 2048, 1, NULL, Thread::JOINABLE);
     
     Pedometer& pedo = Pedometer::instance();
     for(;;){
