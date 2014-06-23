@@ -3,6 +3,7 @@
 #include "miosix.h"
 #include "pedometer.h"
 #include "util/lcd44780.h"
+#include "audio/slice-and-play.h"
 
 using namespace std;
 using namespace miosix;
@@ -52,6 +53,16 @@ float usr_weight = 85;
 void pedometerTask(void *argv) {
     Pedometer::instance().init(usr_height, usr_weight);
     Pedometer::instance().start();
+}
+
+void audioTask(void *argv) {
+    for(;;){
+        sleep(30);  
+        int steps = Pedometer::instance().getSteps();
+        if(steps!=0) {
+                ring::instance().play_n_of_step(steps,100);
+        }
+    }
 }
 
 void introGUI() {

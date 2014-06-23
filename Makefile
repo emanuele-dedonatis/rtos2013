@@ -14,7 +14,7 @@ SUBDIRS := miosix
 ## List here your source files (both .s, .c and .cpp)
 ##
 SRC :=                                  \
-main.cpp lib/spi.cpp lib/LIS302.cpp lib/pedometer.cpp
+main.cpp lib/spi.cpp lib/LIS302.cpp lib/pedometer.cpp include/audio/player.cpp include/audio/slice-and-play.cpp include/audio/adpcm.c
 
 ##
 ## List here additional static libraries with relative path
