@@ -14,7 +14,16 @@ SUBDIRS := miosix
 ## List here your source files (both .s, .c and .cpp)
 ##
 SRC :=                                  \
-main.cpp lib/spi.cpp lib/LIS302.cpp lib/pedometer.cpp include/audio/player.cpp include/audio/slice-and-play.cpp include/audio/adpcm.c
+main.cpp				\
+lib/spi.cpp				\
+lib/LIS302.cpp				\
+lib/pedometer.cpp			\
+include/audio/player.cpp		\
+include/audio/slice-and-play.cpp	\
+include/audio/adpcm.c			\
+include/nrf24l01p/spi_driver.cpp	\
+include/nrf24l01p/nRF24L01P.cpp		\
+include/nrf24l01p/wifi_module.cpp	\
 
 ##
 ## List here additional static libraries with relative path

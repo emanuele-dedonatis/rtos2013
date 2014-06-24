@@ -12,7 +12,7 @@
 #include "pedometer.h"
 #include "LIS302.h"
 #include "miosix.h"
-
+#include "audio/slice-and-play.h"
 
 using namespace std;
 using namespace miosix;
@@ -42,6 +42,7 @@ bool active;
 int mode;
 float height, weight;
 float length_run, length_walk , dist, speed, calories;
+pthread_t playerAudio;
 
 Pedometer& Pedometer::instance() {
     static Pedometer singleton;
@@ -236,4 +237,21 @@ float Pedometer::getSpeed() {
 
 int Pedometer::getCalories() {
     return (dist/1000.0) * weight;
+}
+
+void *playVictory(void *arg){
+    ring::instance().victory_Song(100);
+}
+
+void *playLoose(void *arg){
+    ring::instance().looser_Song(100);
+}
+
+void Pedometer::compareSteps(int otherSteps){
+    if(steps <= otherSteps){
+        pthread_create(&playerAudio,NULL,&playLoose,NULL);
+    }
+    else{
+        pthread_create(&playerAudio,NULL,&playVictory,NULL);
+    }
 }

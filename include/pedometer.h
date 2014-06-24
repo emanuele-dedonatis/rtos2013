@@ -126,6 +126,13 @@ public:
     */
    int getCalories();
    
+   /**
+    * Compare own steps with others steps
+    * 
+    * \param otherSteps other steps to compare
+    */
+   void compareSteps(int otherSteps);
+   
 private:
     void newStep();
 

@@ -4,6 +4,7 @@
 #include "pedometer.h"
 #include "util/lcd44780.h"
 #include "audio/slice-and-play.h"
+#include "nrf24l01p/wifi_module.h"
 
 using namespace std;
 using namespace miosix;
@@ -41,6 +42,14 @@ typedef Gpio<GPIOE_BASE,13>  btn_UP;
 typedef Gpio<GPIOE_BASE,14>  btn_OK;
 typedef Gpio<GPIOE_BASE,15> btn_DOWN;
 
+/*  WIFI GPIO
+Gpio<GPIOB_BASE,11> CE;
+Gpio<GPIOB_BASE,12> CS;
+Gpio<GPIOB_BASE,13> SCK;
+Gpio<GPIOB_BASE,14> MISO;
+Gpio<GPIOB_BASE,15> MOSI;
+Gpio<GPIOA_BASE,1> IRQ;
+*/
 #define LCD_ROW         4
 #define LCD_COL         40
 #define LCD_REFRESH     50000
@@ -57,12 +66,15 @@ void pedometerTask(void *argv) {
     Pedometer::instance().start();
 }
 
-void audioTask(void *argv) {
+void audio_and_wifiTask(void *argv) {
+    char stepsCod[32];
     for(;;){
         sleep(SOUND_DELAY);  
         int steps = Pedometer::instance().getSteps();
         if(steps!=0) {
                 ring::instance().play_n_of_step(steps,100);
+                sprintf(stepsCod, "%d", steps);
+                send(stepsCod);
         }
     }
 }
@@ -156,12 +168,14 @@ int main()
     introGUI();
     mainGUI();
     
+    wifi_init();
+    
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
     
      Thread *audio_t;
-    audio_t = Thread::create(audioTask, 2048, 1, NULL, Thread::JOINABLE);
-    
+    audio_t = Thread::create(audio_and_wifiTask, 2048, 1, NULL, Thread::JOINABLE);
+        
     Pedometer& pedo = Pedometer::instance();
     for(;;){
         //STEPS
