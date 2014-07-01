@@ -4,11 +4,13 @@
     <df root=".." name="0">
       <df name="include">
         <in>LIS302.h</in>
+        <in>gui.h</in>
         <in>pedometer.h</in>
         <in>spi.h</in>
       </df>
       <df name="lib">
         <in>LIS302.cpp</in>
+        <in>gui.cpp</in>
         <in>pedometer.cpp</in>
         <in>spi.cpp</in>
       </df>
@@ -479,11 +481,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1609,11 +1615,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -2735,11 +2745,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -3864,11 +3878,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -4997,11 +5015,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -6125,11 +6147,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -7253,11 +7279,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -8381,11 +8411,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -9507,11 +9541,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -10633,11 +10671,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -11759,11 +11801,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -12885,11 +12931,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -14011,11 +14061,15 @@
       </makefileType>
       <item path="../include/LIS302.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="../include/gui.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="../include/pedometer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../include/spi.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="../lib/LIS302.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/gui.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="../lib/pedometer.cpp" ex="false" tool="1" flavor2="0">
       </item>

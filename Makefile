@@ -18,6 +18,7 @@ main.cpp				\
 lib/spi.cpp				\
 lib/LIS302.cpp				\
 lib/pedometer.cpp			\
+lib/gui.cpp				\
 include/audio/player.cpp		\
 include/audio/slice-and-play.cpp	\
 include/audio/adpcm.c			\
