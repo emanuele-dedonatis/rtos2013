@@ -41,31 +41,30 @@ void pedometerTask(void *argv) {
 
 void audio_and_wifiTask(void *argv) {
     char stepsCod[32];
-    for(;;){
-        sleep(SOUND_DELAY);  
+    for (;;) {
+        sleep(SOUND_DELAY);
         int steps = Pedometer::instance().getSteps();
-        if(steps!=0) {
-                ring::instance().play_n_of_step(steps,100);
-                sprintf(stepsCod, "%d", steps);
-                send(stepsCod);
+        if (steps != 0) {
+            ring::instance().play_n_of_step(steps, 100);
+            sprintf(stepsCod, "%d", steps);
+            send(stepsCod);
         }
     }
 }
 
-int main()
-{
+int main() {
     GUI::init();
-    
+
     wifi_init();
-    
+
     Thread *pedometer_t;
     pedometer_t = Thread::create(pedometerTask, 2048, 1, NULL, Thread::JOINABLE);
-    
+
     Thread *audio_t;
     audio_t = Thread::create(audio_and_wifiTask, 2048, 1, NULL, Thread::JOINABLE);
-        
+
     Pedometer& pedo = Pedometer::instance();
-    for(;;){
+    for (;;) {
         //STEPS
         GUI::steps(pedo.getSteps());
         //MODE
