@@ -2,8 +2,8 @@
 #include "miosix.h"
 #include "spi_driver.h"
 #include "nRF24L01P.h"
-#include "pedometer.h"
 #include <miosix/kernel/scheduler/scheduler.h>
+#include "pedometer.h"
 
 #define BUFFER_TRANSMIT_SIZE            32
 #define BUFFER_CELL_SIZE                32

@@ -1,4 +1,5 @@
 /**
+ * @file
  * File:   wifi_module.h
  *  \brief     This is the header file for the file wifi_module.cpp.
  *  \author    Andrea Corna

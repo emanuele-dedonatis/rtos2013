@@ -29,9 +29,12 @@ using namespace miosix;
  * Gpio<GPIOB_BASE,14> MISO;
  * Gpio<GPIOB_BASE,15> MOSI;
  * Gpio<GPIOA_BASE,1> IRQ;
+ * 
+ * 0xE7E7E7E7E7 address
+ * channel 100
  */
 
-#define SOUND_DELAY     30
+#define SOUND_DELAY     15
 #define LCD_REFRESH     50000
 
 void pedometerTask(void *argv) {

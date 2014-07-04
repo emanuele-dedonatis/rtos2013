@@ -106,6 +106,19 @@ public:
      */
     int get_crc_width();
     
+    
+    
+    /**
+     * The function return the tx address
+     * @return the tx address
+     */
+    unsigned long long get_tx_address();
+    
+    /**
+     * The function return the rx address of pipe 0
+     * @return the address of pipe 0
+     */
+    unsigned long long get_rx_address_pipe0();
 
     /**
      * Function to get the status register
