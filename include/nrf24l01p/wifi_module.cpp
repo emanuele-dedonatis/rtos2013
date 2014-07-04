@@ -65,6 +65,7 @@ void __attribute__((naked)) EXTI1_IRQHandler(){
 }
 
 void __attribute__((used))EXTI1HandlerImpl(){
+    printf("INTERRUPT\n");
     EXTI->PR=EXTI_PR_PR1;
     if(waiting==0) return;
     waiting->IRQwakeup(); 

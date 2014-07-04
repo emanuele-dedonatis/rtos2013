@@ -119,7 +119,21 @@ public:
      * @return the address of pipe 0
      */
     unsigned long long get_rx_address_pipe0();
-
+    
+    /**
+     * The function sets the tx address
+     * @param address - value of the address to use 
+     * @param width - address field width
+     */
+    void set_tx_address(unsigned long long address, int width);
+    
+    /**
+     * The function set the rx address
+     * @param address - value of the address to use
+     * @param width - address field width
+     */
+    void set_rx_address_pipe0(unsigned long long address, int width);
+    
     /**
      * Function to get the status register
      * @return the value of the status register

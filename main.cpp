@@ -23,19 +23,21 @@ using namespace miosix;
  * Gpio<GPIOE_BASE,12>  d7;        //pin14
  *  
  * WIFI GPIO
- * Gpio<GPIOB_BASE,11> CE;
- * Gpio<GPIOB_BASE,12> CS;
- * Gpio<GPIOB_BASE,13> SCK;
- * Gpio<GPIOB_BASE,14> MISO;
- * Gpio<GPIOB_BASE,15> MOSI;
- * Gpio<GPIOA_BASE,1> IRQ;
+ * GND                                  //pin1 
+ * 3v3                                  //pin2
+ * Gpio<GPIOB_BASE,11> CE;              //pin3
+ * Gpio<GPIOB_BASE,12> CS;              //pin4
+ * Gpio<GPIOB_BASE,13> SCK;             //pin5
+ * Gpio<GPIOB_BASE,15> MOSI;            //pin6
+ * Gpio<GPIOB_BASE,14> MISO;            //pin7
+ * Gpio<GPIOA_BASE,1> IRQ;              //pin8
  * 
  * 0xE7E7E7E7E7 address
- * channel 100
+ * channel 110
  */
 
-#define SOUND_DELAY     15
-#define LCD_REFRESH     50000
+#define SOUND_DELAY     60      //seconds
+#define LCD_REFRESH     50000   //useconds
 
 void pedometerTask(void *argv) {
     Pedometer::instance().init(GUI::getHeight(), GUI::getWeight());
