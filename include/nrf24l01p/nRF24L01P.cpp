@@ -17,6 +17,7 @@
 /*Receive buffer size macro*/
 #define NRF24L01P_RX_BUFFER_SIZE                32
 
+#define NRF24L01P_FREQ                          2512
 
 /*Command MACRO*/
 #define NRF24L01P_CMD_RD_REG                    0x00
@@ -148,13 +149,15 @@ nRF24L01P::nRF24L01P() {
     disable_auto_ack();
     disable_auto_retransmit();
     disable_tx_interrupt();
-    set_transfer_size(32);
-    set_frequency(2510);
+    set_transfer_size(NRF24L01P_RX_BUFFER_SIZE);
+    set_frequency(NRF24L01P_FREQ);
+    set_air_data_rate(NRF24L01P_DATARATE_1MBPS);
     printf("Status %d\n",get_register_status());
     printf("Output power %d\n",get_output_power());
     printf("Air data rate %d\n",get_air_data_rate());
     printf("Crc %d\n",get_crc_width());
     printf("Channel %d\n", get_register(NRF24L01P_REG_RF_CH));
+    printf("Payload size %d\n", get_register(NRF24L01P_REG_RX_PW_P0));
     printf("SETUP_AW %d\n",get_register(NRF24L01P_REG_SETUP_AW));
     printf("tx register 0x%010llX\n",get_tx_address());
     printf("rx address 0x%010llX\n",get_rx_address_pipe0());

@@ -33,10 +33,10 @@ using namespace miosix;
  * Gpio<GPIOA_BASE,1> IRQ;              //pin8
  * 
  * 0xE7E7E7E7E7 address
- * channel 100
+ * channel 112
  */
 
-#define SOUND_DELAY     60      //seconds
+#define SOUND_DELAY     30      //seconds
 #define LCD_REFRESH     50000   //useconds
 
 void pedometerTask(void *argv) {
