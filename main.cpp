@@ -33,7 +33,7 @@ using namespace miosix;
  * Gpio<GPIOA_BASE,1> IRQ;              //pin8
  * 
  * 0xE7E7E7E7E7 address
- * channel 110
+ * channel 100
  */
 
 #define SOUND_DELAY     60      //seconds
