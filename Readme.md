@@ -1,6 +1,9 @@
-##INTRODUCTION
+#Pedometer for STM32F4
 
-This project is a part of a collaborative [project for the class of Real-Time Operating Systems](http://home.deib.polimi.it/bellasi/lib/exe/fetch.php?media=teaching:2013:201311_rtos_projectpresentation.pdf "RTOS Project Presentation") at Polytechnic University of Milan.
+This project is a part of a collaborative [project for the class of Real-Time Operating Systems](http://home.deib.polimi.it/bellasi/lib/exe/fetch.php?media=teaching:2013:201311_rtos_projectpresentation.pdf "RTOS Project Presentation") at Polytechnic University of Milan. The goal of this project is to develop a pedometer using the MEMS motion sensor on the STM32F4DISCOVERY board.
+The device provides the user with statistics about its training activity.
+
+Download [Report.pdf](https://github.com/emanuele-dedonatis/rtos2013-report/blob/grp12-report/Report.pdf?raw=true)
 
 ##Features
 + STM32 F4 Discovery
